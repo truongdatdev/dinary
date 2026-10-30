@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="docs/banner.png" alt="Dinary — one platform for the whole business" width="100%">
+  <img src="docs/banner.png" alt="Dinary: one platform for the whole business" width="100%">
 </p>
 
 # Dinary
 
 **One platform for the whole business: ERP, CRM, HRM, ATS, projects and time tracking.**
 
-Dinary is an open-source business management platform that replaces a stack of disconnected tools with a single system for people, customers, money, projects and time — available as a web app, a self-hosted server and desktop applications.
+Dinary is an open-source business management platform that replaces a stack of disconnected tools with a single system for people, customers, money, projects and time. It is available as a web app, a self-hosted server and desktop applications.
 
 [![License: AGPL v3](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D26-339933?logo=node.js&logoColor=white)](https://nodejs.org)
@@ -56,7 +56,7 @@ Most small and mid-sized companies run on a patchwork of spreadsheets, invoicing
 
 - **Node.js 26.x** (pinned in `.nvmrc`)
 - **Yarn 1.22.x**
-- No database server needed for local development — the default configuration uses SQLite.
+- No database server is needed for local development; the default configuration uses SQLite.
 
 ### Run locally
 
@@ -97,7 +97,7 @@ With `DEMO=true`, a fresh demo installation accepts:
 | Super Admin | `admin@dinary.app` | `admin` |
 | Employee | `employee@dinary.app` | `12345678` |
 
-These credentials exist **only in demo mode**. A production installation must set `DEMO_SUPER_ADMIN_PASSWORD`, `DEMO_ADMIN_PASSWORD` and `DEMO_EMPLOYEE_PASSWORD` before its first boot — the API refuses to seed with the shipped defaults. Dinary Server and the desktop apps instead generate a random password per account on first start and display it once.
+These credentials exist **only in demo mode**. A production installation must set `DEMO_SUPER_ADMIN_PASSWORD`, `DEMO_ADMIN_PASSWORD` and `DEMO_EMPLOYEE_PASSWORD` before its first boot. The API refuses to seed with the shipped defaults. Dinary Server and the desktop apps instead generate a random password per account on first start and display it once.
 
 ## Project structure
 
@@ -109,7 +109,7 @@ apps/
   desktop-timer/     Electron time-tracking application
   server*/           Self-hosted server distributions
 packages/
-  core/              Domain modules (employees, invoices, projects, …)
+  core/              Domain modules (employees, invoices, projects, etc.)
   plugins/           Integrations, auth providers and UI plugins
   ui-core/           Shared UI components, themes and i18n
   contracts/         Shared types and DTOs
@@ -141,11 +141,11 @@ Settings are read from `.env.local` (or `.env`) at startup. The most important o
 | `API_PORT` | `3000` | API port |
 | `CLIENT_BASE_URL` | `http://localhost:4200` | Public URL of the web app |
 | `DB_TYPE` | `better-sqlite3` | `better-sqlite3`, `postgres` or `mysql` |
-| `DB_HOST` / `DB_PORT` / `DB_NAME` / `DB_USER` / `DB_PASS` | — | Database connection for PostgreSQL/MySQL |
+| `DB_HOST` / `DB_PORT` / `DB_NAME` / `DB_USER` / `DB_PASS` | n/a | Database connection for PostgreSQL/MySQL |
 | `DB_SYNCHRONIZE` | `false` | Let the ORM create the schema (development only) |
 | `REDIS_ENABLED` | `false` | Required for multiple API replicas and the worker queue |
 | `FILE_PROVIDER` | `LOCAL` | `LOCAL`, `S3`, `WASABI` or `CLOUDINARY` |
-| `JWT_SECRET`, `JWT_REFRESH_TOKEN_SECRET`, `EXPRESS_SESSION_SECRET` | — | **Must be changed in production** |
+| `JWT_SECRET`, `JWT_REFRESH_TOKEN_SECRET`, `EXPRESS_SESSION_SECRET` | n/a | **Must be changed in production** |
 | `DEMO` | `false` | Enable demo mode and demo accounts |
 
 The full list, with comments, is in [`.env.sample`](.env.sample).
@@ -191,7 +191,7 @@ To report a vulnerability, use the private advisory form in the [Security tab](h
 
 ## License
 
-Dinary is free software released under the [GNU Affero General Public License v3.0](LICENSE). You may redistribute and/or modify it under the terms of the AGPL-3.0, provided that copyright and license notices are preserved and that the complete source code of modified versions is made available — including when the modified version is offered as a network service.
+Dinary is free software released under the [GNU Affero General Public License v3.0](LICENSE). You may redistribute and/or modify it under the terms of the AGPL-3.0, provided that copyright and license notices are preserved and that the complete source code of modified versions is made available, including when the modified version is offered as a network service.
 
 The copyright notices and attribution for the software Dinary is built on are preserved in [NOTICE.md](NOTICE.md), [LICENSES.md](LICENSES.md) and [CREDITS.md](CREDITS.md), as the AGPL-3.0 requires.
 
