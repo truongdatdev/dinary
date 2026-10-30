@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="44" viewBox="0 0 180 44" role="img" aria-label="Dinary">
+  <defs>
+    <linearGradient id="dinary-gradient" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="4" width="36" height="36" rx="9" fill="url(#dinary-gradient)"/>
+  <text x="20" y="31" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF">D</text>
+  <text x="48" y="31" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="-0.6" fill="#0F172A">Dinary</text>
+</svg>

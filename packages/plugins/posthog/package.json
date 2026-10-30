@@ -1,0 +1,62 @@
+{
+	"name": "@dinary/plugin-posthog",
+	"version": "0.1.0",
+	"description": "Dinary Platform PostHog Plugin",
+	"author": {
+		"name": "Ordinary Labs",
+		"email": "hello@ordinarylabs.com",
+		"url": "https://ordinarylabs.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ordinary-labs/dinary",
+		"directory": "packages/plugins/posthog"
+	},
+	"bugs": {
+		"url": "https://github.com/ordinary-labs/dinary/issues"
+	},
+	"homepage": "https://ordinarylabs.com",
+	"license": "AGPL-3.0",
+	"private": true,
+	"type": "commonjs",
+	"main": "./src/index.js",
+	"typings": "./src/index.d.ts",
+	"scripts": {
+		"lib:build": "yarn nx build plugin-posthog",
+		"lib:build:prod": "yarn nx build plugin-posthog",
+		"lib:watch": "yarn nx build plugin-posthog --watch"
+	},
+	"peerDependencies": {
+		"@nestjs/common": "^12.0.0",
+		"@nestjs/core": "^12.0.0"
+	},
+	"dependencies": {
+		"@dinary/common": "^0.1.0",
+		"@dinary/config": "^0.1.0",
+		"@dinary/contracts": "^0.1.0",
+		"@dinary/core": "^0.1.0",
+		"@dinary/plugin": "^0.1.0",
+		"chalk": "^4.1.0",
+		"express": "^5.3.0",
+		"posthog-node": "^5.55.3",
+		"tslib": "^2.8.1"
+	},
+	"devDependencies": {
+		"@types/jest": "30.0.0",
+		"@types/node": "^26.6.5",
+		"typescript": "~6.0.3"
+	},
+	"keywords": [
+		"dinary",
+		"plugin",
+		"posthog",
+		"ordinary-labs",
+		"platform",
+		"error-tracking"
+	],
+	"engines": {
+		"node": ">=26",
+		"yarn": ">=1.22"
+	},
+	"sideEffects": false
+}

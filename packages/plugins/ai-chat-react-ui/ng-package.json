@@ -1,0 +1,19 @@
+{
+	"$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
+	"dest": "../../../dist/packages/plugins/ai-chat-react-ui",
+	"lib": {
+		"entryFile": "src/index.ts"
+	},
+	"allowedNonPeerDependencies": [
+		"@ai-sdk/react",
+		"ai",
+		"streamdown",
+		"@dinary/contracts",
+		"@dinary/plugin-ui",
+		"@dinary/ui-config",
+		"@dinary/ui-core",
+		"@dinary/ui-react",
+		"@dinary/ui-react-components",
+		"tslib"
+	]
+}

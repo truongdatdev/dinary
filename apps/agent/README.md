@@ -1,0 +1,12 @@
+# Dinary Agent Application
+
+Dinary Agent is a cross-platform application built with [nstudio/electron](https://github.com/nstudio/xplat) for seamless integration with Dinary. 
+
+---
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) (version 20 or later recommended)
+- [Yarn](https://yarnpkg.com/) (Package Manager)
+- [nstudio/electron](https://github.com/nstudio/xplat)
+---

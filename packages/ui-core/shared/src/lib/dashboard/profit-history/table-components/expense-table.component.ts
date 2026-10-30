@@ -1,0 +1,35 @@
+import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { filter, tap } from 'rxjs/operators';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { IOrganization } from '@dinary/contracts';
+import { Store } from '@dinary/ui-core/core';
+
+@UntilDestroy({ checkProperties: true })
+@Component({
+    selector: 'ga-expense-table-selector',
+    template: `
+		<span>
+			{{ rowData.expense ? '- ' + rowData.expense + ' ' + organization?.currency : '' }}
+		</span>
+	`,
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false
+})
+export class ExpenseTableComponent implements OnInit {
+	public organization: IOrganization;
+
+	@Input() rowData: any;
+	@Input() value: string | number;
+
+	constructor(private readonly store: Store) {}
+
+	ngOnInit(): void {
+		this.store.selectedOrganization$
+			.pipe(
+				filter((organization: IOrganization) => !!organization),
+				tap((organization: IOrganization) => (this.organization = organization)),
+				untilDestroyed(this)
+			)
+			.subscribe();
+	}
+}

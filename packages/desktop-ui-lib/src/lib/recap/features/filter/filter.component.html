@@ -1,0 +1,9 @@
+<button nbButton [nbPopover]="dinaryFilter" size="small" nbPopoverTrigger="click" status="basic">
+	<nb-icon icon="more-horizontal-outline"></nb-icon>
+</button>
+
+<ng-template #dinaryFilter>
+	<ngx-dinary-filters class="vertical" [filters]="filters$ | async" [hasTimeZoneFilter]="false" [saveFilters]="false"
+		(filtersChange)="filtersChange($event)"></ngx-dinary-filters>
+	<ngx-auto-refresh></ngx-auto-refresh>
+</ng-template>

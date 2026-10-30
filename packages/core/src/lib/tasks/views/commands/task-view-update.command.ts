@@ -1,0 +1,8 @@
+import { ID, ITaskViewUpdateInput } from '@dinary/contracts';
+import { ICommand } from '@nestjs/cqrs';
+
+export class TaskViewUpdateCommand implements ICommand {
+	static readonly type = '[Task View] Update';
+
+	constructor(public readonly id: ID, public readonly input: ITaskViewUpdateInput) {}
+}

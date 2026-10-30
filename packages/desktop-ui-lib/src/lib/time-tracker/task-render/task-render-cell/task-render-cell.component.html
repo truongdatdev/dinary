@@ -1,0 +1,26 @@
+<div class="task-render">
+  <div (click)="showDetail()" class="detail">
+    @if (number) {
+      <div class="task-number">
+        {{ number }}
+      </div>
+    }
+    <div class="task-title-container">
+      <div class="task-title">{{ title }}</div>
+    </div>
+  </div>
+  <div class="badges">
+    @if (priority) {
+      <div>
+        <dinary-task-badge-view
+          [taskBadge]="priority"
+        ></dinary-task-badge-view>
+      </div>
+    }
+    @if (size) {
+      <div>
+        <dinary-task-badge-view [taskBadge]="size"></dinary-task-badge-view>
+      </div>
+    }
+  </div>
+</div>

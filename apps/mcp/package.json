@@ -1,0 +1,38 @@
+{
+	"name": "@dinary/mcp",
+	"version": "0.1.0",
+	"description": "Dinary MCP Server - Standalone Model Context Protocol Server",
+	"author": {
+		"name": "Ordinary Labs",
+		"email": "hello@ordinarylabs.com",
+		"url": "https://ordinarylabs.com"
+	},
+	"homepage": "https://dinary.app",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ordinary-labs/dinary.git"
+	},
+	"bugs": {
+		"url": "https://github.com/ordinary-labs/dinary/issues"
+	},
+	"license": "AGPL-3.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "npx rimraf build && npx tsc --project tsconfig.json",
+		"build:prod": "yarn nx build mcp --configuration=production",
+		"build:dev": "yarn nx build mcp --configuration=development",
+		"start": "yarn nx serve mcp",
+		"test": "node build/index.js --test"
+	},
+	"dependencies": {
+		"@dinary/mcp-server": "^0.1.0",
+		"@modelcontextprotocol/sdk": "^1.32.1",
+		"electron-log": "^5.4.4"
+	},
+	"devDependencies": {
+		"@types/node": "^26.6.5",
+		"rimraf": "^6.1.3",
+		"typescript": "~6.0.3"
+	}
+}

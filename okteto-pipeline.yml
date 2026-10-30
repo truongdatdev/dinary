@@ -1,0 +1,7 @@
+icon: https://docs.dinary.app/img/dinary.png
+deploy:
+    - okteto build -t registry.cloud.okteto.net/ordinarylabs/dinary-api:${OKTETO_GIT_COMMIT} -f .deploy/api/Dockerfile .
+    - okteto build -t registry.cloud.okteto.net/ordinarylabs/dinary-webapp:${OKTETO_GIT_COMMIT} -f .deploy/webapp/Dockerfile .
+devs:
+    - apps/api/okteto.yml
+    - apps/dinary/okteto.yml

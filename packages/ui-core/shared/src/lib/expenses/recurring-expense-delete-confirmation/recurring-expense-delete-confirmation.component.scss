@@ -1,0 +1,10 @@
+@use 'dinary/_dinary-dialogs' as *;
+
+:host {
+    nb-card {
+        // Fallback because `dinary-card-1` is not registered by material-light /
+        // material-dark, where a `var()` with nothing to resolve to invalidates
+        // the declaration and left this confirmation dialog transparent.
+        background-color: var(--dinary-card-1, var(--card-background-color));
+    }
+}

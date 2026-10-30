@@ -1,0 +1,23 @@
+{
+	"extends": "./tsconfig.lib.json",
+	"compilerOptions": {
+		"declarationMap": false,
+		"baseUrl": "../../..",
+		"paths": {
+			"@dinary/ui-core": ["./dist/packages/ui-core"],
+			"@dinary/ui-core/*": ["./dist/packages/ui-core/*"],
+			"@dinary/ui-config": ["./packages/ui-config/src/index.ts"],
+			"@dinary/contracts": ["./packages/contracts/src/index.ts"],
+			"@dinary/constants": ["./packages/constants/src/index.ts"]
+		}
+	},
+	"angularCompilerOptions": {
+		"compilationMode": "partial",
+		"extendedDiagnostics": {
+			"checks": {
+				"nullishCoalescingNotNullable": "suppress",
+				"optionalChainNotNullable": "suppress"
+			}
+		}
+	}
+}

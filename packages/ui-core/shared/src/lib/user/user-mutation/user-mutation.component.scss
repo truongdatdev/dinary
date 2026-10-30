@@ -1,0 +1,5 @@
+@use 'dinary/_dinary-dialogs' as *;
+
+:host nb-card{
+	background-color: nb-theme(dinary-card-1);
+}

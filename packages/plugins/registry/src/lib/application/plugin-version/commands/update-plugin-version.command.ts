@@ -1,0 +1,12 @@
+import { ID } from '@dinary/contracts';
+import { ICommand } from '@nestjs/cqrs';
+import { UpdatePluginVersionDTO } from '../../../shared';
+
+export class UpdatePluginVersionCommand implements ICommand {
+	public static readonly type = '[Plugin Version] Update';
+	constructor(
+		public readonly pluginId: ID,
+		public readonly versionId: ID,
+		public readonly input: UpdatePluginVersionDTO
+	) {}
+}

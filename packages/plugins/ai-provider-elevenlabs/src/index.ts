@@ -1,0 +1,5 @@
+/*
+ * Public API Surface of @dinary/plugin-ai-provider-elevenlabs
+ */
+export { AiProviderElevenLabsPlugin } from './lib/ai-provider-elevenlabs.plugin';
+export { elevenLabsProviderDefinition } from './lib/ai-provider-elevenlabs.provider';

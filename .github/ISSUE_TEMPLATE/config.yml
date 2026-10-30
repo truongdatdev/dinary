@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://docs.dinary.app
+    about: Setup guides and documentation.
+  - name: Dinary Discord
+    url: https://discord.gg/hKQfn4j
+    about: Chat with the open-source community.
+  - name: Dinary Slack community
+    url: https://join.slack.com/t/dinary/shared_invite/enQtNzc5MTA5MDUwODg2LTI0MGEwYTlmNWFlNzQzMzBlOWExNTk0NzAyY2IwYWYwMzZjMTliYjMwNDI3NTJmYmM4MDQ4NDliMDNiNDY1NWU
+    about: Setup, configuration and "how do I?" help.

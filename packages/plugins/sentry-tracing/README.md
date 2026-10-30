@@ -1,0 +1,35 @@
+# @dinary/plugin-sentry
+
+This library was generated with [Nx](https://nx.dev). It contains the Dinary Sentry Plugin for the Dinary platform.
+
+## Overview
+
+The Dinary Sentry Plugin seamlessly integrates your server with the [Sentry](https://sentry.io/) application monitoring service. This integration enhances your monitoring capabilities and provides robust error tracking, allowing you to identify and resolve issues promptly.
+
+## Features
+
+- **Error Tracking:** Capture and track errors in real-time to gain insights into the health of your application.
+- **Enhanced Monitoring:** Monitor server performance and receive alerts for potential issues before they impact your users.
+- **Easy Integration:** Effortlessly connect Dinary with Sentry for a streamlined monitoring experience.
+
+## Building
+
+Run `yarn nx build plugin-sentry` to build the library.
+
+## Running unit tests
+
+Run `yarn nx test plugin-sentry` to execute the unit tests via [Jest](https://jestjs.io).
+
+## Publishing
+
+After building your library with `yarn nx build plugin-sentry`, go to the dist folder `dist/packages/plugins/sentry-tracing` and run `npm publish`.
+
+## Installation
+
+Install the Dinary Sentry Plugin using your preferred package manager:
+
+```bash
+npm install @dinary/plugin-sentry
+# or
+yarn add @dinary/plugin-sentry
+```

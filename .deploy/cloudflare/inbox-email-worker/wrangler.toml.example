@@ -1,0 +1,18 @@
+# Dinary Inbox — Cloudflare Email Worker (copy to wrangler.toml, one per environment).
+#
+# The secret is never in this file:
+#   wrangler secret put DINARY_INBOX_PLATFORM_SECRET   # the API's DINARY_INBOX_PLATFORM_SECRET (at least 24 characters)
+#
+# Then route the platform mailbox domain to the Worker in Email Routing (a catch-all rule, action "Send to a Worker").
+
+name = "dinary-inbox-email-worker"
+main = "src/worker.mjs"
+compatibility_date = "2026-01-01"
+
+[vars]
+# The Dinary API of this environment (https; the Worker posts to <url>/api/inbox/inbound/generic/platform).
+DINARY_INBOX_API_URL = "https://api.example.com"
+# The largest message accepted (the API's DINARY_INBOX_MAX_MESSAGE_BYTES; default 25 MB).
+# DINARY_INBOX_MAX_MESSAGE_BYTES = "26214400"
+# Whose Authentication-Results are forwarded (Cloudflare Email Routing's MX by default).
+# DINARY_INBOX_TRUSTED_AUTHSERV_ID = "mx.cloudflare.net"

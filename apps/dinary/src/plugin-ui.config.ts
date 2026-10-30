@@ -1,0 +1,126 @@
+import { LanguagesEnum, WeekDaysEnum } from '@dinary/contracts';
+import { JobEmployeePlugin } from '@dinary/plugin-job-employee-ui';
+import { JobMatchingPlugin } from '@dinary/plugin-job-matching-ui';
+import { JobProposalPlugin, JobProposalTemplatePlugin } from '@dinary/plugin-job-proposal-ui';
+import { JobSearchPlugin } from '@dinary/plugin-job-search-ui';
+import { JobsPlugin } from '@dinary/plugin-jobs-ui';
+import { DocsUiPlugin } from '@dinary/plugin-docs-ui';
+import { InboxUiPlugin } from '@dinary/plugin-inbox-ui';
+import { IntegrationUpworkPlugin } from '@dinary/plugin-integration-upwork-ui';
+import { IntegrationPlanePlugin } from '@dinary/plugin-integration-plane-ui';
+import { IntegrationEverAsyncPlugin } from '@dinary/plugin-integration-ever-async-ui';
+import { IntegrationEverWorksUiPlugin } from '@dinary/plugin-integration-ever-works-ui';
+import { EverConnectUiPlugin } from '@dinary/plugin-ever-connect-ui';
+import { DashboardTimeTrackReactUiPlugin } from '@dinary/plugin-dashboard-time-track-react-ui';
+import { AiChatReactUiPlugin } from '@dinary/plugin-ai-chat-react-ui';
+import { AuthZitadelUiPlugin } from '@dinary/plugin-auth-zitadel-ui';
+import { EverStatsUiPlugin } from '@dinary/plugin-ever-stats-ui';
+import { DashboardTimeTrackAngularUiPlugin } from '@dinary/plugin-dashboard-time-track-angular-ui';
+import { DayOfWeek, PluginUiConfig } from '@dinary/plugin-ui';
+import { dayOfWeekAsString } from '@dinary/ui-core/shared';
+
+/**
+ * Application UI configuration.
+ *
+ * Single source of truth for supported languages / locales
+ * and the list of active UI plugins.
+ *
+ * ┌──────────────────────────────────────────────────────────┐
+ * │  Plugins can be flat or hierarchical. A parent plugin    │
+ * │  (e.g. JobsPlugin) can have child plugins via `plugins`.  │
+ * │  Use JobsPlugin.init({ plugins: [...] }) to customize.    │
+ * └──────────────────────────────────────────────────────────┘
+ */
+export const uiPluginConfig: PluginUiConfig = {
+	// ── Internationalization ───────────────────────────────
+	defaultLanguage: LanguagesEnum.ENGLISH,
+	defaultLocale: 'en-US',
+	fallbackLocale: LanguagesEnum.ENGLISH,
+
+	availableLanguages: [
+		LanguagesEnum.ENGLISH,
+		LanguagesEnum.FRENCH,
+		LanguagesEnum.SPANISH,
+		LanguagesEnum.GERMAN,
+		LanguagesEnum.PORTUGUESE,
+		LanguagesEnum.ITALIAN,
+		LanguagesEnum.DUTCH,
+		LanguagesEnum.POLISH,
+		LanguagesEnum.RUSSIAN,
+		LanguagesEnum.CHINESE,
+		LanguagesEnum.ARABIC,
+		LanguagesEnum.BULGARIAN,
+		LanguagesEnum.HEBREW
+	],
+
+	availableLocales: [
+		'en-US',
+		'fr-FR',
+		'es-ES',
+		'de-DE',
+		'pt-PT',
+		'it-IT',
+		'nl-NL',
+		'pl-PL',
+		'ru-RU',
+		'zh-CN',
+		'ar-SA',
+		'bg-BG',
+		'he-IL'
+	],
+
+	// Day of week the week starts on (0 = Sunday, 1 = Monday, …)
+	startWeekOn: dayOfWeekAsString(WeekDaysEnum.MONDAY) as DayOfWeek,
+
+	// ── Plugins ────────────────────────────────────────────
+	plugins: [
+		// Angular Time Tracking Dashboard Plugin
+		DashboardTimeTrackAngularUiPlugin,
+
+		// Documents Plugin
+		DocsUiPlugin,
+
+		// Inbox (/pages/inbox, the header badge). The nav entry and the badge appear only where the API
+		// loads the Inbox (DINARY_INBOX_ENABLED=true); elsewhere (the default) the route only says it is off.
+		InboxUiPlugin,
+
+		// Integration Plugins
+		IntegrationUpworkPlugin,
+		IntegrationPlanePlugin,
+		IntegrationEverAsyncPlugin,
+		// Integrations > Ever Works. Where the API's Ever Works plugin is not loaded (the default:
+		// EVER_WORKS_ENABLED unset) the page only says so.
+		IntegrationEverWorksUiPlugin,
+		// Integrations > Ordinary Labs Platform. Where the API's Ordinary Labs Platform module is not loaded (the
+		// default) the page only says so.
+		EverConnectUiPlugin,
+
+		// Job Plugins
+		JobsPlugin.init({
+			plugins: [
+				JobProposalPlugin,
+				JobEmployeePlugin,
+				JobSearchPlugin,
+				JobMatchingPlugin,
+				JobProposalTemplatePlugin
+			]
+		}),
+
+		// React Time Tracking Dashboard Plugin — the React flavour of the tab above. Both
+		// register the same `/pages/dashboard/time-tracking` path behind `preferredUiCanMatch`
+		// guards; the tenant's Settings → General "Preferred UI" choice decides which renders.
+		DashboardTimeTrackReactUiPlugin,
+
+		// AI Chat — enabled in all builds; visibility is gated at runtime by the
+		// AI_CHAT_ACCESS permission and the backend configuration (/api/ai-chat/config).
+		AiChatReactUiPlugin,
+
+		// Ever ID sign-in pages and Settings > Connected identities. Nothing of it is visible unless
+		// the web app has ZITADEL_AUTH_LINK set and the API reports Ever ID sign-in as enabled.
+		AuthZitadelUiPlugin,
+
+		// Settings > Anonymous usage statistics: the controls for the operator of the installation,
+		// "Managed by the instance operator" for everyone else.
+		EverStatsUiPlugin
+	]
+};

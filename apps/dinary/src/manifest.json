@@ -1,0 +1,10 @@
+{
+	"name": "Dinary",
+	"short_name": "Dinary",
+	"description": "Dinary — business management platform by Ordinary Labs",
+	"theme_color": "#4F46E5",
+	"background_color": "#FFFFFF",
+	"display": "standalone",
+	"scope": "/",
+	"start_url": "/"
+}

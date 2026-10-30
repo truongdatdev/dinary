@@ -1,0 +1,73 @@
+{
+	"name": "@dinary/config",
+	"version": "0.1.0",
+	"description": "Dinary Platform Config module",
+	"author": {
+		"name": "Ordinary Labs",
+		"email": "hello@ordinarylabs.com",
+		"url": "https://ordinarylabs.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ordinary-labs/dinary",
+		"directory": "packages/config"
+	},
+	"bugs": {
+		"url": "https://github.com/ordinary-labs/dinary/issues"
+	},
+	"homepage": "https://ordinarylabs.com",
+	"license": "AGPL-3.0",
+	"private": true,
+	"type": "commonjs",
+	"main": "./src/index.js",
+	"typings": "./src/index.d.ts",
+	"scripts": {
+		"lib:build": "yarn nx build config",
+		"lib:build:prod": "cross-env NODE_ENV=production yarn nx run config:select-environment --configuration=production",
+		"lib:watch": "yarn nx build config --watch"
+	},
+	"dependencies": {
+		"@dinary/constants": "^0.1.0",
+		"@dinary/common": "^0.1.0",
+		"@dinary/contracts": "^0.1.0",
+		"@dinary/utils": "^0.1.0",
+		"@mikro-orm/better-sqlite": "^6.6.17",
+		"@mikro-orm/core": "^6.6.17",
+		"@mikro-orm/mysql": "^6.6.17",
+		"@mikro-orm/nestjs": "^6.1.2",
+		"@mikro-orm/postgresql": "^6.6.17",
+		"@nestjs/common": "^12.1.3",
+		"@nestjs/config": "^12.0.1",
+		"@nestjs/typeorm": "^12.0.2",
+		"app-root-path": "^3.1.0",
+		"chalk": "^4.1.0",
+		"dotenv": "^18.0.7",
+		"mikro-orm-soft-delete": "^1.0.0-alpha.1",
+		"nest-knexjs": "^0.0.34",
+		"tslib": "^2.8.1",
+		"typeorm": "^1.1.2"
+	},
+	"devDependencies": {
+		"@types/jest": "30.0.0",
+		"@types/node": "^26.6.5",
+		"better-sqlite3": "13.0.3",
+		"cross-env": "^10.1.0",
+		"ts-node": "^10.9.2",
+		"typescript": "~6.0.3"
+	},
+	"keywords": [
+		"api",
+		"config",
+		"nest",
+		"nestjs",
+		"dinary",
+		"platform",
+		"module",
+		"configuration"
+	],
+	"engines": {
+		"node": ">=26",
+		"yarn": ">=1.22"
+	},
+	"sideEffects": false
+}

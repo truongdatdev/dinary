@@ -1,0 +1,15 @@
+
+/**
+ * @description
+ * Current version of the Dinary Agent Application.
+ *
+ * @example
+ * ```
+ * import { version } from './version';
+ *
+ * console.log('Dinary Agent Application Version:', version);
+ * ```
+ *
+ * @since 0.1.0
+ */
+export const version: string = require('./package.json').version;

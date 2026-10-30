@@ -1,0 +1,14 @@
+@media screen and (max-width: 1440px) {
+  ::ng-deep .transition {
+    background: var(--dinary-card-1);
+    &.show {
+      position: relative;
+      z-index: 10;
+      background: var(--dinary-card-1) !important;
+      box-shadow: var(--dinary-shadow);
+    }
+    & .actions {
+      background: var(--dinary-card-1) !important;
+    }
+  }
+}

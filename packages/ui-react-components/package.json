@@ -1,0 +1,44 @@
+{
+	"name": "@dinary/ui-react-components",
+	"version": "0.1.0",
+	"description": "Reusable React UI components (Card, CounterPoint, ProgressBar, Badge, Avatar, Spinner, Popover) and theme-adaptive design tokens for Dinary dashboards.",
+	"author": {
+		"name": "Ordinary Labs",
+		"email": "hello@ordinarylabs.com",
+		"url": "https://ordinarylabs.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ordinary-labs/dinary",
+		"directory": "packages/ui-react-components"
+	},
+	"bugs": {
+		"url": "https://github.com/ordinary-labs/dinary/issues"
+	},
+	"homepage": "https://ordinarylabs.com",
+	"license": "AGPL-3.0",
+	"private": true,
+	"scripts": {
+		"lib:build": "yarn nx build ui-react-components",
+		"lib:watch": "yarn nx build ui-react-components --watch"
+	},
+	"peerDependencies": {
+		"react": "^19.3.0",
+		"react-dom": "^19.3.0"
+	},
+	"devDependencies": {
+		"@types/react": "^19.3.0",
+		"@types/react-dom": "^19.3.0"
+	},
+	"keywords": [
+		"dinary",
+		"ui-react-components",
+		"react",
+		"dinary"
+	],
+	"engines": {
+		"node": ">=26",
+		"yarn": ">=1.22"
+	},
+	"sideEffects": false
+}

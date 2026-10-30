@@ -1,0 +1,60 @@
+{
+	"name": "@dinary/plugin-auth-zitadel-ui",
+	"version": "0.1.0",
+	"description": "Dinary UI plugin for Ever ID sign-in: the sign-in hand-off, confirmation and sign-up pages and Settings > Connected identities",
+	"author": {
+		"name": "Ordinary Labs",
+		"email": "hello@ordinarylabs.com",
+		"url": "https://ordinarylabs.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ordinary-labs/dinary",
+		"directory": "packages/plugins/auth-zitadel-ui"
+	},
+	"bugs": {
+		"url": "https://github.com/ordinary-labs/dinary/issues"
+	},
+	"homepage": "https://ordinarylabs.com",
+	"license": "AGPL-3.0",
+	"private": true,
+	"scripts": {
+		"lib:build": "yarn nx build plugin-auth-zitadel-ui --configuration=development",
+		"lib:build:prod": "yarn nx build plugin-auth-zitadel-ui --configuration=production",
+		"lib:watch": "yarn nx build plugin-auth-zitadel-ui --watch --configuration=development"
+	},
+	"peerDependencies": {
+		"@angular/common": "22.2.2",
+		"@angular/core": "22.2.2"
+	},
+	"dependencies": {
+		"@angular/forms": "22.2.2",
+		"@angular/router": "22.2.2",
+		"@dinary/contracts": "^0.1.0",
+		"@dinary/plugin-ui": "^0.1.0",
+		"@dinary/ui-config": "^0.1.0",
+		"@dinary/ui-core": "^0.1.0",
+		"@nebular/theme": "^18.0.0",
+		"@ngx-translate/core": "^18.0.0",
+		"rxjs": "^7.8.2",
+		"tslib": "^2.8.1"
+	},
+	"devDependencies": {
+		"@types/jest": "30.0.0",
+		"@types/node": "^26.6.5",
+		"jest-preset-angular": "17.0.2"
+	},
+	"keywords": [
+		"dinary",
+		"ever-id",
+		"sign-in",
+		"ui",
+		"angular",
+		"plugin"
+	],
+	"engines": {
+		"node": ">=26",
+		"yarn": ">=1.22"
+	},
+	"sideEffects": false
+}

@@ -1,0 +1,11 @@
+@use 'dinary/_dinary-dialogs' as *;
+
+.in-valid {
+  border: 1px solid #ff3d71;
+  border-radius: 0.25rem;
+}
+:host {
+  nb-card {
+    background-color: var(--dinary-card-1);
+  }
+}

@@ -1,0 +1,17 @@
+{
+	"extends": "./tsconfig.lib.json",
+	"compilerOptions": {
+		"declarationMap": false,
+		"types": ["node", "google.maps"],
+		"baseUrl": "../..",
+		"paths": {
+			"@dinary/ui-core/*": ["./packages/ui-core/*/src/index.ts"],
+			"@dinary/ui-config": ["./packages/ui-config/src/index.ts"],
+			"@dinary/contracts": ["./packages/contracts/src/index.ts"],
+			"@dinary/constants": ["./packages/constants/src/index.ts"]
+		}
+	},
+	"angularCompilerOptions": {
+		"compilationMode": "partial"
+	}
+}

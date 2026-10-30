@@ -1,0 +1,68 @@
+{
+	"name": "@dinary/plugin-public-layout-ui",
+	"version": "0.1.0",
+	"description": "A public-facing UI plugin for the Dinary Platform, providing reusable components and layouts for public views and interactions.",
+	"author": {
+		"name": "Ordinary Labs",
+		"email": "hello@ordinarylabs.com",
+		"url": "https://ordinarylabs.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ordinary-labs/dinary"
+	},
+	"bugs": {
+		"url": "https://github.com/ordinary-labs/dinary/issues"
+	},
+	"homepage": "https://ordinarylabs.com",
+	"license": "AGPL-3.0",
+	"private": true,
+	"scripts": {
+		"lib:build": "yarn nx build plugin-public-layout-ui --configuration=development",
+		"lib:build:prod": "yarn nx build plugin-public-layout-ui --configuration=production",
+		"lib:watch": "yarn nx build plugin-public-layout-ui --watch --configuration=development"
+	},
+	"peerDependencies": {
+		"@angular/common": "22.2.2",
+		"@angular/core": "22.2.2"
+	},
+	"dependencies": {
+		"@angular/forms": "22.2.2",
+		"@angular/router": "22.2.2",
+		"@fullcalendar/angular": "^6.1.21",
+		"@dinary/constants": "^0.1.0",
+		"@dinary/contracts": "^0.1.0",
+		"@dinary/ui-core": "^0.1.0",
+		"@nebular/theme": "^18.0.0",
+		"@ng-select/ng-select": "^24.2.1",
+		"@ngneat/until-destroy": "^10.0.0",
+		"@ngx-translate/core": "^18.0.0",
+		"moment": "^2.31.0",
+		"ng2-file-upload": "^12.0.0",
+		"ngx-permissions": "^19.0.0",
+		"rxjs": "^7.8.2",
+		"tslib": "^2.8.1"
+	},
+	"devDependencies": {
+		"@types/jest": "30.0.0",
+		"@types/node": "^26.6.5",
+		"jest-preset-angular": "17.0.2"
+	},
+	"keywords": [
+		"angular",
+		"ui",
+		"public-layout",
+		"frontend",
+		"dinary",
+		"components",
+		"ordinary-labs",
+		"web-plugin",
+		"layout",
+		"reusable-components"
+	],
+	"engines": {
+		"node": ">=26",
+		"yarn": ">=1.22"
+	},
+	"sideEffects": false
+}

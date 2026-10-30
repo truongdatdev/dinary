@@ -1,0 +1,8 @@
+import { ICommand } from "@nestjs/cqrs";
+import { ID, ISharedEntityUpdateInput } from "@dinary/contracts";
+
+export class SharedEntityUpdateCommand implements ICommand {
+    static readonly type = '[SharedEntity] Update';
+
+    constructor(public readonly id: ID, public readonly input: ISharedEntityUpdateInput) {}
+}

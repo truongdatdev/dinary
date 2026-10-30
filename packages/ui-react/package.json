@@ -1,0 +1,54 @@
+{
+	"name": "@dinary/ui-react",
+	"version": "0.1.0",
+	"description": "React-to-Angular bridge for Dinary UI plugins. Renders React components inside Angular with access to Angular services.",
+	"author": {
+		"name": "Ordinary Labs",
+		"email": "hello@ordinarylabs.com",
+		"url": "https://ordinarylabs.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ordinary-labs/dinary",
+		"directory": "packages/ui-react"
+	},
+	"bugs": {
+		"url": "https://github.com/ordinary-labs/dinary/issues"
+	},
+	"homepage": "https://ordinarylabs.com",
+	"license": "AGPL-3.0",
+	"private": true,
+	"scripts": {
+		"lib:build": "yarn nx build ui-react --configuration=development",
+		"lib:build:prod": "yarn nx build ui-react --configuration=production",
+		"lib:watch": "yarn nx build ui-react --watch --configuration=development"
+	},
+	"peerDependencies": {
+		"@angular/common": "22.2.2",
+		"@angular/core": "22.2.2",
+		"@dinary/plugin-ui": "*",
+		"react": "^19.3.0",
+		"react-dom": "^19.3.0",
+		"rxjs": "^7.0.0"
+	},
+	"devDependencies": {
+		"@types/jest": "30.0.0",
+		"@types/node": "^26.6.5",
+		"@types/react": "^19.3.0",
+		"@types/react-dom": "^19.3.0",
+		"jest-preset-angular": "17.0.2"
+	},
+	"keywords": [
+		"dinary",
+		"ui-react",
+		"angular",
+		"react",
+		"plugin",
+		"dinary"
+	],
+	"engines": {
+		"node": ">=26",
+		"yarn": ">=1.22"
+	},
+	"sideEffects": false
+}

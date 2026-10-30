@@ -1,0 +1,26 @@
+@if (taskStatus$ | async) {
+  <dinary-task-badge-view
+    [nbPopover]="contextMenu"
+    [taskBadge]="taskStatus$ | async"
+    nbPopoverTrigger="hover"
+  ></dinary-task-badge-view>
+} @else {
+  <dinary-task-badge-default
+    [nbPopover]="contextMenu"
+    [taskBadge]="status$ | async"
+    nbPopoverTrigger="hover"
+  ></dinary-task-badge-default>
+}
+
+<ng-template #contextMenu>
+  <div class="view">
+    @for (taskStatus of statuses$ | async; track taskStatus) {
+      <dinary-task-badge-view
+        (click)="updateStatus(taskStatus)"
+        [taskBadge]="taskStatus"
+        class="status-view"
+      ></dinary-task-badge-view>
+    }
+  </div>
+</ng-template>
+

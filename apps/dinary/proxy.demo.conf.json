@@ -1,0 +1,12 @@
+{
+	"/api": {
+		"target": "https://apidemo.dinary.app",
+		"secure": true,
+		"changeOrigin": true,
+		"headers": {
+			"Origin": "https://demo.dinary.app",
+			"Referer": "https://demo.dinary.app/"
+		},
+		"logLevel": "debug"
+	}
+}

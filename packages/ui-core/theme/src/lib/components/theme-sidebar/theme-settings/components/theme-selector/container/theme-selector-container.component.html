@@ -1,0 +1,11 @@
+<ng-container>
+	<ng-template [ngTemplateOutlet]="isClassic ? classic : card"></ng-template>
+</ng-container>
+
+<ng-template #classic>
+	<dinary-theme-selector></dinary-theme-selector>
+</ng-template>
+
+<ng-template #card>
+	<dinary-theme-selector-image></dinary-theme-selector-image>
+</ng-template>
