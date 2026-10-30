@@ -1,25 +1,26 @@
 {
 	"name": "dinary",
 	"version": "0.1.0",
-	"description": "Dinary - Open Business Management Platform (ERP/CRM/HRM/ATS/PM) by Ordinary Labs",
+	"description": "Dinary — open-source business management platform for ERP, CRM, HRM, ATS, projects and time tracking",
 	"license": "AGPL-3.0",
 	"homepage": "https://dinary.app",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ordinary-labs/dinary.git"
+		"url": "https://github.com/truongdatdev/dinary.git"
 	},
 	"bugs": {
-		"url": "https://github.com/ordinary-labs/dinary/issues"
+		"url": "https://github.com/truongdatdev/dinary/issues"
 	},
 	"private": true,
 	"author": {
-		"name": "Ordinary Labs",
-		"email": "hello@ordinarylabs.com",
-		"url": "https://ordinarylabs.com"
+		"name": "Dinary",
+		"email": "hello@dinary.app",
+		"url": "https://dinary.app"
 	},
 	"keywords": [
 		"dinary",
-		"ordinary-labs",
+		"business-management",
+		"open-source",
 		"erp",
 		"crm",
 		"hrm",

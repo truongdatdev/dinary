@@ -1,5 +1,5 @@
 {
-	"description": "The outbound-call rows of the Ordinary Labs Platform contract each optional module makes in this release (see outbound-calls.mjs). A row added here must be made by the module, listed in its README's request table and exercised by the egress audit's every_trigger run.",
+	"description": "The outbound-call rows of the Dinary Cloud contract each optional module makes in this release (see outbound-calls.mjs). A row added here must be made by the module, listed in its README's request table and exercised by the egress audit's every_trigger run.",
 	"product": "dinary",
 	"phase": 2,
 	"modules": {

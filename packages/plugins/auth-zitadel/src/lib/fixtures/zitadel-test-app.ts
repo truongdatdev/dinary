@@ -72,7 +72,7 @@ export class FakeTermsDocuments implements TermsDocumentsPort {
 export interface ZitadelTestAppOptions {
 	/** Extra environment for the plugin settings (merged over the defaults). */
 	env?: Record<string, string>;
-	/** Replace the issuer list (for example with an Ordinary Labs host). */
+	/** Replace the issuer list (for example with a Dinary host). */
 	issuers?: (issuer: MockOidcIssuer) => string;
 	/** Provide the optional connected-instance port. */
 	everConnect?: EverConnectConfigPort;

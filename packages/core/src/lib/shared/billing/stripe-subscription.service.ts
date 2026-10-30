@@ -231,7 +231,7 @@ export class StripeSubscriptionService {
 	}
 
 	/**
-	 * The Ordinary Labs product this deployment bills for: `BILLING_PRODUCT`, default `dinary`.
+	 * The Dinary product this deployment bills for: `BILLING_PRODUCT`, default `dinary`.
 	 *
 	 * Every read of the shared Stripe account is scoped to it — the webhook, the signup paywall, the
 	 * lazy tenant link and the billing pages all count only this product's subscriptions. Null when the
@@ -373,7 +373,7 @@ export class StripeSubscriptionService {
 	 * Check that a Checkout Session proves `email` bought THIS deployment's product, and return the
 	 * Stripe customer it created.
 	 *
-	 * This is the proven-identity link. The ordinarylabs.com checkout forwards the session id to the register
+	 * This is the proven-identity link. The dinary.app checkout forwards the session id to the register
 	 * form (`checkout_session`), and only the browser that completed the checkout has it. Every rule
 	 * below must hold, or the session is declined and the caller falls back to the slower paths:
 	 *

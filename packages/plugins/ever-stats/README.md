@@ -1,6 +1,6 @@
 # @dinary/plugin-ever-stats: anonymous usage statistics
 
-Once a day, a Dinary API sends Ordinary Labs Platform one small, signed report about the installation as a whole: which version runs, which modules are switched on, how many tenants, users, employees and projects exist, and monthly totals per currency. The report never contains a name, an e-mail address, a company, an address, a document, an amount per record or any free text, and its shape is fixed by a published schema, so you can check every byte. (Amounts are monthly totals per currency: on a small installation, a month with a single invoice has that invoice's amount as its total.)
+Once a day, a Dinary API sends Dinary Cloud one small, signed report about the installation as a whole: which version runs, which modules are switched on, how many tenants, users, employees and projects exist, and monthly totals per currency. The report never contains a name, an e-mail address, a company, an address, a document, an amount per record or any free text, and its shape is fixed by a published schema, so you can check every byte. (Amounts are monthly totals per currency: on a small installation, a month with a single invoice has that invoice's amount as its total.)
 
 It is on by default and you can switch it off at any time, in Settings or with one environment variable.
 
@@ -20,23 +20,23 @@ It is on by default and you can switch it off at any time, in Settings or with o
 | `EVER_STATS_API_URL` set to an address that cannot be used | Nothing is sent, to any address; the settings page says why. The default address is never used instead of yours. |
 | The stored statistics key cannot be read (`ENCRYPTION_KEY` or `JWT_SECRET` changed) | Nothing is sent; the settings page says so. *Reset instance identity* makes a new key. |
 | The report fails its own checks | It is refused before signing and never sent; the settings page shows which field (never its value). |
-| Ordinary Labs Platform refused a report: `422`, or `409 key_mismatch` | Nothing more is sent until this module's version, the Dinary release or the identity changes. |
-| Ordinary Labs Platform refused a report: `400`, `413` or `415` | The same, but for at most 7 days. |
+| Dinary Cloud refused a report: `422`, or `409 key_mismatch` | Nothing more is sent until this module's version, the Dinary release or the identity changes. |
+| Dinary Cloud refused a report: `400`, `413` or `415` | The same, but for at most 7 days. |
 
 Only `EVER_STATS_ENABLED=false` switches the module off. Unset, empty or `true` keep it on; any other value (`TRUE`, `1`, ...) keeps the default and logs one warning. The Dinary desktop apps turn `false`, `off`, `no` and `0` typed in their settings into `false`.
 
 ## What is sent
 
-**One call:** `POST {EVER_STATS_API_URL}/v1/stats/reports` (default `https://api.ordinarylabs.com`).
+**One call:** `POST {EVER_STATS_API_URL}/v1/stats/reports` (default `https://api.dinary.app`).
 
 | | |
 |---|---|
 | Schedule | Once per UTC day, at a second drawn at random for each report. The first report goes out one day after the first start (ten minutes after a start when the last report is more than a day old). On days 1 to 3 of a month the previous month is sent once more with `final: true`. Several API processes on one database send one report: a lease in the database lets one of them send. |
-| Body | One JSON document, `ever.stats.v1`, at most 16 KiB, integers only. The schema is published in the public Ordinary Labs Platform SDK repository ([`ever.stats.v1.json`](https://github.com/ever-co/ever-connect-sdk/blob/93fbb1ef2b37f60205ab193d973467a176eec8df/contracts/schemas/ever.stats.v1.json)); this module reads it from the SDK's contracts package, `@ever-co/connect-contracts` (its SHA-256 is pinned in `src/lib/schema/stats-schema.ts`). |
+| Body | One JSON document, `ever.stats.v1`, at most 16 KiB, integers only. The schema is published in the public Dinary Cloud SDK repository ([`ever.stats.v1.json`](https://github.com/ever-co/ever-connect-sdk/blob/93fbb1ef2b37f60205ab193d973467a176eec8df/contracts/schemas/ever.stats.v1.json)); this module reads it from the SDK's contracts package, `@ever-co/connect-contracts` (its SHA-256 is pinned in `src/lib/schema/stats-schema.ts`). |
 | Headers | `Ever-Stats-Key`: the public part of this installation's statistics key (Ed25519, base64url); `Ever-Stats-Signature: ed25519=<signature over the exact body>`; `Ever-Stats-Key-Id`; `User-Agent: dinary-ever-stats/<module version> (dinary/<version>)`. No cookie, no credential, no redirect followed, 10 s timeout. |
 | Retries | `202`: done. `429`, `5xx` or a connection error: again after 1 h, 4 h, 12 h, then the next day. `404` (the endpoint is not available), a redirect or any other answer: the next day. The answer body is read up to 64 KiB. |
 
-The statistics key is made at first start, stored encrypted in the database (with `ENCRYPTION_KEY`, else `JWT_SECRET`, else a fixed value from the public source code; see `@dinary/plugin-ever-instance`), and used for nothing else than signing these reports. Ordinary Labs Platform remembers the key of an installation id on the first report it accepts, so nobody else can send reports in its name.
+The statistics key is made at first start, stored encrypted in the database (with `ENCRYPTION_KEY`, else `JWT_SECRET`, else a fixed value from the public source code; see `@dinary/plugin-ever-instance`), and used for nothing else than signing these reports. Dinary Cloud remembers the key of an installation id on the first report it accepts, so nobody else can send reports in its name.
 
 ### The fields
 
@@ -83,7 +83,7 @@ An example, from the published fixtures (`fixtures/stats/valid/dinary.json` of `
 
 ### Settings > Anonymous usage statistics
 
-The operator of the installation sees: the switch and why nothing is sent, the next report, the last attempt and its HTTP status, *What is sent* (the report as it would be built now; nothing is stored or sent; built at most once a minute), *Last payload* (the exact bytes sent last time, formatted or unchanged), *Send now* (once per 10 minutes), and *Reset instance identity* (a new `instance_id` and a new statistics key; Ordinary Labs Platform then counts the installation as new, and earlier reports can no longer be linked to it; it waits for a report being sent, on any API process). The page also warns, from how the key is actually stored, until it is protected by `ENCRYPTION_KEY` (see `@dinary/plugin-ever-instance`).
+The operator of the installation sees: the switch and why nothing is sent, the next report, the last attempt and its HTTP status, *What is sent* (the report as it would be built now; nothing is stored or sent; built at most once a minute), *Last payload* (the exact bytes sent last time, formatted or unchanged), *Send now* (once per 10 minutes), and *Reset instance identity* (a new `instance_id` and a new statistics key; Dinary Cloud then counts the installation as new, and earlier reports can no longer be linked to it; it waits for a report being sent, on any API process). The page also warns, from how the key is actually stored, until it is protected by `ENCRYPTION_KEY` (see `@dinary/plugin-ever-instance`).
 
 The last 12 reports are kept in the `ever_stats_report` table, with their exact bytes and results.
 
@@ -92,10 +92,10 @@ The last 12 reports are kept in the `ever_stats_report` table, with their exact 
 | Variable | Default | Meaning |
 |---|---|---|
 | `EVER_STATS_ENABLED` | on | `false` removes the module (no route, no timer, no request). |
-| `EVER_STATS_API_URL` | `EVER_PLATFORM_API_URL`, else `https://api.ordinarylabs.com` | Where reports go. Plain `http` is accepted only for `localhost`, a private address or a single-label host name (a container, not `metadata`), for tests and mirrors. An address that cannot be used means nothing is sent. |
+| `EVER_STATS_API_URL` | `EVER_PLATFORM_API_URL`, else `https://api.dinary.app` | Where reports go. Plain `http` is accepted only for `localhost`, a private address or a single-label host name (a container, not `metadata`), for tests and mirrors. An address that cannot be used means nothing is sent. |
 | `EVER_STATS_COUNTRY` | `ZZ` | Two-letter country you declare. |
 | `EVER_STATS_SERVES` | `dinary` | `dinary,teams` when an Ever Teams web app uses this API: the report says so, and `GET /api/ever-stats/state` exists (see below). |
-| `EVER_INSTALL_SOURCE` | `self-hosted` | `self-hosted`, `cloud`, `desktop`, `ever.sh`, `works_app` or `partner:<slug>`, where `<slug>` is the id of a published partner template (Ordinary Labs Platform counts any other slug as `partner:other`). The Dinary desktop apps (Dinary Desktop with its local server, Dinary Server, Dinary API Server) set `desktop` and their release version for their embedded API. |
+| `EVER_INSTALL_SOURCE` | `self-hosted` | `self-hosted`, `cloud`, `desktop`, `ever.sh`, `works_app` or `partner:<slug>`, where `<slug>` is the id of a published partner template (Dinary Cloud counts any other slug as `partner:other`). The Dinary desktop apps (Dinary Desktop with its local server, Dinary Server, Dinary API Server) set `desktop` and their release version for their embedded API. |
 | `EVER_OPERATOR_USER_IDS` | unset | The operators of the installation, by Dinary user id (comma separated); see below. |
 | `EVER_OPERATOR_EMAILS` | unset | The operators of the installation, by the address of their account in the first tenant (comma separated); see below. |
 | `EVER_STATS_SEND_INTERVAL_S` | `86400` | Tests only: shortens the day (every delay scales with it). Below `3600` only with a local `EVER_STATS_API_URL`. |
@@ -123,12 +123,12 @@ Every route that answers without authentication is declared in `ever-connect.rou
 ## How to verify yourself
 
 1. Open Settings > Anonymous usage statistics, *What is sent*, and compare it with the schema.
-2. Watch the traffic of the API host or container (for example `tcpdump -i any host api.ordinarylabs.com`): with `EVER_STATS_ENABLED=false` and a restart, no connection is made; switched back on, you see one scheduled `POST /v1/stats/reports` a day (two on days 1 to 3 of a month, when the previous month is sent once more), plus retries after a failure and each *Send now*.
+2. Watch the traffic of the API host or container (for example `tcpdump -i any host api.dinary.app`): with `EVER_STATS_ENABLED=false` and a restart, no connection is made; switched back on, you see one scheduled `POST /v1/stats/reports` a day (two on days 1 to 3 of a month, when the previous month is sent once more), plus retries after a failure and each *Send now*.
 3. Point `EVER_STATS_API_URL` at your own endpoint (for example a local HTTP server that prints the request) and compare the body with *Last payload*: they are the same bytes, and the `Ever-Stats-Signature` verifies with the `Ever-Stats-Key` over exactly those bytes.
 
 ## For developers
 
 - Counters: one `COUNT(*)` or `SUM()` over a whole table per number, with the plugin's own SQL (`src/lib/ever-stats-collector.service.ts`), so no request context or tenant filter can narrow them, wherever the collection runs. On Postgres they run in one transaction with a 30 s statement timeout.
-- The schema and its fixtures come from `@ever-co/connect-contracts`, and the checks Ordinary Labs Platform runs and the report signature from `@ever-co/connect-sdk` (`validateStatsReportBytes`, `signStatsReportBytes`), both pinned to an exact version in package.json; nothing of the SDK is copied. `schema.drift.spec.ts` pins the schema's SHA-256, so a package version that changes it fails until the change is reviewed.
-- Tests: `yarn nx test plugin-ever-stats`; the database suites (`*.db.spec.ts`: migrations, identity, lease, counters, the canary, and the module in an operator's request) also run on Postgres or MySQL with `EVER_STATS_TEST_POSTGRES_URL` / `EVER_STATS_TEST_MYSQL_URL` (`yarn nx run plugin-ever-stats:test-integration`; CI runs both). `yarn nx run plugin-ever-stats:test-mock-platform` runs the plugin against the Ordinary Labs Platform mock of `@ever-co/connect-tools` (`EVER_STATS_MOCK_PLATFORM_URL`): a report accepted when on, no call at all when switched off by `EVER_STATS_ENABLED=false` or in Settings, and a control without the mock that must fail. CI runs it in `build-api`.
+- The schema and its fixtures come from `@ever-co/connect-contracts`, and the checks Dinary Cloud runs and the report signature from `@ever-co/connect-sdk` (`validateStatsReportBytes`, `signStatsReportBytes`), both pinned to an exact version in package.json; nothing of the SDK is copied. `schema.drift.spec.ts` pins the schema's SHA-256, so a package version that changes it fails until the change is reviewed.
+- Tests: `yarn nx test plugin-ever-stats`; the database suites (`*.db.spec.ts`: migrations, identity, lease, counters, the canary, and the module in an operator's request) also run on Postgres or MySQL with `EVER_STATS_TEST_POSTGRES_URL` / `EVER_STATS_TEST_MYSQL_URL` (`yarn nx run plugin-ever-stats:test-integration`; CI runs both). `yarn nx run plugin-ever-stats:test-mock-platform` runs the plugin against the Dinary Cloud mock of `@ever-co/connect-tools` (`EVER_STATS_MOCK_PLATFORM_URL`): a report accepted when on, no call at all when switched off by `EVER_STATS_ENABLED=false` or in Settings, and a control without the mock that must fail. CI runs it in `build-api`.
 - Tables and migrations: see `MIGRATIONS.md`.

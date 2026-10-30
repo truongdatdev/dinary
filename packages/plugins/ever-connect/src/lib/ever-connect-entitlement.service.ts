@@ -19,7 +19,7 @@ import {
 /**
  * Where a document stands on the grace ladder: `valid` until it expires, `grace` for `grace_s` after
  * that (30 days unless the document says otherwise; its features still apply), then `paused` (no
- * document, a revoked connection, or the grace over): Ordinary Labs Platform features pause, nothing else.
+ * document, a revoked connection, or the grace over): Dinary Cloud features pause, nothing else.
  */
 export type EntitlementLadder = 'valid' | 'grace' | 'paused';
 
@@ -115,7 +115,7 @@ const iso = (seconds: number | null | undefined) =>
 const isoMs = (ms: number | null | undefined) => (typeof ms === 'number' ? new Date(ms).toISOString() : null);
 
 /**
- * Entitlement documents: fetched from Ordinary Labs Platform, verified with the SDK's verifier before
+ * Entitlement documents: fetched from Dinary Cloud, verified with the SDK's verifier before
  * anything is stored (issuer, key, signature, schema, this installation, the expected subject, never
  * older than the stored one), then stored encrypted as the bytes received.
  */
@@ -348,10 +348,10 @@ export class EverConnectEntitlementService {
 	}
 
 	/**
-	 * The Ordinary Labs Platform features one organization may use now, from its link's stored document only
+	 * The Dinary Cloud features one organization may use now, from its link's stored document only
 	 * (no request is made): the document's `features` while it is valid or in grace, every feature off
 	 * when it is paused (no document, the grace over, the connection not connected). Nothing outside the
-	 * Ordinary Labs Platform module reads this: the product's own features never depend on it.
+	 * Dinary Cloud module reads this: the product's own features never depend on it.
 	 */
 	async features(
 		tenantId: string,
@@ -392,7 +392,7 @@ export class EverConnectEntitlementService {
 				{
 					statusCode: 409,
 					code: 'not_connected',
-					message: 'Connect this installation to Ordinary Labs Platform first.'
+					message: 'Connect this installation to Dinary Cloud first.'
 				},
 				HttpStatus.CONFLICT
 			);
@@ -671,7 +671,7 @@ export class EverConnectEntitlementService {
 	}
 
 	/**
-	 * Runs one refresh. A read the SDK holds back (Ordinary Labs Platform allows 6 reads an hour per document)
+	 * Runs one refresh. A read the SDK holds back (Dinary Cloud allows 6 reads an hour per document)
 	 * is skipped: the stored document stays and the next refresh reads it.
 	 */
 	private async guard(work: () => Promise<void>): Promise<void> {

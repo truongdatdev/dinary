@@ -12,8 +12,8 @@ const DINARY_DEPLOYMENT = {
 		appLink: 'https://app.dinary.app/',
 		appEmailConfirmationUrl: 'https://app.dinary.app/#/auth/confirm-email',
 		appMagicSignUrl: 'https://app.dinary.app/#/auth/magic-sign-in',
-		companyLink: 'https://ordinarylabs.com',
-		companyName: 'Ordinary Labs'
+		companyLink: 'https://dinary.app',
+		companyName: 'Dinary'
 	}
 };
 const mockEnvironment = JSON.parse(JSON.stringify(DINARY_DEPLOYMENT));
@@ -95,7 +95,7 @@ describe('email link origin allowlist', () => {
 			expect(isAllowedEmailLink(configured, allowed)).toBe(true);
 		}
 		// The company site is a footer link, not a front end: it is not a place a code may be sent to.
-		expect(isAllowedEmailLink('https://ordinarylabs.com/x', allowed)).toBe(false);
+		expect(isAllowedEmailLink('https://dinary.app/x', allowed)).toBe(false);
 		expect([...allowed]).toEqual(['https://app.dinary.app']);
 	});
 

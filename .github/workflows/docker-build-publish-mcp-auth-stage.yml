@@ -54,10 +54,10 @@ jobs:
           load: true
           platforms: linux/amd64
           tags: |
-            ghcr.io/ordinary-labs/dinary-mcp-auth-stage:latest
-            ordinarylabs/dinary-mcp-auth-stage:latest
+            ghcr.io/truongdatdev/dinary-mcp-auth-stage:latest
+            dinary/dinary-mcp-auth-stage:latest
             registry.digitalocean.com/ever/dinary-mcp-auth-stage:latest
-          cache-from: type=registry,ref=ghcr.io/ordinary-labs/dinary-mcp-auth-stage:latest
+          cache-from: type=registry,ref=ghcr.io/truongdatdev/dinary-mcp-auth-stage:latest
           cache-to: type=inline
           build-args: |
             NODE_ENV=production
@@ -83,9 +83,9 @@ jobs:
       - name: Push to Docker Hub Registry
         run: |
           for attempt in 1 2 3 4 5; do
-            docker push ordinarylabs/dinary-mcp-auth-stage:latest && break
+            docker push dinary/dinary-mcp-auth-stage:latest && break
             [ "$attempt" = 5 ] && exit 1
-            echo "::warning::docker push ordinarylabs/dinary-mcp-auth-stage:latest failed (attempt $attempt of 5), retrying in $((attempt * 15)) s"
+            echo "::warning::docker push dinary/dinary-mcp-auth-stage:latest failed (attempt $attempt of 5), retrying in $((attempt * 15)) s"
             sleep $((attempt * 15))
           done
 
@@ -119,9 +119,9 @@ jobs:
       - name: Push to Github Registry
         run: |
           for attempt in 1 2 3 4 5; do
-            docker push ghcr.io/ordinary-labs/dinary-mcp-auth-stage:latest && break
+            docker push ghcr.io/truongdatdev/dinary-mcp-auth-stage:latest && break
             [ "$attempt" = 5 ] && exit 1
-            echo "::warning::docker push ghcr.io/ordinary-labs/dinary-mcp-auth-stage:latest failed (attempt $attempt of 5), retrying in $((attempt * 15)) s"
+            echo "::warning::docker push ghcr.io/truongdatdev/dinary-mcp-auth-stage:latest failed (attempt $attempt of 5), retrying in $((attempt * 15)) s"
             sleep $((attempt * 15))
           done
 
@@ -134,4 +134,4 @@ jobs:
 
     #  - name: Push to CW Registry
     #    run: |
-    #      docker push ${{ secrets.CW_DOCKER_REGISTRY }}/ordinary-labs/dinary-mcp-auth:latest
+    #      docker push ${{ secrets.CW_DOCKER_REGISTRY }}/truongdatdev/dinary-mcp-auth:latest

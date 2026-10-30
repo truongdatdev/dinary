@@ -1,4 +1,4 @@
-import { isOrdinaryLabsHost, isZitadelEnabled, parseZitadelSettings } from './auth-zitadel.config';
+import { isdinaryHost, isZitadelEnabled, parseZitadelSettings } from './auth-zitadel.config';
 
 describe('Ever ID plugin settings', () => {
 	const base = { ZITADEL_ISSUERS: 'https://idp.example.test', ZITADEL_CLIENT_ID: 'web', ZITADEL_CLIENT_SECRET: 'secret' };
@@ -58,24 +58,24 @@ describe('Ever ID plugin settings', () => {
 		expect(warnings.some((m) => m.includes('ZITADEL_JIT_PROVISIONING'))).toBe(true);
 	});
 
-	it('refuses an Ordinary Labs issuer on a non-cloud install and accepts it on Dinary Cloud', () => {
-		const selfHosted = parseZitadelSettings({ ...base, ZITADEL_ISSUERS: 'https://auth.ordinarylabs.com,https://idp.example.test' });
+	it('refuses a Dinary issuer on a non-cloud install and accepts it on Dinary Cloud', () => {
+		const selfHosted = parseZitadelSettings({ ...base, ZITADEL_ISSUERS: 'https://auth.dinary.app,https://idp.example.test' });
 		expect(selfHosted.issuers).toEqual(['https://idp.example.test']);
-		expect(selfHosted.everIssuersAwaitingConnect).toEqual(['https://auth.ordinarylabs.com']);
+		expect(selfHosted.everIssuersAwaitingConnect).toEqual(['https://auth.dinary.app']);
 
-		expect(parseZitadelSettings({ ...base, ZITADEL_ISSUERS: 'https://AUTH.ORDINARYLABS.COM./' }).issuers).toEqual([]);
-		expect(parseZitadelSettings({ ...base, ZITADEL_ISSUERS: 'https://auth.ordinarylabs.com', EVER_INSTALL_SOURCE: 'cloud' }).issuers).toEqual([
-			'https://auth.ordinarylabs.com'
+		expect(parseZitadelSettings({ ...base, ZITADEL_ISSUERS: 'https://AUTH.dinary.app./' }).issuers).toEqual([]);
+		expect(parseZitadelSettings({ ...base, ZITADEL_ISSUERS: 'https://auth.dinary.app', EVER_INSTALL_SOURCE: 'cloud' }).issuers).toEqual([
+			'https://auth.dinary.app'
 		]);
 	});
 
-	it('tells Ordinary Labs hosts apart by hostname only', () => {
-		expect(isOrdinaryLabsHost('https://auth.ordinarylabs.com')).toBe(true);
-		expect(isOrdinaryLabsHost('https://ordinarylabs.com')).toBe(true);
-		expect(isOrdinaryLabsHost('https://AUTH.ORDINARYLABS.COM.')).toBe(true);
-		expect(isOrdinaryLabsHost('https://ordinarylabs.com.example.test')).toBe(false);
-		expect(isOrdinaryLabsHost('https://notordinarylabs.com')).toBe(false);
-		expect(isOrdinaryLabsHost('not a url')).toBe(false);
+	it('tells Dinary hosts apart by hostname only', () => {
+		expect(isdinaryHost('https://auth.dinary.app')).toBe(true);
+		expect(isdinaryHost('https://dinary.app')).toBe(true);
+		expect(isdinaryHost('https://AUTH.dinary.app.')).toBe(true);
+		expect(isdinaryHost('https://dinary.app.example.test')).toBe(false);
+		expect(isdinaryHost('https://notdinary.app')).toBe(false);
+		expect(isdinaryHost('not a url')).toBe(false);
 	});
 
 	it('accepts https issuers, http only on loopback, at most three', () => {

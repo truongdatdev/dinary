@@ -18,7 +18,7 @@ import {
 /**
  * Owner decision 5: a provider sign-in matches only when the provider reports the email verified AND the Dinary
  * account has confirmed that address itself; when the address owns several workspaces, the person picks one in
- * the workspace picker the password sign-in shows. Built on ordinary-labs/dinary#11291, which only skipped an
+ * the workspace picker the password sign-in shows. Built on truongdatdev/dinary#11291, which only skipped an
  * unconfirmed account that had no tenant: an unconfirmed account INSIDE a tenant (an admin of another tenant set
  * the address, or a squatter onboarded a workspace before the owner arrived) still matched, and the first match
  * won silently.

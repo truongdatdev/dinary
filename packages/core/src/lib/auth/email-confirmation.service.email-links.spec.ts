@@ -12,7 +12,7 @@ describe('EmailConfirmationService.sendEmailVerification - confirmation link', (
 	const TEAMS = 'https://app.ever.team';
 	const configured = environment.appIntegrationConfig;
 	const savedAllowList = process.env['EMAIL_LINK_ALLOWED_ORIGINS'];
-	const user = { id: 'user-1', email: 'new+tag@ordinarylabs.com' } as any;
+	const user = { id: 'user-1', email: 'new+tag@dinary.app' } as any;
 
 	let service: EmailConfirmationService;
 	let emailVerification: jest.Mock;

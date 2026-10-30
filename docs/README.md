@@ -2,8 +2,7 @@
 
 # Dinary documentation
 
-The Dinary documentation does not live in this repository. It is written in
-[`ordinary-labs/dinary-docs`](https://github.com/ordinary-labs/dinary-docs) and published at
+The Dinary documentation does not live in this repository. It is published at
 **[docs.dinary.app](https://docs.dinary.app)**. This folder only points there.
 
 ## Read
@@ -18,7 +17,7 @@ The Dinary documentation does not live in this repository. It is written in
 | 🚢 Deployment (Kubernetes)      | [docs.dinary.app/deployment/kubernetes](https://docs.dinary.app/deployment/kubernetes/)                       |
 | 🐳 Deployment (Docker Compose)  | [docs.dinary.app/deployment/docker/docker-compose](https://docs.dinary.app/deployment/docker/docker-compose/) |
 | 💻 Contributing to Dinary        | [docs.dinary.app/development/contributing](https://docs.dinary.app/development/contributing/)                 |
-| 📚 Wiki                         | [github.com/ordinary-labs/dinary/wiki](https://github.com/ordinary-labs/dinary/wiki)                          |
+| 📚 Wiki                         | [github.com/truongdatdev/dinary/wiki](https://github.com/truongdatdev/dinary/wiki)                          |
 
 ## Use
 
@@ -31,7 +30,7 @@ The Dinary documentation does not live in this repository. It is written in
 
 ## Write or fix a page
 
-Open a pull request in **[`ordinary-labs/dinary-docs`](https://github.com/ordinary-labs/dinary-docs)**, not here:
+Open a pull request in the documentation repository, not here:
 
 - the site is a [Docusaurus](https://docusaurus.io/) app in `website/`; the pages are Markdown under
   `website/docs/`, one folder per section of the sidebar;

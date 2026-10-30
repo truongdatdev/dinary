@@ -522,7 +522,7 @@ export class Employee extends TenantOrganizationBaseEntity implements IEmployee,
 	 * User
 	 * Note: Changed from @MultiORMOneToOne to @MultiORMManyToOne to allow
 	 * one User to have multiple Employee records across different organizations.
-	 * See: https://github.com/ordinary-labs/dinary/wiki/Users-vs-Employees
+	 * See: https://github.com/truongdatdev/dinary/wiki/Users-vs-Employees
 	 */
 	@MultiORMManyToOne(() => User, {
 		/** Database cascade action on delete. */

@@ -60,7 +60,7 @@ export interface StatsBuildResult {
 
 /**
  * Assembles an `ever.stats.v1` report, serialises it once and runs on those exact bytes the checks
- * Ordinary Labs Platform runs (size, strict JSON, the published schema, the calendar date). A report that
+ * Dinary Cloud runs (size, strict JSON, the published schema, the calendar date). A report that
  * fails is refused here and never sent; the reason names a field and a code, never a value.
  */
 @Injectable()
@@ -108,7 +108,7 @@ export class EverStatsBuilder {
 			return { ok: false, built: null, text: '', error: 'schema_violation:(body):type' };
 		}
 		const bytes = Buffer.from(text, 'utf8');
-		// The checks Ordinary Labs Platform runs, from the SDK.
+		// The checks Dinary Cloud runs, from the SDK.
 		const checked = validateStatsReportBytes(bytes);
 		if ('error' in checked) {
 			const refused = checked.error;

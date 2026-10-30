@@ -318,7 +318,7 @@ describe('InviteService - the invitations of a team are handled by its managers'
 	function invitationOf(teams: ISpecTeam[]) {
 		return {
 			id: 'invite-1',
-			email: 'new@ordinarylabs.com',
+			email: 'new@dinary.app',
 			organization: { id: ORGANIZATION, tenantId: TENANT },
 			role: { name: RolesEnum.EMPLOYEE },
 			teams
@@ -671,7 +671,7 @@ describe('InviteService - the invitations of a team are handled by its managers'
 			const relations = { projects: [], departments: [], organizationContacts: [], organizationTeams: teams };
 			Object.assign(service, { fetchInvitesRelations: jest.fn(async () => relations) });
 			const input = {
-				emailIds: ['new@ordinarylabs.com'],
+				emailIds: ['new@dinary.app'],
 				teamIds: teams.map((team) => team.id),
 				organizationId: ORGANIZATION,
 				tenantId: TENANT,
@@ -749,18 +749,18 @@ describe('InviteService - the invitations of a team are handled by its managers'
 
 		/** The invitations stored, by the teams each one names. */
 		const INVITES = [
-			{ id: 'invite-no-team', email: 'no-team@ordinarylabs.com', teamIds: [] as string[] },
-			{ id: 'invite-managed', email: 'managed@ordinarylabs.com', teamIds: [MANAGED_TEAM.id] },
-			{ id: 'invite-role-managed', email: 'role-managed@ordinarylabs.com', teamIds: [ROLE_MANAGED_TEAM.id] },
-			{ id: 'invite-created', email: 'created@ordinarylabs.com', teamIds: [CREATED_TEAM.id] },
-			{ id: 'invite-member', email: 'member@ordinarylabs.com', teamIds: [MEMBER_TEAM.id] },
-			{ id: 'invite-other', email: 'other@ordinarylabs.com', teamIds: [OTHER_TEAM.id] },
-			{ id: 'invite-both', email: 'both@ordinarylabs.com', teamIds: [MANAGED_TEAM.id, OTHER_TEAM.id] },
-			{ id: 'invite-other-deleted', email: 'other-deleted@ordinarylabs.com', teamIds: [OTHER_TEAM.id, DELETED_TEAM.id] },
-			{ id: 'invite-deleted', email: 'deleted@ordinarylabs.com', teamIds: [DELETED_TEAM.id] },
+			{ id: 'invite-no-team', email: 'no-team@dinary.app', teamIds: [] as string[] },
+			{ id: 'invite-managed', email: 'managed@dinary.app', teamIds: [MANAGED_TEAM.id] },
+			{ id: 'invite-role-managed', email: 'role-managed@dinary.app', teamIds: [ROLE_MANAGED_TEAM.id] },
+			{ id: 'invite-created', email: 'created@dinary.app', teamIds: [CREATED_TEAM.id] },
+			{ id: 'invite-member', email: 'member@dinary.app', teamIds: [MEMBER_TEAM.id] },
+			{ id: 'invite-other', email: 'other@dinary.app', teamIds: [OTHER_TEAM.id] },
+			{ id: 'invite-both', email: 'both@dinary.app', teamIds: [MANAGED_TEAM.id, OTHER_TEAM.id] },
+			{ id: 'invite-other-deleted', email: 'other-deleted@dinary.app', teamIds: [OTHER_TEAM.id, DELETED_TEAM.id] },
+			{ id: 'invite-deleted', email: 'deleted@dinary.app', teamIds: [DELETED_TEAM.id] },
 			{
 				id: 'invite-managed-deleted',
-				email: 'managed-deleted@ordinarylabs.com',
+				email: 'managed-deleted@dinary.app',
 				teamIds: [MANAGED_TEAM.id, DELETED_TEAM.id]
 			}
 		];
@@ -894,12 +894,12 @@ describe('InviteService - the invitations of a team are handled by its managers'
 
 			// Not the plain membership's, nor the other team's, nor the deleted team's.
 			const expected = [
-				'both@ordinarylabs.com',
-				'created@ordinarylabs.com',
-				'managed-deleted@ordinarylabs.com',
-				'managed@ordinarylabs.com',
-				'no-team@ordinarylabs.com',
-				'role-managed@ordinarylabs.com'
+				'both@dinary.app',
+				'created@dinary.app',
+				'managed-deleted@dinary.app',
+				'managed@dinary.app',
+				'no-team@dinary.app',
+				'role-managed@dinary.app'
 			];
 			expect(emails).toEqual(expected);
 		});
@@ -909,8 +909,8 @@ describe('InviteService - the invitations of a team are handled by its managers'
 
 			const emails = await listed({});
 
-			expect(emails).not.toContain('other-deleted@ordinarylabs.com');
-			expect(emails).not.toContain('deleted@ordinarylabs.com');
+			expect(emails).not.toContain('other-deleted@dinary.app');
+			expect(emails).not.toContain('deleted@dinary.app');
 		});
 
 		it('lists a creator without an employee the invitations of the teams they created, and of no team', async () => {
@@ -918,7 +918,7 @@ describe('InviteService - the invitations of a team are handled by its managers'
 
 			const emails = await listed({});
 
-			expect(emails).toEqual(['created@ordinarylabs.com', 'no-team@ordinarylabs.com']);
+			expect(emails).toEqual(['created@dinary.app', 'no-team@dinary.app']);
 		});
 
 		it('lists nothing for a team the caller does not manage', async () => {
@@ -934,7 +934,7 @@ describe('InviteService - the invitations of a team are handled by its managers'
 
 			const emails = await listed({ where: { teams: { id: [MANAGED_TEAM.id] } } });
 
-			expect(emails).toEqual(['both@ordinarylabs.com', 'managed-deleted@ordinarylabs.com', 'managed@ordinarylabs.com']);
+			expect(emails).toEqual(['both@dinary.app', 'managed-deleted@dinary.app', 'managed@dinary.app']);
 		});
 
 		it('lists the invitation a request names when it is in reach, and nothing when it is not', async () => {
@@ -943,7 +943,7 @@ describe('InviteService - the invitations of a team are handled by its managers'
 			const inReach = await listed({ where: { id: 'invite-managed' } });
 			const outOfReach = await listed({ where: { id: 'invite-other' } });
 
-			expect(inReach).toEqual(['managed@ordinarylabs.com']);
+			expect(inReach).toEqual(['managed@dinary.app']);
 			expect(outOfReach).toEqual([]);
 		});
 

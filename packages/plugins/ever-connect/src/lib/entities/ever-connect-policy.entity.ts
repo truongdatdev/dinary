@@ -4,7 +4,7 @@ import { MultiORMColumn, MultiORMEntity, SkipExport } from '@dinary/core';
 
 /**
  * The operator's instance policy: one row per integration the operator allowed or denied in the
- * Ordinary Labs Platform settings. A denied integration is off for every organization of the installation.
+ * Dinary Cloud settings. A denied integration is off for every organization of the installation.
  * `EVER_CONNECT_INTEGRATIONS_DENY` is not stored here: it is read from the environment and wins.
  *
  * Created by the core `EverConnect` migration; never exported.

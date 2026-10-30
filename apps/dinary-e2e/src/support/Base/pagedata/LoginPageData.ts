@@ -1,7 +1,7 @@
 export const LoginPageData = {
 	TitleText: 'Dinary',
-	email: 'admin@ordinarylabs.com',
+	email: 'admin@dinary.app',
 	password: 'admin',
-	empEmail: 'employee@ordinarylabs.com',
+	empEmail: 'employee@dinary.app',
 	empPassword: '12345678'
 };

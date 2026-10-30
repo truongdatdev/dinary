@@ -100,7 +100,7 @@ export class NgxRegisterComponent extends NbRegisterComponent implements OnInit 
 			/**
 			 * Carry what the checkout already collected into the form.
 			 *
-			 * Both values arrive from Stripe by way of ordinarylabs.com/checkout/complete, which reads them off
+			 * Both values arrive from Stripe by way of dinary.app/checkout/complete, which reads them off
 			 * the completed Checkout Session. The email is the address the subscription was created
 			 * against, and the template hides its input entirely when the parameter is present - which
 			 * is why assigning it only when it is actually there matters: an absent parameter used to

@@ -20,8 +20,8 @@ When('I log in to edit my profile', async () => {
 	// IMPORTANT: this spec edits the *currently logged-in* user's own profile
 	// (/#/pages/auth/profile) and then logs out + logs back in to prove the
 	// saved credentials still authenticate. It therefore runs against the
-	// SEEDED admin (admin@ordinarylabs.com / admin from LoginPageData) — the prior
-	// EditProfilePageData.email ('local.admin@ordinarylabs.com') was never created in
+	// SEEDED admin (admin@dinary.app / admin from LoginPageData) — the prior
+	// EditProfilePageData.email ('local.admin@dinary.app') was never created in
 	// the seed, so the very first login failed. We deliberately keep the email
 	// and password UNCHANGED in the profile form so this shared-DB account's
 	// credentials are not mutated for the specs that run after this one.

@@ -40,7 +40,7 @@ export class AboutComponent implements OnInit, OnDestroy {
 	readonly learnMoreLinks: { label: string; icon: string; url: string }[] = [
 		{ label: 'dinary.app', icon: 'globe-outline', url: 'https://dinary.app' },
 		{ label: 'docs.dinary.app', icon: 'book-open-outline', url: 'https://docs.dinary.app' },
-		{ label: 'Ordinary Labs', icon: 'briefcase-outline', url: 'https://ordinarylabs.com' }
+		{ label: 'GitHub', icon: 'github-outline', url: 'https://github.com/truongdatdev/dinary' }
 	];
 	readonly currentYear = new Date().getFullYear();
 
@@ -60,7 +60,7 @@ export class AboutComponent implements OnInit, OnDestroy {
 	private copiedTimer: ReturnType<typeof setTimeout> | null = null;
 
 	constructor(private readonly http: HttpClient, @Inject(DINARY_ENV) readonly environment: Environment) {
-		this.repoBaseUrl = (environment.PROJECT_REPO ?? 'https://github.com/ordinary-labs/dinary.git').replace(/\.git$/, '');
+		this.repoBaseUrl = (environment.PROJECT_REPO ?? 'https://github.com/truongdatdev/dinary.git').replace(/\.git$/, '');
 		this.repoName = this.repoBaseUrl.replace(/^https?:\/\/github\.com\//, '');
 		this.web = { version: environment.version ?? '', commit: environment.commit ?? '' };
 		this.isProductionBuild = !!environment.production;

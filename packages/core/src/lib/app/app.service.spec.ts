@@ -77,7 +77,7 @@ describe('AppService', () => {
 
 	/**
 	 * GHSA-4r2r-mv32-3468: the seed guard only protects NEW databases, so an install seeded before it
-	 * keeps `admin@ordinarylabs.com` / `admin` silently. Boot now warns (never refuses) when a seeded account
+	 * keeps `admin@dinary.app` / `admin` silently. Boot now warns (never refuses) when a seeded account
 	 * still verifies against its published password.
 	 */
 	describe('published seed passwords on an existing database', () => {
@@ -122,7 +122,7 @@ describe('AppService', () => {
 
 		it('also checks the CANONICAL published addresses when the configuration was changed later', async () => {
 			// The database was seeded at some point in the past. An operator who set
-			// DEMO_SUPER_ADMIN_EMAIL afterwards still has the original `admin@ordinarylabs.com` row with the
+			// DEMO_SUPER_ADMIN_EMAIL afterwards still has the original `admin@dinary.app` row with the
 			// published password; checking only today's configuration would walk straight past it.
 			const credentials = environment.demoCredentialConfig as unknown as Record<string, string>;
 			const saved = credentials.superAdminEmail;
@@ -134,7 +134,7 @@ describe('AppService', () => {
 				expect(checked).toEqual(
 					expect.arrayContaining([
 						{ email: 'ops@example.com', password: 'admin' },
-						{ email: 'admin@ordinarylabs.com', password: 'admin' }
+						{ email: 'admin@dinary.app', password: 'admin' }
 					])
 				);
 			} finally {
@@ -150,11 +150,11 @@ describe('AppService', () => {
 		});
 
 		it('warns loudly when one still matches, and still never re-seeds', async () => {
-			userService.findAccountsUsingPasswords.mockResolvedValue({ matches: ['admin@ordinarylabs.com'], inconclusive: [] });
+			userService.findAccountsUsingPasswords.mockResolvedValue({ matches: ['admin@dinary.app'], inconclusive: [] });
 
 			await service.seedDBIfEmpty();
 
-			expect(warned()).toContain('INSECURE ACCOUNTS: admin@ordinarylabs.com');
+			expect(warned()).toContain('INSECURE ACCOUNTS: admin@dinary.app');
 			expect(seedDataService.runDefaultSeed).not.toHaveBeenCalled();
 		});
 
@@ -172,13 +172,13 @@ describe('AppService', () => {
 			// boot would be indistinguishable from "checked, nothing found".
 			userService.findAccountsUsingPasswords.mockResolvedValue({
 				matches: [],
-				inconclusive: ['admin@ordinarylabs.com']
+				inconclusive: ['admin@dinary.app']
 			});
 
 			await service.seedDBIfEmpty();
 
 			expect(String(warn.mock.calls[0][0])).toContain('not exhaustively');
-			expect(String(warn.mock.calls[0][0])).toContain('admin@ordinarylabs.com');
+			expect(String(warn.mock.calls[0][0])).toContain('admin@dinary.app');
 			// Still only a note: nothing was actually found, so it must not claim an insecure account.
 			expect(warned()).not.toContain('INSECURE ACCOUNTS');
 		});

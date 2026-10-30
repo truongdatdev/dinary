@@ -62,8 +62,8 @@ const bool = (name: string, defaultValue?: boolean): Column => ({
 });
 
 /**
- * The tables of the Ordinary Labs Platform connection plugin (`@dinary/plugin-ever-connect`). Times are epoch
- * milliseconds; ids are text (Ordinary Labs Platform ids are ULIDs).
+ * The tables of the Dinary Cloud connection plugin (`@dinary/plugin-ever-connect`). Times are epoch
+ * milliseconds; ids are text (Dinary Cloud ids are ULIDs).
  */
 const TABLES: Table[] = [
 	{
@@ -208,12 +208,12 @@ const TABLES: Table[] = [
 ];
 
 /**
- * Creates the six tables of the Ordinary Labs Platform connection plugin (`@dinary/plugin-ever-connect`):
+ * Creates the six tables of the Dinary Cloud connection plugin (`@dinary/plugin-ever-connect`):
  *
  * - `ever_connect_connection`: the one-row connection of this installation (no credential: the
  *   connect key lives encrypted in `ever_instance`; the instance-wide entitlement document is
  *   stored encrypted);
- * - `ever_connect_link`: one row per Dinary organization linked to an Ordinary Labs Platform organization (its
+ * - `ever_connect_link`: one row per Dinary organization linked to a Dinary Cloud organization (its
  *   entitlement document, encrypted; Dinary's own `integration_tenant` row names the link);
  * - `ever_connect_integration`: the local state of each integration, per link or installation-wide;
  * - `ever_connect_policy`: the operator's allow or deny per integration;

@@ -9,7 +9,7 @@
 name: Configure npm registry
 description: >-
   Point the job at the internal Verdaccio VIP when it is reachable, otherwise at the public npm
-  registry. The Cloudflare-fronted packages.ordinarylabs.com route is gated behind an explicit opt-in.
+  registry. The Cloudflare-fronted packages.dinary.app route is gated behind an explicit opt-in.
 
 inputs:
   verdaccio-registry:
@@ -20,11 +20,11 @@ inputs:
     required: false
     default: ''
   verdaccio-token:
-    description: Auth token for the public packages.ordinarylabs.com route. Only used when force-public is true.
+    description: Auth token for the public packages.dinary.app route. Only used when force-public is true.
     required: false
     default: ''
   force-public:
-    description: Set to 'true' to force the public packages.ordinarylabs.com route even when the VIP answers.
+    description: Set to 'true' to force the public packages.dinary.app route even when the VIP answers.
     required: false
     default: ''
   expect-vip:
@@ -47,9 +47,9 @@ runs:
       run: |
         # Registry selection is CONDITIONAL on where this job runs.
         #
-        # The public Cloudflare-fronted route https://packages.ordinarylabs.com intermittently TRUNCATES
+        # The public Cloudflare-fronted route https://packages.dinary.app intermittently TRUNCATES
         # large tarballs mid-stream. Measured 2026-08-16 on
-        # @rspack/binding-win32-arm64-msvc@1.7.6: 9,525,323 bytes from packages.ordinarylabs.com against
+        # @rspack/binding-win32-arm64-msvc@1.7.6: 9,525,323 bytes from packages.dinary.app against
         # 14,590,565 bytes (byte-exact) from BOTH the internal VIP and npmjs. The route sustains
         # only ~280 KB/s, and a single release-windows-arm64 job logged 12 "unexpected end of
         # file" errors against it.
@@ -68,7 +68,7 @@ runs:
         # the VIP rather than by hardcoding a runner list, because release-linux runs on
         # "vars.RUNNER_LINUX_APPS_X64 or ubuntu-24.04" and so is not statically known.
         #
-        # NO-REMOVAL RULE: the packages.ordinarylabs.com path below is GATED, not deleted. Set the
+        # NO-REMOVAL RULE: the packages.dinary.app path below is GATED, not deleted. Set the
         # repo/org variable VERDACCIO_FORCE_PUBLIC=true to bring it back.
 
         # Start from a known state. The self-hosted Windows jobs check out with clean: false and
@@ -144,13 +144,13 @@ runs:
           # Evaluated BEFORE the probe so the override actually overrides: an operator setting
           # this wants the public route even when the VIP is up (e.g. the internal cache is
           # serving bad data). Gating it on a failed probe would make the flag a no-op.
-          REGISTRY="https://packages.ordinarylabs.com/"
-          echo "::warning title=Verdaccio public route in use::VERDACCIO_FORCE_PUBLIC=true - installing through packages.ordinarylabs.com, which is known to truncate large tarballs mid-stream."
-          echo "//packages.ordinarylabs.com/:_authToken=$VERDACCIO_TOKEN" >> .npmrc
+          REGISTRY="https://packages.dinary.app/"
+          echo "::warning title=Verdaccio public route in use::VERDACCIO_FORCE_PUBLIC=true - installing through packages.dinary.app, which is known to truncate large tarballs mid-stream."
+          echo "//packages.dinary.app/:_authToken=$VERDACCIO_TOKEN" >> .npmrc
           echo "always-auth=true" >> .npmrc
         else
           if [ "$VERDACCIO_FORCE_PUBLIC" = "true" ]; then
-            echo "::warning title=VERDACCIO_FORCE_PUBLIC set without a token::VERDACCIO_TOKEN is empty, so packages.ordinarylabs.com cannot be used; probing the internal VIP instead."
+            echo "::warning title=VERDACCIO_FORCE_PUBLIC set without a token::VERDACCIO_TOKEN is empty, so packages.dinary.app cannot be used; probing the internal VIP instead."
           fi
           # Retry only where the VIP is expected to answer. An external runner can never reach
           # it, so a second attempt would just add dead time to every release job.

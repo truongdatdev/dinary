@@ -2,9 +2,9 @@ import { When } from '../../support/bdd';
 import { getPage } from '../../support/page-context';
 import * as addExistingUserPage from '../../support/pages/AddExistingUser.po';
 
-// Target the seeded ADMIN user "Local Admin" (firstName "Local", lastName "Admin"; local.admin@ordinarylabs.com)
+// Target the seeded ADMIN user "Local Admin" (firstName "Local", lastName "Admin"; local.admin@dinary.app)
 // — NOT the Super Admin. users.component.selectUser() protects SUPER_ADMIN rows: when the logged-in
-// user has SUPER_ADMIN_EDIT permission (the e2e logs in as admin@ordinarylabs.com), selecting a SUPER_ADMIN row
+// user has SUPER_ADMIN_EDIT permission (the e2e logs in as admin@dinary.app), selecting a SUPER_ADMIN row
 // sets disableButton = true, so the toolbar Remove button stays DISABLED and the remove-confirm dialog
 // (nb-card-footer > button[status="danger"]) never opens — exactly the round-3 failure. The ADMIN row
 // has no such guard, so its selection enables Remove. "Local Admin" also re-appears in the add-existing

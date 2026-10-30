@@ -42,7 +42,7 @@ export class EverAsyncConnectComponent extends TranslationBaseComponent implemen
 	readonly showSecret = signal(false);
 	readonly ready = signal(false);
 	readonly form = new FormGroup({
-		serverUrl: new FormControl('https://api-async.ordinarylabs.com', {
+		serverUrl: new FormControl('https://api-async.dinary.app', {
 			nonNullable: true,
 			validators: [Validators.required, Validators.pattern(/^https:\/\/[^\s]+$/)]
 		}),
@@ -85,7 +85,7 @@ export class EverAsyncConnectComponent extends TranslationBaseComponent implemen
 					this.verifying.set(false);
 					this.connectionOk.set(null);
 					this.showSecret.set(false);
-					this.form.reset({ serverUrl: 'https://api-async.ordinarylabs.com', projectIds: [], isEnabled: true });
+					this.form.reset({ serverUrl: 'https://api-async.dinary.app', projectIds: [], isEnabled: true });
 					this.form.controls.userMappings.clear();
 				}),
 				switchMap((org) =>

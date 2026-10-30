@@ -51,7 +51,7 @@ type CredentialsOutcome =
 /**
  * Moves the desktop timer to another organization of the user's tenant.
  *
- * The API confines a non-admin to the organization named in their access token (ordinary-labs/dinary#11316), so
+ * The API confines a non-admin to the organization named in their access token (truongdatdev/dinary#11316), so
  * changing the selected organization locally is not enough: every list would come back empty and every write would be
  * refused. Like the Dinary web UI (`OrganizationContextService` in `@dinary/ui-core/core`), this calls
  * `POST /auth/switch-organization` first, and only once the API has issued tokens for the new organization does it

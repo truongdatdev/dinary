@@ -37,7 +37,7 @@ on:
       before_image:
         description: "develop's API image to upgrade from (default: the image the demo runs)"
         type: string
-        default: ghcr.io/ordinary-labs/dinary-api-demo:latest
+        default: ghcr.io/truongdatdev/dinary-api-demo:latest
       databases:
         description: Databases to run the upgrade on
         type: choice
@@ -70,7 +70,7 @@ env:
   # docker/build-push-action's build record holds every build-arg value and is downloadable on a public repo.
   DOCKER_BUILD_RECORD_UPLOAD: false
   DOCKER_BUILD_SUMMARY: false
-  BEFORE_IMAGE: ${{ inputs.before_image || 'ghcr.io/ordinary-labs/dinary-api-demo:latest' }}
+  BEFORE_IMAGE: ${{ inputs.before_image || 'ghcr.io/truongdatdev/dinary-api-demo:latest' }}
   AFTER_IMAGE: dinary-api-upgrade-after:${{ github.sha }}
   POSTGRES_IMAGE: ${{ inputs.postgres_image || 'postgres:16' }}
   DATABASES: ${{ inputs.databases || 'both' }}

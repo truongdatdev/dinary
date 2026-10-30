@@ -59,14 +59,14 @@ const TENANT_B = '22222222-2222-4222-8222-222222222222';
 const ATTACKER = { id: 'attacker', email: 'attacker@evil.co', tenantId: TENANT_A, isActive: true, isArchived: false };
 const VICTIM = {
 	id: 'victim',
-	email: 'victim@ordinarylabs.com',
+	email: 'victim@dinary.app',
 	tenantId: TENANT_B,
 	isActive: true,
 	isArchived: false,
 	emailVerifiedAt: new Date('2026-01-01T00:00:00.000Z')
 };
-const TENANTLESS = { id: 'fresh', email: 'fresh@ordinarylabs.com', tenantId: null, isActive: true, isArchived: false };
-const INACTIVE = { id: 'gone', email: 'gone@ordinarylabs.com', tenantId: TENANT_A, isActive: false, isArchived: false };
+const TENANTLESS = { id: 'fresh', email: 'fresh@dinary.app', tenantId: null, isActive: true, isArchived: false };
+const INACTIVE = { id: 'gone', email: 'gone@dinary.app', tenantId: TENANT_A, isActive: false, isArchived: false };
 
 let dataSource: DataSource;
 let users: Repository<any>;
@@ -152,7 +152,7 @@ describe('AuthService.workspaceSigninVerifyToken (GHSA-28wv-vrxj-rp4q)', () => {
 		const { service } = buildAuthService();
 		const token = workspaceTokenFor(service, TENANTLESS);
 
-		const result = await service.workspaceSigninVerifyToken({ email: 'Fresh@OrdinaryLabs.com', token } as any);
+		const result = await service.workspaceSigninVerifyToken({ email: 'Fresh@dinary.app', token } as any);
 
 		expect(result.token).toBe('access-for-fresh');
 	});
@@ -188,7 +188,7 @@ describe('AuthService.workspaceSigninVerifyToken (GHSA-28wv-vrxj-rp4q)', () => {
 	it('rejects a password-reset token for a tenant member — CONTROL: pre-fix took over any user of that tenant', async () => {
 		const colleague = {
 			id: 'colleague',
-			email: 'boss@ordinarylabs.com',
+			email: 'boss@dinary.app',
 			tenantId: TENANT_A,
 			isActive: true,
 			isArchived: false
@@ -356,7 +356,7 @@ describe('AuthService social sign-in / link (GHSA-58x4-7mw9-gmqg)', () => {
 
 	it.each([
 		['no email', { provider: ProviderEnum.FACEBOOK, id: '99' }],
-		['no provider id', { provider: ProviderEnum.FACEBOOK, email: 'victim@ordinarylabs.com' }]
+		['no provider id', { provider: ProviderEnum.FACEBOOK, email: 'victim@dinary.app' }]
 	])('sign-in with an identity carrying %s never queries users or links anything', async (_label, identity) => {
 		const { service, userService, socialAccountService } = buildSocial(identity);
 
@@ -373,8 +373,8 @@ describe('AuthService social sign-in / link (GHSA-58x4-7mw9-gmqg)', () => {
 		const { service, socialAccountService } = buildSocial({
 			provider: ProviderEnum.GITHUB,
 			id: '42',
-			email: 'victim@ordinarylabs.com',
-			rawEmail: 'Victim@ordinarylabs.com'
+			email: 'victim@dinary.app',
+			rawEmail: 'Victim@dinary.app'
 		});
 
 		const response = await service.signinWorkspacesByEmailSocial(
@@ -425,8 +425,8 @@ describe('AuthService social sign-in / link (GHSA-58x4-7mw9-gmqg)', () => {
 		const { service, socialAccountService } = buildSocial({
 			provider: ProviderEnum.GOOGLE,
 			id: 'g-1',
-			email: 'victim@ordinarylabs.com',
-			rawEmail: 'victim@ordinarylabs.com'
+			email: 'victim@dinary.app',
+			rawEmail: 'victim@dinary.app'
 		});
 		await expect(
 			service.linkUserToSocialAccount({ provider: ProviderEnum.GOOGLE, token: 't' })

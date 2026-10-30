@@ -13,7 +13,7 @@
 
 # @dinary/plugin-integration-ever-async
 
-Connect a Dinary organization to an [Ever Async](https://async.ordinarylabs.com)
+Connect a Dinary organization to an [Ever Async](https://async.dinary.app)
 tenant. The connector can read task links and status from explicitly selected
 projects. Its credentials cannot modify tasks or access general Dinary APIs.
 

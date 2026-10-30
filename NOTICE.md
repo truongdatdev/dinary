@@ -1,6 +1,6 @@
 # NOTICE
 
-Dinary Platform is a derivative work of **Ever Gauzy**.
+Dinary is a derivative work of **Ever Gauzy**, developed by Ever Co. LTD and the Ever Gauzy contributors.
 
 This product includes software developed by Ever Co. LTD and the Ever Gauzy contributors.
 
@@ -11,13 +11,13 @@ This product includes software developed by Ever Co. LTD and the Ever Gauzy cont
 
 Dinary modifications, branding and additional code are:
 
-- Copyright © 2026 Ordinary Labs
+- Copyright © 2026 Dinary contributors
 - Licensed under the GNU Affero General Public License v3.0
 
-The Dinary name and logo are trademarks of Ordinary Labs. Ever Gauzy™ and Ever® are trademarks of Ever Co. LTD and are referenced here only to identify the upstream project.
+Ever Gauzy™ and Ever® are trademarks of Ever Co. LTD and are referenced here only to identify the upstream project. This project makes no claim over those marks.
 
 The complete corresponding source code for this distribution is available at:
 
-- <https://github.com/ordinary-labs/dinary>
+- <https://github.com/truongdatdev/dinary>
 
 Third-party components included in this distribution are listed in [CREDITS.md](CREDITS.md), together with their respective licenses.

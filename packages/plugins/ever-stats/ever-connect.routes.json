@@ -1,5 +1,5 @@
 {
-	"$comment": "Every endpoint of this module that answers without an Ordinary Labs Platform credential, and every request Ordinary Labs Platform makes to an installation through it. routes-manifest.spec.ts compares it with the registered routes; UPDATE_ROUTES_MANIFEST=1 rewrites it.",
+	"$comment": "Every endpoint of this module that answers without a Dinary Cloud credential, and every request Dinary Cloud makes to an installation through it. routes-manifest.spec.ts compares it with the registered routes; UPDATE_ROUTES_MANIFEST=1 rewrites it.",
 	"version": 1,
 	"product": "dinary",
 	"module": "ever-stats",

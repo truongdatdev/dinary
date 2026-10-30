@@ -13,7 +13,7 @@ const DELETION_DELAY_MS = 1_000;
 
 /**
  * What a deleted Dinary tenant or organization leaves behind is removed (the plugin's tables have no
- * foreign keys to cascade): its link is removed on Ordinary Labs Platform (best effort) and unlinked here, so
+ * foreign keys to cascade): its link is removed on Dinary Cloud (best effort) and unlinked here, so
  * no document is fetched and no state is read for it any more, and its rows are removed from the
  * plugin's tables (links, integration states, lookup cache, audit). The installation keeps one audit
  * row saying a deleted organization's link was removed, without the organization's ids.
@@ -106,7 +106,7 @@ export class EverConnectCleanupService implements OnModuleInit, OnModuleDestroy 
 				return true;
 			}
 			this.logger.warn(
-				`Ordinary Labs Platform was not told that a deleted organization's link is removed (${errorCode(error)}); it is removed here.`
+				`Dinary Cloud was not told that a deleted organization's link is removed (${errorCode(error)}); it is removed here.`
 			);
 			return false;
 		}

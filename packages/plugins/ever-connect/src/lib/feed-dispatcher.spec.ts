@@ -9,7 +9,7 @@ import { CONSTANTS, EventEnvelope, ProblemError } from './sdk';
  * connection event of another installation, or of before this connection, is ignored; the cursor is
  * kept before it is acknowledged, and one that cannot be kept is never acknowledged.
  */
-describe('Ordinary Labs Platform feed dispatcher', () => {
+describe('Dinary Cloud feed dispatcher', () => {
 	function scheduler() {
 		const states = { sync: jest.fn().mockResolvedValue(undefined) };
 		const entitlements = { refreshAll: jest.fn().mockResolvedValue(undefined) };
@@ -77,11 +77,11 @@ describe('Ordinary Labs Platform feed dispatcher', () => {
 		}) as never;
 
 	it.each([
-		['ordinarylabs.comnsent.consent.granted', 'states'],
-		['ordinarylabs.comnsent.consent.revoked', 'states'],
-		['ordinarylabs.comnsent.integration.enabled', 'states'],
-		['ordinarylabs.comnsent.integration.disabled', 'states'],
-		['ordinarylabs.comnsent.integration.scope_bumped', 'states'],
+		['dinary.appnsent.consent.granted', 'states'],
+		['dinary.appnsent.consent.revoked', 'states'],
+		['dinary.appnsent.integration.enabled', 'states'],
+		['dinary.appnsent.integration.disabled', 'states'],
+		['dinary.appnsent.integration.scope_bumped', 'states'],
 		['ever.entitlements.entitlement.issued', 'entitlements'],
 		['ever.entitlements.entitlement.revoked', 'entitlements'],
 		['ever.registry.tenant_link.unlinked', 'link'],
@@ -98,11 +98,11 @@ describe('Ordinary Labs Platform feed dispatcher', () => {
 
 	it('every other catalog type is acknowledged and ignored', async () => {
 		const handled = new Set([
-			'ordinarylabs.comnsent.consent.granted',
-			'ordinarylabs.comnsent.consent.revoked',
-			'ordinarylabs.comnsent.integration.enabled',
-			'ordinarylabs.comnsent.integration.disabled',
-			'ordinarylabs.comnsent.integration.scope_bumped',
+			'dinary.appnsent.consent.granted',
+			'dinary.appnsent.consent.revoked',
+			'dinary.appnsent.integration.enabled',
+			'dinary.appnsent.integration.disabled',
+			'dinary.appnsent.integration.scope_bumped',
 			'ever.entitlements.entitlement.issued',
 			'ever.entitlements.entitlement.revoked',
 			'ever.registry.tenant_link.unlinked',
@@ -133,8 +133,8 @@ describe('Ordinary Labs Platform feed dispatcher', () => {
 	it('a page: follow-ups once per page, an event read twice handled once', async () => {
 		const { instance, states, entitlements, links } = scheduler();
 		const page = [
-			event('ordinarylabs.comnsent.consent.granted', '01JD0000000000000000000001'),
-			event('ordinarylabs.comnsent.integration.enabled', '01JD0000000000000000000002'),
+			event('dinary.appnsent.consent.granted', '01JD0000000000000000000001'),
+			event('dinary.appnsent.integration.enabled', '01JD0000000000000000000002'),
 			event('ever.entitlements.entitlement.issued', '01JD0000000000000000000003'),
 			event('ever.registry.tenant_link.unlinked', '01JD0000000000000000000004', { tenant_link_id: 'L1' })
 		];

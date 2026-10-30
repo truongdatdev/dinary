@@ -94,8 +94,8 @@ function unchanged(before: IntegrationRecord, values: Partial<Record<keyof Integ
 }
 
 /**
- * Whether a consent link from Ordinary Labs Platform may be opened: https, on app.ordinarylabs.com or on a host of the
- * registrable domain of `EVER_PLATFORM_API_URL` (`api-dev.ordinarylabs.com` → `*.ordinarylabs.com`).
+ * Whether a consent link from Dinary Cloud may be opened: https, on app.dinary.app or on a host of the
+ * registrable domain of `EVER_PLATFORM_API_URL` (`api-dev.dinary.app` → `*.dinary.app`).
  */
 export function consentLinkAllowed(link: string, apiUrl: string | null): boolean {
 	let url: URL;
@@ -108,7 +108,7 @@ export function consentLinkAllowed(link: string, apiUrl: string | null): boolean
 		return false;
 	}
 	const host = url.hostname.toLowerCase();
-	if (host === 'app.ordinarylabs.com') {
+	if (host === 'app.dinary.app') {
 		return true;
 	}
 	let apiHost: string | null = null;
@@ -127,17 +127,17 @@ export function consentLinkAllowed(link: string, apiUrl: string | null): boolean
 /**
  * The integration states of this installation, and the only paths that change them:
  *
- * - Ordinary Labs Platform's states are read (`GET /v1/instances/me/integrations`) and applied here; an
- *   integration is `enabled` only when Ordinary Labs Platform holds a consent for it. Nothing switches one on
- *   from this side: an administrator consents in app.ordinarylabs.com (the consent link), and an
+ * - Dinary Cloud's states are read (`GET /v1/instances/me/integrations`) and applied here; an
+ *   integration is `enabled` only when Dinary Cloud holds a consent for it. Nothing switches one on
+ *   from this side: an administrator consents in app.dinary.app (the consent link), and an
  *   installation-wide integration also needs its operator's accept here.
- * - Switching off works offline: the local state goes off first and Ordinary Labs Platform is told when it
+ * - Switching off works offline: the local state goes off first and Dinary Cloud is told when it
  *   can be reached.
  * - The operator's policy (and `EVER_CONNECT_INTEGRATIONS_DENY`, which wins) denies an integration
  *   for every organization.
  *
  * In this release only `instance_url` and `stats_link` can be enabled; every other integration reads
- * "coming soon" whatever Ordinary Labs Platform says, and nothing of it moves.
+ * "coming soon" whatever Dinary Cloud says, and nothing of it moves.
  */
 @Injectable()
 export class EverConnectIntegrationStateService {
@@ -145,7 +145,7 @@ export class EverConnectIntegrationStateService {
 	private readonly now: () => number;
 	/** Integrations whose local effect failed and is retried at the next heartbeat. */
 	private readonly retry = new Set<string>();
-	/** The read of Ordinary Labs Platform's states in progress, shared by concurrent callers. */
+	/** The read of Dinary Cloud's states in progress, shared by concurrent callers. */
 	private syncing: Promise<void> | null = null;
 	/** When the states were last read (for coalescing reads from page views). */
 	private lastSyncAt: number | null = null;
@@ -185,12 +185,12 @@ export class EverConnectIntegrationStateService {
 		return [...new Set([...this.config.deny, ...ui])].sort((a, b) => a.localeCompare(b));
 	}
 
-	// ── Reading Ordinary Labs Platform's states ────────────────────────────────────────
+	// ── Reading Dinary Cloud's states ────────────────────────────────────────
 
 	/**
-	 * Reads Ordinary Labs Platform's states and applies them: a state that became `enabled` runs the
+	 * Reads Dinary Cloud's states and applies them: a state that became `enabled` runs the
 	 * integration's local effect (once), one that went off stops it, and each change is audited as
-	 * Ordinary Labs Platform's. Without `force` (a page asking to re-read), at most one read every 30 seconds
+	 * Dinary Cloud's. Without `force` (a page asking to re-read), at most one read every 30 seconds
 	 * per process; concurrent calls share one read.
 	 */
 	async sync(options: { force?: boolean } = {}): Promise<void> {
@@ -255,7 +255,7 @@ export class EverConnectIntegrationStateService {
 				state === 'enabled' &&
 				operatorAccept !== 'accepted'
 			) {
-				// Ordinary Labs Platform reads `enabled`, but the operator did not accept this consent here: an
+				// Dinary Cloud reads `enabled`, but the operator did not accept this consent here: an
 				// installation-wide integration runs only after their local accept.
 				state = 'pending_operator';
 			}
@@ -263,7 +263,7 @@ export class EverConnectIntegrationStateService {
 				operatorAccept = 'pending';
 			}
 			if ((state === 'enabled' || state === 'pending_operator') && before?.pendingRemoteRevoke) {
-				// Switched off here while Ordinary Labs Platform could not be told: off it stays.
+				// Switched off here while Dinary Cloud could not be told: off it stays.
 				state = 'disabled';
 			}
 			if (state === 'revoked_remote') {
@@ -420,7 +420,7 @@ export class EverConnectIntegrationStateService {
 
 	/** The installation-wide integrations waiting for the operator's accept. */
 	async pendingApprovals(): Promise<IntegrationView[]> {
-		// Accepted ones wait for Ordinary Labs Platform, not for the operator.
+		// Accepted ones wait for Dinary Cloud, not for the operator.
 		const rows = (await this.store.integrations({ scope: 'instance' })).filter(
 			(row) => row.state === 'pending_operator' && row.operatorAccept !== 'accepted'
 		);
@@ -458,14 +458,14 @@ export class EverConnectIntegrationStateService {
 			throw new ConflictException({
 				statusCode: 409,
 				code: 'not_linked',
-				message: 'Link this organization to an Ordinary Labs Platform organization first.'
+				message: 'Link this organization to a Dinary Cloud organization first.'
 			});
 		}
 		return { scope: link.linkId, link };
 	}
 
 	/**
-	 * The app.ordinarylabs.com consent link for `key` (`GET /v1/instances/me/consent-url`). The instance policy
+	 * The app.dinary.app consent link for `key` (`GET /v1/instances/me/consent-url`). The instance policy
 	 * is checked first: a denied integration answers 409 without any call.
 	 */
 	async consentUrl(key: string, context: IntegrationContext): Promise<{ url: string; expires_at: string }> {
@@ -510,9 +510,9 @@ export class EverConnectIntegrationStateService {
 			throw this.problem(error);
 		}
 		if (!consentLinkAllowed(String(answer?.url ?? ''), this.config.apiUrl)) {
-			// Only an https link to Ordinary Labs Platform's web app is passed to the browser.
+			// Only an https link to Dinary Cloud's web app is passed to the browser.
 			throw new HttpException(
-				{ statusCode: 502, code: 'consent_url_invalid', message: 'Ordinary Labs Platform answered an unusable consent link.' },
+				{ statusCode: 502, code: 'consent_url_invalid', message: 'Dinary Cloud answered an unusable consent link.' },
 				HttpStatus.BAD_GATEWAY
 			);
 		}
@@ -522,8 +522,8 @@ export class EverConnectIntegrationStateService {
 	/**
 	 * `{enabled: true}` never switches an integration on from here: 409 `consent_required` (with the
 	 * consent link when it can be had). `{enabled: false}` switches it off here first, always (nothing
-	 * of it runs any more), then tells Ordinary Labs Platform; whatever Ordinary Labs Platform answers (a redirect, a
-	 * refusal, no answer), the integration stays off and Ordinary Labs Platform is told again at each heartbeat
+	 * of it runs any more), then tells Dinary Cloud; whatever Dinary Cloud answers (a redirect, a
+	 * refusal, no answer), the integration stays off and Dinary Cloud is told again at each heartbeat
 	 * until it takes it.
 	 */
 	async setEnabled(key: string, enabled: boolean, context: IntegrationContext): Promise<IntegrationView> {
@@ -541,7 +541,7 @@ export class EverConnectIntegrationStateService {
 			throw new ConflictException({
 				statusCode: 409,
 				code: 'consent_required',
-				message: 'An administrator enables this integration in app.ordinarylabs.com.',
+				message: 'An administrator enables this integration in app.dinary.app.',
 				url
 			});
 		}
@@ -579,10 +579,10 @@ export class EverConnectIntegrationStateService {
 
 	/**
 	 * The operator's local accept (or decline) of an installation-wide integration the connecting
-	 * organization consented to: the only path that switches one on, also when Ordinary Labs Platform already
-	 * reads it as enabled. The accept is told to Ordinary Labs Platform
+	 * organization consented to: the only path that switches one on, also when Dinary Cloud already
+	 * reads it as enabled. The accept is told to Dinary Cloud
 	 * (`POST /v1/instances/me/integrations/{key}/accept`) and holds for this consent only; the local
-	 * effect runs once Ordinary Labs Platform reads it as enabled with this consent.
+	 * effect runs once Dinary Cloud reads it as enabled with this consent.
 	 */
 	async accept(key: string, accepted: boolean, actorUserId: string | null): Promise<IntegrationView> {
 		const definition = this.offeredDefinition(key);
@@ -612,7 +612,7 @@ export class EverConnectIntegrationStateService {
 			if (!(accepted && error instanceof ProblemError && error.status === 409)) {
 				throw this.problem(error);
 			}
-			// Ordinary Labs Platform does not wait for this accept (it reads the consent as enabled already):
+			// Dinary Cloud does not wait for this accept (it reads the consent as enabled already):
 			// the accept is this installation's own, for that same consent.
 			answer = await this.remoteInstanceState(key);
 			if (answer?.state !== 'enabled' || answer.consent_id !== consentId) {
@@ -621,8 +621,8 @@ export class EverConnectIntegrationStateService {
 		}
 		const where = { tenantId: null, organizationId: null, integration: key };
 		if (accepted && (answer?.state !== 'enabled' || (answer.consent_id && answer.consent_id !== consentId))) {
-			// Accepted, but Ordinary Labs Platform does not read it as enabled yet: it stays waiting, accepted
-			// for this consent, and starts when Ordinary Labs Platform enables it.
+			// Accepted, but Dinary Cloud does not read it as enabled yet: it stays waiting, accepted
+			// for this consent, and starts when Dinary Cloud enables it.
 			const waiting = await this.store.saveIntegration('instance', key, { operatorAccept: 'accepted' });
 			return this.view(definition, waiting, true);
 		}
@@ -680,7 +680,7 @@ export class EverConnectIntegrationStateService {
 
 	/**
 	 * Allows or denies `key` for every organization. A deny switches it off everywhere at once (and on
-	 * Ordinary Labs Platform when it can be reached; the next heartbeat carries the deny list anyway). The
+	 * Dinary Cloud when it can be reached; the next heartbeat carries the deny list anyway). The
 	 * environment's deny cannot be lifted here (409).
 	 */
 	async setPolicy(key: string, allowed: boolean, actorUserId: string | null): Promise<void> {
@@ -730,7 +730,7 @@ export class EverConnectIntegrationStateService {
 	}
 
 	/**
-	 * Tells Ordinary Labs Platform about a deny now (`reason: policy` denies the key on every link of this
+	 * Tells Dinary Cloud about a deny now (`reason: policy` denies the key on every link of this
 	 * installation). The heartbeat a second later carries the whole deny list anyway; when this call
 	 * fails, the rows that were on are also marked to be told again at each heartbeat.
 	 */
@@ -753,15 +753,15 @@ export class EverConnectIntegrationStateService {
 				await this.store.saveIntegration(row.scope, row.name, { pendingRemoteRevoke: true });
 			}
 			this.logger.warn(
-				`Ordinary Labs Platform was not told about the deny of ${key} now (${errorCode(error)}); the next heartbeat carries it.`
+				`Dinary Cloud was not told about the deny of ${key} now (${errorCode(error)}); the next heartbeat carries it.`
 			);
 		}
 	}
 
 	/**
-	 * Tells Ordinary Labs Platform that an integration was switched off here. Never throws: on a 2xx or a 404
+	 * Tells Dinary Cloud that an integration was switched off here. Never throws: on a 2xx or a 404
 	 * (already off there) the pending mark is cleared; on any other outcome it stays, for the next
-	 * heartbeat. Returns whether Ordinary Labs Platform took it.
+	 * heartbeat. Returns whether Dinary Cloud took it.
 	 */
 	private async tellOff(row: IntegrationRecord): Promise<boolean> {
 		const connection = await this.store.connection();
@@ -779,7 +779,7 @@ export class EverConnectIntegrationStateService {
 		} catch (error) {
 			if (!(error instanceof ProblemError && error.status === 404)) {
 				this.logger.warn(
-					`Ordinary Labs Platform was not told now that ${row.name} is off (${errorCode(error)}); it is off here, and told again at the next heartbeat.`
+					`Dinary Cloud was not told now that ${row.name} is off (${errorCode(error)}); it is off here, and told again at the next heartbeat.`
 				);
 				return false;
 			}
@@ -788,7 +788,7 @@ export class EverConnectIntegrationStateService {
 		return true;
 	}
 
-	/** Ordinary Labs Platform's state of one installation-wide integration, read now. */
+	/** Dinary Cloud's state of one installation-wide integration, read now. */
 	private async remoteInstanceState(key: string): Promise<RemoteState | null> {
 		const remote = await this.guard(async () => (await this.platform.getClient()).instances.integrations());
 		return ((remote.instance ?? {}) as Record<string, RemoteState>)[key] ?? null;
@@ -831,7 +831,7 @@ export class EverConnectIntegrationStateService {
 	}
 
 	/**
-	 * At each heartbeat: tells Ordinary Labs Platform about integrations switched off here that it has not
+	 * At each heartbeat: tells Dinary Cloud about integrations switched off here that it has not
 	 * taken yet, and retries a local effect that failed. One failure never stops the others, nor the
 	 * rest of the heartbeat.
 	 */
@@ -916,8 +916,8 @@ export class EverConnectIntegrationStateService {
 	// ── The installation's public address ─────────────────────────────────────
 
 	/**
-	 * `PUT /ever-connect/public-url`: only once `instance_url` is enabled (consented in app.ordinarylabs.com and
-	 * accepted by the operator); 409 before. Ordinary Labs Platform does not take the address from an
+	 * `PUT /ever-connect/public-url`: only once `instance_url` is enabled (consented in app.dinary.app and
+	 * accepted by the operator); 409 before. Dinary Cloud does not take the address from an
 	 * installation yet, so nothing is sent: 503 until it does.
 	 */
 	async setPublicUrl(url: string): Promise<never> {
@@ -926,7 +926,7 @@ export class EverConnectIntegrationStateService {
 			throw new ConflictException({
 				statusCode: 409,
 				code: 'consent_required',
-				message: 'Enable "Installation address" in app.ordinarylabs.com first.'
+				message: 'Enable "Installation address" in app.dinary.app first.'
 			});
 		}
 		void url;
@@ -934,7 +934,7 @@ export class EverConnectIntegrationStateService {
 			{
 				statusCode: 503,
 				code: 'not_available',
-				message: 'Ordinary Labs Platform does not accept an installation address from here yet.'
+				message: 'Dinary Cloud does not accept an installation address from here yet.'
 			},
 			HttpStatus.SERVICE_UNAVAILABLE
 		);
@@ -946,14 +946,14 @@ export class EverConnectIntegrationStateService {
 	private problem(error: unknown): unknown {
 		if (isUnreachable(error)) {
 			return new HttpException(
-				{ statusCode: 502, code: 'platform_unreachable', message: 'Ordinary Labs Platform could not be reached.' },
+				{ statusCode: 502, code: 'platform_unreachable', message: 'Dinary Cloud could not be reached.' },
 				HttpStatus.BAD_GATEWAY
 			);
 		}
 		if (error instanceof ProblemError) {
 			const status = [404, 409, 422].includes(error.status) ? error.status : 502;
 			return new HttpException(
-				{ statusCode: status, code: error.code, message: 'Ordinary Labs Platform refused the request.' },
+				{ statusCode: status, code: error.code, message: 'Dinary Cloud refused the request.' },
 				status
 			);
 		}
@@ -966,7 +966,7 @@ export class EverConnectIntegrationStateService {
 			throw new ConflictException({
 				statusCode: 409,
 				code: 'not_connected',
-				message: 'This installation is not connected to Ordinary Labs Platform.'
+				message: 'This installation is not connected to Dinary Cloud.'
 			});
 		}
 		return connection;

@@ -18,7 +18,7 @@ import {
  * login, and without letting a concurrent burst or a second replica walk past the threshold.
  */
 describe('LoginAttemptService', () => {
-	const EMAIL = 'victim@ordinarylabs.com';
+	const EMAIL = 'victim@dinary.app';
 	const MAX = 5;
 
 	const originalMax = environment.AUTH_MAX_FAILED_ATTEMPTS;
@@ -304,11 +304,11 @@ describe('LoginAttemptService', () => {
 
 		it('shares one counter across differently-cased spellings of the same email', async () => {
 			const spellings = [
-				'Victim@OrdinaryLabs.com',
-				' victim@ordinarylabs.com ',
-				'VICTIM@ORDINARYLABS.COM',
-				'victim@ORDINARYLABS.com',
-				'vIcTiM@ordinarylabs.com'
+				'Victim@dinary.app',
+				' victim@dinary.app ',
+				'VICTIM@dinary.app',
+				'victim@dinary.app',
+				'vIcTiM@dinary.app'
 			];
 
 			for (let i = 0; i < spellings.length; i++) {
@@ -324,7 +324,7 @@ describe('LoginAttemptService', () => {
 			}
 
 			expect(typeof (await begin(service, EMAIL, LoginAttemptScope.MAGIC_CODE))).toBe('object');
-			expect(typeof (await begin(service, 'someone-else@ordinarylabs.com'))).toBe('object');
+			expect(typeof (await begin(service, 'someone-else@dinary.app'))).toBe('object');
 		});
 
 		it('is switched off entirely by AUTH_MAX_FAILED_ATTEMPTS=0', async () => {

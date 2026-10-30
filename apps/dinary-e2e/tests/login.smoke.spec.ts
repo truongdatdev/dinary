@@ -11,7 +11,7 @@ import { test, expect } from '@playwright/test';
  *
  *  visit / → see login → enter creds → submit → land on the dashboard.
  */
-const EMAIL = process.env.E2E_EMAIL || 'admin@ordinarylabs.com';
+const EMAIL = process.env.E2E_EMAIL || 'admin@dinary.app';
 const PASSWORD = process.env.E2E_PASSWORD || 'admin';
 
 test('super-admin can log in and reach the dashboard', async ({ page }) => {

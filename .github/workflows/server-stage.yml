@@ -127,7 +127,7 @@ jobs:
         uses: actions/github-script@v8
         env:
           RELEASE_TAG: ${{ steps.resolve.outputs.tag }}
-          RELEASE_OWNER: 'ordinary-labs'
+          RELEASE_OWNER: 'truongdatdev'
           RELEASE_REPO: 'dinary-server'
           RELEASE_TYPE: 'prerelease'
         with:
@@ -289,13 +289,13 @@ jobs:
             console.log(script.server(false))
         env:
           DINARY_RELEASE_TAG: ${{ needs.check-release-tag.outputs.tag }}
-          PROJECT_REPO: 'https://github.com/ordinary-labs/dinary.git'
+          PROJECT_REPO: 'https://github.com/truongdatdev/dinary.git'
           DESKTOP_SERVER_APP_NAME: 'dinary-server'
           DESKTOP_SERVER_REPO_NAME: 'dinary-server'
-          DESKTOP_SERVER_REPO_OWNER: 'ordinary-labs'
+          DESKTOP_SERVER_REPO_OWNER: 'truongdatdev'
           COMPANY_SITE_LINK: 'https://dinary.app'
           DESKTOP_SERVER_APP_DESCRIPTION: 'Dinary Server'
-          DESKTOP_SERVER_APP_ID: 'com.ordinarylabs.dinaryserver'
+          DESKTOP_SERVER_APP_ID: 'com.dinary.dinaryserver'
 
       - name: Ensure dist directory exists
         shell: bash
@@ -364,7 +364,7 @@ jobs:
         run: |
           # The auth token must not outlive the job. These runners check out with clean: false and
           # clean only dist/ and node_modules/, so a workspace .npmrc carrying
-          # //packages.ordinarylabs.com/:_authToken=... would sit on disk after the job ends - readable by
+          # //packages.dinary.app/:_authToken=... would sit on disk after the job ends - readable by
           # anything scheduled on this runner before the next Configure Registry step resets it.
           #
           # This is deliberately the LAST step of the job: the build steps above run
@@ -587,13 +587,13 @@ jobs:
             console.log(script.server(false))
         env:
           DINARY_RELEASE_TAG: ${{ needs.check-release-tag.outputs.tag }}
-          PROJECT_REPO: 'https://github.com/ordinary-labs/dinary.git'
+          PROJECT_REPO: 'https://github.com/truongdatdev/dinary.git'
           DESKTOP_SERVER_APP_NAME: 'dinary-server'
           DESKTOP_SERVER_REPO_NAME: 'dinary-server'
-          DESKTOP_SERVER_REPO_OWNER: 'ordinary-labs'
+          DESKTOP_SERVER_REPO_OWNER: 'truongdatdev'
           COMPANY_SITE_LINK: 'https://dinary.app'
           DESKTOP_SERVER_APP_DESCRIPTION: 'Dinary Server'
-          DESKTOP_SERVER_APP_ID: 'com.ordinarylabs.dinaryserver'
+          DESKTOP_SERVER_APP_ID: 'com.dinary.dinaryserver'
 
       - name: Ensure dist directory exists
         shell: bash
@@ -666,7 +666,7 @@ jobs:
         run: |
           # The auth token must not outlive the job. These runners check out with clean: false and
           # clean only dist/ and node_modules/, so a workspace .npmrc carrying
-          # //packages.ordinarylabs.com/:_authToken=... would sit on disk after the job ends - readable by
+          # //packages.dinary.app/:_authToken=... would sit on disk after the job ends - readable by
           # anything scheduled on this runner before the next Configure Registry step resets it.
           #
           # This is deliberately the LAST step of the job: the build steps above run
@@ -818,13 +818,13 @@ jobs:
             console.log(script.server(false))
         env:
           DINARY_RELEASE_TAG: ${{ needs.check-release-tag.outputs.tag }}
-          PROJECT_REPO: 'https://github.com/ordinary-labs/dinary.git'
+          PROJECT_REPO: 'https://github.com/truongdatdev/dinary.git'
           DESKTOP_SERVER_APP_NAME: 'dinary-server'
           DESKTOP_SERVER_REPO_NAME: 'dinary-server'
-          DESKTOP_SERVER_REPO_OWNER: 'ordinary-labs'
+          DESKTOP_SERVER_REPO_OWNER: 'truongdatdev'
           COMPANY_SITE_LINK: 'https://dinary.app'
           DESKTOP_SERVER_APP_DESCRIPTION: 'Dinary Server'
-          DESKTOP_SERVER_APP_ID: 'com.ordinarylabs.dinaryserver'
+          DESKTOP_SERVER_APP_ID: 'com.dinary.dinaryserver'
 
       - name: Prepare Apple API Key
         run: |
@@ -934,7 +934,7 @@ jobs:
         uses: ./.github/actions/set-mac-minimum-system-version
         with:
           token: ${{ secrets.GH_TOKEN }}
-          owner: 'ordinary-labs'
+          owner: 'truongdatdev'
           repo: 'dinary-server'
           tag: ${{ needs.check-release-tag.outputs.tag }}
           app-package-json: 'apps/server/src/package.json'
@@ -950,7 +950,7 @@ jobs:
         run: |
           # The auth token must not outlive the job. These runners check out with clean: false and
           # clean only dist/ and node_modules/, so a workspace .npmrc carrying
-          # //packages.ordinarylabs.com/:_authToken=... would sit on disk after the job ends - readable by
+          # //packages.dinary.app/:_authToken=... would sit on disk after the job ends - readable by
           # anything scheduled on this runner before the next Configure Registry step resets it.
           #
           # This is deliberately the LAST step of the job: the build steps above run
@@ -1181,13 +1181,13 @@ jobs:
           AZURE_CODE_SIGNING_ACCOUNT: ${{ vars.AZURE_CODE_SIGNING_ACCOUNT || 'ever' }}
           AZURE_CODE_SIGNING_ENDPOINT: ${{ vars.AZURE_CODE_SIGNING_ENDPOINT || 'https://eus.codesigning.azure.net/' }}
           DINARY_RELEASE_TAG: ${{ needs.check-release-tag.outputs.tag }}
-          PROJECT_REPO: 'https://github.com/ordinary-labs/dinary.git'
+          PROJECT_REPO: 'https://github.com/truongdatdev/dinary.git'
           DESKTOP_SERVER_APP_NAME: 'dinary-server'
           DESKTOP_SERVER_REPO_NAME: 'dinary-server'
-          DESKTOP_SERVER_REPO_OWNER: 'ordinary-labs'
+          DESKTOP_SERVER_REPO_OWNER: 'truongdatdev'
           COMPANY_SITE_LINK: 'https://dinary.app'
           DESKTOP_SERVER_APP_DESCRIPTION: 'Dinary Server'
-          DESKTOP_SERVER_APP_ID: 'com.ordinarylabs.dinaryserver'
+          DESKTOP_SERVER_APP_ID: 'com.dinary.dinaryserver'
 
       - name: Fix Node.js PATH for child processes
         shell: powershell
@@ -1322,7 +1322,7 @@ jobs:
         run: |
           # The auth token must not outlive the job. These runners check out with clean: false and
           # clean only dist/ and node_modules/, so a workspace .npmrc carrying
-          # //packages.ordinarylabs.com/:_authToken=... would sit on disk after the job ends - readable by
+          # //packages.dinary.app/:_authToken=... would sit on disk after the job ends - readable by
           # anything scheduled on this runner before the next Configure Registry step resets it.
           #
           # This is deliberately the LAST step of the job: the build steps above run
@@ -1576,13 +1576,13 @@ jobs:
           # WINDOWS_PUBLISHER_NAME the bump script emits no signer, so ARM64 builds
           # unsigned and succeeds; electron-updater verification stays off for it. x64 signs.
           DINARY_RELEASE_TAG: ${{ needs.check-release-tag.outputs.tag }}
-          PROJECT_REPO: 'https://github.com/ordinary-labs/dinary.git'
+          PROJECT_REPO: 'https://github.com/truongdatdev/dinary.git'
           DESKTOP_SERVER_APP_NAME: 'dinary-server'
           DESKTOP_SERVER_REPO_NAME: 'dinary-server'
-          DESKTOP_SERVER_REPO_OWNER: 'ordinary-labs'
+          DESKTOP_SERVER_REPO_OWNER: 'truongdatdev'
           COMPANY_SITE_LINK: 'https://dinary.app'
           DESKTOP_SERVER_APP_DESCRIPTION: 'Dinary Server'
-          DESKTOP_SERVER_APP_ID: 'com.ordinarylabs.dinaryserver'
+          DESKTOP_SERVER_APP_ID: 'com.dinary.dinaryserver'
 
       - name: Fix Node.js PATH for child processes
         shell: powershell
@@ -1712,7 +1712,7 @@ jobs:
         run: |
           # The auth token must not outlive the job. These runners check out with clean: false and
           # clean only dist/ and node_modules/, so a workspace .npmrc carrying
-          # //packages.ordinarylabs.com/:_authToken=... would sit on disk after the job ends - readable by
+          # //packages.dinary.app/:_authToken=... would sit on disk after the job ends - readable by
           # anything scheduled on this runner before the next Configure Registry step resets it.
           #
           # This is deliberately the LAST step of the job: the build steps above run

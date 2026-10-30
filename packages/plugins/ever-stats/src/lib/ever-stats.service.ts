@@ -28,7 +28,7 @@ export interface EverStatsStatus {
 	/** Why nothing is sent, or `null` while reports go out. */
 	reason: EverStatsStopReason | null;
 	install_source: string;
-	/** The anonymous id, once Ordinary Labs Platform accepted a report under it (`null` before). */
+	/** The anonymous id, once Dinary Cloud accepted a report under it (`null` before). */
 	instance_id: string | null;
 	key_id: string;
 	serves: string[];

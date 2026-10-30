@@ -194,7 +194,7 @@ describe('ApiService', () => {
 			child.stdout.emit(
 				'data',
 				Buffer.from(
-					'er.co","admin":"local.admin@ordinarylabs.com","employee":"employee@ordinarylabs.com"}\nDatabase Default Seed Started\n'
+					'er.co","admin":"local.admin@dinary.app","employee":"employee@dinary.app"}\nDatabase Default Seed Started\n'
 				)
 			);
 			listening(child);
@@ -205,19 +205,19 @@ describe('ApiService', () => {
 				DEMO_SUPER_ADMIN_PASSWORD: 'generated-super-admin-1'
 			});
 			expect(mockRecordSeed.mock.calls[0][1]).toEqual({
-				superAdmin: 'admin@ordinarylabs.com',
-				admin: 'local.admin@ordinarylabs.com',
-				employee: 'employee@ordinarylabs.com'
+				superAdmin: 'admin@dinary.app',
+				admin: 'local.admin@dinary.app',
+				employee: 'employee@dinary.app'
 			});
 		});
 
 		/** The line SeedDataService.runDefaultSeed prints just before "Database Default Seed Started". */
 		const accountsLine =
-			'Database Default Seed Accounts: {"superAdmin":"admin@ordinarylabs.com","admin":"local.admin@ordinarylabs.com","employee":"employee@ordinarylabs.com"}\n';
+			'Database Default Seed Accounts: {"superAdmin":"admin@dinary.app","admin":"local.admin@dinary.app","employee":"employee@dinary.app"}\n';
 		const reportedEmails = {
-			superAdmin: 'admin@ordinarylabs.com',
-			admin: 'local.admin@ordinarylabs.com',
-			employee: 'employee@ordinarylabs.com'
+			superAdmin: 'admin@dinary.app',
+			admin: 'local.admin@dinary.app',
+			employee: 'employee@dinary.app'
 		};
 
 		it('reads the reports of a chunk longer than the tail it keeps (the seed logs that follow, coalesced)', async () => {
@@ -284,10 +284,10 @@ describe('ApiService', () => {
 			listening(child);
 			await started;
 			// stderr may arrive after "Listening at" on stdout.
-			child.stderr.emit('data', Buffer.from(' INSECURE ACCOUNTS: admin@ordinarylabs.com, employee@ordinarylabs.com \n'));
+			child.stderr.emit('data', Buffer.from(' INSECURE ACCOUNTS: admin@dinary.app, employee@dinary.app \n'));
 
 			expect(mockRecordPublishedPasswords).toHaveBeenCalledTimes(1);
-			expect(mockRecordPublishedPasswords).toHaveBeenCalledWith(['admin@ordinarylabs.com', 'employee@ordinarylabs.com']);
+			expect(mockRecordPublishedPasswords).toHaveBeenCalledWith(['admin@dinary.app', 'employee@dinary.app']);
 		});
 	});
 });

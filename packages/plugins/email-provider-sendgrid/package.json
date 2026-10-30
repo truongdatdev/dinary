@@ -3,18 +3,18 @@
 	"version": "0.1.0",
 	"description": "SendGrid as a Dinary Inbox email provider: Inbound Parse and the Mail Send API.",
 	"author": {
-		"name": "Ordinary Labs",
-		"url": "https://github.com/ordinary-labs"
+		"name": "Dinary",
+		"url": "https://github.com/truongdatdev"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ordinary-labs/dinary",
+		"url": "https://github.com/truongdatdev/dinary",
 		"directory": "packages/plugins/email-provider-sendgrid"
 	},
 	"bugs": {
-		"url": "https://github.com/ordinary-labs/dinary/issues"
+		"url": "https://github.com/truongdatdev/dinary/issues"
 	},
-	"homepage": "https://github.com/ordinary-labs/dinary/tree/develop/packages/plugins/email-provider-sendgrid",
+	"homepage": "https://github.com/truongdatdev/dinary/tree/develop/packages/plugins/email-provider-sendgrid",
 	"license": "AGPL-3.0",
 	"private": true,
 	"type": "commonjs",

@@ -4868,7 +4868,7 @@
 		}
 	},
 	"ABOUT_PAGE": {
-		"COPYRIGHT": "Copyright © 2019-{{year}}, Ordinary Labs. Todos los derechos reservados.",
+		"COPYRIGHT": "Copyright © 2019-{{year}}, Dinary. Todos los derechos reservados.",
 		"DESCRIPTION": "Dinary™ es una plataforma abierta de gestión empresarial para economías colaborativas, bajo demanda y compartidas — ERP, CRM, HRM, ATS y gestión de proyectos con seguimiento de tiempo integrado.",
 		"LICENSE": "Código abierto, publicado bajo la licencia",
 		"VERSION_DETAILS": "Detalles de la versión",

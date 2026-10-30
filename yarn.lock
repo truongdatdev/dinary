@@ -6963,7 +6963,7 @@
 
 "@nestjs/axios@^4.0.1", "@nestjs/axios@github:ever-co/nestjs-axios#master":
   version "4.0.1"
-  resolved "https://codeload.github.com/ordinary-labs/nestjs-axios/tar.gz/6c7a33d5147f2218e76808f628fabbf4d4f616ad"
+  resolved "https://codeload.github.com/ever-co/nestjs-axios/tar.gz/6c7a33d5147f2218e76808f628fabbf4d4f616ad"
 
 "@nestjs/bull-shared@^12.0.0":
   version "12.0.0"

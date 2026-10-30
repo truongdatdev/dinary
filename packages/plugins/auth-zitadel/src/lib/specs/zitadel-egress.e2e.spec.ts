@@ -56,8 +56,8 @@ describe('Outbound calls of the Ever ID plugin', () => {
 		expect(t.issuer.requests).toEqual([]);
 	});
 
-	it('an Ordinary Labs issuer on a non-cloud install without Ever Connect is refused and never contacted', async () => {
-		t = await createZitadelTestApp({ issuers: () => 'https://auth.ordinarylabs.com' });
+	it('a Dinary issuer on a non-cloud install without Ever Connect is refused and never contacted', async () => {
+		t = await createZitadelTestApp({ issuers: () => 'https://auth.dinary.app' });
 		browser = new TestBrowser();
 		const spy = recordConnections();
 
@@ -67,18 +67,18 @@ describe('Outbound calls of the Ever ID plugin', () => {
 		});
 		expect((await browser.get(`${t.baseUrl}/api/auth/zitadel`)).status).toBe(404);
 		expect(spy.external).toEqual([]);
-		expect(t.settings.everIssuersAwaitingConnect).toEqual(['https://auth.ordinarylabs.com']);
+		expect(t.settings.everIssuersAwaitingConnect).toEqual(['https://auth.dinary.app']);
 	});
 
 	it('positive control: the same issuer on Dinary Cloud is contacted, so the recorder does see egress', async () => {
-		t = await createZitadelTestApp({ issuers: () => 'https://auth.ordinarylabs.com', env: { EVER_INSTALL_SOURCE: 'cloud' } });
+		t = await createZitadelTestApp({ issuers: () => 'https://auth.dinary.app', env: { EVER_INSTALL_SOURCE: 'cloud' } });
 		browser = new TestBrowser();
 		const spy = recordConnections();
 
 		expect((await (await browser.get(`${t.baseUrl}/api/auth/zitadel/config`)).json()).enabled).toBe(true);
 		expect(spy.external).toEqual([]);
 		await browser.get(`${t.baseUrl}/api/auth/zitadel`);
-		expect(spy.external).toEqual(['auth.ordinarylabs.com:443']);
+		expect(spy.external).toEqual(['auth.dinary.app:443']);
 	});
 
 	it('an issuer on any other host stays allowed on a non-cloud install', async () => {

@@ -3,19 +3,19 @@
 	"version": "0.1.0",
 	"description": "Dinary Pricing Plugin - Price lists, product prices, tax-inclusivity preferences and foreign-exchange rates for the Dinary Platform.",
 	"author": {
-		"name": "Ordinary Labs",
-		"email": "hello@ordinarylabs.com",
-		"url": "https://ordinarylabs.com"
+		"name": "Dinary",
+		"email": "hello@dinary.app",
+		"url": "https://dinary.app"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ordinary-labs/dinary",
+		"url": "https://github.com/truongdatdev/dinary",
 		"directory": "packages/plugins/pricing"
 	},
 	"bugs": {
-		"url": "https://github.com/ordinary-labs/dinary/issues"
+		"url": "https://github.com/truongdatdev/dinary/issues"
 	},
-	"homepage": "https://ordinarylabs.com",
+	"homepage": "https://dinary.app",
 	"license": "AGPL-3.0",
 	"private": true,
 	"type": "commonjs",

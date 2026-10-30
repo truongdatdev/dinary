@@ -52,7 +52,7 @@ describe('OrganizationTeamJoinRequestService.create on the public join route (#1
 	});
 
 	it('saves the request with the tenant of the public team, not the missing caller tenant', async () => {
-		const created = await service.create({ organizationTeamId: 'team-1', email: 'guest@ordinarylabs.com' } as any);
+		const created = await service.create({ organizationTeamId: 'team-1', email: 'guest@dinary.app' } as any);
 
 		expect(save).toHaveBeenCalledTimes(1);
 		expect(save.mock.calls[0][0]).toEqual(
@@ -60,7 +60,7 @@ describe('OrganizationTeamJoinRequestService.create on the public join route (#1
 				tenantId: 'tenant-1',
 				organizationId: 'org-1',
 				organizationTeamId: 'team-1',
-				email: 'guest@ordinarylabs.com',
+				email: 'guest@dinary.app',
 				status: null
 			})
 		);
@@ -70,7 +70,7 @@ describe('OrganizationTeamJoinRequestService.create on the public join route (#1
 	});
 
 	it('takes the tenant from a team found among public teams only', async () => {
-		await service.create({ organizationTeamId: 'team-1', email: 'guest@ordinarylabs.com' } as any);
+		await service.create({ organizationTeamId: 'team-1', email: 'guest@dinary.app' } as any);
 
 		expect(findOneByIdString).toHaveBeenCalledWith(
 			'team-1',

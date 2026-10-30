@@ -27,7 +27,7 @@ import { StripeSubscriptionService, describeError } from './stripe-subscription.
  * unauthenticated write into the billing state of every tenant, so the signature check is not
  * optional and there is no bypass for local development.
  *
- * The endpoint is registered on a Stripe account that EVERY Ordinary Labs product sells through, so most of
+ * The endpoint is registered on a Stripe account that EVERY Dinary product sells through, so most of
  * what arrives here is somebody else's: Teams, Platform, Rec, Works and directory-site purchases,
  * lifetime licenses, card saves, GitHands. Nothing is linked unless the event is provably a purchase
  * of this deployment's product (`BILLING_PRODUCT`), the matched user is an administrator of the

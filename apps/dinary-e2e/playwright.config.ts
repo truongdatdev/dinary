@@ -78,7 +78,7 @@ export default defineConfig({
 	retries: process.env.CI ? 2 : process.env.E2E_RETRY ? 1 : 0,
 	/* ALWAYS one worker — locally too, not just in CI.
 	 *
-	 * This suite is built around ONE accumulating database and ONE shared `admin@ordinarylabs.com` login: specs
+	 * This suite is built around ONE accumulating database and ONE shared `admin@dinary.app` login: specs
 	 * create data other specs consume, and several mutate account-wide state that is persisted server
 	 * side. Running two workers means two browser contexts driving the same account concurrently, and
 	 * the state one spec sets leaks into whatever happens to be running alongside it. That is not

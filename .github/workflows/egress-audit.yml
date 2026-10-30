@@ -1,7 +1,7 @@
 name: Egress audit
 # cspell:words corepack println DOTENV readdir nomock pcaps toomanyrequests
 
-# Proves at runtime, with the published API and web app images, what the Ordinary Labs Platform modules
+# Proves at runtime, with the published API and web app images, what the Dinary Cloud modules
 # (anonymous usage statistics, connection) may send: nothing at all when they are switched off or
 # loaded but idle, and only the documented report when the statistics are on. The API runs with a
 # throw-away PostgreSQL on Docker networks with no route out; CoreDNS is its only resolver and a
@@ -54,11 +54,11 @@ on:
       image:
         description: 'The Dinary API image to audit'
         required: true
-        default: 'ghcr.io/ordinary-labs/dinary-api-demo:latest'
+        default: 'ghcr.io/truongdatdev/dinary-api-demo:latest'
       webapp_image:
         description: 'The Dinary web app image to audit'
         required: true
-        default: 'ghcr.io/ordinary-labs/dinary-webapp-demo:latest'
+        default: 'ghcr.io/truongdatdev/dinary-webapp-demo:latest'
   pull_request:
     # Not for a pull request into develop (owner decision 2026-09-21): the push trigger below runs the
     # same checks when the change lands there. Pull requests aimed at other branches still run it.
@@ -225,7 +225,7 @@ jobs:
       - name: The mock platform's clock patch applies to the pinned harness, and does what it says
         run: node --test tools/egress-audit/patch-mock-clock.test.mjs
 
-      - name: No Ever host named outside the Ordinary Labs Platform modules beyond the baseline (sources)
+      - name: No Ever host named outside the Dinary Cloud modules beyond the baseline (sources)
         run: node --test tools/egress-audit/static-hostnames.test.mjs
 
       - name: The baseline of Ever hosts in the sources only shrinks
@@ -244,7 +244,7 @@ jobs:
           fi
           node tools/egress-audit/static-hostnames.mjs --check-shrink "$base_file"
 
-      - name: The import boundary of the Ordinary Labs Platform modules (scanner and ESLint rule)
+      - name: The import boundary of the Dinary Cloud modules (scanner and ESLint rule)
         env:
           # The workspace's ESLint and parser versions, locked in tools/egress-audit/package-lock.json
           # and installed with the harness above (no workspace install).
@@ -363,8 +363,8 @@ jobs:
 
       - name: Pull the images
         env:
-          IMAGE: ${{ github.event.inputs.image || 'ghcr.io/ordinary-labs/dinary-api-demo:latest' }}
-          WEBAPP_IMAGE: ${{ github.event.inputs.webapp_image || 'ghcr.io/ordinary-labs/dinary-webapp-demo:latest' }}
+          IMAGE: ${{ github.event.inputs.image || 'ghcr.io/truongdatdev/dinary-api-demo:latest' }}
+          WEBAPP_IMAGE: ${{ github.event.inputs.webapp_image || 'ghcr.io/truongdatdev/dinary-webapp-demo:latest' }}
         run: |
           pull() { for attempt in 1 2 3 4 5; do docker pull -q "$1" && return 0; sleep $((attempt * 20)); done; return 1; }
           pull "$IMAGE"
@@ -489,7 +489,7 @@ jobs:
         # bash with pipefail, so the scan's exit code survives the tee.
         shell: bash
         env:
-          WEBAPP_IMAGE: ${{ github.event.inputs.webapp_image || 'ghcr.io/ordinary-labs/dinary-webapp-demo:latest' }}
+          WEBAPP_IMAGE: ${{ github.event.inputs.webapp_image || 'ghcr.io/truongdatdev/dinary-webapp-demo:latest' }}
         run: |
           pull() { for attempt in 1 2 3 4 5; do docker pull -q "$1" && return 0; sleep $((attempt * 20)); done; echo "::error::could not pull $1"; return 1; }
           pull "$WEBAPP_IMAGE"

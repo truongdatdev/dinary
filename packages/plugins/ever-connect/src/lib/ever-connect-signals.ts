@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { Subject } from 'rxjs';
 
 /**
- * In-process signals between the parts of the Ordinary Labs Platform connection: the connection became
- * usable (start the heartbeat and the event feed), it stopped (stop them), or Ordinary Labs Platform said the
+ * In-process signals between the parts of the Dinary Cloud connection: the connection became
+ * usable (start the heartbeat and the event feed), it stopped (stop them), or Dinary Cloud said the
  * installation's credential was revoked (`401 credential_revoked`, wherever it was seen), or a
  * heartbeat should go out soon.
  */

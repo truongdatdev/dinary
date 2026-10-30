@@ -2,7 +2,7 @@
 
 # Egress audit
 
-A runtime proof of what the optional Ordinary Labs Platform modules (`@dinary/plugin-ever-stats`, the
+A runtime proof of what the optional Dinary Cloud modules (`@dinary/plugin-ever-stats`, the
 anonymous usage statistics, and `@dinary/plugin-ever-connect`, the connection) may send:
 **nothing at all** when they are switched off or loaded but idle, and **only the statistics report**
 when the statistics are on. Both are off on a self-hosted install unless an operator turns them on.
@@ -22,7 +22,7 @@ baseline of links that predate the modules.
 
 ## The harness
 
-The harness is the egress audit of the Ordinary Labs Platform SDK's dev tools, the
+The harness is the egress audit of the Dinary Cloud SDK's dev tools, the
 `ever-egress-audit` of [`@ever-co/connect-tools`][connect-tools] (Apache-2.0),
 with its mock platform. It is not copied here: `package.json` and
 `package-lock.json` in this directory pin it (with the `typescript` its Angular
@@ -97,7 +97,7 @@ Locally, with Docker:
 npm ci --prefix tools/egress-audit --ignore-scripts
 : > /tmp/api-empty.env
 DINARY_AUDIT_SECRET=$(openssl rand -hex 32) DINARY_AUDIT_DOTENV=/tmp/api-empty.env \
-  DINARY_API_IMAGE=ghcr.io/ordinary-labs/dinary-api-demo:latest DINARY_WEBAPP_IMAGE=ghcr.io/ordinary-labs/dinary-webapp-demo:latest \
+  DINARY_API_IMAGE=ghcr.io/truongdatdev/dinary-api-demo:latest DINARY_WEBAPP_IMAGE=ghcr.io/truongdatdev/dinary-webapp-demo:latest \
   node tools/egress-audit/node_modules/@ever-co/connect-tools/dist/egress-audit/run.mjs \
   --config tools/egress-audit/egress-audit.config.json --mode off
 
@@ -110,7 +110,7 @@ node tools/egress-audit/node_modules/@ever-co/connect-tools/dist/egress-audit/ru
 
 Run on every pull request that touches code, with nothing installed but the harness:
 
-- `node tools/egress-audit/static-hostnames.mjs`: no file outside the Ordinary Labs Platform modules (their
+- `node tools/egress-audit/static-hostnames.mjs`: no file outside the Dinary Cloud modules (their
   packages, their docs, this directory, tests and prose, and the external uptime monitor) names an
   Ever host (the `ever_owned` names of the harness's never-allowed list and every name under them)
   or `EVER_PLATFORM_API_URL` / `EVER_STATS_API_URL` more often than `static-hostnames.baseline.json`

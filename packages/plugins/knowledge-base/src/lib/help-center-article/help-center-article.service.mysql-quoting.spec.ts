@@ -7,7 +7,7 @@ jest.mock('@dinary/core', () => ({
 		constructor(public readonly typeOrmRepository: any, public readonly mikroOrmRepository: any) {}
 
 		// A caller confined to one organization, for a raw query that also keeps to the organization boundary
-		// of the CRUD base (ordinary-labs/dinary#11314); unused by a query that does not read it.
+		// of the CRUD base (truongdatdev/dinary#11314); unused by a query that does not read it.
 		organizationBoundary() {
 			return { organizationId: 'organization-1' };
 		}

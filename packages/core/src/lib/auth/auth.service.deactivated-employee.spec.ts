@@ -6,7 +6,7 @@ import { AuthService } from './auth.service';
 import { isDeactivatedEmployee } from './deactivated-employee';
 
 /**
- * A deactivated employee cannot sign in to Dinary (owner decision 6, core follow-up of ordinary-labs/dinary#11324).
+ * A deactivated employee cannot sign in to Dinary (owner decision 6, core follow-up of truongdatdev/dinary#11324).
  *
  * `login()` and `workspaceSigninVerifyToken()` meant to refuse an inactive employee, but they asked
  * `EmployeeService.findOneByUserId`, which reads ACTIVE records only: a deactivated employee read as "no
@@ -32,16 +32,16 @@ const user = (id: string, email: string, tenantId: string, lastOrganizationId: s
 });
 
 /** Deactivated in one organization, archived in the other: no active record left. */
-const DEACTIVATED = user('u-deactivated', 'gone@ordinarylabs.com', TENANT_A, ORG_A);
+const DEACTIVATED = user('u-deactivated', 'gone@dinary.app', TENANT_A, ORG_A);
 /** Deactivated in ORG_A, still active in ORG_B. */
-const MOVED = user('u-moved', 'moved@ordinarylabs.com', TENANT_A, ORG_A);
+const MOVED = user('u-moved', 'moved@dinary.app', TENANT_A, ORG_A);
 /** An active employee of ORG_A. */
-const ACTIVE = user('u-active', 'active@ordinarylabs.com', TENANT_A, ORG_A);
+const ACTIVE = user('u-active', 'active@dinary.app', TENANT_A, ORG_A);
 /** No employee record at all: a tenant admin. */
-const ADMIN = user('u-admin', 'admin@ordinarylabs.com', TENANT_A, ORG_A);
+const ADMIN = user('u-admin', 'admin@dinary.app', TENANT_A, ORG_A);
 /** The same person in two tenants: a deactivated employee in A, an admin in B. */
-const PAT_IN_A = user('u-pat-a', 'pat@ordinarylabs.com', TENANT_A, ORG_A);
-const PAT_IN_B = user('u-pat-b', 'pat@ordinarylabs.com', TENANT_B, ORG_C);
+const PAT_IN_A = user('u-pat-a', 'pat@dinary.app', TENANT_A, ORG_A);
+const PAT_IN_B = user('u-pat-b', 'pat@dinary.app', TENANT_B, ORG_C);
 
 const USERS = [DEACTIVATED, MOVED, ACTIVE, ADMIN, PAT_IN_A, PAT_IN_B];
 

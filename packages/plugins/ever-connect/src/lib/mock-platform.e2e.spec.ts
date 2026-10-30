@@ -34,7 +34,7 @@ import {
 } from './fixtures/test-db';
 
 /**
- * End to end against the Ordinary Labs Platform mock of the SDK's dev tools (`@ever-co/connect-tools`, the
+ * End to end against the Dinary Cloud mock of the SDK's dev tools (`@ever-co/connect-tools`, the
  * exact version in this plugin's package.json): an independent implementation of every call an
  * installation makes (contract validation of every body, signatures, consent states, the event
  * feed) that records each call it receives. CI runs it in `build-api`; locally:
@@ -42,7 +42,7 @@ import {
  *     node node_modules/@ever-co/connect-tools/dist/mock-platform/bin/ever-mock-platform.mjs --port 18081
  *     EVER_CONNECT_MOCK_PLATFORM_URL=http://127.0.0.1:18081 yarn nx run plugin-ever-connect:test-mock-platform
  *
- * The mock's issuer is an https name (`MOCK_ISSUER`, `https://mock-platform.test`: Ordinary Labs Platform's
+ * The mock's issuer is an https name (`MOCK_ISSUER`, `https://mock-platform.test`: Dinary Cloud's
  * documents always name an https issuer) served on a local address; `EVER_PLATFORM_ISSUER` tells the
  * plugin, which honours it for a local or private address only.
  *
@@ -62,9 +62,9 @@ if (REQUIRED && !MOCK) {
 	});
 }
 
-/** A problem answer as Ordinary Labs Platform (or a proxy in front of it) would send. */
+/** A problem answer as Dinary Cloud (or a proxy in front of it) would send. */
 const problemAnswer = (status: number, code: string): Response =>
-	new Response(JSON.stringify({ type: `https://ordinarylabs.com/problems/${code}`, title: code, status, code }), {
+	new Response(JSON.stringify({ type: `https://dinary.app/problems/${code}`, title: code, status, code }), {
 		status,
 		headers: { 'content-type': 'application/problem+json' }
 	});
@@ -146,7 +146,7 @@ const ALL = ['INTEGRATION_VIEW', 'INTEGRATION_ADD', 'INTEGRATION_EDIT', 'INTEGRA
 /** The outbound-call rows this release may use. */
 const ALLOWED_ROWS = [1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 16, 31];
 
-suite('Ordinary Labs Platform connection against the mock platform', () => {
+suite('Dinary Cloud connection against the mock platform', () => {
 	let dir: string;
 	let roots: string;
 	let dataSource: DataSource;
@@ -362,7 +362,7 @@ suite('Ordinary Labs Platform connection against the mock platform', () => {
 			).status
 		).toBe(404);
 
-		// The organization consents in app.ordinarylabs.com; the installation-wide integration waits for the operator.
+		// The organization consents in app.dinary.app; the installation-wide integration waits for the operator.
 		await mock('consent', { integration: 'stats_link', operator_accept: 'pending' });
 		await readFeed();
 		expect((await integration(acme.organizationId, 'operator', 'stats_link')).state).toBe('pending_operator');
@@ -395,7 +395,7 @@ suite('Ordinary Labs Platform connection against the mock platform', () => {
 		const link11 = (await calls()).filter((call) => call.row === 11);
 		expect(link11.map((call) => call.status)).toEqual([409]);
 
-		// Switching off: off here first, then Ordinary Labs Platform is told.
+		// Switching off: off here first, then Dinary Cloud is told.
 		const off = await call(
 			'put',
 			`/api/ever-connect/integrations/stats_link?organizationId=${acme.organizationId}`,
@@ -475,7 +475,7 @@ suite('Ordinary Labs Platform connection against the mock platform', () => {
 			'stranger'
 		);
 		expect(entitlement.body.link).toMatchObject({ subject: 'link', handle: 'globex', status: 'valid' });
-		// The installation's document names the connecting Ordinary Labs Platform organization and its plan: the operator's only.
+		// The installation's document names the connecting Dinary Cloud organization and its plan: the operator's only.
 		expect(entitlement.body.instance).toBeNull();
 		expect(
 			(await call('get', `/api/ever-connect/entitlement?organizationId=${acme.organizationId}`, 'operator')).body
@@ -496,7 +496,7 @@ suite('Ordinary Labs Platform connection against the mock platform', () => {
 			).status
 		).toBe(200);
 
-		// Removing a link: Ordinary Labs Platform is told, the Dinary record is archived.
+		// Removing a link: Dinary Cloud is told, the Dinary record is archived.
 		const removed = await call(
 			'delete',
 			`/api/ever-connect/links/${linked.body.integration_tenant_id}?organizationId=${zephyr.organizationId}`,
@@ -509,7 +509,7 @@ suite('Ordinary Labs Platform connection against the mock platform', () => {
 		).toBeNull();
 		expect(await rows()).toContain(5);
 
-		// A new consent in app.ordinarylabs.com (Ordinary Labs Platform reads it as enabled at once): it waits for the
+		// A new consent in app.dinary.app (Dinary Cloud reads it as enabled at once): it waits for the
 		// operator's accept again, which holds for one consent only.
 		await mock('consent', { integration: 'stats_link' });
 		await readFeed();
@@ -518,7 +518,7 @@ suite('Ordinary Labs Platform connection against the mock platform', () => {
 			(await call('post', '/api/ever-connect/integrations/stats_link/accept', 'operator', { accepted: true })).body
 				.state
 		).toBe('enabled');
-		// A revocation in app.ordinarylabs.com reaches the installation through the feed.
+		// A revocation in app.dinary.app reaches the installation through the feed.
 		await mock('revoke', { integration: 'stats_link' });
 		await readFeed();
 		expect(await integration(acme.organizationId, 'operator', 'stats_link')).toMatchObject({
@@ -546,7 +546,7 @@ suite('Ordinary Labs Platform connection against the mock platform', () => {
 		);
 		expect(JSON.stringify(audit.body)).not.toMatch(/@|EVC-|EVL-|evit_|eyJ/);
 
-		// Disconnect: Ordinary Labs Platform is told; here everything is off whatever it answered.
+		// Disconnect: Dinary Cloud is told; here everything is off whatever it answered.
 		const disconnect = await call('post', '/api/ever-connect/disconnect', 'operator', { confirm: true });
 		expect(disconnect.body).toEqual({ status: 'disconnected' });
 		expect(app.get(EverConnectScheduler).active).toBe(false);
@@ -574,7 +574,7 @@ suite('Ordinary Labs Platform connection against the mock platform', () => {
 		return connected.body as { kid: string };
 	};
 
-	/** stats_link consented in app.ordinarylabs.com, waiting for the operator, then accepted: enabled. */
+	/** stats_link consented in app.dinary.app, waiting for the operator, then accepted: enabled. */
 	const enableStatsLink = async () => {
 		await mock('consent', { integration: 'stats_link', operator_accept: 'pending' });
 		await readFeed();
@@ -586,10 +586,10 @@ suite('Ordinary Labs Platform connection against the mock platform', () => {
 
 	const statsLinkCalls = async () => (await calls()).filter((entry) => entry.row === 11).length;
 
-	it('an installation-wide integration Ordinary Labs Platform reads as enabled still waits for the operator (and again after a new consent)', async () => {
+	it('an installation-wide integration Dinary Cloud reads as enabled still waits for the operator (and again after a new consent)', async () => {
 		app = await start(environment());
 		await connectAcme();
-		// The consent is enabled on Ordinary Labs Platform at once (no pending_operator there).
+		// The consent is enabled on Dinary Cloud at once (no pending_operator there).
 		await mock('consent', { integration: 'stats_link' });
 		await readFeed();
 		expect((await integration(acme.organizationId, 'operator', 'stats_link')).state).toBe('pending_operator');
@@ -621,7 +621,7 @@ suite('Ordinary Labs Platform connection against the mock platform', () => {
 		['a redirect (an access proxy)', () => new Response(null, { status: 302, headers: { location: 'https://access.example.test/' } })],
 		['a 403', () => problemAnswer(403, 'forbidden')],
 		['a 500', () => problemAnswer(500, 'internal_error')]
-	])('switching off answers %s from Ordinary Labs Platform: off here anyway, told again at the next heartbeat', async (_name, answer) => {
+	])('switching off answers %s from Dinary Cloud: off here anyway, told again at the next heartbeat', async (_name, answer) => {
 		app = await start(environment());
 		await connectAcme();
 		await enableStatsLink();
@@ -643,7 +643,7 @@ suite('Ordinary Labs Platform connection against the mock platform', () => {
 		expect(during).toEqual(expect.arrayContaining([6, 8]));
 		expect((await integration(acme.organizationId, 'operator', 'stats_link')).pending_remote_revoke).toBe(true);
 
-		// Once Ordinary Labs Platform takes it, the mark is cleared (a heartbeat a minute at most).
+		// Once Dinary Cloud takes it, the mark is cleared (a heartbeat a minute at most).
 		fault = null;
 		await mock('clock', { advance: 61 });
 		expect(await scheduler.heartbeat()).toBe(true);
@@ -654,7 +654,7 @@ suite('Ordinary Labs Platform connection against the mock platform', () => {
 		});
 	});
 
-	it('switching off with an unusable EVER_PLATFORM_API_URL: off here anyway, Ordinary Labs Platform told once it can be', async () => {
+	it('switching off with an unusable EVER_PLATFORM_API_URL: off here anyway, Dinary Cloud told once it can be', async () => {
 		app = await start(environment());
 		await connectAcme();
 		await enableStatsLink();
@@ -675,7 +675,7 @@ suite('Ordinary Labs Platform connection against the mock platform', () => {
 		expect((await integration(acme.organizationId, 'operator', 'stats_link')).pending_remote_revoke).toBe(false);
 	});
 
-	it('the connect key: replaced on Ordinary Labs Platform with two proofs; unreadable after a secret change until a disconnect; one key per connection', async () => {
+	it('the connect key: replaced on Dinary Cloud with two proofs; unreadable after a secret change until a disconnect; one key per connection', async () => {
 		app = await start(environment());
 		const first = await connectAcme();
 		const keyId = async () =>
@@ -686,7 +686,7 @@ suite('Ordinary Labs Platform connection against the mock platform', () => {
 			)[0].k as string | null;
 		expect(await keyId()).toBe(first.kid);
 
-		// Replace key: Ordinary Labs Platform installs the new key, and it signs from now on.
+		// Replace key: Dinary Cloud installs the new key, and it signs from now on.
 		const rotated = await call('post', '/api/ever-connect/connection/rotate-key', 'operator', {});
 		expect(rotated.status).toBe(200);
 		expect(rotated.body.kid).not.toBe(first.kid);
@@ -733,7 +733,7 @@ suite('Ordinary Labs Platform connection against the mock platform', () => {
 		expect(await keyId()).toBeNull();
 	});
 
-	it('a deleted Dinary organization or tenant: its link is removed on Ordinary Labs Platform and here, and its rows go', async () => {
+	it('a deleted Dinary organization or tenant: its link is removed on Dinary Cloud and here, and its rows go', async () => {
 		app = await start(environment());
 		await connectAcme();
 		const linked = await call('post', `/api/ever-connect/links?organizationId=${zephyr.organizationId}`, 'stranger', {

@@ -3,7 +3,7 @@ import { connectKeyMaterialProblem, EverInstanceKeyError, unwrapKey, wrapKey } f
 type Env = Record<string, string | undefined>;
 
 /**
- * Stores what the Ordinary Labs Platform connection keeps on this installation (entitlement documents) with
+ * Stores what the Dinary Cloud connection keeps on this installation (entitlement documents) with
  * the same AES-256-GCM encryption as the installation's keys (`@dinary/plugin-ever-instance`): under
  * `ENCRYPTION_KEY`, or a key derived from a non-default `JWT_SECRET`. Never Dinary's integration
  * setting "wrapping", which only masks a value for display and stores it in clear.
@@ -22,7 +22,7 @@ export class EverConnectSecretStore {
 	seal(value: string): string {
 		const problem = connectKeyMaterialProblem(this.env);
 		if (problem) {
-			throw new Error(`An Ordinary Labs Platform document cannot be stored safely (${problem}).`);
+			throw new Error(`An Dinary Cloud document cannot be stored safely (${problem}).`);
 		}
 		const plain = Buffer.from(value, 'utf8');
 		try {

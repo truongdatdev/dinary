@@ -2310,8 +2310,8 @@ export class AuthService extends SocialAuthService {
 
 			// If it's a demo environment, handle special cases
 			if (IS_DEMO) {
-				const demoEmployeeEmail = environment.demoCredentialConfig?.employeeEmail || 'employee@ordinarylabs.com';
-				const demoAdminEmail = environment.demoCredentialConfig?.adminEmail || 'local.admin@ordinarylabs.com';
+				const demoEmployeeEmail = environment.demoCredentialConfig?.employeeEmail || 'employee@dinary.app';
+				const demoAdminEmail = environment.demoCredentialConfig?.adminEmail || 'local.admin@dinary.app';
 
 				this.logger.debug(`Demo Employee Email: ${demoEmployeeEmail}`);
 				this.logger.debug(`Demo Admin Email: ${demoAdminEmail}`);

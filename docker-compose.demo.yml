@@ -22,7 +22,7 @@ services:
 
   api:
     container_name: api
-    image: ghcr.io/ordinary-labs/dinary-api:latest
+    image: ghcr.io/truongdatdev/dinary-api:latest
     environment:
       NODE_ENV: ${NODE_ENV:-development}
       DB_HOST: db
@@ -48,7 +48,7 @@ services:
 
   webapp:
     container_name: webapp
-    image: ghcr.io/ordinary-labs/dinary-webapp:latest
+    image: ghcr.io/truongdatdev/dinary-webapp:latest
     environment:
       NODE_ENV: ${NODE_ENV:-development}
       SENTRY_PROFILE_SAMPLE_RATE: ${SENTRY_PROFILE_SAMPLE_RATE:-1}

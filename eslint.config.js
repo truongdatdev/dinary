@@ -51,7 +51,7 @@ const globalIgnores = {
 	]
 };
 
-// The import boundary of the optional Ordinary Labs Platform modules (`@dinary/plugin-ever-*`): only the
+// The import boundary of the optional Dinary Cloud modules (`@dinary/plugin-ever-*`): only the
 // modules and the two plugin lists import them, through their entry points; the rules are in
 // tools/dinary-platform/import-boundary.cjs, which the CI check (check-import-boundary.mjs) reads too.
 // A rule of its own, so a project config's `no-restricted-imports` never replaces it.

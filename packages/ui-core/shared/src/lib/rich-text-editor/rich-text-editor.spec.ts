@@ -93,8 +93,8 @@ describe('rich-text-editor presets', () => {
 				'<ul><li>one</li><li>two</li></ul>',
 				'<ol start="3"><li>three</li></ol>',
 				'<blockquote><p>quoted</p></blockquote>',
-				'<p><a href="https://ordinarylabs.com" target="_blank" rel="noopener noreferrer nofollow">link</a></p>',
-				'<img src="https://ordinarylabs.com/logo.png" alt="logo" width="120" height="40">',
+				'<p><a href="https://dinary.app" target="_blank" rel="noopener noreferrer nofollow">link</a></p>',
+				'<img src="https://dinary.app/logo.png" alt="logo" width="120" height="40">',
 				'<table><tbody><tr><th>Head</th><th>er</th></tr><tr><td colspan="2">cell</td></tr></tbody></table>',
 				'<hr>'
 			].join('');
@@ -117,9 +117,9 @@ describe('rich-text-editor presets', () => {
 			expect(html).toContain('<ul');
 			expect(html).toContain('start="3"');
 			expect(html).toContain('<blockquote>');
-			expect(html).toContain('href="https://ordinarylabs.com"');
+			expect(html).toContain('href="https://dinary.app"');
 			expect(html).toContain('target="_blank"');
-			expect(html).toContain('src="https://ordinarylabs.com/logo.png"');
+			expect(html).toContain('src="https://dinary.app/logo.png"');
 			expect(html).toContain('width="120"');
 			expect(html).toContain('<table');
 			expect(html).toContain('<th');

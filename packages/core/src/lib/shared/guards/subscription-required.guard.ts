@@ -3,10 +3,10 @@ import { DEFAULT_BILLING_PRODUCT, isCheckoutSessionId, resolveBillingProduct } f
 import { EntitlementResult, StripeSubscriptionService } from '../billing/stripe-subscription.service';
 
 /**
- * Where someone is sent to buy a plan. Every Ordinary Labs product shares one checkout, hosted on ordinarylabs.com —
+ * Where someone is sent to buy a plan. Every Dinary product shares one checkout, hosted on dinary.app —
  * the platform never renders a payment form of its own.
  */
-const CHECKOUT_URL = process.env.DINARY_CHECKOUT_URL?.trim() || 'https://ordinarylabs.com/checkout';
+const CHECKOUT_URL = process.env.DINARY_CHECKOUT_URL?.trim() || 'https://dinary.app/checkout';
 
 /**
  * Per-request Stripe budget for checking a forwarded Checkout Session. It runs BEFORE the email
@@ -48,7 +48,7 @@ export function paywallCheckoutUrl(email: string, base: string = CHECKOUT_URL): 
  * billing pages) without requiring a subscription to sign up — Ever Teams does exactly that.
  *
  * Only a subscription to THIS deployment's product (`BILLING_PRODUCT`, default `dinary`) counts:
- * the Stripe account is shared by every Ordinary Labs product, and a free Teams or Platform Starter must not
+ * the Stripe account is shared by every Dinary product, and a free Teams or Platform Starter must not
  * open Dinary signup.
  *
  * Runs alongside RegisterAuthorizationGuard, which handles a different question (whether privileged

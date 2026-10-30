@@ -23,7 +23,7 @@ class UserEntity {
 function validated(id = 'user-1'): any {
 	return new UserEntity({
 		id,
-		email: `${id}@ordinarylabs.com`,
+		email: `${id}@dinary.app`,
 		hash: 'secret',
 		role: { id: 'role-1', name: 'EMPLOYEE' },
 		permissions: ['ORG_TEAM_VIEW']

@@ -396,16 +396,16 @@ export class SettingsComponent implements OnInit, AfterViewInit, OnDestroy {
 			]
 		},
 		{
-			title: 'Ordinary Labs Platform',
+			title: 'Dinary Cloud',
 			fields: [
 				{
-					// `true` loads the Ordinary Labs Platform connection (applies on the next start; off otherwise).
+					// `true` loads the Dinary Cloud connection (applies on the next start; off otherwise).
 					name: 'EVER_CONNECT_ENABLED',
 					field: 'EVER_CONNECT_ENABLED',
 					value: ''
 				},
 				{
-					// `interval` reads Ordinary Labs Platform events every 15 minutes instead of a long poll.
+					// `interval` reads Dinary Cloud events every 15 minutes instead of a long poll.
 					name: 'EVER_CONNECT_FEED_MODE',
 					field: 'EVER_CONNECT_FEED_MODE',
 					value: ''

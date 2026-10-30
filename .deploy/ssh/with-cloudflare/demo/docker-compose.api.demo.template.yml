@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   api:
-    image: ghcr.io/ordinary-labs/dinary-api-demo:latest
+    image: ghcr.io/truongdatdev/dinary-api-demo:latest
     deploy:
       mode: replicated
       replicas: 2

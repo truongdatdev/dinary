@@ -6,8 +6,8 @@ import { STATS_HEADERS as SDK_STATS_HEADERS } from '@ever-co/connect-sdk';
 /** The one outbound call of this plugin: `POST {EVER_STATS_API_URL}/v1/stats/reports`. */
 export const STATS_REPORTS_PATH = '/v1/stats/reports';
 
-/** The default Ordinary Labs Platform API origin. */
-export const DEFAULT_STATS_API_URL = 'https://api.ordinarylabs.com';
+/** The default Dinary Cloud API origin. */
+export const DEFAULT_STATS_API_URL = 'https://api.dinary.app';
 
 /** The signature prefix and the largest report body, from the SDK. */
 export { MAX_STATS_REPORT_BYTES, STATS_SIGNATURE_PREFIX } from '@ever-co/connect-sdk';
@@ -40,13 +40,13 @@ export const STATS_SEND_NOW_INTERVAL_MS = 10 * 60 * 1000;
 export const STATS_LEASE_MS = 15 * 60 * 1000;
 
 /**
- * The published schema, for operators and reviewers: the file in the public Ordinary Labs Platform SDK
+ * The published schema, for operators and reviewers: the file in the public Dinary Cloud SDK
  * repository, at the release of `@ever-co/connect-contracts` this plugin pins (ts-v1.0.0-rc.6).
  */
 export const STATS_SCHEMA_URL =
 	'https://github.com/ever-co/ever-connect-sdk/blob/93fbb1ef2b37f60205ab193d973467a176eec8df/contracts/schemas/ever.stats.v1.json';
 
-/** The largest answer body read from Ordinary Labs Platform; a longer one is not read further. */
+/** The largest answer body read from Dinary Cloud; a longer one is not read further. */
 export const MAX_STATS_RESPONSE_BYTES = 64 * 1024;
 
 /**

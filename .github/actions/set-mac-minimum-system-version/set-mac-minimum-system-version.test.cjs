@@ -98,17 +98,17 @@ test('refuses what it cannot edit safely', () => {
 
 const PACKAGE = {
 	version: '111.136.7',
-	build: { publish: [{ provider: 'github', owner: 'ordinary-labs', repo: 'dinary-desktop-timer', releaseType: 'prerelease' }] }
+	build: { publish: [{ provider: 'github', owner: 'truongdatdev', repo: 'dinary-desktop-timer', releaseType: 'prerelease' }] }
 };
 
 test('resolveTarget uses the gate tag and checks it against the published package', () => {
-	const target = { owner: 'ordinary-labs', repo: 'dinary-desktop-timer' };
+	const target = { owner: 'truongdatdev', repo: 'dinary-desktop-timer' };
 	assert.deepEqual(resolveTarget({ ...target, tag: 'v111.136.7', appPackage: PACKAGE }), { ...target, tag: 'v111.136.7' });
 	assert.deepEqual(resolveTarget({ ...target, tag: 'v111.136.7', appPackage: null }), { ...target, tag: 'v111.136.7' });
 	assert.deepEqual(resolveTarget({ ...target, tag: '', appPackage: PACKAGE }), { ...target, tag: 'v111.136.7' });
-	assert.deepEqual(resolveTarget({ owner: 'Ordinary-Labs', repo: 'dinary-desktop-timer', tag: '', appPackage: PACKAGE }).tag, 'v111.136.7');
+	assert.deepEqual(resolveTarget({ owner: 'truongdatdev', repo: 'dinary-desktop-timer', tag: '', appPackage: PACKAGE }).tag, 'v111.136.7');
 	assert.throws(() => resolveTarget({ ...target, tag: 'v111.136.8', appPackage: PACKAGE }), /not the one electron-builder published to/);
-	assert.throws(() => resolveTarget({ ...target, repo: 'dinary-desktop', tag: '', appPackage: PACKAGE }), /ordinary-labs\/dinary-desktop-timer/);
+	assert.throws(() => resolveTarget({ ...target, repo: 'dinary-desktop', tag: '', appPackage: PACKAGE }), /truongdatdev\/dinary-desktop-timer/);
 	assert.throws(() => resolveTarget({ ...target, tag: 'stage', appPackage: null }), /vX\.Y\.Z/);
 	assert.throws(() => resolveTarget({ owner: '', repo: 'x', tag: 'v1.0.0', appPackage: null }), /required/);
 	assert.ok(resolveTarget({ ...target, tag: '', appPackage: null }).skip);
@@ -191,7 +191,7 @@ function fakeCore() {
 }
 
 const ENV = {
-	RELEASE_OWNER: 'ordinary-labs',
+	RELEASE_OWNER: 'truongdatdev',
 	RELEASE_REPO: 'dinary-desktop-timer',
 	RELEASE_TAG: 'v111.136.7',
 	APP_PACKAGE_JSON: '',

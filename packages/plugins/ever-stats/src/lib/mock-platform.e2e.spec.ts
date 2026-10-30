@@ -13,7 +13,7 @@ import { EverStatsStore } from './ever-stats.store';
 import { createCoreTables, insert, migrateUp, openTestDataSource, q } from './fixtures/test-db';
 
 /**
- * End to end against the Ordinary Labs Platform mock of the SDK's dev tools (`@ever-co/connect-tools`, the
+ * End to end against the Dinary Cloud mock of the SDK's dev tools (`@ever-co/connect-tools`, the
  * exact version in this plugin's package.json), an independent implementation of the report
  * endpoint (its own schema validation, signature check and key pinning) that records every call it
  * receives. CI runs it in `build-api`; locally:
@@ -79,7 +79,7 @@ async function closedPort(): Promise<number> {
 	return port;
 }
 
-suite('against the Ordinary Labs Platform mock', () => {
+suite('against the Dinary Cloud mock', () => {
 	let dataSource: DataSource;
 
 	beforeEach(async () => {

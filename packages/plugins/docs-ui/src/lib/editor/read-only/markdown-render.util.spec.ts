@@ -133,11 +133,11 @@ describe('read-only render sanitization', () => {
 
 		it('drops a srcset whose candidate list smuggles a dangerous scheme', () => {
 			const image = parse(
-				sanitizeHtml('<img src="https://cdn.ordinarylabs.com/a.png" srcset="vbscript:msgbox(1) 2x">', sanitizer)
+				sanitizeHtml('<img src="https://cdn.dinary.app/a.png" srcset="vbscript:msgbox(1) 2x">', sanitizer)
 			).querySelector('img');
 
 			expect(image?.hasAttribute('srcset')).toBe(false);
-			expect(image?.getAttribute('src')).toBe('https://cdn.ordinarylabs.com/a.png');
+			expect(image?.getAttribute('src')).toBe('https://cdn.dinary.app/a.png');
 		});
 
 		it('collapses to null when nothing survives sanitization', () => {
@@ -205,16 +205,16 @@ describe('read-only render sanitization', () => {
 		it('keeps the links and images real content is made of', () => {
 			const dom = parse(
 				renderMarkdownToSanitizedHtml(
-					'[site](https://ordinarylabs.com/a?b=1#c) [mail](mailto:hello@ordinarylabs.com) [rel](/api/documents/1)' +
-						'\n\n![shot](https://cdn.ordinarylabs.com/a.png)\n\n![inline](data:image/png;base64,iVBORw0KGgo=)',
+					'[site](https://dinary.app/a?b=1#c) [mail](mailto:hello@dinary.app) [rel](/api/documents/1)' +
+						'\n\n![shot](https://cdn.dinary.app/a.png)\n\n![inline](data:image/png;base64,iVBORw0KGgo=)',
 					sanitizer
 				)
 			);
 			const hrefs = Array.from(dom.querySelectorAll('a')).map((a) => a.getAttribute('href'));
 			const sources = Array.from(dom.querySelectorAll('img')).map((img) => img.getAttribute('src'));
 
-			expect(hrefs).toEqual(['https://ordinarylabs.com/a?b=1#c', 'mailto:hello@ordinarylabs.com', '/api/documents/1']);
-			expect(sources).toEqual(['https://cdn.ordinarylabs.com/a.png', 'data:image/png;base64,iVBORw0KGgo=']);
+			expect(hrefs).toEqual(['https://dinary.app/a?b=1#c', 'mailto:hello@dinary.app', '/api/documents/1']);
+			expect(sources).toEqual(['https://cdn.dinary.app/a.png', 'data:image/png;base64,iVBORw0KGgo=']);
 		});
 
 		it('returns null for empty input', () => {

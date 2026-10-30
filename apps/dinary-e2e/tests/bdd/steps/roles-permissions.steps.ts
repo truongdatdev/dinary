@@ -561,7 +561,7 @@ const ENABLED_PERMISSIONS: Record<string, readonly PermissionsEnum[]> = {
 		PermissionsEnum.EMPLOYEE_AVAILABILITY_CREATE,
 		PermissionsEnum.EMPLOYEE_AVAILABILITY_UPDATE,
 		PermissionsEnum.EMPLOYEE_AVAILABILITY_DELETE,
-		/** Switching among the user's own organizations (after ordinary-labs/dinary#11316) */
+		/** Switching among the user's own organizations (after truongdatdev/dinary#11316) */
 		PermissionsEnum.CHANGE_SELECTED_ORGANIZATION,
 		/** GENERAL card */
 		PermissionsEnum.DOCS_READ,
@@ -574,7 +574,7 @@ const ENABLED_PERMISSIONS: Record<string, readonly PermissionsEnum[]> = {
 	],
 	VIEWER: [
 		PermissionsEnum.ORG_STRATEGIC_INITIATIVE_READ,
-		/** Switching among the user's own organizations (after ordinary-labs/dinary#11316) */
+		/** Switching among the user's own organizations (after truongdatdev/dinary#11316) */
 		PermissionsEnum.CHANGE_SELECTED_ORGANIZATION,
 		PermissionsEnum.DOCS_READ
 	]

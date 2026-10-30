@@ -10,10 +10,10 @@ pipeline {
         IMAGE_WEBAPP = "dinary-webapp"
         GITHUB_DOCKER_USERNAME = credentials('github-docker-username')
         GITHUB_DOCKER_PASSWORD = credentials('github-docker-password')
-        GITHUB_DOCKER_REPO = "docker.pkg.github.com/ordinary-labs/dinary"
+        GITHUB_DOCKER_REPO = "docker.pkg.github.com/truongdatdev/dinary"
         GITHUB_DISPATCH_TOKEN = credentials('github-dispatch-token')
         GITHUB_TOKEN = credentials('github-token')
-        CI_URL = "ci.ordinarylabs.com"
+        CI_URL = "ci.dinary.app"
         AWS_ACCESS_KEY_ID = credentials('aws-access-key')
         AWS_SECRET_ACCESS_KEY = credentials('aws-secret-key')
         AWS_DEFAULT_REGION = "us-east-1"
@@ -26,7 +26,7 @@ pipeline {
             returnStdout: true
         )}"""
         WORKFLOW_ID = """${sh(
-            script: "curl --silent -X GET -H 'Accept: application/vnd.github.v3+json' https://api.github.com/repos/ordinary-labs/$REPO_NAME-pulumi/actions/workflows/pulumi.yml | tr -s ' ' | tr -d '\r' | tr -d '\n' | grep -Eo '[0-9]{5,9}' | uniq",
+            script: "curl --silent -X GET -H 'Accept: application/vnd.github.v3+json' https://api.github.com/repos/truongdatdev/$REPO_NAME-pulumi/actions/workflows/pulumi.yml | tr -s ' ' | tr -d '\r' | tr -d '\n' | grep -Eo '[0-9]{5,9}' | uniq",
             returnStdout: true
         )}"""
     }
@@ -35,10 +35,10 @@ pipeline {
         stage("Clone") {
             steps{
                 git branch: 'develop',
-                    url: 'https://github.com/ordinary-labs/dinary.git'
+                    url: 'https://github.com/truongdatdev/dinary.git'
 
                 sh """
-                    curl 'https://api.github.com/repos/ordinary-labs/${REPO_NAME}/statuses/$GIT_COMMIT' -H 'Authorization: token ${GITHUB_TOKEN}' -H 'Content-Type: application/json' -X POST -d '{"state": "pending", "context": "Jenkins", "description": "Jenkins pipeline is running", "target_url": "https://$CI_URL/job/${JOB_NAME}/$BUILD_NUMBER/console"}'
+                    curl 'https://api.github.com/repos/truongdatdev/${REPO_NAME}/statuses/$GIT_COMMIT' -H 'Authorization: token ${GITHUB_TOKEN}' -H 'Content-Type: application/json' -X POST -d '{"state": "pending", "context": "Jenkins", "description": "Jenkins pipeline is running", "target_url": "https://$CI_URL/job/${JOB_NAME}/$BUILD_NUMBER/console"}'
                 """
             }
             post {
@@ -158,7 +158,7 @@ pipeline {
         stage ("Pulumi Update") {
             steps {
                 sh """
-                    curl -sX POST 'https://api.github.com/repos/ordinary-labs/${REPO_NAME}-pulumi/actions/workflows/2319005/dispatches' -H 'Accept: application/vnd.github.v3+json' -H 'Authorization: token ${GITHUB_DISPATCH_TOKEN}' -d '{"ref": "master"}'
+                    curl -sX POST 'https://api.github.com/repos/truongdatdev/${REPO_NAME}-pulumi/actions/workflows/2319005/dispatches' -H 'Accept: application/vnd.github.v3+json' -H 'Authorization: token ${GITHUB_DISPATCH_TOKEN}' -d '{"ref": "master"}'
                 """
             }
         }
@@ -167,13 +167,13 @@ pipeline {
         success {
             echo "Dinary CI/CD pipeline executed successfully!"
             sh """
-                curl 'https://api.github.com/repos/ordinary-labs/${REPO_NAME}/statuses/$GIT_COMMIT' -H 'Authorization: token ${GITHUB_TOKEN}' -H 'Content-Type: application/json' -X POST -d '{"state": "success", "context": "Jenkins", "description": "Jenkins pipeline succeeded", "target_url": "https://$CI_URL/job/${JOB_NAME}/$BUILD_NUMBER/console"}'
+                curl 'https://api.github.com/repos/truongdatdev/${REPO_NAME}/statuses/$GIT_COMMIT' -H 'Authorization: token ${GITHUB_TOKEN}' -H 'Content-Type: application/json' -X POST -d '{"state": "success", "context": "Jenkins", "description": "Jenkins pipeline succeeded", "target_url": "https://$CI_URL/job/${JOB_NAME}/$BUILD_NUMBER/console"}'
             """
 		}
         failure {
             echo "Dinary CI/CD pipeline failed..."
 			sh """
-                curl 'https://api.github.com/repos/ordinary-labs/${REPO_NAME}/statuses/$GIT_COMMIT' -H 'Authorization: token ${GITHUB_TOKEN}' -H 'Content-Type: application/json' -X POST -d '{"state": "failure", "context": "Jenkins", "description": "Jenkins pipeline failed", "target_url": "https://$CI_URL/job/${JOB_NAME}/$BUILD_NUMBER/console"}'
+                curl 'https://api.github.com/repos/truongdatdev/${REPO_NAME}/statuses/$GIT_COMMIT' -H 'Authorization: token ${GITHUB_TOKEN}' -H 'Content-Type: application/json' -X POST -d '{"state": "failure", "context": "Jenkins", "description": "Jenkins pipeline failed", "target_url": "https://$CI_URL/job/${JOB_NAME}/$BUILD_NUMBER/console"}'
             """
         }
     }

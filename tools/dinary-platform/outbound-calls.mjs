@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * The public list of every call the optional Ordinary Labs Platform modules can make
- * (tools/dinary-platform/outbound-calls.md), generated from the outbound-call rows of the Ordinary Labs Platform
+ * The public list of every call the optional Dinary Cloud modules can make
+ * (tools/dinary-platform/outbound-calls.md), generated from the outbound-call rows of the Dinary Cloud
  * contract at the exact version Dinary pins, and the checks that keep everything that repeats it in
  * step:
  *
@@ -19,7 +19,7 @@
  * module makes in this release.
  *
  * The page is published at https://docs.dinary.app/dinary-platform/outbound-calls/ from
- * ordinary-labs/dinary-docs (website/docs/dinary-platform/outbound-calls.md): after a --write that
+ * truongdatdev/dinary-docs (website/docs/dinary-platform/outbound-calls.md): after a --write that
  * changes the tables, copy them there too.
  */
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
@@ -74,7 +74,7 @@ export function notMade(rows, config = CONFIG) {
 			row: r,
 			why:
 				r.availability === 'not_in_v1'
-					? 'not served by version 1 of the Ordinary Labs Platform API'
+					? 'not served by version 1 of the Dinary Cloud API'
 					: 'not built in this release'
 		}));
 }

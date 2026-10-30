@@ -36,15 +36,15 @@ const TEAM_CREATED = 'team-created';
 const TEAM_OTHER = 'team-other';
 
 /** An applicant who asked to join a team the caller manages and the team they cannot act on. */
-const APPLICANT = 'applicant@ordinarylabs.com';
+const APPLICANT = 'applicant@dinary.app';
 
 /** One request per team the caller may act on, and two for the team they may not. */
 const ROWS: ReadonlyArray<[id: string, organizationTeamId: string, email: string]> = [
 	['request-1', TEAM_FLAGGED, APPLICANT],
-	['request-2', TEAM_LED, 'second@ordinarylabs.com'],
-	['request-3', TEAM_CREATED, 'third@ordinarylabs.com'],
+	['request-2', TEAM_LED, 'second@dinary.app'],
+	['request-3', TEAM_CREATED, 'third@dinary.app'],
 	['request-4', TEAM_OTHER, APPLICANT],
-	['request-5', TEAM_OTHER, 'fifth@ordinarylabs.com']
+	['request-5', TEAM_OTHER, 'fifth@dinary.app']
 ];
 
 const REQUESTS_CALLER_MAY_ACT_ON = ['request-1', 'request-2', 'request-3'];

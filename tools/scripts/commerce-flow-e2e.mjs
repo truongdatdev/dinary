@@ -46,7 +46,7 @@
  *
  * Environment:
  *   BASE_URL        default http://127.0.0.1:3000
- *   E2E_EMAIL       default admin@ordinarylabs.com
+ *   E2E_EMAIL       default admin@dinary.app
  *   E2E_PASSWORD    default admin
  *   E2E_TIMEOUT_MS  default 30000, per request
  *
@@ -55,7 +55,7 @@
 'use strict';
 
 const BASE = (process.env.BASE_URL || 'http://127.0.0.1:3000').replace(/\/+$/, '');
-const EMAIL = process.env.E2E_EMAIL || 'admin@ordinarylabs.com';
+const EMAIL = process.env.E2E_EMAIL || 'admin@dinary.app';
 const PASSWORD = process.env.E2E_PASSWORD || 'admin';
 const TIMEOUT_MS = Number(process.env.E2E_TIMEOUT_MS || 30_000);
 

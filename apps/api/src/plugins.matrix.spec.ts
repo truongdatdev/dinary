@@ -161,7 +161,7 @@ describe('API plugin list: anonymous usage statistics', () => {
 	});
 });
 
-describe('API plugin list: Ordinary Labs Platform connection', () => {
+describe('API plugin list: Dinary Cloud connection', () => {
 	it.each([
 		['unset (the default)', undefined, false, 0],
 		['false', 'false', false, 0],
@@ -235,7 +235,7 @@ describe('API plugin list: Ever Works integration', () => {
 		[false, true],
 		[true, false],
 		[true, true]
-	])('Ever Works %s, Ordinary Labs Platform connection %s', (works, connect) => {
+	])('Ever Works %s, Dinary Cloud connection %s', (works, connect) => {
 		const warn = jest.spyOn(console, 'warn').mockImplementation(() => undefined);
 		try {
 			const plugins = loadPlugins({

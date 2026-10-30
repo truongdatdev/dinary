@@ -24,7 +24,7 @@ import {
 } from './request-approval.service';
 
 /**
- * Editing a request approval while it is being answered (follow-up of ordinary-labs/dinary#11382).
+ * Editing a request approval while it is being answered (follow-up of truongdatdev/dinary#11382).
  *
  * An answer is one transaction under the request's row lock (#11382). The edit (`PUT /request-approval/:id`, GraphQL
  * `updateRequestApproval`) was not: it removed the approver slots, filed them again as `REQUESTED` and saved the

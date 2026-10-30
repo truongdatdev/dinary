@@ -4,7 +4,7 @@ kill_timeout = 30
 primary_region = "lax"
 
 [build]
-  image = "ghcr.io/ordinary-labs/dinary-webapp-demo:latest"
+  image = "ghcr.io/truongdatdev/dinary-webapp-demo:latest"
 
 [env]
   DEMO="true"

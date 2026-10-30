@@ -209,8 +209,8 @@ function buildService(importRecords: Record<string, string> = {}) {
  * - save over the SUPER_ADMIN user's own row through an archive id an earlier import mapped to it;
  * - plant an invitation with a known token for the SUPER_ADMIN role.
  * The role, user and invite APIs refuse all of these (role name rules R7-01, the role ceiling of
- * ordinary-labs/dinary#11318). The import now writes those rows by the same rules, and skips the rest; a SUPER_ADMIN
- * imports as before. The role permissions follow the same pattern (ordinary-labs/dinary#11376).
+ * truongdatdev/dinary#11318). The import now writes those rows by the same rules, and skips the rest; a SUPER_ADMIN
+ * imports as before. The role permissions follow the same pattern (truongdatdev/dinary#11376).
  */
 describe('ImportService — users, roles and invitations are imported under the role ceiling', () => {
 	let extractPath: string;

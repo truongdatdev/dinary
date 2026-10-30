@@ -2,7 +2,7 @@
 import { DataSource } from 'typeorm';
 
 /**
- * Small helpers for the hand-written SQL of the Ordinary Labs Platform modules, which run on every database
+ * Small helpers for the hand-written SQL of the Dinary Cloud modules, which run on every database
  * Dinary supports (Postgres, MySQL, SQLite) and on either ORM: they read and write their own tables
  * through TypeORM's data source, which Dinary always opens.
  */

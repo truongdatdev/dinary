@@ -25,12 +25,12 @@ import { EverConnectOperatorGuard } from './guards/ever-connect-operator.guard';
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 /**
- * The installation side of the Ordinary Labs Platform connection, for the operator of this installation only
+ * The installation side of the Dinary Cloud connection, for the operator of this installation only
  * (`EverConnectOperatorGuard`): connect, disconnect, the instance policy, the installation's public
  * address, and the local accept of installation-wide integrations. Everyone else, every tenant
  * administrator of Ever's cloud included, gets 404. No answer is cached.
  */
-@ApiTags('Ordinary Labs Platform')
+@ApiTags('Dinary Cloud')
 @ApiBearerAuth()
 @Roles(RolesEnum.SUPER_ADMIN)
 @UseGuards(EverConnectOperatorGuard, RoleGuard)
@@ -44,7 +44,7 @@ export class EverConnectInstanceController {
 	) {}
 
 	/**
-	 * Connects this installation with a connect code from app.ordinarylabs.com: `{ "code": "EVC-…",
+	 * Connects this installation with a connect code from app.dinary.app: `{ "code": "EVC-…",
 	 * "organizationId"?: "<the operator's organization, linked at once when the code names one>" }`.
 	 * No name is sent: only the tenant and organization ids of that organization.
 	 */
@@ -76,7 +76,7 @@ export class EverConnectInstanceController {
 		});
 	}
 
-	/** Re-reads a connection waiting for approval in app.ordinarylabs.com. */
+	/** Re-reads a connection waiting for approval in app.dinary.app. */
 	@Post('connection/check')
 	@HttpCode(HttpStatus.OK)
 	@Header('Cache-Control', 'no-store')
@@ -147,7 +147,7 @@ export class EverConnectInstanceController {
 	}
 
 	/**
-	 * Imports a downloaded entitlement document, for an installation without a route to Ordinary Labs Platform:
+	 * Imports a downloaded entitlement document, for an installation without a route to Dinary Cloud:
 	 * `{ "jws": "<the document>" }` (at most 16 KiB). The checks of a refresh apply; the document must
 	 * name this installation or one of its organization links. 409 when not connected, 422 when refused.
 	 */

@@ -345,18 +345,18 @@ export const environment: IEnvironment = {
 		appEmailConfirmationUrl:
 			process.env.APP_EMAIL_CONFIRMATION_URL || `${process.env.CLIENT_BASE_URL}/#/auth/confirm-email`,
 		appMagicSignUrl: process.env.APP_MAGIC_SIGN_URL || `${process.env.CLIENT_BASE_URL}/#/auth/magic-sign-in`,
-		companyLink: process.env.COMPANY_LINK || 'https://ordinarylabs.com',
-		companyName: process.env.COMPANY_NAME || 'Ordinary Labs'
+		companyLink: process.env.COMPANY_LINK || 'https://dinary.app',
+		companyName: process.env.COMPANY_NAME || 'Dinary'
 	},
 
 	demo: process.env.DEMO === 'true' ? true : false,
 
 	demoCredentialConfig: {
-		superAdminEmail: process.env.DEMO_SUPER_ADMIN_EMAIL || `admin@ordinarylabs.com`,
+		superAdminEmail: process.env.DEMO_SUPER_ADMIN_EMAIL || `admin@dinary.app`,
 		superAdminPassword: process.env.DEMO_SUPER_ADMIN_PASSWORD || `admin`,
-		adminEmail: process.env.DEMO_ADMIN_EMAIL || `local.admin@ordinarylabs.com`,
+		adminEmail: process.env.DEMO_ADMIN_EMAIL || `local.admin@dinary.app`,
 		adminPassword: process.env.DEMO_ADMIN_PASSWORD || `admin`,
-		employeeEmail: process.env.DEMO_EMPLOYEE_EMAIL || `employee@ordinarylabs.com`,
+		employeeEmail: process.env.DEMO_EMPLOYEE_EMAIL || `employee@dinary.app`,
 		employeePassword: process.env.DEMO_EMPLOYEE_PASSWORD || `12345678`
 	}
 };

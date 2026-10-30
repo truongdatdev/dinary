@@ -64,7 +64,7 @@ describe('InviteService - invitation callbackUrl', () => {
 			saveMany: jest.fn(async (invites: any[]) => invites),
 			findOneByIdString: jest.fn(async () => ({
 				id: 'invite-1',
-				email: 'new@ordinarylabs.com',
+				email: 'new@dinary.app',
 				organization: { id: 'org-1', tenantId: 'tenant-1' },
 				role: { name: RolesEnum.EMPLOYEE },
 				teams: [{ id: 'team-1', name: 'Team' }]
@@ -76,7 +76,7 @@ describe('InviteService - invitation callbackUrl', () => {
 	async function createBulk(body: Record<string, unknown>) {
 		await build().createBulk(
 			{
-				emailIds: ['new@ordinarylabs.com'],
+				emailIds: ['new@dinary.app'],
 				teamIds: ['team-1'],
 				organizationId: 'org-1',
 				tenantId: 'tenant-1',
@@ -92,7 +92,7 @@ describe('InviteService - invitation callbackUrl', () => {
 			await createBulk({ inviteType: InvitationTypeEnum.TEAM, callbackUrl: `${TEAMS}/auth/accept-invite` });
 
 			const [{ inviteLink, inviteCode }] = emailService.inviteTeamMember.mock.calls[0];
-			expect(inviteLink).toBe(`${TEAMS}/auth/accept-invite?email=new%40ordinarylabs.com&code=${inviteCode}`);
+			expect(inviteLink).toBe(`${TEAMS}/auth/accept-invite?email=new%40dinary.app&code=${inviteCode}`);
 			expect(warn).not.toHaveBeenCalled();
 		});
 
@@ -105,7 +105,7 @@ describe('InviteService - invitation callbackUrl', () => {
 			await createBulk({ inviteType: InvitationTypeEnum.TEAM, callbackUrl });
 
 			const [{ inviteLink }] = emailService.inviteTeamMember.mock.calls[0];
-			expect(inviteLink.startsWith(`${CLIENT}/#/auth/accept-invite?email=new%40ordinarylabs.com&token=`)).toBe(true);
+			expect(inviteLink.startsWith(`${CLIENT}/#/auth/accept-invite?email=new%40dinary.app&token=`)).toBe(true);
 			expect(inviteLink).not.toContain('attacker.example');
 			expect(warn).toHaveBeenCalledTimes(1);
 		});
@@ -140,7 +140,7 @@ describe('InviteService - invitation callbackUrl', () => {
 			);
 
 			const [{ inviteLink, inviteCode }] = emailService.inviteTeamMember.mock.calls[0];
-			expect(inviteLink).toBe(`${TEAMS}/auth/accept-invite?email=new%40ordinarylabs.com&code=${inviteCode}`);
+			expect(inviteLink).toBe(`${TEAMS}/auth/accept-invite?email=new%40dinary.app&code=${inviteCode}`);
 		});
 
 		it('uses the default accept link for a callback on a foreign origin', async () => {
@@ -154,7 +154,7 @@ describe('InviteService - invitation callbackUrl', () => {
 			);
 
 			const [{ inviteLink }] = emailService.inviteTeamMember.mock.calls[0];
-			expect(inviteLink.startsWith(`${CLIENT}/#/auth/accept-invite?email=new%40ordinarylabs.com&token=`)).toBe(true);
+			expect(inviteLink.startsWith(`${CLIENT}/#/auth/accept-invite?email=new%40dinary.app&token=`)).toBe(true);
 			expect(inviteLink).not.toContain('attacker.example');
 			expect(warn).toHaveBeenCalledTimes(1);
 		});

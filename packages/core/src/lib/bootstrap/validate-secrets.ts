@@ -92,9 +92,9 @@ const KNOWN_DEFAULT_SEED_CREDENTIALS: ReadonlyArray<{
 	email: string;
 	role: string;
 }> = [
-	{ key: 'DEMO_SUPER_ADMIN_PASSWORD', value: 'admin', email: 'admin@ordinarylabs.com', role: 'SUPER_ADMIN' },
-	{ key: 'DEMO_ADMIN_PASSWORD', value: 'admin', email: 'local.admin@ordinarylabs.com', role: 'ADMIN' },
-	{ key: 'DEMO_EMPLOYEE_PASSWORD', value: '12345678', email: 'employee@ordinarylabs.com', role: 'EMPLOYEE' }
+	{ key: 'DEMO_SUPER_ADMIN_PASSWORD', value: 'admin', email: 'admin@dinary.app', role: 'SUPER_ADMIN' },
+	{ key: 'DEMO_ADMIN_PASSWORD', value: 'admin', email: 'local.admin@dinary.app', role: 'ADMIN' },
+	{ key: 'DEMO_EMPLOYEE_PASSWORD', value: '12345678', email: 'employee@dinary.app', role: 'EMPLOYEE' }
 ];
 
 /**
@@ -112,7 +112,7 @@ export function getPublishedSeedAccounts(): Array<{ email: string; password: str
 
 	// BOTH the currently configured address and the canonical published one. The database was seeded
 	// at some point in the past: an operator who changed DEMO_SUPER_ADMIN_EMAIL afterwards still has
-	// the original `admin@ordinarylabs.com` row, with the published password, and checking only today's
+	// the original `admin@dinary.app` row, with the published password, and checking only today's
 	// configuration would walk straight past it.
 	const seen = new Set<string>();
 	const accounts: Array<{ email: string; password: string }> = [];

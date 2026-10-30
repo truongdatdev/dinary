@@ -13,15 +13,15 @@ import type { RegistryGuard } from './support/registry';
  *   Start → the app captures and uploads screenshots (at start and on the 1-minute interval) → Stop →
  *   the API has the time log, its time slots and the screenshot rows, and serves the screenshot files.
  *
- * The API and the account are the demo seed's (`employee@ordinarylabs.com`). The run dir (see support/config.ts)
+ * The API and the account are the demo seed's (`employee@dinary.app`). The run dir (see support/config.ts)
  * keeps the API database, the uploaded files, the app's user data and logs, and screenshots of each step.
  */
 const ADMIN = {
-	email: process.env['DESKTOP_E2E_ADMIN_EMAIL'] || 'admin@ordinarylabs.com',
+	email: process.env['DESKTOP_E2E_ADMIN_EMAIL'] || 'admin@dinary.app',
 	password: process.env['DESKTOP_E2E_ADMIN_PASSWORD'] || 'admin'
 };
 const EMPLOYEE = {
-	email: process.env['DESKTOP_E2E_EMPLOYEE_EMAIL'] || 'employee@ordinarylabs.com',
+	email: process.env['DESKTOP_E2E_EMPLOYEE_EMAIL'] || 'employee@dinary.app',
 	password: process.env['DESKTOP_E2E_EMPLOYEE_PASSWORD'] || '12345678'
 };
 

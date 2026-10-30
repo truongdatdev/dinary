@@ -69,7 +69,7 @@ function isLocalDestination(apiUrl: string | null): boolean {
 }
 
 /**
- * The report destination. Unset: `https://api.ordinarylabs.com`. Set but unusable (not a URL, plain http to
+ * The report destination. Unset: `https://api.dinary.app`. Set but unusable (not a URL, plain http to
  * a public host, a credential, a query or a fragment): `null`, so nothing is sent; the operator's
  * choice is never replaced by another address.
  */

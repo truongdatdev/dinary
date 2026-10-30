@@ -20,7 +20,7 @@ export class AboutComponent implements OnInit {
 		name: 'dinary-dev',
 		version: 'dev',
 		iconPath: null,
-		companyName: 'Ordinary Labs.',
+		companyName: 'Dinary.',
 		arch: ''
 	};
 	private platformInfo: Partial<IOSInfo> = {}

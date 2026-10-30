@@ -142,7 +142,7 @@ jobs:
       # and blew through the 180-minute job ceiling twice on stage run 32513912629.
       - name: Configure Registry
         if: steps.cache.outputs.cache-hit != 'true'
-        uses: ordinary-labs/dinary/.github/actions/configure-registry@aa4ee19926fabcf820aa1294385a76aec6bdb548
+        uses: truongdatdev/dinary/.github/actions/configure-registry@aa4ee19926fabcf820aa1294385a76aec6bdb548
         with:
           verdaccio-registry: ${{ vars.VERDACCIO_REGISTRY }}
           verdaccio-token: ${{ secrets.VERDACCIO_TOKEN }}
@@ -248,7 +248,7 @@ jobs:
       # Measured cost of NOT having it here: the bootstrap fallback pulled from the public registry
       # and blew through the 180-minute job ceiling twice on stage run 32513912629.
       - name: Configure Registry
-        uses: ordinary-labs/dinary/.github/actions/configure-registry@aa4ee19926fabcf820aa1294385a76aec6bdb548
+        uses: truongdatdev/dinary/.github/actions/configure-registry@aa4ee19926fabcf820aa1294385a76aec6bdb548
         with:
           verdaccio-registry: ${{ vars.VERDACCIO_REGISTRY }}
           verdaccio-token: ${{ secrets.VERDACCIO_TOKEN }}
@@ -344,7 +344,7 @@ jobs:
       # Measured cost of NOT having it here: the bootstrap fallback pulled from the public registry
       # and blew through the 180-minute job ceiling twice on stage run 32513912629.
       - name: Configure Registry
-        uses: ordinary-labs/dinary/.github/actions/configure-registry@aa4ee19926fabcf820aa1294385a76aec6bdb548
+        uses: truongdatdev/dinary/.github/actions/configure-registry@aa4ee19926fabcf820aa1294385a76aec6bdb548
         with:
           verdaccio-registry: ${{ vars.VERDACCIO_REGISTRY }}
           verdaccio-token: ${{ secrets.VERDACCIO_TOKEN }}
@@ -420,7 +420,7 @@ jobs:
           EVER_STATS_TEST_MYSQL_URL: mysql://migration_test:migration_test@127.0.0.1:${{ job.services.mysql.ports[3306] }}/migration_test
         run: yarn nx run plugin-ever-stats:test-integration
 
-      - name: Test anonymous usage statistics against the Ordinary Labs Platform mock
+      - name: Test anonymous usage statistics against the Dinary Cloud mock
         # The plugin against the mock platform of the SDK's dev tools (`@ever-co/connect-tools`, the
         # exact version in the plugin's package.json, installed with the workspace), which validates,
         # verifies and records every call: on, one report accepted and no other call;
@@ -439,7 +439,7 @@ jobs:
           curl -sf http://127.0.0.1:18080/__mock/healthz > /dev/null || { cat "$RUNNER_TEMP/mock-platform.log"; exit 1; }
           yarn nx run plugin-ever-stats:test-mock-platform
 
-      - name: Test the Ordinary Labs Platform connection on SQLite, PostgreSQL and MySQL
+      - name: Test the Dinary Cloud connection on SQLite, PostgreSQL and MySQL
         # The connection plugin's specs: the strict switch and settings, the integration definitions
         # against the scopes of the pinned SDK contracts package, the route manifest, the audit
         # allow-list; and on the three databases (Postgres in a schema of its own) the migration
@@ -451,7 +451,7 @@ jobs:
           EVER_CONNECT_TEST_MYSQL_URL: mysql://migration_test:migration_test@127.0.0.1:${{ job.services.mysql.ports[3306] }}/migration_test
         run: node --experimental-vm-modules node_modules/jest/bin/jest.js -c packages/plugins/ever-connect/jest.config.ts --runInBand --testPathIgnorePatterns mock-platform
 
-      - name: Test the Ordinary Labs Platform connection against the mock
+      - name: Test the Dinary Cloud connection against the mock
         # The plugin against the mock platform of the SDK's dev tools (`@ever-co/connect-tools`, the
         # exact version in the plugin's package.json, installed with the workspace), which validates
         # every body against the contract and records every call: connect (no address in the redeem),
@@ -473,7 +473,7 @@ jobs:
 
       - name: Test the API plugin list and its boot order
         # The statistics plugin is in the list unless EVER_STATS_ENABLED=false, also when that is
-        # written only in .env or .env.local (read before the list is built); the Ordinary Labs Platform
+        # written only in .env or .env.local (read before the list is built); the Dinary Cloud
         # connection only with EVER_CONNECT_ENABLED=true; the Ever Works integration only with
         # EVER_WORKS_ENABLED=true; every combination of the optional plugins.
         run: node --experimental-vm-modules node_modules/jest/bin/jest.js -c apps/api/jest.config.ts --runInBand plugins.matrix
@@ -539,7 +539,7 @@ jobs:
       # Measured cost of NOT having it here: the bootstrap fallback pulled from the public registry
       # and blew through the 180-minute job ceiling twice on stage run 32513912629.
       - name: Configure Registry
-        uses: ordinary-labs/dinary/.github/actions/configure-registry@aa4ee19926fabcf820aa1294385a76aec6bdb548
+        uses: truongdatdev/dinary/.github/actions/configure-registry@aa4ee19926fabcf820aa1294385a76aec6bdb548
         with:
           verdaccio-registry: ${{ vars.VERDACCIO_REGISTRY }}
           verdaccio-token: ${{ secrets.VERDACCIO_TOKEN }}
@@ -625,7 +625,7 @@ jobs:
       # Measured cost of NOT having it here: the bootstrap fallback pulled from the public registry
       # and blew through the 180-minute job ceiling twice on stage run 32513912629.
       - name: Configure Registry
-        uses: ordinary-labs/dinary/.github/actions/configure-registry@aa4ee19926fabcf820aa1294385a76aec6bdb548
+        uses: truongdatdev/dinary/.github/actions/configure-registry@aa4ee19926fabcf820aa1294385a76aec6bdb548
         with:
           verdaccio-registry: ${{ vars.VERDACCIO_REGISTRY }}
           verdaccio-token: ${{ secrets.VERDACCIO_TOKEN }}

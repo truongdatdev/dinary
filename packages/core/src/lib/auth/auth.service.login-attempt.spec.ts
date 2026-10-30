@@ -40,11 +40,11 @@ describe('AuthService per-account attempt settlement', () => {
 				userService: { find: jest.fn(async () => [{ id: 'u1', hash: 'h' }]) }
 			});
 
-			await expect(service.login({ email: 'victim@ordinarylabs.com', password: 'guess' })).rejects.toBeInstanceOf(
+			await expect(service.login({ email: 'victim@dinary.app', password: 'guess' })).rejects.toBeInstanceOf(
 				UnauthorizedException
 			);
 
-			expect(loginAttemptService.begin).toHaveBeenCalledWith(LoginAttemptScope.PASSWORD, 'victim@ordinarylabs.com');
+			expect(loginAttemptService.begin).toHaveBeenCalledWith(LoginAttemptScope.PASSWORD, 'victim@dinary.app');
 			expect(attempt.fail).toHaveBeenCalledTimes(1);
 			expect(attempt.release).not.toHaveBeenCalled();
 		});
@@ -52,7 +52,7 @@ describe('AuthService per-account attempt settlement', () => {
 		it('counts an unknown email as a failure', async () => {
 			Object.assign(service, { userService: { find: jest.fn(async () => []) } });
 
-			await expect(service.login({ email: 'nobody@ordinarylabs.com', password: 'guess' })).rejects.toBeInstanceOf(
+			await expect(service.login({ email: 'nobody@dinary.app', password: 'guess' })).rejects.toBeInstanceOf(
 				UnauthorizedException
 			);
 
@@ -64,7 +64,7 @@ describe('AuthService per-account attempt settlement', () => {
 				userService: { find: jest.fn(async () => Promise.reject(new Error('connection terminated'))) }
 			});
 
-			await expect(service.login({ email: 'victim@ordinarylabs.com', password: 'secret' })).rejects.toBeInstanceOf(
+			await expect(service.login({ email: 'victim@dinary.app', password: 'secret' })).rejects.toBeInstanceOf(
 				UnauthorizedException
 			);
 
@@ -80,7 +80,7 @@ describe('AuthService per-account attempt settlement', () => {
 			});
 
 			await expect(
-				service.signinWorkspacesByEmailPassword({ email: 'victim@ordinarylabs.com', password: 'guess' }, false)
+				service.signinWorkspacesByEmailPassword({ email: 'victim@dinary.app', password: 'guess' }, false)
 			).rejects.toBeInstanceOf(UnauthorizedException);
 
 			expect(attempt.fail).toHaveBeenCalledTimes(1);
@@ -91,7 +91,7 @@ describe('AuthService per-account attempt settlement', () => {
 			Object.assign(service, { userService: { find: jest.fn(async () => Promise.reject(outage)) } });
 
 			await expect(
-				service.signinWorkspacesByEmailPassword({ email: 'victim@ordinarylabs.com', password: 'secret' }, false)
+				service.signinWorkspacesByEmailPassword({ email: 'victim@dinary.app', password: 'secret' }, false)
 			).rejects.toBe(outage);
 
 			expect(attempt.fail).not.toHaveBeenCalled();
@@ -102,10 +102,10 @@ describe('AuthService per-account attempt settlement', () => {
 	describe('signinWorkspacesByMagicCode', () => {
 		it('counts a missing code as a failure', async () => {
 			await expect(
-				service.signinWorkspacesByMagicCode({ email: 'victim@ordinarylabs.com', code: '' } as any, false)
+				service.signinWorkspacesByMagicCode({ email: 'victim@dinary.app', code: '' } as any, false)
 			).rejects.toBeInstanceOf(UnauthorizedException);
 
-			expect(loginAttemptService.begin).toHaveBeenCalledWith(LoginAttemptScope.MAGIC_CODE, 'victim@ordinarylabs.com');
+			expect(loginAttemptService.begin).toHaveBeenCalledWith(LoginAttemptScope.MAGIC_CODE, 'victim@dinary.app');
 			expect(attempt.fail).toHaveBeenCalledTimes(1);
 		});
 
@@ -116,7 +116,7 @@ describe('AuthService per-account attempt settlement', () => {
 			});
 
 			await expect(
-				service.signinWorkspacesByMagicCode({ email: 'victim@ordinarylabs.com', code: 'ABC123' } as any, false)
+				service.signinWorkspacesByMagicCode({ email: 'victim@dinary.app', code: 'ABC123' } as any, false)
 			).rejects.toBeInstanceOf(UnauthorizedException);
 
 			expect(attempt.fail).not.toHaveBeenCalled();

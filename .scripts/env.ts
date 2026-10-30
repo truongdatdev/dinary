@@ -259,13 +259,13 @@ export const env: Env = cleanEnv(
 
 		DEMO: bool({ default: false }),
 
-		DEMO_SUPER_ADMIN_EMAIL: str({ default: 'admin@ordinarylabs.com' }),
+		DEMO_SUPER_ADMIN_EMAIL: str({ default: 'admin@dinary.app' }),
 		DEMO_SUPER_ADMIN_PASSWORD: str({ default: 'admin' }),
 
-		DEMO_ADMIN_EMAIL: str({ default: 'local.admin@ordinarylabs.com' }),
+		DEMO_ADMIN_EMAIL: str({ default: 'local.admin@dinary.app' }),
 		DEMO_ADMIN_PASSWORD: str({ default: 'admin' }),
 
-		DEMO_EMPLOYEE_EMAIL: str({ default: 'employee@ordinarylabs.com' }),
+		DEMO_EMPLOYEE_EMAIL: str({ default: 'employee@dinary.app' }),
 		DEMO_EMPLOYEE_PASSWORD: str({ default: '12345678' }),
 
 		CHATWOOT_SDK_TOKEN: str({ default: '' }),
@@ -303,10 +303,10 @@ export const env: Env = cleanEnv(
 		}),
 
 		COMPANY_NAME: str({
-			default: 'Ordinary Labs'
+			default: 'Dinary'
 		}),
 		COMPANY_LINK: str({
-			default: 'https://ordinarylabs.com'
+			default: 'https://dinary.app'
 		}),
 		COMPANY_SITE_NAME: str({
 			default: 'Dinary'
@@ -315,10 +315,10 @@ export const env: Env = cleanEnv(
 			default: 'https://dinary.app'
 		}),
 		COMPANY_GITHUB_LINK: str({
-			default: 'https://github.com/ordinary-labs'
+			default: 'https://github.com/truongdatdev'
 		}),
 		COMPANY_GITLAB_LINK: str({
-			default: 'https://gitlab.com/ordinary-labs'
+			default: 'https://gitlab.com/truongdatdev'
 		}),
 		COMPANY_FACEBOOK_LINK: str({
 			default: 'https://www.facebook.com/dinary'
@@ -327,13 +327,13 @@ export const env: Env = cleanEnv(
 			default: 'https://twitter.com/dinary'
 		}),
 		COMPANY_IN_LINK: str({
-			default: 'https://www.linkedin.com/company/ordinary-labs'
+			default: 'https://www.linkedin.com/company/truongdatdev'
 		}),
 		NO_INTERNET_LOGO: str({
 			default: 'assets/images/logos/logo_Dinary.svg'
 		}),
 		PROJECT_REPO: str({
-			default: 'https://github.com/ordinary-labs/dinary.git'
+			default: 'https://github.com/truongdatdev/dinary.git'
 		}),
 
 		DESKTOP_TIMER_APP_NAME: str({
@@ -343,12 +343,12 @@ export const env: Env = cleanEnv(
 			default: 'Dinary Desktop Timer'
 		}),
 		DESKTOP_TIMER_APP_ID: str({
-			default: 'com.ordinarylabs.dinarydesktoptimer'
+			default: 'com.dinary.dinarydesktoptimer'
 		}),
 		DESKTOP_TIMER_APP_REPO_NAME: str({
 			default: 'dinary-desktop-timer'
 		}),
-		DESKTOP_TIMER_APP_REPO_OWNER: str({ default: 'ordinary-labs' }),
+		DESKTOP_TIMER_APP_REPO_OWNER: str({ default: 'truongdatdev' }),
 		DESKTOP_TIMER_APP_WELCOME_TITLE: str({ default: '' }),
 		DESKTOP_TIMER_APP_WELCOME_CONTENT: str({ default: '' }),
 		DESKTOP_TIMER_APP_PROTOCOL: str({ default: 'dinary-timer' }),
@@ -360,12 +360,12 @@ export const env: Env = cleanEnv(
 			default: 'Dinary Desktop'
 		}),
 		DESKTOP_APP_ID: str({
-			default: 'com.ordinarylabs.dinarydesktop'
+			default: 'com.dinary.dinarydesktop'
 		}),
 		DESKTOP_APP_REPO_NAME: str({
 			default: 'dinary-desktop'
 		}),
-		DESKTOP_APP_REPO_OWNER: str({ default: 'ordinary-labs' }),
+		DESKTOP_APP_REPO_OWNER: str({ default: 'truongdatdev' }),
 		DESKTOP_APP_WELCOME_TITLE: str({ default: '' }),
 		DESKTOP_APP_WELCOME_CONTENT: str({ default: '' }),
 		DESKTOP_APP_PROTOCOL: str({ default: 'dinary-desktop' }),
@@ -377,12 +377,12 @@ export const env: Env = cleanEnv(
 			default: 'Dinary Server'
 		}),
 		DESKTOP_SERVER_APP_ID: str({
-			default: 'com.ordinarylabs.dinaryserver'
+			default: 'com.dinary.dinaryserver'
 		}),
 		DESKTOP_SERVER_APP_REPO_NAME: str({
 			default: 'dinary-server'
 		}),
-		DESKTOP_SERVER_APP_REPO_OWNER: str({ default: 'ordinary-labs' }),
+		DESKTOP_SERVER_APP_REPO_OWNER: str({ default: 'truongdatdev' }),
 		DESKTOP_SERVER_APP_WELCOME_TITLE: str({ default: '' }),
 		DESKTOP_SERVER_APP_WELCOME_CONTENT: str({ default: '' }),
 		DESKTOP_SERVER_APP_PROTOCOL: str({ default: 'dinary-server' }),
@@ -400,12 +400,12 @@ export const env: Env = cleanEnv(
 			default: 'Dinary API Server'
 		}),
 		DESKTOP_API_SERVER_APP_ID: str({
-			default: 'com.ordinarylabs.dinaryapiserver'
+			default: 'com.dinary.dinaryapiserver'
 		}),
 		DESKTOP_API_SERVER_APP_REPO_NAME: str({
 			default: 'dinary-api-server'
 		}),
-		DESKTOP_API_SERVER_APP_REPO_OWNER: str({ default: 'ordinary-labs' }),
+		DESKTOP_API_SERVER_APP_REPO_OWNER: str({ default: 'truongdatdev' }),
 		DESKTOP_API_SERVER_APP_WELCOME_TITLE: str({ default: '' }),
 		DESKTOP_API_SERVER_APP_WELCOME_CONTENT: str({ default: '' }),
 		DESKTOP_API_SERVER_APP_PROTOCOL: str({ default: 'dinary-api-server' }),
@@ -416,12 +416,12 @@ export const env: Env = cleanEnv(
 			default: 'Dinary MCP Server'
 		}),
 		DESKTOP_MCP_SERVER_APP_ID: str({
-			default: 'com.ordinarylabs.dinarymcpserver'
+			default: 'com.dinary.dinarymcpserver'
 		}),
 		DESKTOP_MCP_SERVER_APP_REPO_NAME: str({
 			default: 'dinary-mcp-server'
 		}),
-		DESKTOP_MCP_SERVER_APP_REPO_OWNER: str({ default: 'ordinary-labs' }),
+		DESKTOP_MCP_SERVER_APP_REPO_OWNER: str({ default: 'truongdatdev' }),
 		DESKTOP_MCP_SERVER_APP_WELCOME_TITLE: str({ default: '' }),
 		DESKTOP_MCP_SERVER_APP_WELCOME_CONTENT: str({ default: '' }),
 
@@ -431,7 +431,7 @@ export const env: Env = cleanEnv(
 			default: 'dinary-agent'
 		}),
 		AGENT_APP_ID: str({
-			default: 'com.ordinarylabs.dinaryagent'
+			default: 'com.dinary.dinaryagent'
 		}),
 		AGENT_APP_DESCRIPTION: str({
 			default: 'Dinary Agent'
@@ -440,7 +440,7 @@ export const env: Env = cleanEnv(
 			default: 'dinary-agent'
 		}),
 		AGENT_APP_REPO_OWNER: str({
-			default: 'ordinary-labs'
+			default: 'truongdatdev'
 		}),
 		AGENT_APP_WELCOME_TITLE: str({
 			default: ''

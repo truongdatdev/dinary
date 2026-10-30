@@ -3,18 +3,18 @@
 	"version": "0.1.0",
 	"description": "Mailgun as a Dinary Inbox email provider: inbound routes and the Messages API.",
 	"author": {
-		"name": "Ordinary Labs",
-		"url": "https://github.com/ordinary-labs"
+		"name": "Dinary",
+		"url": "https://github.com/truongdatdev"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ordinary-labs/dinary",
+		"url": "https://github.com/truongdatdev/dinary",
 		"directory": "packages/plugins/email-provider-mailgun"
 	},
 	"bugs": {
-		"url": "https://github.com/ordinary-labs/dinary/issues"
+		"url": "https://github.com/truongdatdev/dinary/issues"
 	},
-	"homepage": "https://github.com/ordinary-labs/dinary/tree/develop/packages/plugins/email-provider-mailgun",
+	"homepage": "https://github.com/truongdatdev/dinary/tree/develop/packages/plugins/email-provider-mailgun",
 	"license": "AGPL-3.0",
 	"private": true,
 	"type": "commonjs",

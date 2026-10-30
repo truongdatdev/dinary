@@ -234,14 +234,14 @@ jobs:
             console.log(script.servermcp(false))
         env:
           DINARY_RELEASE_TAG: ${{ needs.check-release-tag.outputs.tag }}
-          PROJECT_REPO: 'https://github.com/ordinary-labs/dinary.git'
+          PROJECT_REPO: 'https://github.com/truongdatdev/dinary.git'
           DESKTOP_MCP_SERVER_APP_NAME: 'dinary-mcp-server'
           # Demo electron releases go to the same repo
           DESKTOP_MCP_SERVER_REPO_NAME: 'dinary'
-          DESKTOP_MCP_SERVER_REPO_OWNER: 'ordinary-labs'
+          DESKTOP_MCP_SERVER_REPO_OWNER: 'truongdatdev'
           COMPANY_SITE_LINK: 'https://dinary.app'
           DESKTOP_MCP_SERVER_APP_DESCRIPTION: 'Dinary MCP Server'
-          DESKTOP_MCP_SERVER_APP_ID: 'com.ordinarylabs.dinarymcpserver'
+          DESKTOP_MCP_SERVER_APP_ID: 'com.dinary.dinarymcpserver'
 
       - name: Fix Node.js PATH for child processes
         shell: powershell
@@ -306,13 +306,13 @@ jobs:
           NX_NO_CLOUD: true
           NX_PLUGIN_NO_TIMEOUTS: true
           NX_DAEMON: false
-          PROJECT_REPO: 'https://github.com/ordinary-labs/dinary.git'
+          PROJECT_REPO: 'https://github.com/truongdatdev/dinary.git'
           # Demo electron releases go to the same repo
-          DESKTOP_MCP_SERVER_REPO_OWNER: 'ordinary-labs'
+          DESKTOP_MCP_SERVER_REPO_OWNER: 'truongdatdev'
           DESKTOP_MCP_SERVER_REPO_NAME: 'dinary'
           DESKTOP_MCP_SERVER_APP_NAME: 'dinary-mcp-server'
           DESKTOP_MCP_SERVER_APP_DESCRIPTION: 'Dinary MCP Server'
-          DESKTOP_MCP_SERVER_APP_ID: 'com.ordinarylabs.dinarymcpserver'
+          DESKTOP_MCP_SERVER_APP_ID: 'com.dinary.dinarymcpserver'
           COMPANY_SITE_LINK: 'https://dinary.app'
 
       - name: Scrub registry credentials
@@ -326,7 +326,7 @@ jobs:
         run: |
           # The auth token must not outlive the job. These runners check out with clean: false and
           # clean only dist/ and node_modules/, so a workspace .npmrc carrying
-          # //packages.ordinarylabs.com/:_authToken=... would sit on disk after the job ends - readable by
+          # //packages.dinary.app/:_authToken=... would sit on disk after the job ends - readable by
           # anything scheduled on this runner before the next Configure Registry step resets it.
           #
           # This is deliberately the LAST step of the job: the build steps above run

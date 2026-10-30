@@ -200,12 +200,12 @@ const AUDITED_NAMES = 81;
 
 /**
  * Where the human-readable copy of this table lives; the gate refuses a copy that has drifted from the table. The
- * same page is published from `ordinary-labs/dinary-docs` (`PUBLISHED`): refresh that copy from `--markdown` when the
+ * same page is published on the documentation site (`PUBLISHED`): refresh that copy from `--markdown` when the
  * table changes.
  */
 const MARKDOWN = join(ROOT, 'tools', 'scripts', 'design-name-triage.md');
 
-/** The published copy, in `ordinary-labs/dinary-docs` (the hostname is left to the docs: no Ever host in code here). */
+/** The published copy on the documentation site (the hostname is left to the docs: no vendor host in code here). */
 const PUBLISHED = 'website/docs/platform-extensions/design-name-triage.md';
 
 const schema = readFileSync(SDL, 'utf8').replace(/"""[\s\S]*?"""/g, '');
@@ -285,8 +285,8 @@ function renderMarkdown() {
 				`becomes served, when one of the ${AUDITED_NAMES} rows disappears, and when the build backlog grows.`
 		),
 		wrap(
-			'**Where it lives.** The gate checks `tools/scripts/design-name-triage.md` in `ordinary-labs/dinary`; ' +
-				`the documentation site publishes the same page from \`ordinary-labs/dinary-docs\` (\`${PUBLISHED}\`), ` +
+			'**Where it lives.** The gate checks `tools/scripts/design-name-triage.md` in `truongdatdev/dinary`; ' +
+				`the documentation site publishes the same page (\`${PUBLISHED}\`), ` +
 				'and `node tools/scripts/design-name-triage-check.mjs --markdown` prints it.'
 		),
 		wrap(

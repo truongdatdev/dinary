@@ -80,7 +80,7 @@ export class AuditEntryRefusedError extends Error {
 export const MAX_AUDIT_PAGE = 10_000;
 
 /**
- * The audit of the Ordinary Labs Platform connection (`ever_connect_audit`). It only adds rows; no row is
+ * The audit of the Dinary Cloud connection (`ever_connect_audit`). It only adds rows; no row is
  * ever changed. Rows are removed only with the Dinary tenant or organization they belong to, once that
  * was deleted ({@link purge}); the installation keeps one row saying a deleted organization's link was
  * removed, without its ids.

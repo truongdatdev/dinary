@@ -116,7 +116,7 @@ export class BillingService {
 		return this.stripeSubscriptionService.mode;
 	}
 
-	/** The Ordinary Labs product this deployment bills for (`BILLING_PRODUCT`, default `dinary`). */
+	/** The Dinary product this deployment bills for (`BILLING_PRODUCT`, default `dinary`). */
 	get product(): string | null {
 		return this.stripeSubscriptionService.billingProduct;
 	}
@@ -125,7 +125,7 @@ export class BillingService {
 	 * Whether this Stripe customer has EVER subscribed to this deployment's product (any status).
 	 *
 	 * The billing routes resolve the customer from the tenant's stored link. If that link points at a
-	 * customer who only ever bought another Ordinary Labs product — whether written by an older, product-blind
+	 * customer who only ever bought another Dinary product — whether written by an older, product-blind
 	 * version of the linking code or by hand — this is false, and the routes treat the tenant as not
 	 * linked rather than show, cancel, re-price or open a portal on someone else's billing.
 	 */
@@ -163,7 +163,7 @@ export class BillingService {
 	/**
 	 * Plans this tenant could switch to, taken from the prices actually present in Stripe.
 	 *
-	 * `productKey` narrows the list to one Ordinary Labs product (e.g. `dinary`), since a Dinary tenant should
+	 * `productKey` narrows the list to one Dinary product (e.g. `dinary`), since a Dinary tenant should
 	 * not be offered Ever Demand's tiers.
 	 */
 	async listPlans(productKey: string, hosting = 'cloud'): Promise<BillingPlan[]> {
@@ -212,7 +212,7 @@ export class BillingService {
 		productKey: string,
 		hosting = 'cloud'
 	): Promise<BillingSubscription> {
-		// The catalog is shared by every Ordinary Labs product, so a lookup key from another one is perfectly
+		// The catalog is shared by every Dinary product, so a lookup key from another one is perfectly
 		// valid in Stripe and would otherwise be accepted here — moving a Dinary tenant onto, say,
 		// Ever Demand's pricing. `listPlans` already narrows what the UI offers; this refuses anything
 		// outside that set regardless of what the client sends.
@@ -328,7 +328,7 @@ export class BillingService {
 	/**
 	 * Invoice history of THIS deployment's product, newest first.
 	 *
-	 * Invoices used to be listed per customer, and one customer can also hold another Ordinary Labs product (the
+	 * Invoices used to be listed per customer, and one customer can also hold another Dinary product (the
 	 * same buyer's Teams plan, a one-off license). Those invoices are not this tenant's to see, and
 	 * enough of them would push this product's own invoices off the page entirely. So invoices are
 	 * listed per subscription of this product instead — Stripe filters server-side, so there is no
@@ -430,7 +430,7 @@ export class BillingService {
 			`/subscriptions?customer=${encodeURIComponent(stripeCustomerId)}&status=all`
 		);
 
-		// Only this deployment's product. The Stripe account is shared by every Ordinary Labs product, so one
+		// Only this deployment's product. The Stripe account is shared by every Dinary product, so one
 		// customer can hold, say, a Teams subscription beside a Dinary one — and the Dinary billing page
 		// must neither show that as the Dinary plan nor cancel or re-price it.
 		const product = this.product;

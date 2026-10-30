@@ -25,8 +25,7 @@ same kind, when a name that is not `delivered` becomes served, when one of the
 81 rows disappears, and when the build backlog grows.
 
 **Where it lives.** The gate checks `tools/scripts/design-name-triage.md` in
-`ordinary-labs/dinary`; the documentation site publishes the same page from
-`ordinary-labs/dinary-docs`
+`truongdatdev/dinary`; the documentation site publishes the same page
 (`website/docs/platform-extensions/design-name-triage.md`), and `node
 tools/scripts/design-name-triage-check.mjs --markdown` prints it.
 

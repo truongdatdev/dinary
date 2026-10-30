@@ -3,7 +3,7 @@ import { PrimaryColumn } from 'typeorm';
 import { ColumnIndex, MultiORMColumn, MultiORMEntity, SkipExport } from '@dinary/core';
 
 /**
- * The append-only record of what happened to the Ordinary Labs Platform connection: connect, disconnect,
+ * The append-only record of what happened to the Dinary Cloud connection: connect, disconnect,
  * links, consents, integrations switched on and off, entitlement refreshes, policy changes.
  *
  * `details` is JSON with ids and states only (an allow-list of keys): never a code, a token, a key,

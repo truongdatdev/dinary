@@ -1,9 +1,9 @@
 {
-	"description": "Ever hosts (and Ordinary Labs Platform base URL variables) that Dinary code outside the Ordinary Labs Platform modules named before the modules: the product site, legal pages, documentation, demo accounts, downloads. Written by `node tools/egress-audit/static-hostnames.mjs --write`; it may only shrink (checked against the base of every pull request). `code`: per tracked file and host, the occurrences; `bundle`: the hosts the built web app names.",
+	"description": "Hostnames (and Dinary Cloud base URL variables) that Dinary code outside the Dinary Cloud modules named before the modules: the product site, legal pages, documentation, demo accounts, downloads. Written by `node tools/egress-audit/static-hostnames.mjs --write`; it may only shrink (checked against the base of every pull request). `code`: per tracked file and host, the occurrences; `bundle`: the hosts the built web app names.",
 	"code": {
 		".deploy/api/Dockerfile": {
-			"ordinarylabs.com": 1,
-			"packages.ordinarylabs.com": 13
+			"dinary.app": 1,
+			"packages.dinary.app": 13
 		},
 		".deploy/k8s/k8s-manifest.civo.demo.yaml": {
 			"apidemocivo.dinary.app": 4,
@@ -62,16 +62,16 @@
 			"stage.dinary.app": 5
 		},
 		".deploy/mcp-auth/Dockerfile": {
-			"ordinarylabs.com": 1,
-			"packages.ordinarylabs.com": 12
+			"dinary.app": 1,
+			"packages.dinary.app": 12
 		},
 		".deploy/mcp/Dockerfile": {
 			"apidemo.dinary.app": 1,
 			"auth.dinary.app": 3,
-			"ordinarylabs.com": 1,
+			"dinary.app": 1,
 			"mcp.dinary.app": 1,
 			"mcpdemo.dinary.app": 1,
-			"packages.ordinarylabs.com": 12
+			"packages.dinary.app": 12
 		},
 		".deploy/ssh/with-cloudflare/demo/nginx.demo.pre.cloudflare.conf": {
 			"apidemodt.dinary.app": 2
@@ -83,28 +83,28 @@
 			"apistagedt.dinary.app": 2
 		},
 		".deploy/ssh/with-letsencrypt/demo/docker-compose.api.demo.letsencrypt.pre.yml": {
-			"ordinarylabs.com": 1
+			"dinary.app": 1
 		},
 		".deploy/ssh/with-letsencrypt/demo/nginx-certbot.env": {
-			"ordinarylabs.com": 1
+			"dinary.app": 1
 		},
 		".deploy/ssh/with-letsencrypt/demo/user_conf.d/nginx.conf": {
 			"apidemodts.dinary.app": 4
 		},
 		".deploy/ssh/with-letsencrypt/prod/docker-compose.api.prod.letsencrypt.pre.yml": {
-			"ordinarylabs.com": 1
+			"dinary.app": 1
 		},
 		".deploy/ssh/with-letsencrypt/prod/nginx-certbot.env": {
-			"ordinarylabs.com": 1
+			"dinary.app": 1
 		},
 		".deploy/ssh/with-letsencrypt/prod/user_conf.d/nginx.conf": {
 			"apidts.dinary.app": 4
 		},
 		".deploy/ssh/with-letsencrypt/stage/docker-compose.api.stage.letsencrypt.pre.yml": {
-			"ordinarylabs.com": 1
+			"dinary.app": 1
 		},
 		".deploy/ssh/with-letsencrypt/stage/nginx-certbot.env": {
-			"ordinarylabs.com": 1
+			"dinary.app": 1
 		},
 		".deploy/ssh/with-letsencrypt/stage/user_conf.d/nginx.conf": {
 			"apistagedts.dinary.app": 4
@@ -112,20 +112,18 @@
 		".deploy/webapp/Dockerfile": {
 			"api.dinary.app": 1,
 			"app.dinary.app": 1,
-			"ordinarylabs.com": 2,
-			"dinary.app": 10,
-			"packages.ordinarylabs.com": 7
+			"dinary.app": 12,
+			"packages.dinary.app": 7
 		},
 		".deploy/worker/Dockerfile": {
-			"ordinarylabs.com": 1,
-			"packages.ordinarylabs.com": 13
+			"dinary.app": 1,
+			"packages.dinary.app": 13
 		},
 		".env.compose": {
 			"api.dinary.app": 1,
 			"app.dinary.app": 3,
 			"auth.dinary.app": 9,
-			"ordinarylabs.com": 6,
-			"dinary.app": 12,
+			"dinary.app": 18,
 			"mcp.dinary.app": 3,
 			"mcpauth.dinary.app": 1
 		},
@@ -133,50 +131,44 @@
 			"api.dinary.app": 1,
 			"app.dinary.app": 3,
 			"authdemo.dinary.app": 8,
-			"ordinarylabs.com": 3,
-			"dinary.app": 12,
+			"dinary.app": 15,
 			"mcpauthdemo.dinary.app": 1,
 			"mcpdemo.dinary.app": 3
 		},
 		".env.docker": {
 			"api.dinary.app": 1,
 			"app.dinary.app": 3,
-			"ordinarylabs.com": 3,
-			"dinary.app": 12
+			"dinary.app": 15
 		},
 		".env.local": {
 			"app.dinary.app": 2,
-			"ordinarylabs.com": 3,
-			"dinary.app": 11
+			"dinary.app": 14
 		},
 		".env.sample": {
 			"EVER_PLATFORM_API_URL": 2,
 			"EVER_STATS_API_URL": 2,
-			"api.ordinarylabs.com": 4,
-			"api.dinary.app": 1,
-			"app.ordinarylabs.com": 3,
+			"api.dinary.app": 5,
+			"app.dinary.app": 7,
 			"app.ever.team": 1,
-			"app.dinary.app": 4,
-			"ordinarylabs.com": 7,
-			"dinary.app": 12
+			"dinary.app": 19
 		},
 		".github/ISSUE_TEMPLATE/config.yml": {
 			"docs.dinary.app": 1
 		},
 		".github/actions/configure-registry/action.yml": {
-			"packages.ordinarylabs.com": 10
+			"packages.dinary.app": 10
 		},
 		".github/workflows/agent-demo.yml": {
 			"dinary.app": 2,
-			"packages.ordinarylabs.com": 1
+			"packages.dinary.app": 1
 		},
 		".github/workflows/agent-prod.yml": {
 			"dinary.app": 5,
-			"packages.ordinarylabs.com": 5
+			"packages.dinary.app": 5
 		},
 		".github/workflows/agent-stage.yml": {
 			"dinary.app": 5,
-			"packages.ordinarylabs.com": 5
+			"packages.dinary.app": 5
 		},
 		".github/workflows/deploy-do-app-platform-demo.yml": {
 			"apidemoda.dinary.app": 2,
@@ -207,183 +199,162 @@
 		},
 		".github/workflows/desktop-app-demo.yml": {
 			"dinary.app": 2,
-			"packages.ordinarylabs.com": 1
+			"packages.dinary.app": 1
 		},
 		".github/workflows/desktop-app-prod.yml": {
 			"dinary.app": 5,
-			"packages.ordinarylabs.com": 5
+			"packages.dinary.app": 5
 		},
 		".github/workflows/desktop-app-stage.yml": {
 			"dinary.app": 5,
-			"packages.ordinarylabs.com": 5
+			"packages.dinary.app": 5
 		},
 		".github/workflows/desktop-timer-app-demo.yml": {
 			"dinary.app": 2,
-			"packages.ordinarylabs.com": 1
+			"packages.dinary.app": 1
 		},
 		".github/workflows/desktop-timer-app-prod.yml": {
 			"dinary.app": 5,
-			"packages.ordinarylabs.com": 5
+			"packages.dinary.app": 5
 		},
 		".github/workflows/desktop-timer-app-stage.yml": {
 			"dinary.app": 5,
-			"packages.ordinarylabs.com": 5
+			"packages.dinary.app": 5
 		},
 		".github/workflows/mirror-releases-to-r2.yml": {
-			"cdn.ordinarylabs.com": 1,
-			"downloads.ordinarylabs.com": 2,
-			"dinary.app": 1
+			"cdn.dinary.app": 1,
+			"dinary.app": 1,
+			"downloads.dinary.app": 2
 		},
 		".github/workflows/server-api-demo.yml": {
 			"dinary.app": 2,
-			"packages.ordinarylabs.com": 1
+			"packages.dinary.app": 1
 		},
 		".github/workflows/server-api-prod.yml": {
 			"dinary.app": 5,
-			"packages.ordinarylabs.com": 5
+			"packages.dinary.app": 5
 		},
 		".github/workflows/server-api-stage.yml": {
 			"dinary.app": 5,
-			"packages.ordinarylabs.com": 5
+			"packages.dinary.app": 5
 		},
 		".github/workflows/server-demo.yml": {
 			"dinary.app": 2,
-			"packages.ordinarylabs.com": 1
+			"packages.dinary.app": 1
 		},
 		".github/workflows/server-mcp-demo.yml": {
 			"dinary.app": 2,
-			"packages.ordinarylabs.com": 1
+			"packages.dinary.app": 1
 		},
 		".github/workflows/server-mcp-prod.yml": {
 			"dinary.app": 5,
-			"packages.ordinarylabs.com": 5
+			"packages.dinary.app": 5
 		},
 		".github/workflows/server-mcp-stage.yml": {
 			"dinary.app": 5,
-			"packages.ordinarylabs.com": 5
+			"packages.dinary.app": 5
 		},
 		".github/workflows/server-prod.yml": {
 			"dinary.app": 5,
-			"packages.ordinarylabs.com": 5
+			"packages.dinary.app": 5
 		},
 		".github/workflows/server-stage.yml": {
 			"dinary.app": 5,
-			"packages.ordinarylabs.com": 5
+			"packages.dinary.app": 5
 		},
 		".scripts/env.ts": {
 			"app.dinary.app": 3,
-			"ordinarylabs.com": 4,
-			"dinary.app": 10
+			"dinary.app": 14
 		},
 		"apps/agent/package.json": {
-			"ordinarylabs.com": 2,
-			"dinary.app": 1
+			"dinary.app": 3
 		},
 		"apps/agent/src/main/init/menu.ts": {
 			"dinary.app": 1
 		},
 		"apps/agent/src/package.json": {
-			"ordinarylabs.com": 2,
-			"dinary.app": 1
+			"dinary.app": 3
 		},
 		"apps/api/package.json": {
-			"ordinarylabs.com": 2,
-			"dinary.app": 1
+			"dinary.app": 3
 		},
 		"apps/desktop-api/package.json": {
-			"ordinarylabs.com": 2,
-			"dinary.app": 1
+			"dinary.app": 3
 		},
 		"apps/desktop-timer/package.json": {
-			"ordinarylabs.com": 2,
-			"dinary.app": 1
+			"dinary.app": 3
 		},
 		"apps/desktop-timer/src/package.json": {
-			"ordinarylabs.com": 2,
-			"dinary.app": 1
+			"dinary.app": 3
 		},
 		"apps/desktop/package.json": {
-			"ordinarylabs.com": 2,
-			"dinary.app": 1
+			"dinary.app": 3
 		},
 		"apps/desktop/src/package.json": {
-			"ordinarylabs.com": 2,
-			"dinary.app": 1
+			"dinary.app": 3
 		},
 		"apps/dinary/package.json": {
-			"ordinarylabs.com": 2,
-			"dinary.app": 1
+			"dinary.app": 3
 		},
 		"apps/dinary/proxy.demo.conf.json": {
 			"apidemo.dinary.app": 1,
 			"demo.dinary.app": 2
 		},
 		"apps/dinary/src/app/pages/about/about.component.ts": {
-			"docs.dinary.app": 2,
-			"ordinarylabs.com": 1,
-			"dinary.app": 2
+			"dinary.app": 3,
+			"docs.dinary.app": 2
 		},
 		"apps/dinary/src/app/pages/help/help.component.html": {
-			"docs.dinary.app": 2,
-			"dinary.app": 1
+			"dinary.app": 1,
+			"docs.dinary.app": 2
 		},
 		"apps/mcp-auth/package.json": {
-			"ordinarylabs.com": 2,
-			"dinary.app": 1
+			"dinary.app": 3
 		},
 		"apps/mcp/package.json": {
-			"ordinarylabs.com": 2,
-			"dinary.app": 1
+			"dinary.app": 3
 		},
 		"apps/server-api/package.json": {
-			"ordinarylabs.com": 2,
-			"dinary.app": 1
+			"dinary.app": 3
 		},
 		"apps/server-api/src/index.ts": {
 			"dinary.app": 1
 		},
 		"apps/server-api/src/package.json": {
-			"ordinarylabs.com": 2,
-			"dinary.app": 1
+			"dinary.app": 3
 		},
 		"apps/server-mcp/package.json": {
-			"ordinarylabs.com": 2,
-			"dinary.app": 1
+			"dinary.app": 3
 		},
 		"apps/server-mcp/src/package.json": {
-			"ordinarylabs.com": 2,
-			"dinary.app": 1
+			"dinary.app": 3
 		},
 		"apps/server/package.json": {
-			"ordinarylabs.com": 2,
-			"dinary.app": 1
+			"dinary.app": 3
 		},
 		"apps/server/src/index.ts": {
 			"dinary.app": 1
 		},
 		"apps/server/src/package.json": {
-			"ordinarylabs.com": 2,
-			"dinary.app": 1
+			"dinary.app": 3
 		},
 		"apps/worker/package.json": {
-			"ordinarylabs.com": 2,
-			"dinary.app": 1
+			"dinary.app": 3
 		},
 		"okteto-pipeline.yml": {
-			"docs.ordinarylabs.com": 1
+			"docs.dinary.app": 1
 		},
 		"package.json": {
-			"ordinarylabs.com": 2,
-			"dinary.app": 1
+			"dinary.app": 3
 		},
 		"packages/auth/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/common/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/config/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/config/src/lib/environments/environment.helper.ts": {
 			"app.dinary.app": 1
@@ -391,28 +362,28 @@
 		"packages/config/src/lib/environments/environment.prod.ts": {
 			"api.dinary.app": 1,
 			"app.dinary.app": 2,
-			"ordinarylabs.com": 4
+			"dinary.app": 4
 		},
 		"packages/config/src/lib/environments/environment.ts": {
-			"ordinarylabs.com": 4
+			"dinary.app": 4
 		},
 		"packages/constants/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/contracts/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/core/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/core/src/lib/app/app.service.ts": {
-			"ordinarylabs.com": 1
+			"dinary.app": 1
 		},
 		"packages/core/src/lib/auth/auth.service.ts": {
-			"ordinarylabs.com": 2
+			"dinary.app": 2
 		},
 		"packages/core/src/lib/auth/login-attempt.service.ts": {
-			"ordinarylabs.com": 2
+			"dinary.app": 2
 		},
 		"packages/core/src/lib/bootstrap/index.ts": {
 			"app.dinary.app": 1
@@ -420,22 +391,22 @@
 		"packages/core/src/lib/bootstrap/swagger.ts": {
 			"api.dinary.app": 1,
 			"apidemo.dinary.app": 1,
-			"docs.dinary.app": 1,
-			"ordinarylabs.com": 2
+			"dinary.app": 2,
+			"docs.dinary.app": 1
 		},
 		"packages/core/src/lib/bootstrap/validate-secrets.ts": {
-			"ordinarylabs.com": 4
+			"dinary.app": 4
 		},
 		"packages/core/src/lib/database/migrations/1790000005000-RefreshChangelogContent.ts": {
-			"docs.dinary.app": 5,
-			"dinary.app": 2
+			"dinary.app": 2,
+			"docs.dinary.app": 5
 		},
 		"packages/core/src/lib/email-send/email-send.service.ts": {
 			"dinary.app": 1
 		},
 		"packages/core/src/lib/shared/billing/billing-product.ts": {
 			"app.dinary.app": 1,
-			"ordinarylabs.com": 2
+			"dinary.app": 2
 		},
 		"packages/core/src/lib/shared/billing/billing.controller.ts": {
 			"app.dinary.app": 1
@@ -443,26 +414,26 @@
 		"packages/core/src/lib/shared/billing/stripe-subscription.service.ts": {
 			"app.dinary.app": 2,
 			"demo.dinary.app": 1,
-			"ordinarylabs.com": 1,
+			"dinary.app": 1,
 			"stage.dinary.app": 1
 		},
 		"packages/core/src/lib/shared/guards/subscription-required.guard.ts": {
-			"ordinarylabs.com": 2
+			"dinary.app": 2
 		},
 		"packages/core/src/lib/user/dto/register-user.dto.ts": {
-			"ordinarylabs.com": 1
+			"dinary.app": 1
 		},
 		"packages/core/src/lib/user/user.service.ts": {
-			"ordinarylabs.com": 2
+			"dinary.app": 2
 		},
 		"packages/desktop-activity/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/desktop-core/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/desktop-lib/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/desktop-lib/src/lib/desktop-menu.ts": {
 			"dinary.app": 1
@@ -471,7 +442,7 @@
 			"api.dinary.app": 2
 		},
 		"packages/desktop-ui-lib/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/desktop-ui-lib/src/lib/login/features/login-magic/login-magic.component.html": {
 			"dinary.app": 1
@@ -487,10 +458,10 @@
 			"api.dinary.app": 3
 		},
 		"packages/desktop-window/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/mcp-server/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/mcp-server/src/lib/common/security-config.ts": {
 			"api.dinary.app": 1,
@@ -501,176 +472,176 @@
 			"stage.dinary.app": 1
 		},
 		"packages/plugin-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugin/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/ai-chat-react-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/ai-chat/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/ai-provider-anthropic/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/ai-provider-deepgram/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/ai-provider-elevenlabs/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/ai-provider-dinary-ai/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/ai-provider-gemini/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/ai-provider-grok/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/ai-provider-groq/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/ai-provider-localai/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/ai-provider-mistral/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/ai-provider-openai-compatible/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/ai-provider-openai/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/ai-provider-openrouter/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/ai-provider-speaches/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/ai-provider-vercel-gateway/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/ai-provider-whisper-cpp/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/auth-keycloak/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/auth-zitadel-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/auth-zitadel/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/auth-zitadel/src/lib/auth-zitadel.config.ts": {
-			"ordinarylabs.com": 2
-		},
-		"packages/plugins/camshot/package.json": {
-			"ordinarylabs.com": 3
-		},
-		"packages/plugins/cart/package.json": {
-			"ordinarylabs.com": 3
-		},
-		"packages/plugins/catalog/package.json": {
-			"ordinarylabs.com": 3
-		},
-		"packages/plugins/changelog/package.json": {
-			"ordinarylabs.com": 3
-		},
-		"packages/plugins/changelog/src/lib/initial-changelog-template.ts": {
-			"docs.dinary.app": 5,
 			"dinary.app": 2
 		},
+		"packages/plugins/camshot/package.json": {
+			"dinary.app": 3
+		},
+		"packages/plugins/cart/package.json": {
+			"dinary.app": 3
+		},
+		"packages/plugins/catalog/package.json": {
+			"dinary.app": 3
+		},
+		"packages/plugins/changelog/package.json": {
+			"dinary.app": 3
+		},
+		"packages/plugins/changelog/src/lib/initial-changelog-template.ts": {
+			"dinary.app": 2,
+			"docs.dinary.app": 5
+		},
 		"packages/plugins/dashboard-time-track-angular-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/dashboard-time-track-react-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/docs-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/docs/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/docs/src/lib/knowledge/extraction/__fixtures__/docx.fixture.ts": {
-			"ordinarylabs.com": 1
+			"dinary.app": 1
 		},
 		"packages/plugins/docs/src/lib/knowledge/extraction/__fixtures__/odf.fixture.ts": {
-			"ordinarylabs.com": 1
+			"dinary.app": 1
 		},
 		"packages/plugins/docs/src/lib/knowledge/extraction/__fixtures__/text.fixture.ts": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/docs/src/lib/knowledge/extraction/__fixtures__/xlsx.fixture.ts": {
-			"ordinarylabs.com": 1
+			"dinary.app": 1
 		},
 		"packages/plugins/entitlement/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/fulfillment/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-activepieces-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-activepieces/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-ai-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-ai/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-ever-async-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-ever-async-ui/src/lib/components/ever-async-connect/ever-async-connect.component.html": {
-			"docs-async.ordinarylabs.com": 1
+			"docs-async.dinary.app": 1
 		},
 		"packages/plugins/integration-ever-async-ui/src/lib/components/ever-async-connect/ever-async-connect.component.ts": {
-			"api-async.ordinarylabs.com": 2
+			"api-async.dinary.app": 2
 		},
 		"packages/plugins/integration-ever-async/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-ever-async/src/lib/dto/configure-ever-async-integration.dto.ts": {
-			"api-async.ordinarylabs.com": 1
+			"api-async.dinary.app": 1
 		},
 		"packages/plugins/integration-ever-async/src/lib/dto/verify-ever-async-connection.dto.ts": {
-			"api-async.ordinarylabs.com": 1
+			"api-async.dinary.app": 1
 		},
 		"packages/plugins/integration-github-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-github/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-github/src/lib/github/github.module.ts": {
 			"api.dinary.app": 1
 		},
 		"packages/plugins/integration-hubstaff-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-hubstaff/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-jira/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-make-com-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-make-com/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-plane-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-plane-ui/src/lib/components/plane-authorize/plane-authorize.component.ts": {
 			"pm-space.dinary.app": 1,
@@ -680,159 +651,158 @@
 			"pm.dinary.app": 1
 		},
 		"packages/plugins/integration-plane/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-plane/src/lib/plane-integration.service.ts": {
 			"pm-space.dinary.app": 1,
 			"pm.dinary.app": 1
 		},
 		"packages/plugins/integration-sim-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-sim/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-upwork-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-upwork/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-wakatime/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-zapier-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/integration-zapier/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/inventory/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/jitsu-analytics/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/job-employee-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/job-matching-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/job-proposal-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/job-proposal/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/job-search-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/job-search/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/jobs-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/knowledge-base/package.json": {
-			"ordinarylabs.com": 2
+			"dinary.app": 2
 		},
 		"packages/plugins/legal-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/legal-ui/scripts/sync-legal-content.mjs": {
-			"ordinarylabs.com": 1,
-			"dinary.app": 4
+			"dinary.app": 5
 		},
 		"packages/plugins/legal-ui/src/lib/content/index.ts": {
-			"ordinarylabs.com": 1
+			"dinary.app": 1
 		},
 		"packages/plugins/legal-ui/src/lib/models/legal-document.model.ts": {
 			"dinary.app": 1
 		},
 		"packages/plugins/maintenance-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/marketplace/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/onboarding-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/order/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/payment/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/posthog-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/posthog/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/pricing/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/product-reviews/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/promotion/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/public-layout-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/public-layout-ui/src/lib/components/workspace-actions/shared/email-code-form/email-code-form.component.ts": {
 			"dinary.app": 1
 		},
 		"packages/plugins/purchasing/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/registry/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/returns/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/search/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/sentry-tracing/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/soundshot/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/subscription/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/tax/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/videos-ui/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/videos/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/plugins/warehouse/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/ui-auth/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/ui-auth/src/lib/components/login-magic/login-magic.component.html": {
 			"dinary.app": 1
 		},
 		"packages/ui-auth/src/lib/components/login/login.component.html": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/ui-auth/src/lib/components/register/register.component.ts": {
-			"ordinarylabs.com": 1
+			"dinary.app": 1
 		},
 		"packages/ui-config/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/ui-core/core/src/lib/auth/cookie-helper.ts": {
 			"app.dinary.app": 2,
@@ -841,7 +811,7 @@
 			"staging.dinary.app": 1
 		},
 		"packages/ui-core/core/src/lib/services/auth/checkout-session.ts": {
-			"ordinarylabs.com": 2
+			"dinary.app": 2
 		},
 		"packages/ui-core/core/src/lib/services/auth/register-error.ts": {
 			"app.dinary.app": 1
@@ -850,7 +820,7 @@
 			"demo.dinary.app": 1
 		},
 		"packages/ui-core/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/ui-core/theme/src/lib/components/header/header.component.html": {
 			"app.dinary.app": 1
@@ -859,50 +829,48 @@
 			"docs.dinary.app": 1
 		},
 		"packages/ui-react-components/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/ui-react/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"packages/utils/package.json": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"scripts/mirror-releases-to-r2.mjs": {
-			"downloads.ordinarylabs.com": 3,
-			"dinary.app": 1
+			"dinary.app": 1,
+			"downloads.dinary.app": 3
 		},
 		"tools/scripts/authorization-probe.mjs": {
-			"ordinarylabs.com": 3
+			"dinary.app": 3
 		},
 		"tools/scripts/commerce-e2e.mjs": {
-			"ordinarylabs.com": 2
+			"dinary.app": 2
 		},
 		"tools/scripts/commerce-flow-e2e.mjs": {
-			"ordinarylabs.com": 2
+			"dinary.app": 2
 		},
 		"tools/scripts/graphql-surface-smoke.mjs": {
-			"ordinarylabs.com": 1
+			"dinary.app": 1
 		},
 		"tools/scripts/legacy-rich-text-audit.ts": {
-			"ordinarylabs.com": 1
+			"dinary.app": 1
 		},
 		"tools/scripts/return-receipt-e2e.mjs": {
-			"ordinarylabs.com": 1
+			"dinary.app": 1
 		}
 	},
 	"bundle": {
-		"image": "ghcr.io/ordinary-labs/dinary-webapp-demo@sha256:b7ad958da853ce0947ac5f56a3d7fcbff20b12c500ee9841755512b3748266e5",
+		"image": "ghcr.io/truongdatdev/dinary-webapp-demo@sha256:b7ad958da853ce0947ac5f56a3d7fcbff20b12c500ee9841755512b3748266e5",
 		"hosts": [
 			"EVER_STATS_API_URL",
-			"api-async.ordinarylabs.com",
+			"api-async.dinary.app",
 			"api.dinary.app",
-			"app.ordinarylabs.com",
 			"app.dinary.app",
 			"demo.dinary.app",
-			"docs-async.ordinarylabs.com",
-			"docs.dinary.app",
-			"ordinarylabs.com",
 			"dinary.app",
+			"docs-async.dinary.app",
+			"docs.dinary.app",
 			"pm-space.dinary.app",
 			"pm.dinary.app",
 			"staging.dinary.app"

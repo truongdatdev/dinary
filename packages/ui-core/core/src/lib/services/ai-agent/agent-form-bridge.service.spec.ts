@@ -94,10 +94,10 @@ describe('AgentFormBridgeService', () => {
 
 		it('should report current field values', () => {
 			renderContactForm();
-			(document.getElementById('email') as HTMLInputElement).value = 'john@ordinarylabs.com';
+			(document.getElementById('email') as HTMLInputElement).value = 'john@dinary.app';
 
 			const [form] = service.readPage().forms;
-			expect(form.fields.find((f) => f.label === 'Email')!.value).toBe('john@ordinarylabs.com');
+			expect(form.fields.find((f) => f.label === 'Email')!.value).toBe('john@dinary.app');
 		});
 	});
 
@@ -142,14 +142,14 @@ describe('AgentFormBridgeService', () => {
 			renderContactForm();
 
 			const result = await service.fillForm([
-				{ field: 'Email', value: 'ada@ordinarylabs.com' },
+				{ field: 'Email', value: 'ada@dinary.app' },
 				{ field: 'No Such Field', value: 'x' }
 			]);
 
 			expect(result.filled).toEqual(['Email']);
 			expect(result.failed).toHaveLength(1);
 			expect(result.failed[0].field).toBe('No Such Field');
-			expect((document.getElementById('email') as HTMLInputElement).value).toBe('ada@ordinarylabs.com');
+			expect((document.getElementById('email') as HTMLInputElement).value).toBe('ada@dinary.app');
 		});
 	});
 

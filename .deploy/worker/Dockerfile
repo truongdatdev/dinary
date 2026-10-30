@@ -6,7 +6,7 @@
 # Build args consumed: NODE_ENV, DEMO, NODE_OPTIONS, NX_BRANCH (build stage only).
 # Optional build SECRETS (never pass these as build args — they would be embedded in
 # layers and trigger buildx SecretsUsedInArgOrEnv warnings):
-#   VERDACCIO_TOKEN       — auth for the packages.ordinarylabs.com private registry
+#   VERDACCIO_TOKEN       — auth for the packages.dinary.app private registry
 #   NX_CLOUD_ACCESS_TOKEN — Nx Cloud (currently inert: NX_NO_CLOUD=true below)
 # e.g. docker buildx build --secret id=VERDACCIO_TOKEN,env=VERDACCIO_TOKEN ...
 #      or the `secrets:` input of docker/build-push-action.
@@ -21,8 +21,8 @@
 
 FROM node:26.12.1-alpine3.24 AS dependencies
 
-LABEL maintainer="hello@ordinarylabs.com"
-LABEL org.opencontainers.image.source="https://github.com/ordinary-labs/dinary"
+LABEL maintainer="hello@dinary.app"
+LABEL org.opencontainers.image.source="https://github.com/truongdatdev/dinary"
 
 ENV CI=true
 
@@ -165,13 +165,13 @@ RUN --mount=type=secret,id=VERDACCIO_TOKEN,uid=1000 \
     sed -i "s|https://registry.yarnpkg.com|${VERDACCIO_REGISTRY%/}|g" yarn.lock && \
     sed -i "s|https://registry.npmjs.org|${VERDACCIO_REGISTRY%/}|g" yarn.lock; \
     elif [ -n "$VERDACCIO_TOKEN" ]; then \
-    echo "Internal Verdaccio VIP not in use (VERDACCIO_REGISTRY unset, or its probe failed) - installing through the public packages.ordinarylabs.com route, which is known to truncate large tarballs mid-stream." && \
-    echo "//packages.ordinarylabs.com/:_authToken=${VERDACCIO_TOKEN}" >> .npmrc && \
-    echo "registry=https://packages.ordinarylabs.com/" >> .npmrc && \
+    echo "Internal Verdaccio VIP not in use (VERDACCIO_REGISTRY unset, or its probe failed) - installing through the public packages.dinary.app route, which is known to truncate large tarballs mid-stream." && \
+    echo "//packages.dinary.app/:_authToken=${VERDACCIO_TOKEN}" >> .npmrc && \
+    echo "registry=https://packages.dinary.app/" >> .npmrc && \
     echo "always-auth=true" >> .npmrc && \
-    echo 'registry "https://packages.ordinarylabs.com/"' >> .yarnrc && \
-    sed -i 's|https://registry.yarnpkg.com|https://packages.ordinarylabs.com|g' yarn.lock && \
-    sed -i 's|https://registry.npmjs.org|https://packages.ordinarylabs.com|g' yarn.lock; \
+    echo 'registry "https://packages.dinary.app/"' >> .yarnrc && \
+    sed -i 's|https://registry.yarnpkg.com|https://packages.dinary.app|g' yarn.lock && \
+    sed -i 's|https://registry.npmjs.org|https://packages.dinary.app|g' yarn.lock; \
     fi && \
     yarn install --network-timeout 1000000 --network-concurrency 4 --frozen-lockfile --ignore-scripts && \
     yarn postinstall.manual && \
@@ -309,13 +309,13 @@ RUN --mount=type=secret,id=VERDACCIO_TOKEN,uid=1000 \
     sed -i "s|https://registry.yarnpkg.com|${VERDACCIO_REGISTRY%/}|g" yarn.lock && \
     sed -i "s|https://registry.npmjs.org|${VERDACCIO_REGISTRY%/}|g" yarn.lock; \
     elif [ -n "$VERDACCIO_TOKEN" ]; then \
-    echo "Internal Verdaccio VIP not in use (VERDACCIO_REGISTRY unset, or its probe failed) - installing through the public packages.ordinarylabs.com route, which is known to truncate large tarballs mid-stream." && \
-    echo "//packages.ordinarylabs.com/:_authToken=${VERDACCIO_TOKEN}" >> .npmrc && \
-    echo "registry=https://packages.ordinarylabs.com/" >> .npmrc && \
+    echo "Internal Verdaccio VIP not in use (VERDACCIO_REGISTRY unset, or its probe failed) - installing through the public packages.dinary.app route, which is known to truncate large tarballs mid-stream." && \
+    echo "//packages.dinary.app/:_authToken=${VERDACCIO_TOKEN}" >> .npmrc && \
+    echo "registry=https://packages.dinary.app/" >> .npmrc && \
     echo "always-auth=true" >> .npmrc && \
-    echo 'registry "https://packages.ordinarylabs.com/"' >> .yarnrc && \
-    sed -i 's|https://registry.yarnpkg.com|https://packages.ordinarylabs.com|g' yarn.lock && \
-    sed -i 's|https://registry.npmjs.org|https://packages.ordinarylabs.com|g' yarn.lock; \
+    echo 'registry "https://packages.dinary.app/"' >> .yarnrc && \
+    sed -i 's|https://registry.yarnpkg.com|https://packages.dinary.app|g' yarn.lock && \
+    sed -i 's|https://registry.npmjs.org|https://packages.dinary.app|g' yarn.lock; \
     fi && \
     yarn install --network-timeout 1000000 --network-concurrency 4 --frozen-lockfile --ignore-scripts --production && \
     yarn postinstall.manual && \

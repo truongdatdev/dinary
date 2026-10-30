@@ -4,11 +4,11 @@ import { DataSource } from 'typeorm';
 import { LINK_INTEGRATION_NAME } from './ever-connect.constants';
 import { EverConnectSql } from './ever-connect-sql';
 
-/** The integration types the Ordinary Labs Platform card is listed under. */
+/** The integration types the Dinary Cloud card is listed under. */
 const INTEGRATION_TYPES = ['All Integrations'];
 
 /**
- * Lists "Ordinary Labs Platform" among Dinary's integrations: one `integration` catalog row named
+ * Lists "Dinary Cloud" among Dinary's integrations: one `integration` catalog row named
  * `Ever_Connect` (`IntegrationEnum.EVER_CONNECT`), written when the module starts (never by a
  * migration). Safe when several API processes start at once: on Postgres a transaction-scoped
  * advisory lock serialises them, and the insert does nothing when the row exists (its name is

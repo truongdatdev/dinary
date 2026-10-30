@@ -16,15 +16,15 @@ export const LEGAL_DPIA_EN: ILegalDocument = {
 	product: 'dinary',
 	productName: 'Dinary',
 	domain: 'dinary.app',
-	entity: 'Ordinary Labs',
-	entityId: 'ordinary-labs',
+	entity: 'Dinary',
+	entityId: 'dinary',
 	locale: 'en',
 	version: '1.0.0',
 	effectiveDate: '2026-10-24',
 	sha256: '20b37e6a3140a5c11cf3c82230930f0ece5b42f422b3771fda3a787558a01abf',
 	title: 'Data Protection Impact Assessment (DPIA) Support Pack',
 	html: `<p>This support pack describes the processing that Dinary Cloud carries out when a customer uses it
-to record working time and to monitor work. It is published by <strong>Ordinary Labs</strong> for the customers who
+to record working time and to monitor work. It is published by <strong>Dinary</strong> for the customers who
 use the Service as the controller of their own people's personal data, and it is written to be copied into
 their data protection impact assessment, put in front of their data protection officer or works council, and
 checked by an auditor.</p>
@@ -48,7 +48,7 @@ purposes, your workforce, the employment law of your country and your own balanc
 which we can see.</li>
 <li><strong>It does not amend the Data Processing Addendum.</strong> The Addendum and its Schedules remain the contract
 between us. If you find this pack and the Addendum describing the same thing differently, tell us at
-privacy@ordinarylabs.com and we will correct whichever of them is wrong.</li>
+privacy@dinary.app and we will correct whichever of them is wrong.</li>
 <li><strong>It covers Dinary Cloud, the hosted Service we operate.</strong> If you run Dinary on your
 own infrastructure we are not your processor for that deployment. The descriptions of the software below
 still apply to it; everything about hosting, storage, sub-processors, backups and our own operations does
@@ -267,7 +267,7 @@ by deleting the data on that schedule, or by asking us to.</p>
 time entry in the web application marks the record as deleted and removes it from timesheets, galleries and
 reports. The database record stays, and so do the image and its thumbnail in object storage. Permanently
 deleting a screenshot through the API removes its record and deletes the stored image and thumbnail. If you need
-soft-deleted captures removed permanently and cannot do it yourself, write to privacy@ordinarylabs.com and we will
+soft-deleted captures removed permanently and cannot do it yourself, write to privacy@dinary.app and we will
 treat it as a deletion instruction under the Data Processing Addendum.</p>
 <p><strong>A request log holds a further copy.</strong> The API keeps a log of the time-tracking requests it receives — the
 address, the IP address and user agent, and the request and response bodies, with passwords and tokens
@@ -385,7 +385,7 @@ retention period with automatic deletion; and no log of who viewed a capture —
 creation, changes and deletions, not viewing. If your assessment depends on any of these, it cannot rely on
 Dinary to provide it today.</p>
 <h3 id="what-we-can-tell-you-about-your-own-account" tabindex="-1">What we can tell you about your own account</h3>
-<p>On request at privacy@ordinarylabs.com we will tell you, for your assessment: which capture features are enabled
+<p>On request at privacy@dinary.app we will tell you, for your assessment: which capture features are enabled
 in your workspace and their current settings, where its captured files are stored, and which sub-processors
 are involved.</p>
 <h2 id="hosting-sub-processors-and-transfers" tabindex="-1">Hosting, sub-processors and transfers</h2>
@@ -428,9 +428,9 @@ true.</p>
 against it on the sub-processor list, and Schedule 3 of the Data Processing Addendum describes the mechanism
 and the transfer impact assessment behind it. <strong>Where we cannot yet evidence a mechanism for a provider, the
 list says &quot;To be confirmed&quot; rather than naming one.</strong> Read those rows as an open item, and ask us at
-privacy@ordinarylabs.com for the current position on any provider that matters to your assessment.</p>
+privacy@dinary.app for the current position on any provider that matters to your assessment.</p>
 <p>If you need a copy of the safeguards for a named provider — the Standard Contractual Clauses and the modules
-that apply — write to privacy@ordinarylabs.com and we will send them.</p>
+that apply — write to privacy@dinary.app and we will send them.</p>
 <h2 id="security-measures" tabindex="-1">Security measures</h2>
 <p>The technical and organisational measures we operate are described on our
 <a href="https://dinary.app/security">Security page</a> and, contractually, in Schedule 2 of the Data Processing Addendum.
@@ -459,14 +459,14 @@ questionnaire and evidence on request — is described on the Security page.</p>
 <h2 id="questions-and-a-version-you-can-cite" tabindex="-1">Questions, and a version you can cite</h2>
 <ul>
 <li><strong>A question about anything in this pack, an impact-assessment questionnaire, or a request for the current
-settings of your own account</strong> — privacy@ordinarylabs.com</li>
+settings of your own account</strong> — privacy@dinary.app</li>
 <li><strong>A request for the Data Processing Addendum, a security questionnaire, or evidence of a restore test</strong> —
-legal@ordinarylabs.com</li>
-<li><strong>Something you think has been compromised — tell us immediately</strong> — abuse@ordinarylabs.com</li>
+legal@dinary.app</li>
+<li><strong>Something you think has been compromised — tell us immediately</strong> — abuse@dinary.app</li>
 </ul>
-<p>By post: contact privacy@ordinarylabs.com for our current postal address. We correspond in English.</p>
-<p><strong>We have not designated a Data Protection Officer under Article 37 GDPR.</strong> dpo@ordinarylabs.com is a contact
-channel, monitored by the same people as privacy@ordinarylabs.com, and we will not describe it as a designation. If
+<p>By post: contact privacy@dinary.app for our current postal address. We correspond in English.</p>
+<p><strong>We have not designated a Data Protection Officer under Article 37 GDPR.</strong> dpo@dinary.app is a contact
+channel, monitored by the same people as privacy@dinary.app, and we will not describe it as a designation. If
 a questionnaire asks for our data protection officer, that sentence is the honest answer.</p>
 <p>This document is version 1.0.0 of the DPIA Support Pack for
 <a href="https://dinary.app">dinary.app</a>, in force from 2026-10-24. It describes the Service as it

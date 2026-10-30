@@ -10,7 +10,7 @@ import { AuthService } from './auth.service';
  * response to the caller does not change.
  */
 describe('AuthService.sendWorkspaceSigninCode - links in the sign-in code email', () => {
-	const EMAIL = 'victim+tag@ordinarylabs.com';
+	const EMAIL = 'victim+tag@dinary.app';
 	const TEAMS = 'https://app.ever.team';
 	const configured = environment.appIntegrationConfig;
 	const savedAllowList = process.env['EMAIL_LINK_ALLOWED_ORIGINS'];
@@ -123,7 +123,7 @@ describe('AuthService.sendWorkspaceSigninCode - links in the sign-in code email'
 
 		await expect(
 			service.sendWorkspaceSigninCode(
-				{ email: 'nobody@ordinarylabs.com', appMagicSignUrl: 'https://attacker.example/x' } as any,
+				{ email: 'nobody@dinary.app', appMagicSignUrl: 'https://attacker.example/x' } as any,
 				LanguagesEnum.ENGLISH
 			)
 		).resolves.toBeUndefined();

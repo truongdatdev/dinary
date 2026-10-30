@@ -1,7 +1,7 @@
 import { Inject, Injectable, Logger, NotFoundException, Optional } from '@nestjs/common';
 import { OidcIssuerConfig } from '@dinary/auth';
 import { AUTH_ZITADEL_SETTINGS } from '../auth-zitadel.tokens';
-import { AuthZitadelSettings, ZitadelLinkMode, isOrdinaryLabsHost, issuerProblem, stripTrailingSlashes } from '../auth-zitadel.config';
+import { AuthZitadelSettings, ZitadelLinkMode, isdinaryHost, issuerProblem, stripTrailingSlashes } from '../auth-zitadel.config';
 import { EVER_CONNECT_CONFIG, EverConnectConfigPort } from '../ports/ever-connect-config.port';
 
 /** The answer of `GET /api/auth/zitadel/config`. */
@@ -23,9 +23,9 @@ export interface ZitadelResolvedConfig {
  * Resolves the issuers and client the plugin may use right now.
  *
  * The environment wins per key. Only when it configures no issuer or client does the optional
- * connected-instance port get asked, and an issuer on an Ordinary Labs host is accepted on a non-cloud
+ * connected-instance port get asked, and an issuer on a Dinary host is accepted on a non-cloud
  * install only when that port reports the Ever ID sign-in integration as enabled. Without the port
- * (the normal case today) a non-cloud install never contacts an Ordinary Labs issuer.
+ * (the normal case today) a non-cloud install never contacts a Dinary issuer.
  */
 @Injectable()
 export class ZitadelConfigService {
@@ -54,7 +54,7 @@ export class ZitadelConfigService {
 			const usable =
 				!!connectIssuer &&
 				!issuerProblem(connectIssuer) &&
-				(settings.isCloud || !isOrdinaryLabsHost(connectIssuer) || (await this.connectAllowsEverIssuer()));
+				(settings.isCloud || !isdinaryHost(connectIssuer) || (await this.connectAllowsEverIssuer()));
 			if (usable && (!issuers.length || issuers.includes(connectIssuer))) {
 				issuers = [connectIssuer];
 				clientId = clientId || fromConnect.clientId;

@@ -7,20 +7,20 @@ export { isEverConnectEnabled } from './ever-connect-enabled';
 type Env = Record<string, string | undefined>;
 type Warn = (message: string) => void;
 
-/** How the installation reads its Ordinary Labs Platform events: a long poll, or one read every 15 minutes. */
+/** How the installation reads its Dinary Cloud events: a long poll, or one read every 15 minutes. */
 export type FeedMode = 'longpoll' | 'interval';
 
-/** The settings of the Ordinary Labs Platform connection, read once from the environment. */
+/** The settings of the Dinary Cloud connection, read once from the environment. */
 export interface EverConnectConfig {
 	/**
-	 * `EVER_PLATFORM_API_URL` (default `https://api.ordinarylabs.com`), or `null` when it is set to something
+	 * `EVER_PLATFORM_API_URL` (default `https://api.dinary.app`), or `null` when it is set to something
 	 * that cannot be used (not https, credentials, a query or a fragment): then nothing is sent at all,
 	 * never to another address than the one the operator chose.
 	 */
 	apiUrl: string | null;
 	/** Declared by `EVER_INSTALL_SOURCE`, never inferred. */
 	installSource: InstallSource;
-	/** `EVER_INSTALL_SOURCE=cloud`: Ordinary Labs operates this installation; nobody here is its operator. */
+	/** `EVER_INSTALL_SOURCE=cloud`: Dinary operates this installation; nobody here is its operator. */
 	cloud: boolean;
 	/** `EVER_CONNECT_FEED_MODE`. */
 	feedMode: FeedMode;
@@ -33,18 +33,18 @@ export interface EverConnectConfig {
 	/** The Dinary release (`DINARY_APP_VERSION`, `major.minor.patch`; `0.0.0` for a source build). */
 	version: string;
 	/**
-	 * The origin of the web app (`CLIENT_BASE_URL`) that app.ordinarylabs.com may send an administrator back
+	 * The origin of the web app (`CLIENT_BASE_URL`) that app.dinary.app may send an administrator back
 	 * to after a consent, or `null`: https only, or plain http on `localhost`, `127.0.0.1` or `[::1]`
-	 * (as the contract allows). An address on a private network is never sent. Ordinary Labs Platform keeps
+	 * (as the contract allows). An address on a private network is never sent. Dinary Cloud keeps
 	 * only a digest of it.
 	 */
 	returnOrigin: string | null;
-	/** The web app page app.ordinarylabs.com sends an administrator back to (the Ordinary Labs Platform page, in the fragment), or `null`. */
+	/** The web app page app.dinary.app sends an administrator back to (the Dinary Cloud page, in the fragment), or `null`. */
 	returnUrl: string | null;
 	/** `CLIENT_BASE_URL` is set but is not one that may be sent (plain http on another host). */
 	returnUnusable: boolean;
 	/**
-	 * `EVER_PLATFORM_ISSUER`: the issuer Ordinary Labs Platform's documents name, when it differs from the
+	 * `EVER_PLATFORM_ISSUER`: the issuer Dinary Cloud's documents name, when it differs from the
 	 * origin of `EVER_PLATFORM_API_URL` (a mock platform in tests). Honoured only when
 	 * `EVER_PLATFORM_API_URL` is a local address (see `localPlatform`).
 	 */
@@ -72,7 +72,7 @@ export function isLoopbackHost(hostname: string): boolean {
 const KEY = /^[a-z0-9_]{2,64}$/;
 
 /**
- * The Ordinary Labs Platform address. Unset: `https://api.ordinarylabs.com`. Set but unusable: `null`, so nothing is
+ * The Dinary Cloud address. Unset: `https://api.dinary.app`. Set but unusable: `null`, so nothing is
  * sent; the operator's choice is never replaced by another address.
  */
 function parseApiUrl(env: Env, warn: Warn): string | null {
@@ -84,13 +84,13 @@ function parseApiUrl(env: Env, warn: Warn): string | null {
 	try {
 		url = new URL(configured);
 	} catch {
-		warn('EVER_PLATFORM_API_URL is not a URL; the Ordinary Labs Platform connection sends nothing until it is corrected.');
+		warn('EVER_PLATFORM_API_URL is not a URL; the Dinary Cloud connection sends nothing until it is corrected.');
 		return null;
 	}
 	const okProtocol = url.protocol === 'https:' || (url.protocol === 'http:' && isLocalHost(url.hostname));
 	if (!okProtocol || url.username || url.password || url.search || url.hash) {
 		warn(
-			'EVER_PLATFORM_API_URL must be https (plain http only for a local or private address) and carry no credential, query or fragment; the Ordinary Labs Platform connection sends nothing until it is corrected.'
+			'EVER_PLATFORM_API_URL must be https (plain http only for a local or private address) and carry no credential, query or fragment; the Dinary Cloud connection sends nothing until it is corrected.'
 		);
 		return null;
 	}
@@ -148,7 +148,7 @@ export function releaseVersion(raw: string | undefined): string {
 	return match ? `${Number(match[1])}.${Number(match[2])}.${Number(match[3])}` : '0.0.0';
 }
 
-/** The page of the web app a consent given in app.ordinarylabs.com returns to (the web app routes in its fragment). */
+/** The page of the web app a consent given in app.dinary.app returns to (the web app routes in its fragment). */
 export const CONSENT_RETURN_FRAGMENT = '#/pages/integrations/ever-connect';
 
 /** The hosts plain http may return to (the contract's `return_origins`). */
@@ -175,13 +175,13 @@ function parseReturn(raw: string | undefined): { origin: string; url: string } |
 	}
 	const base = `${url.origin}${url.pathname.replace(/\/+$/, '')}`;
 	// The web app routes in its fragment, and a return address may name a page there: the consent
-	// screen returns to the Ordinary Labs Platform page, which reads the result.
+	// screen returns to the Dinary Cloud page, which reads the result.
 	return { origin: url.origin, url: `${base}/${CONSENT_RETURN_FRAGMENT}` };
 }
 
 /**
  * Reads the settings once. A malformed value falls back to its default with one `warn` line (which
- * never repeats the value), except an unusable Ordinary Labs Platform address, which sends nothing.
+ * never repeats the value), except an unusable Dinary Cloud address, which sends nothing.
  */
 export function readEverConnectConfig(env: Env = process.env, warn: Warn = () => undefined): EverConnectConfig {
 	const installSource = parseInstallSource(env, warn);

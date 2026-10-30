@@ -4864,7 +4864,7 @@
 		}
 	},
 	"ABOUT_PAGE": {
-		"COPYRIGHT": "‏Copyright © 2019-{{year}}, Ordinary Labs. جميع الحقوق محفوظة.",
+		"COPYRIGHT": "‏Copyright © 2019-{{year}}, Dinary. جميع الحقوق محفوظة.",
 		"DESCRIPTION": "‏Dinary™ هي منصة مفتوحة لإدارة الأعمال للاقتصادات التعاونية وعند الطلب والتشاركية — ERP وCRM وHRM وATS وإدارة المشاريع مع تتبع الوقت المدمج.",
 		"LICENSE": "مفتوحة المصدر، صادرة بموجب ترخيص",
 		"VERSION_DETAILS": "تفاصيل الإصدار",

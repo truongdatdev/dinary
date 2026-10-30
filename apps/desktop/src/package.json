@@ -7,23 +7,23 @@
 	"homepage": "https://dinary.app",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ordinary-labs/dinary.git"
+		"url": "https://github.com/truongdatdev/dinary.git"
 	},
 	"bugs": {
-		"url": "https://github.com/ordinary-labs/dinary/issues"
+		"url": "https://github.com/truongdatdev/dinary/issues"
 	},
 	"private": true,
 	"author": {
-		"name": "Ordinary Labs",
-		"email": "hello@ordinarylabs.com",
-		"url": "https://ordinarylabs.com"
+		"name": "Dinary",
+		"email": "hello@dinary.app",
+		"url": "https://dinary.app"
 	},
 	"main": "index.js",
 	"build": {
-		"appId": "com.ordinarylabs.dinarydesktop",
+		"appId": "com.dinary.dinarydesktop",
 		"artifactName": "${name}-${arch}-${version}.${ext}",
 		"productName": "Dinary Desktop",
-		"copyright": "Copyright © 2019-Present. Ever Co. LTD and contributors; Dinary modifications © Ordinary Labs",
+		"copyright": "Copyright © 2019-Present. Ever Co. LTD and contributors; Dinary modifications © Dinary",
 		"beforeBuild": "tools/electron/before-build.js",
 		"afterSign": "tools/notarize.js",
 		"dmg": {

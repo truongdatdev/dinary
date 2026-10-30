@@ -30,16 +30,16 @@ import {
 export type EverPlatformView = 'loading' | 'ready' | 'unavailable' | 'error';
 
 /**
- * Integrations > Ordinary Labs Platform.
+ * Integrations > Dinary Cloud.
  *
  * - Connection (the operator of the installation only; "Operated by Dinary Cloud" on Ever's cloud):
  *   what connecting sends, the connect code, the state of the connection, the approvals the
  *   operator owes, the instance policy, Disconnect.
  * - Organization link: link this organization with a link code, or remove the link.
  * - Integrations & data: each integration, its state, what it moves (Show scope), the consent link
- *   to app.ordinarylabs.com ("Enable in app.ordinarylabs.com…") and Disable. Nothing is enabled from here. For an
- *   administrator who may change integrations, opening the page reads the states from Ordinary Labs Platform
- *   (the result of a consent given in app.ordinarylabs.com shows at once).
+ *   to app.dinary.app ("Enable in app.dinary.app…") and Disable. Nothing is enabled from here. For an
+ *   administrator who may change integrations, opening the page reads the states from Dinary Cloud
+ *   (the result of a consent given in app.dinary.app shows at once).
  * - Entitlements and Audit.
  *
  * When the API answers 404 the module is not loaded on this installation: the page says so and
@@ -460,7 +460,7 @@ export type EverPlatformView = 'loading' | 'ready' | 'unavailable' | 'error';
 												}}
 											</dt>
 											<dd>
-												{{ document.handle ? 'ordinarylabs.com/' + document.handle : '—' }} ·
+												{{ document.handle ? 'dinary.app/' + document.handle : '—' }} ·
 												{{ 'EVER_CONNECT.ENTITLEMENTS.STATUS.' + document.status | translate }}
 											</dd>
 											<dt>{{ 'EVER_CONNECT.ENTITLEMENTS.PLAN' | translate }}</dt>
@@ -676,7 +676,7 @@ export class EverPlatformPageComponent implements OnInit {
 			});
 	}
 
-	/** "Enable in app.ordinarylabs.com…" is offered for an integration that can be consented to from here. */
+	/** "Enable in app.dinary.app…" is offered for an integration that can be consented to from here. */
 	canAskConsent(item: EverConnectIntegration): boolean {
 		if (!this.status?.connected || !['available', 'disabled', 'revoked_remote'].includes(item.state)) return false;
 		return !item.instance_wide || this.status.operator;
@@ -740,7 +740,7 @@ export class EverPlatformPageComponent implements OnInit {
 		);
 	}
 
-	/** Asks the API for the app.ordinarylabs.com consent link and opens it; the page reads the result on return. */
+	/** Asks the API for the app.dinary.app consent link and opens it; the page reads the result on return. */
 	enable(item: EverConnectIntegration): void {
 		if (!this.organizationId) return;
 		this.busy = true;

@@ -64,7 +64,7 @@ const translatedText = {
 };
 
 const organization = (currencyPosition?: string, timeZone = 'UTC') =>
-	({ name: 'Ordinary Labs', dateFormat: 'YYYY-MM-DD', currencyPosition, timeZone } as any);
+	({ name: 'Dinary', dateFormat: 'YYYY-MM-DD', currencyPosition, timeZone } as any);
 const contact = { name: 'ACME' } as any;
 
 const invoice = (overrides: Record<string, any> = {}) =>

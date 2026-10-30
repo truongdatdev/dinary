@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 /**
  * Mirror desktop-app release assets from GitHub Releases into the Cloudflare R2 bucket behind
- * https://downloads.ordinarylabs.com, and publish a manifest of what is actually there.
+ * https://downloads.dinary.app, and publish a manifest of what is actually there.
  *
  * Why this exists: the download links on dinary.app pointed at
  * `ever.sfo3.cdn.digitaloceanspaces.com`, which died with the DigitalOcean account. GitHub Releases
  * stays the source of truth and the auto-update feed; R2 is a mirror in front of it, so a mirror
  * miss degrades to a working GitHub link instead of a broken download.
  *
- * The manifest is the contract. The website rewrites a GitHub asset URL to downloads.ordinarylabs.com ONLY
+ * The manifest is the contract. The website rewrites a GitHub asset URL to downloads.dinary.app ONLY
  * for keys listed in manifest.json, so a release that has not been mirrored yet still downloads from
  * GitHub rather than 404ing. Never add a manifest entry for an object you have not read back.
  *
@@ -160,7 +160,7 @@ let failed = 0;
 for (const [repo, prefix] of Object.entries(APPS)) {
 	let releases;
 	try {
-		releases = await gh(`/repos/ordinary-labs/${repo}/releases?per_page=20`);
+		releases = await gh(`/repos/truongdatdev/${repo}/releases?per_page=20`);
 	} catch (e) {
 		console.error(`  ${repo}: cannot list releases -- ${safe(e.message)}`);
 		failed++;
@@ -232,7 +232,7 @@ for (const [repo, prefix] of Object.entries(APPS)) {
 if (!DRY) {
 	const manifest = {
 		generated: new Date().toISOString(),
-		base: 'https://downloads.ordinarylabs.com',
+		base: 'https://downloads.dinary.app',
 		// Byte order, and a copy rather than sorting `mirrored` in place.
 		keys: [...mirrored].sort((a, b) => (a < b ? -1 : a > b ? 1 : 0))
 	};

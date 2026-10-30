@@ -6,7 +6,7 @@ import { DatabaseTypeEnum } from '@dinary/config';
  * Creates the four tables of the Ever ID sign-in plugin (`@dinary/plugin-auth-zitadel`):
  *
  * - `zitadel_account`: links between an Ever ID (`issuer` + `subject`) and Dinary users;
- * - `zitadel_organization`: links between Dinary organizations and Ordinary Labs Platform organizations;
+ * - `zitadel_organization`: links between Dinary organizations and Dinary Cloud organizations;
  * - `zitadel_session`: Dinary sessions opened through Ever ID, for back-channel logout;
  * - `zitadel_logout_jti`: replay cache of back-channel logout tokens.
  *

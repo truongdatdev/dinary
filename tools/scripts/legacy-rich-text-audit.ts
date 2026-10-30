@@ -486,7 +486,7 @@ const SELF_TEST_CASES: { name: string; html: string; expected: Category; expectD
 			'<h2 style="text-align: center;">Title</h2><p><strong>bold</strong> and <em>italic</em>' +
 			' and <u>underline</u>.</p><ul><li>one</li><li>two</li></ul>' +
 			'<table><tbody><tr><th>H</th><td colspan="2">cell</td></tr></tbody></table>' +
-			'<p><a href="https://ordinarylabs.com/x" target="_blank">link</a></p>',
+			'<p><a href="https://dinary.app/x" target="_blank">link</a></p>',
 		expected: 'zero-loss'
 	},
 	{

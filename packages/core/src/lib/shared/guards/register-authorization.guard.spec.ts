@@ -130,12 +130,12 @@ describe('RegisterAuthorizationGuard', () => {
 		const control = build(activeSuperAdmin, superAdminState);
 		await expect(
 			control.guard.canActivate(
-				context({ user: { email: 'new@ordinarylabs.com', roleId: 'role-target' } }).executionContext
+				context({ user: { email: 'new@dinary.app', roleId: 'role-target' } }).executionContext
 			)
 		).resolves.toBe(true);
 
 		const { guard, typeOrmUserRepository } = build(activeSuperAdmin, superAdminState);
-		const { executionContext } = context({ user: { email: 'new@ordinarylabs.com', roleId: 'role-target' } }, resetToken);
+		const { executionContext } = context({ user: { email: 'new@dinary.app', roleId: 'role-target' } }, resetToken);
 
 		await expect(guard.canActivate(executionContext)).rejects.toBeInstanceOf(ForbiddenException);
 		expect(typeOrmUserRepository.findOne).not.toHaveBeenCalled();
@@ -144,14 +144,14 @@ describe('RegisterAuthorizationGuard', () => {
 	it('refuses an access token signed with a non-HS256 algorithm', async () => {
 		const hs512 = sign({ id: 'caller-1', tenantId: 'tenant-1' }, env.JWT_SECRET, { algorithm: 'HS512' });
 		const { guard } = build(activeSuperAdmin, superAdminState);
-		const { executionContext } = context({ user: { email: 'new@ordinarylabs.com', roleId: 'role-target' } }, hs512);
+		const { executionContext } = context({ user: { email: 'new@dinary.app', roleId: 'role-target' } }, hs512);
 
 		await expect(guard.canActivate(executionContext)).rejects.toBeInstanceOf(ForbiddenException);
 	});
 
 	it('lets pure public self-registration through untouched', async () => {
 		const { guard, typeOrmUserRepository } = build(activeSuperAdmin, superAdminState);
-		const { executionContext } = context({ user: { email: 'new@ordinarylabs.com' } }, null);
+		const { executionContext } = context({ user: { email: 'new@dinary.app' } }, null);
 
 		await expect(guard.canActivate(executionContext)).resolves.toBe(true);
 		expect(typeOrmUserRepository.findOne).not.toHaveBeenCalled();
@@ -161,7 +161,7 @@ describe('RegisterAuthorizationGuard', () => {
 		const { guard, roleAuthorizationService } = build(activeSuperAdmin, superAdminState);
 		// A spoofed createdByUserId in the body must be overwritten with the authenticated caller.
 		const { request, executionContext } = context({
-			user: { email: 'new@ordinarylabs.com', roleId: 'role-target' },
+			user: { email: 'new@dinary.app', roleId: 'role-target' },
 			createdByUserId: 'attacker-id'
 		});
 
@@ -180,7 +180,7 @@ describe('RegisterAuthorizationGuard', () => {
 
 	it('refuses a caller demoted to EMPLOYEE whose token still claims SUPER_ADMIN', async () => {
 		const { guard } = build({ ...activeSuperAdmin, roleId: 'role-employee' }, employeeState);
-		const { executionContext } = context({ user: { email: 'new@ordinarylabs.com', roleId: 'role-target' } });
+		const { executionContext } = context({ user: { email: 'new@dinary.app', roleId: 'role-target' } });
 
 		await expect(guard.canActivate(executionContext)).rejects.toBeInstanceOf(ForbiddenException);
 	});
@@ -194,7 +194,7 @@ describe('RegisterAuthorizationGuard', () => {
 		['missing', null]
 	])('refuses a caller that is %s, holding a still-valid token', async (_label, caller) => {
 		const { guard, roleAuthorizationService } = build(caller, superAdminState);
-		const { executionContext } = context({ user: { email: 'new@ordinarylabs.com', roleId: 'role-target' } });
+		const { executionContext } = context({ user: { email: 'new@dinary.app', roleId: 'role-target' } });
 
 		await expect(guard.canActivate(executionContext)).rejects.toBeInstanceOf(ForbiddenException);
 		expect(roleAuthorizationService.getAuthorizationState).not.toHaveBeenCalled();
@@ -202,7 +202,7 @@ describe('RegisterAuthorizationGuard', () => {
 
 	it('refuses a caller whose role cannot be resolved', async () => {
 		const { guard } = build(activeSuperAdmin, null);
-		const { executionContext } = context({ user: { email: 'new@ordinarylabs.com', roleId: 'role-target' } });
+		const { executionContext } = context({ user: { email: 'new@dinary.app', roleId: 'role-target' } });
 
 		await expect(guard.canActivate(executionContext)).rejects.toBeInstanceOf(ForbiddenException);
 	});
@@ -237,7 +237,7 @@ describe('RegisterAuthorizationGuard', () => {
 		it('refuses an own-tenant roleId paired with a foreign role.id', async () => {
 			const { guard, findOneByOrFail } = buildWithRoles();
 			const { executionContext } = context({
-				user: { email: 'new@ordinarylabs.com', roleId: OWN_ROLE, role: { id: FOREIGN_ROLE } }
+				user: { email: 'new@dinary.app', roleId: OWN_ROLE, role: { id: FOREIGN_ROLE } }
 			});
 
 			await expect(guard.canActivate(executionContext)).rejects.toBeInstanceOf(ForbiddenException);
@@ -246,14 +246,14 @@ describe('RegisterAuthorizationGuard', () => {
 
 		it('refuses a foreign role sent as a bare id string', async () => {
 			const { guard } = buildWithRoles();
-			const { executionContext } = context({ user: { email: 'new@ordinarylabs.com', role: FOREIGN_ROLE } });
+			const { executionContext } = context({ user: { email: 'new@dinary.app', role: FOREIGN_ROLE } });
 
 			await expect(guard.canActivate(executionContext)).rejects.toBeInstanceOf(ForbiddenException);
 		});
 
 		it('refuses a role key that references nothing', async () => {
 			const { guard } = buildWithRoles();
-			const { executionContext } = context({ user: { email: 'new@ordinarylabs.com', role: { name: 'SUPER_ADMIN' } } });
+			const { executionContext } = context({ user: { email: 'new@dinary.app', role: { name: 'SUPER_ADMIN' } } });
 
 			await expect(guard.canActivate(executionContext)).rejects.toBeInstanceOf(BadRequestException);
 		});
@@ -264,7 +264,7 @@ describe('RegisterAuthorizationGuard', () => {
 			['both, agreeing', { roleId: OWN_ROLE, role: { id: OWN_ROLE } }]
 		])('still admits an own-tenant role sent as %s', async (_label, fields) => {
 			const { guard } = buildWithRoles();
-			const { executionContext } = context({ user: { email: 'new@ordinarylabs.com', ...fields } });
+			const { executionContext } = context({ user: { email: 'new@dinary.app', ...fields } });
 
 			await expect(guard.canActivate(executionContext)).resolves.toBe(true);
 		});
@@ -272,7 +272,7 @@ describe('RegisterAuthorizationGuard', () => {
 
 	it('still refuses an unauthenticated privileged registration', async () => {
 		const { guard } = build(activeSuperAdmin, superAdminState);
-		const { executionContext } = context({ user: { email: 'new@ordinarylabs.com', roleId: 'role-target' } }, null);
+		const { executionContext } = context({ user: { email: 'new@dinary.app', roleId: 'role-target' } }, null);
 
 		await expect(guard.canActivate(executionContext)).rejects.toBeInstanceOf(ForbiddenException);
 	});
@@ -294,7 +294,7 @@ describe('RegisterAuthorizationGuard', () => {
 		it("refuses a super admin's OAuth-app token, before reading the caller", async () => {
 			const { guard, typeOrmUserRepository } = build(activeSuperAdmin, superAdminState);
 			const { executionContext } = context(
-				{ user: { email: 'new@ordinarylabs.com', roleId: 'role-target' } },
+				{ user: { email: 'new@dinary.app', roleId: 'role-target' } },
 				oauthAppToken
 			);
 
@@ -306,7 +306,7 @@ describe('RegisterAuthorizationGuard', () => {
 			process.env.OAUTH_APP_TOKEN_SCOPE_ENFORCEMENT = 'false';
 			const { guard } = build(activeSuperAdmin, superAdminState);
 			const { executionContext } = context(
-				{ user: { email: 'new@ordinarylabs.com', roleId: 'role-target' } },
+				{ user: { email: 'new@dinary.app', roleId: 'role-target' } },
 				oauthAppToken
 			);
 

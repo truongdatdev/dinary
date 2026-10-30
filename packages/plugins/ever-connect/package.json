@@ -1,21 +1,21 @@
 {
 	"name": "@dinary/plugin-ever-connect",
 	"version": "0.1.0",
-	"description": "Dinary Platform plugin that connects an installation to Ordinary Labs Platform with a connect code, links organizations to Ordinary Labs Platform organizations and keeps the state of each consented integration; off unless EVER_CONNECT_ENABLED=true",
+	"description": "Dinary Platform plugin that connects an installation to Dinary Cloud with a connect code, links organizations to Dinary Cloud organizations and keeps the state of each consented integration; off unless EVER_CONNECT_ENABLED=true",
 	"author": {
-		"name": "Ordinary Labs",
-		"email": "hello@ordinarylabs.com",
-		"url": "https://ordinarylabs.com"
+		"name": "Dinary",
+		"email": "hello@dinary.app",
+		"url": "https://dinary.app"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ordinary-labs/dinary",
+		"url": "https://github.com/truongdatdev/dinary",
 		"directory": "packages/plugins/ever-connect"
 	},
 	"bugs": {
-		"url": "https://github.com/ordinary-labs/dinary/issues"
+		"url": "https://github.com/truongdatdev/dinary/issues"
 	},
-	"homepage": "https://ordinarylabs.com",
+	"homepage": "https://dinary.app",
 	"license": "AGPL-3.0",
 	"private": true,
 	"type": "commonjs",

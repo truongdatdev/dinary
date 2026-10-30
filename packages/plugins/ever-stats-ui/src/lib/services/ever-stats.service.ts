@@ -11,7 +11,7 @@ export interface EverStatsStatus {
 	/** Why nothing is sent: switched off here, an unusable `EVER_STATS_API_URL`, or an unreadable key. */
 	reason: 'ui' | 'config' | 'key_unreadable' | null;
 	install_source: string;
-	/** Set once Ordinary Labs Platform accepted a report under it. */
+	/** Set once Dinary Cloud accepted a report under it. */
 	instance_id: string | null;
 	key_id: string;
 	serves: string[];

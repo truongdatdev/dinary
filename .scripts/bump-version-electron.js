@@ -161,7 +161,7 @@ module.exports.serverapi = async (isProd) => {
 		package.build.linux.executableName = appName;
 
 		const appRepoName = process.env.DESKTOP_API_SERVER_REPO_NAME || appName;
-		const appRepoOwner = process.env.DESKTOP_API_SERVER_REPO_OWNER || 'ordinary-labs';
+		const appRepoOwner = process.env.DESKTOP_API_SERVER_REPO_OWNER || 'truongdatdev';
 
 		// For GitHub options see https://www.electron.build/configuration/publish.html
 
@@ -230,7 +230,7 @@ module.exports.server = async (isProd) => {
 		package.build.linux.executableName = appName;
 
 		const appRepoName = process.env.DESKTOP_SERVER_REPO_NAME || appName;
-		const appRepoOwner = process.env.DESKTOP_SERVER_REPO_OWNER || 'ordinary-labs';
+		const appRepoOwner = process.env.DESKTOP_SERVER_REPO_OWNER || 'truongdatdev';
 
 		// For GitHub options see https://www.electron.build/configuration/publish.html
 
@@ -299,7 +299,7 @@ module.exports.servermcp = async (isProd) => {
 		package.build.linux.executableName = appName;
 
 		const appRepoName = process.env.DESKTOP_MCP_SERVER_REPO_NAME || appName;
-		const appRepoOwner = process.env.DESKTOP_MCP_SERVER_REPO_OWNER || 'ordinary-labs';
+		const appRepoOwner = process.env.DESKTOP_MCP_SERVER_REPO_OWNER || 'truongdatdev';
 
 		// For GitHub options see https://www.electron.build/configuration/publish.html
 
@@ -368,7 +368,7 @@ module.exports.desktop = async (isProd) => {
 		package.build.linux.executableName = appName;
 
 		const appRepoName = process.env.DESKTOP_APP_REPO_NAME || appName;
-		const appRepoOwner = process.env.DESKTOP_APP_REPO_OWNER || 'ordinary-labs';
+		const appRepoOwner = process.env.DESKTOP_APP_REPO_OWNER || 'truongdatdev';
 
 		// For GitHub options see https://www.electron.build/configuration/publish.html
 
@@ -437,7 +437,7 @@ module.exports.desktopTimer = async (isProd) => {
 		package.build.linux.executableName = timerAppName;
 
 		const appRepoName = process.env.DESKTOP_TIMER_APP_REPO_NAME || timerAppName;
-		const appRepoOwner = process.env.DESKTOP_TIMER_APP_REPO_OWNER || 'ordinary-labs';
+		const appRepoOwner = process.env.DESKTOP_TIMER_APP_REPO_OWNER || 'truongdatdev';
 
 		// For GitHub options see https://www.electron.build/configuration/publish.html
 
@@ -506,7 +506,7 @@ module.exports.agent = async (isProd) => {
 		package.build.linux.executableName = appName;
 
 		const appRepoName = process.env.AGENT_APP_REPO_NAME || appName;
-		const appRepoOwner = process.env.AGENT_APP_REPO_OWNER || 'ordinary-labs';
+		const appRepoOwner = process.env.AGENT_APP_REPO_OWNER || 'truongdatdev';
 
 		// For GitHub options see https://www.electron.build/configuration/publish.html
 

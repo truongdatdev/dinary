@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * The import boundary of the optional Ordinary Labs Platform modules (rules in import-boundary.cjs, which the
+ * The import boundary of the optional Dinary Cloud modules (rules in import-boundary.cjs, which the
  * ESLint rule `dinary-platform/import-boundary` shares), over the tree (dependencies and build output skipped). The CI gate: it
  * needs nothing but Node, so it runs before any install.
  *
@@ -123,7 +123,7 @@ export function main(argv) {
 	const findings = check(root);
 	if (findings.length) {
 		process.stderr.write(
-			`check-import-boundary: imports across the Ordinary Labs Platform modules' boundary:\n  ${findings.join('\n  ')}\n`
+			`check-import-boundary: imports across the Dinary Cloud modules' boundary:\n  ${findings.join('\n  ')}\n`
 		);
 		return 1;
 	}

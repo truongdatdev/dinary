@@ -36,8 +36,8 @@ import { isKnownDefaultSecret } from '@dinary/contracts';
 export type KeyMaterialSource = 'k' | 'j' | 'n';
 
 /**
- * What a stored secret is for: the statistics key, the Ordinary Labs Platform connect key, or a document the
- * Ordinary Labs Platform connection keeps (an entitlement document, an integration's configuration). The
+ * What a stored secret is for: the statistics key, the Dinary Cloud connect key, or a document the
+ * Dinary Cloud connection keeps (an entitlement document, an integration's configuration). The
  * purpose is bound into the ciphertext, so one cannot be read as another.
  */
 export type KeyPurpose = 'stats' | 'connect' | 'entitlement' | 'integration_config';
@@ -93,9 +93,9 @@ function material(source: KeyMaterialSource, env: Env): Buffer | null {
 const aad = (purpose: KeyPurpose) => Buffer.from(`ever_instance:${purpose}`, 'utf8');
 
 /**
- * Why this installation cannot keep the Ordinary Labs Platform connect key (and the documents of that
+ * Why this installation cannot keep the Dinary Cloud connect key (and the documents of that
  * connection) safely, or `null` when it can. Unlike the statistics key, the connect key authorizes
- * calls to Ordinary Labs Platform, so it is stored only under `ENCRYPTION_KEY`, or under a `JWT_SECRET` that
+ * calls to Dinary Cloud, so it is stored only under `ENCRYPTION_KEY`, or under a `JWT_SECRET` that
  * is not one of the values published in the Dinary repository; never under the fixed fallback.
  */
 export type ConnectKeyMaterialProblem = 'no_secret' | 'jwt_secret_default' | 'encryption_key_default';
@@ -172,7 +172,7 @@ export function publicKeyOfPrivate(privateKeyDer: Buffer): string {
 	return publicKeyToBase64Url(createPublicKey(createPrivateKey({ key: privateKeyDer, format: 'der', type: 'pkcs8' })));
 }
 
-/** The key id Ordinary Labs Platform derives from a public key: base64url of the first 8 bytes of its SHA-256 (11 characters). */
+/** The key id Dinary Cloud derives from a public key: base64url of the first 8 bytes of its SHA-256 (11 characters). */
 export function keyIdOf(publicKey: string): string {
 	const raw = Buffer.from(publicKey, 'base64url');
 	if (raw.length !== 32 || raw.toString('base64url') !== publicKey) {

@@ -22,7 +22,7 @@ const STATUS: EverConnectStatus = {
 		last_heartbeat_at: null,
 		feed_mode: 'longpoll',
 		last_error: null,
-		api_url: 'https://api.ordinarylabs.com',
+		api_url: 'https://api.dinary.app',
 		return_url: null,
 		key_material: 'ok',
 		env_code: 'none'
@@ -33,7 +33,7 @@ const STATUS: EverConnectStatus = {
 };
 
 /**
- * The Ordinary Labs Platform page: where the module is not loaded it only says so (and asks nothing else);
+ * The Dinary Cloud page: where the module is not loaded it only says so (and asks nothing else);
  * the Connection tab is the operator's; nothing is enabled from the page.
  */
 describe('EverPlatformPageComponent', () => {
@@ -110,14 +110,14 @@ describe('EverPlatformPageComponent', () => {
 		expect(find('connect')).toBeNull();
 	});
 
-	it('an administrator who may change integrations reads the states from Ordinary Labs Platform', () => {
+	it('an administrator who may change integrations reads the states from Dinary Cloud', () => {
 		api.status.mockReturnValue(of(STATUS));
 		render(true);
 		expect(api.refresh).toHaveBeenCalledWith(ORGANIZATION.id);
 		expect(api.integrations).not.toHaveBeenCalled();
 	});
 
-	it('a viewer reads the states kept here (no call to Ordinary Labs Platform)', () => {
+	it('a viewer reads the states kept here (no call to Dinary Cloud)', () => {
 		api.status.mockReturnValue(of(STATUS));
 		render(false);
 		expect(api.integrations).toHaveBeenCalledWith(ORGANIZATION.id);

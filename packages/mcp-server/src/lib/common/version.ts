@@ -67,6 +67,6 @@ export const versionInfo = {
 	version,
 	name: 'Dinary MCP Server',
 	description: 'Model Context Protocol server for Dinary',
-	author: 'Ordinary Labs',
+	author: 'Dinary',
 	license: 'AGPL-3.0'
 };

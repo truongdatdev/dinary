@@ -3,7 +3,7 @@ import { INTEGRATIONS } from '../sdk';
 import { DINARY_INTEGRATIONS, dinaryIntegration, offeredOn, sharedDefinition } from './integration-definitions';
 
 /**
- * The scopes Dinary shows (and app.ordinarylabs.com consents to) are the definitions of the SDK's contracts
+ * The scopes Dinary shows (and app.dinary.app consents to) are the definitions of the SDK's contracts
  * package (`@ever-co/connect-contracts`). Each key Dinary offers pins the `scope_version` and the
  * SHA-256 of the scope it was reviewed with; when a new package version changes a scope, this fails
  * until the pin is reviewed and updated. (The SDK's own build checks that a changed scope also gets

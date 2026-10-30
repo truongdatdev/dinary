@@ -16,8 +16,8 @@ export const LEGAL_COOKIES_EN: ILegalDocument = {
 	product: 'dinary',
 	productName: 'Dinary',
 	domain: 'dinary.app',
-	entity: 'Ordinary Labs',
-	entityId: 'ordinary-labs',
+	entity: 'Dinary',
+	entityId: 'dinary',
 	locale: 'en',
 	version: '1.0.2',
 	effectiveDate: '2026-08-02',
@@ -159,7 +159,7 @@ for that data under its own privacy notice.</strong></li>
 <p><strong>Not every data protection authority accepts that a bot-protection service belongs in the strictly
 necessary category.</strong> We think it does, for the reason above, and we would rather publish the reasoning and
 let you judge it than bury the tool in a list. If you would prefer not to submit a form protected this way,
-write to privacy@ordinarylabs.com and we will take it from you another way.</p>
+write to privacy@dinary.app and we will take it from you another way.</p>
 <h3 id="2-functional-and-preferences-consent-required" tabindex="-1">2. Functional and preferences — consent required</h3>
 <p>These remember choices you have made so that the Service behaves the way you left it: language, time zone,
 theme, layout, dismissed messages, and support or chat widgets where we offer them.</p>
@@ -240,7 +240,7 @@ assessed against the fact that the measurement is aggregate, short-lived and can
 <li>Open <strong>Cookie preferences</strong> from the footer of any page. Our own analytics appears there with a switch,
 even though it runs without consent, and turning it off stops it.</li>
 <li>Blocking it at the browser or network level also works, and we do not try to detect or defeat that.</li>
-<li>Or write to privacy@ordinarylabs.com and ask us to exclude you.</li>
+<li>Or write to privacy@dinary.app and ask us to exclude you.</li>
 </ul>
 <p><strong>We do not ask for a reason and we do not require an account.</strong></p>
 <h3 id="separately-and-only-with-your-consent-we-also-use-third-party-tools" tabindex="-1">Separately, and only with your consent, we also use third-party tools</h3>
@@ -382,7 +382,7 @@ anything else we hold.</p>
 staying on our own infrastructure, and this is a third party receiving it. <strong>We are not going to stretch
 the same reasoning over both.</strong></p>
 <p>If you would rather it did not run, a content blocker or a network-level block stops it, and we do not
-attempt to detect or defeat that. You can also write to privacy@ordinarylabs.com and we will tell you the
+attempt to detect or defeat that. You can also write to privacy@dinary.app and we will tell you the
 current provider and exactly what it collects.</p>
 <h3 id="where-these-providers-are-and-where-to-find-the-full-list" tabindex="-1">Where these providers are, and where to find the full list</h3>
 <p>Some of these providers are established outside the European Economic Area, and using them involves an
@@ -396,10 +396,10 @@ this product's surfaces — the provider, whether it is first- or third-party, i
 how long it lasts, and a link to the provider's own notice.</li>
 <li><strong>Our Sub-processor List</strong> covers the wider set of providers that process personal data for us, including
 the many that never touch your device at all. You can obtain the current version at any time from
-privacy@ordinarylabs.com, and it names the sub-processor, what it does, and where it processes.</li>
+privacy@dinary.app, and it names the sub-processor, what it does, and where it processes.</li>
 </ul>
 <p>We update both when a provider is added, removed or changed. If you find something on our pages that is not
-in either list, tell us at privacy@ordinarylabs.com — that is a defect and we will fix it.</p>
+in either list, tell us at privacy@dinary.app — that is a defect and we will fix it.</p>
 <h2 id="consent-and-how-to-withdraw-it" tabindex="-1">Consent, and how to withdraw it</h2>
 <h3 id="how-the-banner-works" tabindex="-1">How the banner works</h3>
 <p>On your first visit we show a consent banner, and <strong>nothing in the functional, analytics or marketing
@@ -427,7 +427,7 @@ remove what was stored.</p>
 <ul>
 <li><strong>Withdrawal works forwards, not backwards.</strong> It does not make lawful past processing unlawful, and it
 does not reach into data a third-party provider already received. If you want that deleted too, ask us at
-privacy@ordinarylabs.com and we will tell you who holds it and how to ask them.</li>
+privacy@dinary.app and we will tell you who holds it and how to ask them.</li>
 <li><strong>Your choice is stored on the device and browser you made it on.</strong> A different browser, a different
 device or a private window will ask again, because there is nothing there to read. Clearing your browser
 storage deletes the record of your refusal as well, which is why the banner reappears afterwards.</li>
@@ -436,7 +436,7 @@ storage deletes the record of your refusal as well, which is why the banner reap
 <p>When you make a choice we record what you chose, when you chose it, which categories it covered, and which
 version of this policy was in force at the time. That record exists for two reasons: so that we honour your
 choice, and so that we can show what you were asked and what you answered.</p>
-<p>You can ask us for a copy of your own consent record at privacy@ordinarylabs.com.</p>
+<p>You can ask us for a copy of your own consent record at privacy@dinary.app.</p>
 <h3 id="how-long-a-choice-lasts-before-we-ask-again" tabindex="-1">How long a choice lasts before we ask again</h3>
 <p>We store a consent choice for <strong>six months</strong>. After that the banner appears again so you can confirm or
 change it. We will also ask again sooner if we add a purpose or a category your earlier choice did not
@@ -518,10 +518,10 @@ a new version and no fresh request.</p>
 version applies today.</p>
 <h2 id="how-to-reach-us" tabindex="-1">How to reach us</h2>
 <p>Questions about this policy, about anything in the table above, or about a choice you have made — write to
-privacy@ordinarylabs.com. That address is monitored and we answer it. Ask us for a copy of your own consent
+privacy@dinary.app. That address is monitored and we answer it. Ask us for a copy of your own consent
 record, for the current sub-processor list, or to be excluded from our own analytics, and we will do it
 without asking why.</p>
-<p>By post: contact privacy@ordinarylabs.com for our current postal address. We correspond in English.</p>
+<p>By post: contact privacy@dinary.app for our current postal address. We correspond in English.</p>
 <p>If you think we have handled your data badly, tell us first — we would rather fix it. <strong>You can also
 complain to a data protection supervisory authority at any time.</strong> You may complain to the authority
 for the country where you live or work, or to the authority that oversees our handling of personal data.</p>

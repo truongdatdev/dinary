@@ -27,7 +27,7 @@ import { RequestApproval } from './request-approval.entity';
 import { IRequestApprovalAnswerTransaction, RequestApprovalService } from './request-approval.service';
 
 /**
- * Two approvers answering one request approval at the same time (follow-up of ordinary-labs/dinary#11372).
+ * Two approvers answering one request approval at the same time (follow-up of truongdatdev/dinary#11372).
  *
  * The answer used to be a read, a decision in memory, and then the writes, each on its own statement: two approvers
  * who both read the request open both decided it, and the second write won. An approval read before a refusal was

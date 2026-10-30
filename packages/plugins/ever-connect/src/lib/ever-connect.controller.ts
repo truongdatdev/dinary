@@ -34,10 +34,10 @@ import { EverConnectEnabledGuard } from './guards/ever-connect-operator.guard';
 
 /** `GET /api/ever-connect/status`. */
 export interface EverConnectStatus {
-	/** The module is loaded (the web app hides the Ordinary Labs Platform card when this route answers 404). */
+	/** The module is loaded (the web app hides the Dinary Cloud card when this route answers 404). */
 	enabled: true;
 	install_source: string;
-	/** `ever_cloud` when Ordinary Labs operates this installation (`EVER_INSTALL_SOURCE=cloud`). */
+	/** `ever_cloud` when Dinary operates this installation (`EVER_INSTALL_SOURCE=cloud`). */
 	managed_by: 'ever_cloud' | 'operator';
 	/** Whether the caller is the operator of this installation (sees the Connection tab). */
 	operator: boolean;
@@ -53,12 +53,12 @@ export interface EverConnectStatus {
 }
 
 /**
- * The organization side of the Ordinary Labs Platform connection, behind Dinary's tenant and permission
+ * The organization side of the Dinary Cloud connection, behind Dinary's tenant and permission
  * guards with the existing integration permissions (no new permission): the status, the link of the
  * organization, its integrations and consents, its entitlement document and its audit. The
  * installation-wide integrations answer 404 to everyone but the operator. No answer is cached.
  */
-@ApiTags('Ordinary Labs Platform')
+@ApiTags('Dinary Cloud')
 @ApiBearerAuth()
 @UseGuards(EverConnectEnabledGuard, TenantPermissionGuard, PermissionGuard)
 @Controller('/ever-connect')
@@ -111,7 +111,7 @@ export class EverConnectController {
 		return this.states.list(scope);
 	}
 
-	/** Re-reads the states from Ordinary Labs Platform (on return from app.ordinarylabs.com). */
+	/** Re-reads the states from Dinary Cloud (on return from app.dinary.app). */
 	@Post('integrations/refresh')
 	@HttpCode(HttpStatus.OK)
 	@Permissions(PermissionsEnum.INTEGRATION_EDIT)
@@ -128,7 +128,7 @@ export class EverConnectController {
 	}
 
 	/**
-	 * The app.ordinarylabs.com consent link. For the installation-wide integrations (`instance_url`,
+	 * The app.dinary.app consent link. For the installation-wide integrations (`instance_url`,
 	 * `stats_link`, `ever_id_login`, `webhooks`) only the operator gets one; everyone else 404.
 	 */
 	@Post('integrations/:key/consent-url')
@@ -161,7 +161,7 @@ export class EverConnectController {
 		return this.states.setEnabled(key, body.enabled, scope);
 	}
 
-	/** Links this organization with a link code from app.ordinarylabs.com: `{ "link_code": "EVL-…" }`. */
+	/** Links this organization with a link code from app.dinary.app: `{ "link_code": "EVL-…" }`. */
 	@Post('links')
 	@Permissions(PermissionsEnum.INTEGRATION_ADD)
 	@Header('Cache-Control', 'no-store')
@@ -200,7 +200,7 @@ export class EverConnectController {
 
 	/**
 	 * The decoded entitlement documents: this organization's link's, and the installation's for the
-	 * operator only (it names the connecting Ordinary Labs Platform organization and its plan).
+	 * operator only (it names the connecting Dinary Cloud organization and its plan).
 	 */
 	@Get('entitlement')
 	@Permissions(PermissionsEnum.INTEGRATION_VIEW)

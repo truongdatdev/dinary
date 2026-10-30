@@ -9,7 +9,7 @@ export const EVER_WORKS_REDIRECT_URL = 'ever-works';
 /** The catalog icon, relative to the API's public assets (`apps/api/src/assets/seed/integrations`). */
 export const EVER_WORKS_CATALOG_ICON = 'integrations/ever-works.svg';
 
-/** Position on the Integrations page: after Ever Async (12) and Ordinary Labs Platform (13). */
+/** Position on the Integrations page: after Ever Async (12) and Dinary Cloud (13). */
 export const EVER_WORKS_CATALOG_ORDER = 14;
 
 /** The integration contract version this plugin speaks (Ever Works `/api/integrations/v1`). */

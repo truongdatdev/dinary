@@ -1,5 +1,5 @@
 /**
- * Whether the Ordinary Labs Platform connection plugin is loaded. Off unless `EVER_CONNECT_ENABLED` is exactly
+ * Whether the Dinary Cloud connection plugin is loaded. Off unless `EVER_CONNECT_ENABLED` is exactly
  * `true`; unset, empty and `false` keep it off silently, any other value (`TRUE`, `1`, `yes`, ...)
  * keeps it off and is reported once through `warn`, which never repeats the value (it could be
  * anything an operator typed).
@@ -18,6 +18,6 @@ export function isEverConnectEnabled(
 	if (raw === 'true') {
 		return true;
 	}
-	warn('EVER_CONNECT_ENABLED is neither "true" nor "false"; the Ordinary Labs Platform connection stays off (the default).');
+	warn('EVER_CONNECT_ENABLED is neither "true" nor "false"; the Dinary Cloud connection stays off (the default).');
 	return false;
 }

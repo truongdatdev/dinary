@@ -1,8 +1,8 @@
 /**
- * The Stripe Checkout Session a visitor completed on the shared ordinarylabs.com checkout, carried from the
+ * The Stripe Checkout Session a visitor completed on the shared dinary.app checkout, carried from the
  * register form to tenant onboarding.
  *
- * ordinarylabs.com/checkout/complete forwards the session id to the register form as `checkout_session`. The
+ * dinary.app/checkout/complete forwards the session id to the register form as `checkout_session`. The
  * API reads it twice: at registration, as proof of purchase for the signup paywall, and at tenant
  * onboarding — a separate request, after the login that follows registration — where it links the new
  * tenant to the buyer's Stripe customer. Registration creates no tenant, so the id has to survive in

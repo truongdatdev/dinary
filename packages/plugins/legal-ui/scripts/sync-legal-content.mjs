@@ -6,7 +6,7 @@
  * `@ever-co/legal` package at *authoring* time and committed to this repository as plain
  * TypeScript.
  *
- * IMPORTANT: the upstream corpus was written for Ever Gauzy and the Ever legal entities. The
+ * IMPORTANT: the upstream corpus was written for the upstream product and its legal entities. The
  * committed documents are Dinary-branded templates with upstream entity details removed. Running
  * this script regenerates them from the upstream text and will reintroduce Ever branding and the
  * upstream legal entities. Review and rebrand every generated document before publishing it.
@@ -36,7 +36,7 @@
  *   node packages/plugins/legal-ui/scripts/sync-legal-content.mjs --fetch --only dpia
  *   node packages/plugins/legal-ui/scripts/sync-legal-content.mjs --fetch --only tos,privacy,cookies
  *
- *   # 5. Pull the upstream *Ever Gauzy* text when the corpus has no Dinary variant yet
+ *   # 5. Pull the upstream text when the corpus has no Dinary variant yet
  *   #    (always rebrand the result before committing - see below)
  *   node packages/plugins/legal-ui/scripts/sync-legal-content.mjs --fetch --accept-upstream-branding
  *
@@ -421,7 +421,7 @@ function renderIndexModule(corpusVersion) {
  *
  * Run \`node packages/plugins/legal-ui/scripts/sync-legal-content.mjs --fetch\` to refresh.
  *
- * IMPORTANT: the upstream corpus is written for Ever Gauzy and the Ever legal entities. The
+ * IMPORTANT: the upstream corpus is written for the upstream product and its legal entities. The
  * documents vendored here have been rebranded for Dinary and had their entity details removed;
  * any refresh must be reviewed and rebranded in full before it is published. These documents are
  * templates, not legal advice, and must be reviewed by qualified counsel before they go live.
@@ -438,7 +438,7 @@ export const LEGAL_CORPUS_PACKAGE = '${escapeSingleQuoted(CORPUS_PACKAGE)}';
  */
 export const LEGAL_CORPUS_VERSION = '${escapeSingleQuoted(corpusVersion)}';
 
-/** Corpus the documents belong to, e.g. \`dinary\` / \`ordinarylabs.com\`. */
+/** Corpus the documents belong to, e.g. \`dinary\` / \`dinary.app\`. */
 export const LEGAL_CORPUS_NAME = '${escapeSingleQuoted(PRODUCT_NAME)}';
 
 /** Product the bundled documents were rendered for. */

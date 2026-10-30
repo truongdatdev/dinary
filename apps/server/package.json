@@ -6,16 +6,16 @@
 	"homepage": "https://dinary.app",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ordinary-labs/dinary.git"
+		"url": "https://github.com/truongdatdev/dinary.git"
 	},
 	"bugs": {
-		"url": "https://github.com/ordinary-labs/dinary/issues"
+		"url": "https://github.com/truongdatdev/dinary/issues"
 	},
 	"private": true,
 	"author": {
-		"name": "Ordinary Labs",
-		"email": "hello@ordinarylabs.com",
-		"url": "https://ordinarylabs.com"
+		"name": "Dinary",
+		"email": "hello@dinary.app",
+		"url": "https://dinary.app"
 	},
 	"devDependencies": {
 		"@electron/rebuild": "^4.2.1",

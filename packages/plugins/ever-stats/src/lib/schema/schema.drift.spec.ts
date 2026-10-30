@@ -7,7 +7,7 @@ const sha256 = (bytes: Buffer | string) => createHash('sha256').update(bytes).di
 
 /**
  * The statistics contract this module sends against is the SDK's (`@ever-co/connect-contracts`, the
- * exact version in package.json): byte for byte the schema Ordinary Labs Platform publishes. A new package
+ * exact version in package.json): byte for byte the schema Dinary Cloud publishes. A new package
  * version that changes the schema fails here until the change is reviewed.
  */
 describe('the statistics contract', () => {

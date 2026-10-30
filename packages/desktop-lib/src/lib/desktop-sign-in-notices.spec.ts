@@ -61,9 +61,9 @@ describe('DesktopSignInNotices', () => {
 		const credentials = notices.provisionSeedCredentials();
 		const env = { ...inherited, ...desktopSeedCredentialsToEnv(credentials, inherited) };
 		notices.recordSeed(env, {
-			superAdmin: 'admin@ordinarylabs.com',
-			admin: 'local.admin@ordinarylabs.com',
-			employee: 'employee@ordinarylabs.com'
+			superAdmin: 'admin@dinary.app',
+			admin: 'local.admin@dinary.app',
+			employee: 'employee@dinary.app'
 		});
 		return credentials;
 	};
@@ -90,11 +90,11 @@ describe('DesktopSignInNotices', () => {
 		const options = dialogOptions();
 		expect(options.message).toBe('Save these passwords now. They are shown only once.');
 		for (const text of [
-			'Super Admin: admin@ordinarylabs.com',
+			'Super Admin: admin@dinary.app',
 			`Password: ${credentials.superAdmin}`,
-			'Admin: local.admin@ordinarylabs.com',
+			'Admin: local.admin@dinary.app',
 			`Password: ${credentials.admin}`,
-			'Employee: employee@ordinarylabs.com',
+			'Employee: employee@dinary.app',
 			`Password: ${credentials.employee}`
 		]) {
 			expect(options.detail).toContain(text);
@@ -227,8 +227,8 @@ describe('DesktopSignInNotices', () => {
 
 		await notices.show();
 
-		expect(dialogOptions().detail).toContain('admin@ordinarylabs.com');
-		expect(dialogOptions().detail).not.toContain('local.admin@ordinarylabs.com');
+		expect(dialogOptions().detail).toContain('admin@dinary.app');
+		expect(dialogOptions().detail).not.toContain('local.admin@dinary.app');
 		expect(dialogOptions().detail).not.toContain('operator-chosen-password');
 	});
 
@@ -252,7 +252,7 @@ describe('DesktopSignInNotices', () => {
 
 	describe('an existing database still on the published passwords', () => {
 		it('warns once per run and changes nothing', async () => {
-			notices.recordPublishedPasswords(['admin@ordinarylabs.com', 'employee@ordinarylabs.com']);
+			notices.recordPublishedPasswords(['admin@dinary.app', 'employee@dinary.app']);
 			mockShowMessageBox.mockResolvedValue({ response: 0 });
 
 			await notices.show();
@@ -260,7 +260,7 @@ describe('DesktopSignInNotices', () => {
 
 			expect(mockShowMessageBox).toHaveBeenCalledTimes(1);
 			expect(dialogOptions().detail).toContain(
-				'admin@ordinarylabs.com, employee@ordinarylabs.com still sign in with the default password'
+				'admin@dinary.app, employee@dinary.app still sign in with the default password'
 			);
 			expect(mockStore.size).toBe(0);
 		});
@@ -269,7 +269,7 @@ describe('DesktopSignInNotices', () => {
 			mockShowMessageBox.mockResolvedValue({ response: 0 });
 			await notices.show();
 
-			notices.recordPublishedPasswords(['admin@ordinarylabs.com']);
+			notices.recordPublishedPasswords(['admin@dinary.app']);
 			await notices.show();
 
 			expect(mockShowMessageBox).toHaveBeenCalledTimes(1);
@@ -277,21 +277,21 @@ describe('DesktopSignInNotices', () => {
 
 		it('shows the generated passwords first when both are pending', async () => {
 			startAndSeed();
-			notices.recordPublishedPasswords(['old@ordinarylabs.com']);
+			notices.recordPublishedPasswords(['old@dinary.app']);
 			mockShowMessageBox.mockResolvedValueOnce({ response: 1 }).mockResolvedValueOnce({ response: 0 });
 
 			await notices.show();
 
 			expect(mockShowMessageBox).toHaveBeenCalledTimes(2);
 			expect(dialogOptions(0).buttons).toEqual(['Copy', 'I have saved them']);
-			expect(dialogOptions(1).detail).toContain('old@ordinarylabs.com');
+			expect(dialogOptions(1).detail).toContain('old@dinary.app');
 		});
 	});
 
 	it('attaches the dialog to the window while it is open, and shows it on its own once it is closed', async () => {
 		const open = { isDestroyed: () => false };
 		const closed = { isDestroyed: () => true };
-		notices.recordPublishedPasswords(['admin@ordinarylabs.com']);
+		notices.recordPublishedPasswords(['admin@dinary.app']);
 		mockShowMessageBox.mockResolvedValue({ response: 0 });
 
 		await notices.show(open as any);

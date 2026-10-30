@@ -1,4 +1,4 @@
-// Dinary's adapter for the Ordinary Labs Platform egress audit (see README.md).
+// Dinary's adapter for the Dinary Cloud egress audit (see README.md).
 //
 // The audit's driver runs the API hooks inside the sealed audit network, so they reach the API by
 // its compose service name. The browser hooks (uiLogin, routeParams) run in the audit's browser,
@@ -92,7 +92,7 @@ const OFF_MODES = new Set(['off', 'off_env_file', 'connect_off_sign_in_on']);
 // The mock platform serves plain http on the sealed audit network only (no route out). NOSONAR
 const MOCK = 'http://mock-platform:8080'; // NOSONAR
 
-/** The mock's link code: an organization of Ordinary Labs Platform the operator's organization links to. */
+/** The mock's link code: an organization of Dinary Cloud the operator's organization links to. */
 const MOCK_LINK_CODE = 'EVL-TEST-0000-0002';
 
 /**
@@ -101,7 +101,7 @@ const MOCK_LINK_CODE = 'EVL-TEST-0000-0002';
  * the plugin must leave it unused.
  */
 const SIGN_IN_ON = {
-	ZITADEL_ISSUERS: 'https://auth.ordinarylabs.com',
+	ZITADEL_ISSUERS: 'https://auth.dinary.app',
 	ZITADEL_CLIENT_ID: 'dinary-egress-audit',
 	ZITADEL_CLIENT_SECRET: 'egress-audit-not-a-secret'
 };
@@ -131,7 +131,7 @@ async function api(ctx, method, path, body) {
 	return { status: response.status, body: parsed, location: response.headers.get('location') };
 }
 
-/** A control of the mock platform (`/__mock/<path>`): what app.ordinarylabs.com or Ever would do. */
+/** A control of the mock platform (`/__mock/<path>`): what app.dinary.app or Ever would do. */
 async function mock(ctx, path, body) {
 	const response = await ctx.fetch(`${MOCK}/__mock/${path}`, {
 		method: body === undefined ? 'GET' : 'POST',
@@ -315,7 +315,7 @@ export default {
 		);
 		ctx.log(`adapter: the installation's document is now seq ${refreshed?.instance?.seq}`);
 
-		// Rows 9, 31, 11: the organization consents to the statistics link in app.ordinarylabs.com; it waits
+		// Rows 9, 31, 11: the organization consents to the statistics link in app.dinary.app; it waits
 		// for the operator (read from the event feed, row 7); the operator accepts; the link goes out.
 		await mock(session, 'consent', {
 			instance_id: session.instanceId,
@@ -337,7 +337,7 @@ export default {
 			120
 		);
 
-		// Row 10: switched off here, Ordinary Labs Platform told.
+		// Row 10: switched off here, Dinary Cloud told.
 		expect(
 			'switch off',
 			await api(session, 'PUT', `/api/ever-connect/integrations/stats_link?organizationId=${org}`, {

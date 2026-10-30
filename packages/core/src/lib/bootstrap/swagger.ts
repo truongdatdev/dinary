@@ -21,9 +21,9 @@ export const setupSwagger = async (
 		scalarPath = 'docs',
 		enableScalar = true,
 		contact = {
-			name: 'Ordinary Labs',
-			url: 'https://ordinarylabs.com',
-			email: 'support@ordinarylabs.com'
+			name: 'Dinary',
+			url: 'https://dinary.app',
+			email: 'support@dinary.app'
 		},
 		license = {
 			name: 'AGPL-3.0-only',

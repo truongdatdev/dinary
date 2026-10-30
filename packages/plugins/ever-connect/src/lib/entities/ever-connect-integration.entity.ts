@@ -5,7 +5,7 @@ import { ColumnIndex, MultiORMColumn, MultiORMEntity, SkipExport } from '@dinary
 /**
  * The local state of one integration: for the whole installation (`scope = 'instance'`, the
  * installation-wide keys) or for one tenant link (`scope` = the link id). Nothing moves for an
- * integration unless Ordinary Labs Platform holds a consent for it and this row is `enabled`.
+ * integration unless Dinary Cloud holds a consent for it and this row is `enabled`.
  *
  * - `state`: `available`, `enabled`, `disabled`, `denied_by_policy`, `revoked_remote`,
  *   `coming_soon`, or `pending_operator` (an installation-wide integration the connecting
@@ -77,7 +77,7 @@ export class EverConnectIntegration {
 	@MultiORMColumn({ type: 'varchar', length: 16, nullable: true })
 	revokeSource?: string | null;
 
-	/** Switched off here while Ordinary Labs Platform could not be told; retried at the next heartbeat. */
+	/** Switched off here while Dinary Cloud could not be told; retried at the next heartbeat. */
 	@MultiORMColumn({ type: Boolean, default: false })
 	pendingRemoteRevoke: boolean;
 

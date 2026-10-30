@@ -12,7 +12,7 @@ import { isUUID } from 'class-validator';
  * validated upload names.
  *
  * A header that is sent but is not a UUID is refused (400) before any byte is stored, as the AI chat attachments
- * refuse it (ordinary-labs/dinary#11358). So is a header sent with several values, whatever they are: checking one of
+ * refuse it (truongdatdev/dinary#11358). So is a header sent with several values, whatever they are: checking one of
  * them would let any other value through.
  *
  * @param contextOrganizationId The organization of the request (`RequestContext.currentOrganizationId()`).

@@ -64,7 +64,7 @@ const ROUTES: ReadonlyArray<{ field: string; handler: string }> = [
 const ROWS = [
 	{
 		id: '00000000-0000-4000-8000-000000000090',
-		fromAddress: 'noreply@ordinarylabs.com',
+		fromAddress: 'noreply@dinary.app',
 		host: 'smtp.postmarkapp.com',
 		port: 587,
 		secure: false,

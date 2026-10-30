@@ -93,8 +93,8 @@ const ACTIVE_ACCOUNT = { isActive: true, isArchived: false } as const;
  * (GHSA-4r2r-mv32-3468).
  *
  * The budget is per address rather than global: one shared `IN (...)` limit let the rows of whichever
- * address the database returned first use up the whole allowance, so a rotated `admin@ordinarylabs.com` in ten
- * tenants could hide an `employee@ordinarylabs.com` that still had its published password.
+ * address the database returned first use up the whole allowance, so a rotated `admin@dinary.app` in ten
+ * tenants could hide an `employee@dinary.app` that still had its published password.
  */
 const MAX_ROWS_PER_ACCOUNT = 5;
 

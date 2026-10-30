@@ -32,7 +32,7 @@ describe('EverAsyncConnectComponent request lifetime', () => {
 		integrationTenantId: 'integration-a',
 		tenantId: 'tenant-a',
 		organizationId: orgA.id,
-		serverUrl: 'https://api-async.ordinarylabs.com',
+		serverUrl: 'https://api-async.dinary.app',
 		projectIds: [],
 		userMappings: [],
 		isEnabled: true,

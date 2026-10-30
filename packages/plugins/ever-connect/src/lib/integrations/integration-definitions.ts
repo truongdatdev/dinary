@@ -3,17 +3,17 @@ import { INTEGRATIONS, IntegrationDefinition, IntegrationKey } from '../sdk';
 
 /**
  * The integrations Dinary offers, as data. What each one moves (its scope rows, purpose,
- * retention and frequency) comes from the Ordinary Labs Platform SDK's definitions, the same data app.ordinarylabs.com
+ * retention and frequency) comes from the Dinary Cloud SDK's definitions, the same data app.dinary.app
  * renders its consent screen from; this file adds what is Dinary's own:
  *
  * - `scopeVersion` and `scopeSha256` pin the scope this release was reviewed with: when the SDK's
  *   scope changes, `definitions.drift.spec.ts` fails until the pin is updated (and a scope change
  *   without a new `scope_version` fails there too);
  * - `available`: `true` only for the integrations this release can run. The others read "coming
- *   soon" here whatever Ordinary Labs Platform says, and nothing of theirs moves;
+ *   soon" here whatever Dinary Cloud says, and nothing of theirs moves;
  * - `instanceWide`: the integration acts for the whole installation; only its operator asks for
  *   the consent and accepts it locally;
- * - `appEverCoOnly`: consent only in app.ordinarylabs.com.
+ * - `appEverCoOnly`: consent only in app.dinary.app.
  */
 export interface DinaryIntegrationDefinition {
 	key: IntegrationKey;
@@ -40,7 +40,7 @@ const pin = (
 
 /** Every integration key Dinary offers, with its pinned scope. */
 export const DINARY_INTEGRATIONS: ReadonlyArray<DinaryIntegrationDefinition> = Object.freeze([
-	// The public address of this installation, sent only after a consent in app.ordinarylabs.com and the
+	// The public address of this installation, sent only after a consent in app.dinary.app and the
 	// operator's accept.
 	pin('instance_url', '4d49f2e6b58f02e7476680daad357fba6a3f0af18e7c1e393e8707d7ca120cf3', true, true),
 	// Links this installation's anonymous statistics to the organization that connected it.

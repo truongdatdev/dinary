@@ -10,7 +10,7 @@ import { TenantService } from './tenant.service';
 /**
  * Proven-identity linking at tenant onboarding.
  *
- * The ordinarylabs.com checkout forwards the buyer's Checkout Session id to the register form; the web app
+ * The dinary.app checkout forwards the buyer's Checkout Session id to the register form; the web app
  * carries it into `POST /tenant`. There, once the tenant exists and its creator is SUPER_ADMIN, the
  * tenant is linked to the session's Stripe customer — but only after Stripe confirms the session is
  * complete, is a subscription to THIS product, and was paid under the creator's own address. These

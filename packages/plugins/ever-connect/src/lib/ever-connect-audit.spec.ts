@@ -6,7 +6,7 @@ import { AUDIT_ACTIONS, AuditEntryRefusedError, EverConnectAuditService } from '
  * or a value that looks like an address, is refused; and the service has no way to change a row
  * (rows are removed only with a deleted Dinary organization or tenant).
  */
-describe('Ordinary Labs Platform audit entries', () => {
+describe('Dinary Cloud audit entries', () => {
 	it.each(AUDIT_ACTIONS.map((action) => [action]))('%s with id-only details is accepted', (action) => {
 		expect(() =>
 			EverConnectAuditService.check({

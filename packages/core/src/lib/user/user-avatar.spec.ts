@@ -25,7 +25,7 @@ describe('getSeedAvatarFileName', () => {
 	});
 
 	it('ignores an absolute URL, which is a real uploaded avatar', () => {
-		expect(getSeedAvatarFileName('https://cdn.ordinarylabs.com/avatars/alish.jpg')).toBeUndefined();
+		expect(getSeedAvatarFileName('https://cdn.dinary.app/avatars/alish.jpg')).toBeUndefined();
 	});
 
 	it('ignores a dummy image URL', () => {

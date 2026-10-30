@@ -23,8 +23,7 @@ works without Ever Works. The Ever Works integration _feeds_ the Inbox and
 acts on its replies through a source-handler registry, so this plugin never
 depends on the integration.
 
-Plan: `04-inbox-and-email.md` §2–4 (G-P3-1) of the Dinary ↔ Ever Works
-integration plan (`ever-co/homelab`, `docs/superpowers/specs/`).
+Part of the Dinary ↔ Ever Works integration.
 
 ## Switch
 

@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="docs/banner.png" alt="Dinary — open business management platform" width="100%">
+  <img src="docs/banner.png" alt="Dinary — one platform for the whole business" width="100%">
 </p>
 
 # Dinary
 
 **One platform for the whole business: ERP, CRM, HRM, ATS, projects and time tracking.**
 
-Dinary is an open-source business management platform built by [Ordinary Labs](https://ordinarylabs.com). It replaces a stack of disconnected tools with a single system for people, customers, money, projects and time — available as a web app, a self-hosted server and desktop applications.
+Dinary is an open-source business management platform that replaces a stack of disconnected tools with a single system for people, customers, money, projects and time — available as a web app, a self-hosted server and desktop applications.
 
 [![License: AGPL v3](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D26-339933?logo=node.js&logoColor=white)](https://nodejs.org)
@@ -14,8 +14,6 @@ Dinary is an open-source business management platform built by [Ordinary Labs](h
 [![NestJS](https://img.shields.io/badge/NestJS-12-E0234E?logo=nestjs&logoColor=white)](https://nestjs.com)
 [![Nx](https://img.shields.io/badge/Nx-23-143055?logo=nx&logoColor=white)](https://nx.dev)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](.github/CONTRIBUTING.md)
-
-> Dinary is a derivative work of the open-source [Ever Gauzy](https://github.com/ever-co/ever-gauzy) project and remains available under the [GNU Affero General Public License v3.0](LICENSE). Upstream copyright and attribution are documented in [NOTICE.md](NOTICE.md) and [CREDITS.md](CREDITS.md).
 
 ## Why Dinary
 
@@ -67,7 +65,7 @@ git clone https://github.com/truongdatdev/dinary.git
 cd dinary
 
 npm i -g yarn
-yarn bootstrap          # install dependencies and run required postinstall steps
+yarn bootstrap          # install dependencies and run the required postinstall steps
 cp .env.sample .env.local
 
 yarn start              # API on :3000, web UI on :4200
@@ -96,8 +94,8 @@ With `DEMO=true`, a fresh demo installation accepts:
 
 | Role | Email | Password |
 | --- | --- | --- |
-| Super Admin | `admin@ordinarylabs.com` | `admin` |
-| Employee | `employee@ordinarylabs.com` | `12345678` |
+| Super Admin | `admin@dinary.app` | `admin` |
+| Employee | `employee@dinary.app` | `12345678` |
 
 These credentials exist **only in demo mode**. A production installation must set `DEMO_SUPER_ADMIN_PASSWORD`, `DEMO_ADMIN_PASSWORD` and `DEMO_EMPLOYEE_PASSWORD` before its first boot — the API refuses to seed with the shipped defaults. Dinary Server and the desktop apps instead generate a random password per account on first start and display it once.
 
@@ -183,7 +181,7 @@ Deployment helpers for Ubuntu servers and DigitalOcean Droplets are in [`.deploy
 
 Dinary is provided **as is**, without warranty. In production, terminate TLS in front of the API and the web app, rotate the JWT and session secrets, and run with a least-privilege database user.
 
-To report a vulnerability, email <security@ordinarylabs.com> instead of opening a public issue.
+To report a vulnerability, use the private advisory form in the [Security tab](https://github.com/truongdatdev/dinary/security/advisories/new) instead of opening a public issue.
 
 ## Contributing
 
@@ -195,23 +193,19 @@ To report a vulnerability, email <security@ordinarylabs.com> instead of opening 
 
 Dinary is free software released under the [GNU Affero General Public License v3.0](LICENSE). You may redistribute and/or modify it under the terms of the AGPL-3.0, provided that copyright and license notices are preserved and that the complete source code of modified versions is made available — including when the modified version is offered as a network service.
 
-Dinary is based on Ever Gauzy. The upstream project and its contributors retain copyright over their work; see [NOTICE.md](NOTICE.md), [LICENSES.md](LICENSES.md) and [CREDITS.md](CREDITS.md).
+The copyright notices and attribution for the software Dinary is built on are preserved in [NOTICE.md](NOTICE.md), [LICENSES.md](LICENSES.md) and [CREDITS.md](CREDITS.md), as the AGPL-3.0 requires.
 
 ## Trademarks
 
-**Dinary™** is a trademark of [Ordinary Labs](https://ordinarylabs.com).
-
-**Ever Gauzy™** and **Ever®** are trademarks of Ever Co. LTD. They are used in this repository only to identify the upstream project and are not claimed by Ordinary Labs. All other brand and product names are trademarks or registered trademarks of their respective holders.
+The **Dinary** name and logo identify this project. All other product names used in this repository are the trademarks or registered trademarks of their respective owners; they are referenced only to describe integrations and compatibility.
 
 ## Links
 
 - **Website:** <https://dinary.app>
 - **Documentation:** <https://docs.dinary.app>
 - **Source code:** <https://github.com/truongdatdev/dinary>
-- **Company:** <https://ordinarylabs.com>
-- **Upstream project:** <https://github.com/ever-co/ever-gauzy>
+- **Issues:** <https://github.com/truongdatdev/dinary/issues>
 
 ---
 
-Copyright © 2019-present, Ever Co. LTD and contributors.
-Modifications and Dinary branding copyright © 2026 Ordinary Labs.
+Copyright © 2026 Dinary contributors.

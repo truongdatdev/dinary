@@ -33,10 +33,10 @@ describe('redactUrlCredentials', () => {
 	});
 
 	it('treats a userinfo without a colon as a bare token and redacts all of it', () => {
-		const redacted = redactUrlCredentials(`https://${SECRET}@github.com/ordinary-labs/dinary.git`);
+		const redacted = redactUrlCredentials(`https://${SECRET}@github.com/truongdatdev/dinary.git`);
 
 		expect(redacted).not.toContain(SECRET);
-		expect(redacted).toBe(`https://${REDACTED_CREDENTIAL}@github.com/ordinary-labs/dinary.git`);
+		expect(redacted).toBe(`https://${REDACTED_CREDENTIAL}@github.com/truongdatdev/dinary.git`);
 	});
 
 	it.each([

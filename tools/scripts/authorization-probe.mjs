@@ -23,7 +23,7 @@
  *
  * Environment:
  *   BASE_URL        default http://127.0.0.1:3000
- *   ADMIN_EMAIL     default admin@ordinarylabs.com
+ *   ADMIN_EMAIL     default admin@dinary.app
  *   ADMIN_PASSWORD  default admin
  *   PROBE_RESOURCE  default /api/carts, the capability whose routes the probe exercises
  *
@@ -32,12 +32,12 @@
 'use strict';
 
 const BASE = (process.env.BASE_URL || 'http://127.0.0.1:3000').replace(/\/+$/, '');
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@ordinarylabs.com';
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@dinary.app';
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin';
 const RESOURCE = process.env.PROBE_RESOURCE || '/api/carts';
 const TIMEOUT_MS = Number(process.env.PROBE_TIMEOUT_MS || 30_000);
 
-const PROBE_EMAIL = 'authorization-probe@ordinarylabs.com';
+const PROBE_EMAIL = 'authorization-probe@dinary.app';
 const PROBE_PASSWORD = 'AuthorizationProbe123!';
 const PROBE_ROLE = 'Authorization probe (read only)';
 const PROBE_READ_PERMISSION = process.env.PROBE_READ_PERMISSION || 'CARTS_VIEW';

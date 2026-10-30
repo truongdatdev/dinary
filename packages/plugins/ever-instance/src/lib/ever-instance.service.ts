@@ -55,7 +55,7 @@ export interface ExpectedStatsIdentity {
 	statsKeyId: string;
 }
 
-/** The Ordinary Labs Platform connect key as other modules see it: its public part only. */
+/** The Dinary Cloud connect key as other modules see it: its public part only. */
 export interface EverConnectKeyRecord {
 	/** Base64url, 43 characters (`public_jwk.x`). */
 	publicKey: string;
@@ -64,7 +64,7 @@ export interface EverConnectKeyRecord {
 }
 
 /**
- * Signs with the Ordinary Labs Platform connect key (the shape the Ordinary Labs Platform SDK's client takes). The
+ * Signs with the Dinary Cloud connect key (the shape the Dinary Cloud SDK's client takes). The
  * private key itself is never exposed; JSON and inspection show the key id only.
  */
 export interface EverConnectSigner {
@@ -80,7 +80,7 @@ export interface EverConnectSigner {
  */
 export class EverConnectKeyMaterialError extends Error {
 	constructor(readonly code: ConnectKeyMaterialProblem) {
-		super('Set ENCRYPTION_KEY (or a strong, unique JWT_SECRET) before connecting this installation to Ordinary Labs Platform.');
+		super('Set ENCRYPTION_KEY (or a strong, unique JWT_SECRET) before connecting this installation to Dinary Cloud.');
 		this.name = 'EverConnectKeyMaterialError';
 	}
 }
@@ -93,7 +93,7 @@ export class EverConnectKeyMaterialError extends Error {
 export class EverConnectKeyUnreadableError extends Error {
 	readonly code = 'key_unreadable';
 	constructor() {
-		super('The Ordinary Labs Platform connect key of this installation cannot be read with the current secrets.');
+		super('The Dinary Cloud connect key of this installation cannot be read with the current secrets.');
 		this.name = 'EverConnectKeyUnreadableError';
 	}
 }
@@ -240,7 +240,7 @@ export class EverInstanceService {
 		}
 	}
 
-	/** The public part of the Ordinary Labs Platform connect key, or `null` before one was made. */
+	/** The public part of the Dinary Cloud connect key, or `null` before one was made. */
 	async connectKey(): Promise<EverConnectKeyRecord | null> {
 		const row = await this.readRow();
 		if (!row?.['connectPublicKey'] || !row['connectPrivateKeyEncrypted']) {
@@ -270,7 +270,7 @@ export class EverInstanceService {
 	}
 
 	/**
-	 * The Ordinary Labs Platform connect key, made on first use: a second Ed25519 key pair, separate from the
+	 * The Dinary Cloud connect key, made on first use: a second Ed25519 key pair, separate from the
 	 * statistics key, so resetting the statistics identity never touches the connection and the
 	 * connection never signs a statistics report. Refuses ({@link EverConnectKeyMaterialError})
 	 * unless `ENCRYPTION_KEY` or a `JWT_SECRET` other than a published default is set. Safe when
@@ -293,7 +293,7 @@ export class EverInstanceService {
 			}
 			const row = await this.readRow();
 			await this.writeConnectKey(String(row?.['connectPrivateKeyEncrypted'] ?? ''));
-			this.logger.warn('The Ordinary Labs Platform connect key could not be read with the current secrets; a new one was made.');
+			this.logger.warn('The Dinary Cloud connect key could not be read with the current secrets; a new one was made.');
 		} else if (existing) {
 			return existing;
 		} else {
@@ -326,7 +326,7 @@ export class EverInstanceService {
 
 	/**
 	 * A new connect key for a rotation: the SDK's `signKeyRotation` signs its proofs with the current
-	 * key and this one, Ordinary Labs Platform installs it, then `commit()` stores it in place of the key whose
+	 * key and this one, Dinary Cloud installs it, then `commit()` stores it in place of the key whose
 	 * id is `currentKid`. Until then it exists in memory only. Refuses without key material.
 	 */
 	async prepareConnectKeyRotation(currentKid: string): Promise<EverConnectKeyRotation> {
@@ -401,13 +401,13 @@ export class EverInstanceService {
 		);
 	}
 
-	/** Ordinary Labs Platform's key manifest as last fetched (it is verified again whenever it is read), and when. */
+	/** Dinary Cloud's key manifest as last fetched (it is verified again whenever it is read), and when. */
 	async jwksCache(): Promise<{ json: string | null; fetchedAt: number | null }> {
 		const row = await this.readRow();
 		return { json: row?.['jwksCache'] ? String(row['jwksCache']) : null, fetchedAt: toNumber(row?.['jwksFetchedAt']) };
 	}
 
-	/** Stores Ordinary Labs Platform's key manifest (`null` forgets it). */
+	/** Stores Dinary Cloud's key manifest (`null` forgets it). */
 	async setJwksCache(json: string | null): Promise<void> {
 		const d = this.dialect;
 		await runSql(
@@ -445,7 +445,7 @@ export class EverInstanceService {
 
 	/**
 	 * "Reset instance identity": a new statistics id and a new statistics key. The next report is the
-	 * first of a new installation for Ordinary Labs Platform. The Ordinary Labs Platform connection (`connect*`) is not
+	 * first of a new installation for Dinary Cloud. The Dinary Cloud connection (`connect*`) is not
 	 * touched.
 	 */
 	async resetIdentity(actorId: string | null): Promise<EverInstanceRecord> {
@@ -546,7 +546,7 @@ export class EverInstanceService {
 			[rewrapped, Date.now(), EVER_INSTANCE_ROW_ID, blob]
 		);
 		this.logger.log(
-			`The ${purpose === 'stats' ? 'statistics' : 'Ordinary Labs Platform connect'} key of this installation is now protected by ${preferred === 'k' ? 'ENCRYPTION_KEY' : 'JWT_SECRET'}.`
+			`The ${purpose === 'stats' ? 'statistics' : 'Dinary Cloud connect'} key of this installation is now protected by ${preferred === 'k' ? 'ENCRYPTION_KEY' : 'JWT_SECRET'}.`
 		);
 	}
 

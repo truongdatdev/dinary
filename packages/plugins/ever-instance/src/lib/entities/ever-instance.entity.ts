@@ -13,7 +13,7 @@ import { MultiORMColumn, MultiORMEntity, SkipExport } from '@dinary/core';
  * - `operatorUserId`: on an installation with one tenant and no `EVER_OPERATOR_EMAILS`, the user who
  *   operates the installation (its first super admin), pinned once.
  * - `statsEnabledUi`: the operator's switch for the anonymous statistics (default on).
- * - `connect*`, `jwks*`: reserved for the Ordinary Labs Platform connection, which keeps its own, separate key.
+ * - `connect*`, `jwks*`: reserved for the Dinary Cloud connection, which keeps its own, separate key.
  *
  * Times are epoch milliseconds. The table is created by the core `EverInstance` migration. The row
  * never leaves the installation: it is excluded from export archives.

@@ -34,7 +34,7 @@ export type DispatchOutcome = 'states' | 'entitlements' | 'link' | 'connection' 
  * scheduled and nothing is sent.
  *
  * - Heartbeat: at most a minute after start (or connect), then every 24 hours: the version, the
- *   products served, the operator's deny list; integrations switched off while Ordinary Labs Platform could
+ *   products served, the operator's deny list; integrations switched off while Dinary Cloud could
  *   not be reached are retried; the documents and keys are refreshed.
  * - Feed: a long poll of 25 seconds (or one read every 15 minutes with
  *   `EVER_CONNECT_FEED_MODE=interval`). Each event is dispatched by its catalog type, then the
@@ -43,7 +43,7 @@ export type DispatchOutcome = 'states' | 'entitlements' | 'link' | 'connection' 
  *   acknowledged and ignored, and so are connection events of another installation or of before
  *   this connection (a cursor read again from the start replays them).
  */
-/** How far Ordinary Labs Platform's clock may be ahead of this one when an event's time is compared. */
+/** How far Dinary Cloud's clock may be ahead of this one when an event's time is compared. */
 const CLOCK_SKEW_MS = 300_000;
 
 @Injectable()
@@ -146,7 +146,7 @@ export class EverConnectScheduler implements OnModuleInit, OnModuleDestroy {
 				.catch((error) => {
 					this.feedFailures += 1;
 					if (!this.running) return;
-					this.logger.warn(`The Ordinary Labs Platform event feed could not be read (${errorCode(error)}).`);
+					this.logger.warn(`The Dinary Cloud event feed could not be read (${errorCode(error)}).`);
 					this.scheduleFeed(Math.min(FEED_RETRY_MS * 2 ** (this.feedFailures - 1), FEED_INTERVAL_MS));
 				});
 		}, delayMs);
@@ -285,11 +285,11 @@ export class EverConnectScheduler implements OnModuleInit, OnModuleDestroy {
 			return 'ignored';
 		}
 		switch (event.type) {
-			case 'ordinarylabs.comnsent.consent.granted':
-			case 'ordinarylabs.comnsent.consent.revoked':
-			case 'ordinarylabs.comnsent.integration.enabled':
-			case 'ordinarylabs.comnsent.integration.disabled':
-			case 'ordinarylabs.comnsent.integration.scope_bumped':
+			case 'dinary.appnsent.consent.granted':
+			case 'dinary.appnsent.consent.revoked':
+			case 'dinary.appnsent.integration.enabled':
+			case 'dinary.appnsent.integration.disabled':
+			case 'dinary.appnsent.integration.scope_bumped':
 				return 'states';
 			case 'ever.entitlements.entitlement.issued':
 			case 'ever.entitlements.entitlement.revoked':
@@ -345,8 +345,8 @@ export class EverConnectScheduler implements OnModuleInit, OnModuleDestroy {
 	}
 
 	/**
-	 * After `410 resync_required` (the cursor is older than what Ordinary Labs Platform keeps): re-read the
-	 * states and documents, then continue from the position Ordinary Labs Platform names (`last_id`: kept,
+	 * After `410 resync_required` (the cursor is older than what Dinary Cloud keeps): re-read the
+	 * states and documents, then continue from the position Dinary Cloud names (`last_id`: kept,
 	 * then acknowledged); without one, read the feed again from its start (handlers re-read state, so
 	 * events read again change nothing).
 	 */

@@ -1,6 +1,6 @@
 // cspell:ignore Crockford HJKMNP
 /**
- * The constants of the Ordinary Labs Platform connection, in one place.
+ * The constants of the Dinary Cloud connection, in one place.
  */
 
 /** Injection token: the environment the module reads (tests pass their own; default `process.env`). */
@@ -12,16 +12,16 @@ export const EVER_CONNECT_SETTINGS = 'EVER_CONNECT_SETTINGS';
 /** Injection token: the clock (tests pass their own). */
 export const EVER_CONNECT_CLOCK = 'EVER_CONNECT_CLOCK';
 
-/** Injection token: the `fetch` the Ordinary Labs Platform client uses (tests pass a recording one). */
+/** Injection token: the `fetch` the Dinary Cloud client uses (tests pass a recording one). */
 export const EVER_CONNECT_FETCH = 'EVER_CONNECT_FETCH';
 
-/** The default Ordinary Labs Platform API origin. */
-export const DEFAULT_PLATFORM_API_URL = 'https://api.ordinarylabs.com';
+/** The default Dinary Cloud API origin. */
+export const DEFAULT_PLATFORM_API_URL = 'https://api.dinary.app';
 
 /** The version of this module (equals `package.json` `version`; a spec pins it). */
 export const MODULE_VERSION = '0.1.0';
 
-/** The product this installation runs, as Ordinary Labs Platform names it. */
+/** The product this installation runs, as Dinary Cloud names it. */
 export const PRODUCT = 'dinary';
 
 /** The id of the only row of `ever_connect_connection`. */

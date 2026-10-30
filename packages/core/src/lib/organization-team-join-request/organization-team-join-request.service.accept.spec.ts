@@ -17,7 +17,7 @@ describe('OrganizationTeamJoinRequestService.acceptRequestToJoin for an existing
 	const TENANT = 'tenant-1';
 	const REQUEST = {
 		id: 'request-1',
-		email: 'member@ordinarylabs.com',
+		email: 'member@dinary.app',
 		organizationId: 'organization-1',
 		organizationTeamId: 'team-1',
 		tenantId: TENANT,

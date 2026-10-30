@@ -5,7 +5,7 @@ import { AuthService } from './auth.service';
 
 /**
  * A stored organization (`user.lastOrganizationId`) scopes a new token only while the user is still a member of it
- * (follow-up of ordinary-labs/dinary#11357).
+ * (follow-up of truongdatdev/dinary#11357).
  *
  * Sign-in, workspace sign-in (password, social and magic-code sign-ins all end there), workspace switch and token
  * refresh used the stored organization as the token's organization without checking it. Once the user's membership
@@ -33,7 +33,7 @@ interface Membership {
 /** A fresh user per test: the service writes the replacement onto the object it is given. */
 const userWith = (lastOrganizationId: string | null, tenantId = TENANT) => ({
 	id: 'u-1',
-	email: 'pat@ordinarylabs.com',
+	email: 'pat@dinary.app',
 	tenantId,
 	tenant: { id: tenantId },
 	lastOrganizationId,

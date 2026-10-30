@@ -69,7 +69,7 @@ const OVERDUE_DELAY_MS = 10 * 60 * 1000;
  * - Several API processes on one database: a compare-and-set lease lets one send; the others skip the
  *   day once it is sent.
  * - Failed sends (429, 5xx, no answer) are retried at +1 h, +4 h, +12 h, then the next day. After a
- *   report Ordinary Labs Platform refused (422, or 409 `key_mismatch`) nothing is sent until the module
+ *   report Dinary Cloud refused (422, or 409 `key_mismatch`) nothing is sent until the module
  *   version, the Dinary release or the identity changes; after 400, 413 or 415, also at most 7 days.
  * - Nothing is sent, and no lease, key or count is read, while `EVER_STATS_ENABLED=false` (re-read at
  *   run time) or while `EVER_STATS_API_URL` is set to an address that cannot be used.
@@ -381,7 +381,7 @@ export class EverStatsScheduler implements OnModuleDestroy {
 	}
 
 	/**
-	 * Whether the last refusal of Ordinary Labs Platform still holds: it was for this module version, this
+	 * Whether the last refusal of Dinary Cloud still holds: it was for this module version, this
 	 * Dinary release (`version`) and this identity, and, unless it was a 422 or a 409, it is less than
 	 * 7 days old. Any of these changing lets the next report go out.
 	 */

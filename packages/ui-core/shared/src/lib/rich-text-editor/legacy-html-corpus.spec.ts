@@ -53,7 +53,7 @@ const TASK_DESCRIPTION_CORPUS = [
 	'<blockquote><p>Blocked on the storage migration.</p></blockquote>',
 	'<p><strong>Owner:</strong> platform team<br>Due: <em>next sprint</em></p>',
 	'<hr>',
-	'<p>Reference: <a href="https://ordinarylabs.com/handbook?a=1&amp;b=2" target="_blank">the handbook</a>.</p>'
+	'<p>Reference: <a href="https://dinary.app/handbook?a=1&amp;b=2" target="_blank">the handbook</a>.</p>'
 ].join('');
 
 /**
@@ -71,7 +71,7 @@ const PROJECT_DESCRIPTION_CORPUS = [
 	'<tr><td>Discovery</td><td>ana</td></tr>',
 	'<tr><td colspan="2">Delivery is tracked in the programme board</td></tr>',
 	'</tbody></table>',
-	'<img src="https://ordinarylabs.com/assets/northwind.png" alt="Northwind logo" width="120" height="40">',
+	'<img src="https://dinary.app/assets/northwind.png" alt="Northwind logo" width="120" height="40">',
 	'<p>Chemical spec: H<sub>2</sub>O at 25 °C, area x<sup>2</sup>.</p>'
 ].join('');
 
@@ -93,7 +93,7 @@ const HELP_CENTER_ARTICLE_CORPUS = [
 	'<p>Copy the ACS URL &amp; the entity ID &mdash; both are required. Use &quot;strict&quot; mode.</p>',
 	'<table><thead><tr><th>Field</th><th>Value</th></tr></thead>',
 	'<tbody><tr><td>ACS URL</td><td>https://api.dinary.app/saml/acs</td></tr></tbody></table>',
-	'<p>Questions? <a href="mailto:support@ordinarylabs.com">Email support</a>.</p>',
+	'<p>Questions? <a href="mailto:support@dinary.app">Email support</a>.</p>',
 	'<p>Legacy note<br>Second line of the note.</p>'
 ].join('');
 
@@ -111,7 +111,7 @@ const PROPOSAL_CONTENT_CORPUS = [
 	'<ul><li>Discovery workshop</li><li>Technical audit</li></ul>',
 	'<p><s>Fixed price</s> Time and materials.</p>',
 	'<p style="text-align: right;">Valid for 30 days</p>',
-	'<p>Signed: <a href="https://ordinarylabs.com/contact" target="_blank" rel="noopener noreferrer nofollow">contact us</a></p>'
+	'<p>Signed: <a href="https://dinary.app/contact" target="_blank" rel="noopener noreferrer nofollow">contact us</a></p>'
 ].join('');
 
 /**
@@ -126,8 +126,8 @@ const CANDIDATE_EMAIL_CORPUS = [
 	'<ul><li>Tuesday 10:00</li><li>Wednesday 14:00</li></ul>',
 	'<p style="text-align: center;">Please confirm a slot.</p>',
 	'<p><span style="color: #1a73e8;">Ever Recruiting</span></p>',
-	'<p><a href="https://ordinarylabs.com/careers">Our careers page</a></p>',
-	'<img src="https://ordinarylabs.com/assets/logo.png" alt="Ever" width="80" height="24">',
+	'<p><a href="https://dinary.app/careers">Our careers page</a></p>',
+	'<img src="https://dinary.app/assets/logo.png" alt="Ever" width="80" height="24">',
 	'<p>Kind regards,<br>The hiring team</p>'
 ].join('');
 
@@ -215,22 +215,22 @@ describe('legacy HTML corpora — load → serialize → normalize → diff (§8
 		});
 
 		it('<a href target rel> — target is preserved, rel is hardened', () => {
-			const withTarget = parse('<p><a href="https://ordinarylabs.com/x" target="_blank">l</a></p>').querySelector('a')!;
-			expect(withTarget.getAttribute('href')).toBe('https://ordinarylabs.com/x');
+			const withTarget = parse('<p><a href="https://dinary.app/x" target="_blank">l</a></p>').querySelector('a')!;
+			expect(withTarget.getAttribute('href')).toBe('https://dinary.app/x');
 			expect(withTarget.getAttribute('target')).toBe('_blank');
 
-			const bare = parse('<p><a href="https://ordinarylabs.com/y">l</a></p>').querySelector('a')!;
+			const bare = parse('<p><a href="https://dinary.app/y">l</a></p>').querySelector('a')!;
 			expect(bare.getAttribute('rel')).toBe('noopener noreferrer nofollow');
 
-			const mailto = parse('<p><a href="mailto:a@ordinarylabs.com">m</a></p>').querySelector('a')!;
-			expect(mailto.getAttribute('href')).toBe('mailto:a@ordinarylabs.com');
+			const mailto = parse('<p><a href="mailto:a@dinary.app">m</a></p>').querySelector('a')!;
+			expect(mailto.getAttribute('href')).toBe('mailto:a@dinary.app');
 		});
 
 		it('<img src alt width height>', () => {
-			const image = parse('<img src="https://ordinarylabs.com/l.png" alt="logo" width="120" height="40">').querySelector(
+			const image = parse('<img src="https://dinary.app/l.png" alt="logo" width="120" height="40">').querySelector(
 				'img'
 			)!;
-			expect(image.getAttribute('src')).toBe('https://ordinarylabs.com/l.png');
+			expect(image.getAttribute('src')).toBe('https://dinary.app/l.png');
 			expect(image.getAttribute('alt')).toBe('logo');
 			expect(image.getAttribute('width')).toBe('120');
 			expect(image.getAttribute('height')).toBe('40');
@@ -314,7 +314,7 @@ describe('legacy HTML corpora — load → serialize → normalize → diff (§8
 
 		it('<figure><img><figcaption> unwraps to image + caption paragraph', () => {
 			const document = parse(
-				'<figure><img src="https://ordinarylabs.com/a.png" alt="a"><figcaption>the caption</figcaption></figure>'
+				'<figure><img src="https://dinary.app/a.png" alt="a"><figcaption>the caption</figcaption></figure>'
 			);
 			expect(document.querySelector('img')).not.toBeNull();
 			expect(document.body.textContent).toContain('the caption');
@@ -360,9 +360,9 @@ describe('legacy HTML corpora — load → serialize → normalize → diff (§8
 
 		it('ADDS target="_blank" + hardened rel to bare legacy links (additive, not a loss)', () => {
 			const anchor = new DOMParser()
-				.parseFromString(`<body>${roundTrip('<p><a href="https://ordinarylabs.com/z">z</a></p>')}</body>`, 'text/html')
+				.parseFromString(`<body>${roundTrip('<p><a href="https://dinary.app/z">z</a></p>')}</body>`, 'text/html')
 				.querySelector('a')!;
-			expect(anchor.getAttribute('href')).toBe('https://ordinarylabs.com/z');
+			expect(anchor.getAttribute('href')).toBe('https://dinary.app/z');
 			// A legacy anchor with no target/rel comes back hardened — deliberate policy
 			// from `baseLinkConfiguration`, and the only way stored content changes shape
 			// on a no-edit save.
@@ -405,8 +405,8 @@ describe('legacy HTML corpora — load → serialize → normalize → diff (§8
 			expect(html).toContain('<ul>');
 			expect(html).toContain('text-align: center');
 			expect(html).toContain('color: rgb(26, 115, 232)');
-			expect(html).toContain('href="https://ordinarylabs.com/careers"');
-			expect(html).toContain('src="https://ordinarylabs.com/assets/logo.png"');
+			expect(html).toContain('href="https://dinary.app/careers"');
+			expect(html).toContain('src="https://dinary.app/assets/logo.png"');
 			expect(html).toContain('<br>');
 		});
 
@@ -435,7 +435,7 @@ describe('legacy HTML corpora — load → serialize → normalize → diff (§8
 		it('drops relative and data-URL images — only absolute http(s) sources survive', () => {
 			expect(emailRoundTrip('<img src="/assets/local.png" alt="l">')).not.toContain('<img');
 			expect(emailRoundTrip('<img src="data:image/png;base64,AAAA" alt="d">')).not.toContain('<img');
-			expect(emailRoundTrip('<img src="https://ordinarylabs.com/a.png" alt="a">')).toContain('<img');
+			expect(emailRoundTrip('<img src="https://dinary.app/a.png" alt="a">')).toContain('<img');
 		});
 	});
 

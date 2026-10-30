@@ -2,13 +2,13 @@
 /**
  * Which product this deployment bills for, and how to tell whether a Stripe object belongs to it.
  *
- * Every product in the Ordinary Labs family sells through ONE shared Stripe account (the ordinarylabs.com checkout, Ever Works' own
+ * Every product in the Dinary family sells through ONE shared Stripe account (the dinary.app checkout, Ever Works' own
  * checkout, directory sites, GitHands, ...). Anything that reads that account — the webhook, the
  * signup paywall, the lazy tenant link, the billing pages — therefore sees every product's customers
  * and subscriptions, and must decide for itself which ones are its own. Before this module none of
  * them did: a Teams, Works or Platform subscription counted as a Dinary one everywhere.
  *
- * "This product" means this product's HOSTED plan. ordinarylabs.com also sells self-hosted licenses of Dinary
+ * "This product" means this product's HOSTED plan. dinary.app also sells self-hosted licenses of Dinary
  * and Teams as recurring subscriptions on the same account (`ever_<product>_selfhosted_*` prices,
  * `metadata.ever_hosting = 'selfhosted'`). A license is not a cloud plan: counting one as the cloud
  * subscription would bind the buyer's cloud tenant to their license, show the license as the cloud

@@ -47,7 +47,7 @@ describe('UserOrganizationService.findUserOrganizations — credential redaction
 		return new User({
 			id: USER_ID,
 			tenantId: TENANT_ID,
-			email: 'super.admin@ordinarylabs.com',
+			email: 'super.admin@dinary.app',
 			firstName: 'Super',
 			lastName: 'Admin',
 			// Assembled at runtime so secret scanners do not flag the fixture.
@@ -133,7 +133,7 @@ describe('UserOrganizationService.findUserOrganizations — credential redaction
 		expect(plain.items[0].user.employee).toBeDefined();
 		expect(plain.items[0].user.employee.id).toBe(EMPLOYEE_ID);
 		// The non-sensitive user fields the Angular users list renders are untouched.
-		expect(plain.items[0].user.email).toBe('super.admin@ordinarylabs.com');
+		expect(plain.items[0].user.email).toBe('super.admin@dinary.app');
 		expect(plain.items[0].user.firstName).toBe('Super');
 	});
 
@@ -169,7 +169,7 @@ describe('UserOrganizationService.findUserOrganizations — credential redaction
 		for (const key of CREDENTIAL_KEYS) {
 			expect(plainUser).not.toHaveProperty(key);
 		}
-		expect(plainUser.email).toBe('super.admin@ordinarylabs.com');
+		expect(plainUser.email).toBe('super.admin@dinary.app');
 	});
 
 	it('handles the row-without-userId branch without leaking or crashing', async () => {
@@ -232,7 +232,7 @@ describe('UserOrganizationService.findUserOrganizations — credential redaction
 			for (const secret of secrets) {
 				expect(JSON.stringify(plain)).not.toContain(secret);
 			}
-			expect(plain.items[0].user.email).toBe('super.admin@ordinarylabs.com');
+			expect(plain.items[0].user.email).toBe('super.admin@dinary.app');
 		});
 
 		it('strips every credential column when the employee lookup fails', async () => {

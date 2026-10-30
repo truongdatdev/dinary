@@ -3,7 +3,7 @@ import { EVER_STATS_ENTITIES } from './entities';
 import { EverStatsModule } from './ever-stats.module';
 
 /**
- * Anonymous usage statistics: one signed report a day to Ordinary Labs Platform with counts, module switches
+ * Anonymous usage statistics: one signed report a day to Dinary Cloud with counts, module switches
  * and monthly totals per currency, never a name, an address or an amount per record (schema
  * `ever.stats.v1`; on a small installation a month's total can equal a single invoice).
  *

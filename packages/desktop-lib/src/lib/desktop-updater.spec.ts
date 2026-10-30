@@ -116,8 +116,8 @@ jest.mock('./decorators', () => {
 });
 
 const HOUR = 60 * 60 * 1000;
-const CONFIG = { owner: 'ordinary-labs', repository: 'dinary-server', typeRelease: 'releases' };
-const FEED = 'https://github.com/ordinary-labs/dinary-server/releases/download/';
+const CONFIG = { owner: 'truongdatdev', repository: 'dinary-server', typeRelease: 'releases' };
+const FEED = 'https://github.com/truongdatdev/dinary-server/releases/download/';
 const ALL_FILES = [
 	'latest-x64.yml',
 	'latest-arm64.yml',

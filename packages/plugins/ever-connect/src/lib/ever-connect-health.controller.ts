@@ -9,7 +9,7 @@ import { EverConnectEnabledGuard } from './guards/ever-connect-operator.guard';
  * Ever Teams web app (`EVER_STATS_SERVES` contains `teams`), which asks it with the person's token;
  * 404 everywhere else. Declared in `ever-connect.routes.json`.
  */
-@ApiTags('Ordinary Labs Platform')
+@ApiTags('Dinary Cloud')
 @ApiBearerAuth()
 @UseGuards(EverConnectEnabledGuard)
 @Controller('/ever-connect')

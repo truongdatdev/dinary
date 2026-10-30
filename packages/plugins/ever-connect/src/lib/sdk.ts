@@ -1,5 +1,5 @@
 /**
- * The parts of the Ordinary Labs Platform SDK (`@ever-co/connect-sdk`, with its contracts package
+ * The parts of the Dinary Cloud SDK (`@ever-co/connect-sdk`, with its contracts package
  * `@ever-co/connect-contracts`) this plugin uses: the client over the generated operation table, the
  * key manifest and entitlement verifier, the key rotation, the compact JWS signer (the statistics
  * link statement) and the claims reader for documents verified before they were stored, the errors

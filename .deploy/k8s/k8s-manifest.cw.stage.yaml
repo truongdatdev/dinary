@@ -74,7 +74,7 @@ spec:
                       allowPrivilegeEscalation: false
                       readOnlyRootFilesystem: false
                       runAsNonRoot: false
-                  image: ever-registry.tenant-acb888-ever.ord1.ingress.coreweave.cloud/ordinary-labs/dinary-api-stage:latest
+                  image: ever-registry.tenant-acb888-ever.ord1.ingress.coreweave.cloud/truongdatdev/dinary-api-stage:latest
                   env:
                       - name: API_HOST
                         value: 0.0.0.0
@@ -353,7 +353,7 @@ spec:
                       allowPrivilegeEscalation: false
                       readOnlyRootFilesystem: false
                       runAsNonRoot: false
-                  image: ever-registry.tenant-acb888-ever.ord1.ingress.coreweave.cloud/ordinary-labs/dinary-webapp-stage:latest
+                  image: ever-registry.tenant-acb888-ever.ord1.ingress.coreweave.cloud/truongdatdev/dinary-webapp-stage:latest
                   env:
                       - name: DEMO
                         value: 'false'
@@ -419,7 +419,7 @@ kind: Ingress
 metadata:
     name: dinary-stage
     annotations:
-        kubernetes.io/ingress.class: traefik-ordinarylabs
+        kubernetes.io/ingress.class: traefik-dinary
         traefik.ingress.kubernetes.io/router.middlewares: tenant-acb888-ever-https-redirect@kubernetescrd
 spec:
     rules:
@@ -443,7 +443,7 @@ kind: Ingress
 metadata:
     name: dinary-stage-api
     annotations:
-        kubernetes.io/ingress.class: traefik-ordinarylabs
+        kubernetes.io/ingress.class: traefik-dinary
         traefik.ingress.kubernetes.io/router.middlewares: tenant-acb888-ever-https-redirect@kubernetescrd
 spec:
     rules:

@@ -48,8 +48,8 @@ export const EVER_CONNECT_ROUTE: PluginRouteInput = {
 };
 
 /**
- * Ordinary Labs Platform UI plugin (`@dinary/plugin-ever-connect-ui`): Integrations > Ordinary Labs Platform. The page
- * asks the API first; where the Ordinary Labs Platform module is not loaded (the default) it only says so.
+ * Dinary Cloud UI plugin (`@dinary/plugin-ever-connect-ui`): Integrations > Dinary Cloud. The page
+ * asks the API first; where the Dinary Cloud module is not loaded (the default) it only says so.
  */
 export const EverConnectUiPlugin = defineDeclarativePlugin('ever-connect', {
 	version: '0.1.0',

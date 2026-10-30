@@ -69,7 +69,7 @@ describe('ever-connect sources', () => {
 		expect(inferences(files)).toEqual([]);
 	});
 
-	it('call Ordinary Labs Platform only through the SDK client (the API plugin)', () => {
+	it('call Dinary Cloud only through the SDK client (the API plugin)', () => {
 		const api = files.filter(({ path }) => path.includes(join('plugins', 'ever-connect', 'src')));
 		expect(clients(api)).toEqual([]);
 	});
@@ -78,7 +78,7 @@ describe('ever-connect sources', () => {
 		expect(
 			inferences([{ path: 'planted.ts', text: "const cloud = !!process.env['STRIPE_SECRET_KEY'];" }])
 		).toHaveLength(1);
-		expect(clients([{ path: 'planted.ts', text: "await fetch('https://api.ordinarylabs.com/v1/x');" }])).toHaveLength(1);
+		expect(clients([{ path: 'planted.ts', text: "await fetch('https://api.dinary.app/v1/x');" }])).toHaveLength(1);
 		expect(clients([{ path: 'planted.ts', text: "import { HttpService } from '@nestjs/axios';" }])).toHaveLength(1);
 	});
 });

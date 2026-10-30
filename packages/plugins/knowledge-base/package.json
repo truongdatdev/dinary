@@ -3,9 +3,9 @@
 	"version": "0.1.0",
 	"description": "Dinary Platform Knowledge Base plugin",
 	"author": {
-		"name": "Ordinary Labs",
-		"email": "hello@ordinarylabs.com",
-		"url": "https://ordinarylabs.com"
+		"name": "Dinary",
+		"email": "hello@dinary.app",
+		"url": "https://dinary.app"
 	},
 	"license": "AGPL-3.0",
 	"private": true,

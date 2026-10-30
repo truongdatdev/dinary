@@ -5,7 +5,7 @@ services:
     image: jonasal/nginx-certbot:latest
     restart: always
     environment:
-      CERTBOT_EMAIL: 'hello@ordinarylabs.com'
+      CERTBOT_EMAIL: 'hello@dinary.app'
     env_file:
       - ./nginx-certbot.env
     ports:

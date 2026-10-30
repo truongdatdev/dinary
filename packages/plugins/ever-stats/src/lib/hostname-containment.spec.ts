@@ -2,7 +2,7 @@ import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
 
 /**
- * The Ordinary Labs Platform host and the variable that points the statistics at it appear only in the
+ * The Dinary Cloud host and the variable that points the statistics at it appear only in the
  * statistics packages, the environment sample, documentation and the egress audit's inputs (which
  * point a module loaded by mistake at a sealed test address): no other code of Dinary can reach the
  * statistics endpoint.
@@ -10,7 +10,7 @@ import { join } from 'node:path';
 const ALLOWED = [
 	/^packages\/plugins\/ever-stats(-ui)?\//,
 	/^packages\/plugins\/ever-instance\//,
-	// The Ordinary Labs Platform connection, which has its own address setting (`EVER_PLATFORM_API_URL`).
+	// The Dinary Cloud connection, which has its own address setting (`EVER_PLATFORM_API_URL`).
 	/^packages\/plugins\/ever-connect(-ui)?\//,
 	/^tools\/egress-audit\//,
 	/^\.env\.sample$/,

@@ -91,7 +91,7 @@ export const uiPluginConfig: PluginUiConfig = {
 		// Integrations > Ever Works. Where the API's Ever Works plugin is not loaded (the default:
 		// EVER_WORKS_ENABLED unset) the page only says so.
 		IntegrationEverWorksUiPlugin,
-		// Integrations > Ordinary Labs Platform. Where the API's Ordinary Labs Platform module is not loaded (the
+		// Integrations > Dinary Cloud. Where the API's Dinary Cloud module is not loaded (the
 		// default) the page only says so.
 		EverConnectUiPlugin,
 

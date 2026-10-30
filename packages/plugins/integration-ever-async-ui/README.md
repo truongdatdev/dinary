@@ -4,7 +4,7 @@
 
 # @dinary/plugin-integration-ever-async-ui
 
-Angular configuration page for [Ever Async](https://async.ordinarylabs.com), available at
+Angular configuration page for [Ever Async](https://async.dinary.app), available at
 **Integrations → Ever Async** (`/pages/integrations/ever-async`). It uses the
 currently selected Dinary organization.
 

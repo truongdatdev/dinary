@@ -31,7 +31,7 @@ export class AppService {
 	/**
 	 * Warns (never refuses) when a seeded default account of an existing database still signs in with
 	 * its published password. The seed guard only protects NEW databases, so an install seeded before
-	 * it existed keeps `admin@ordinarylabs.com` / `admin` until someone rotates it (GHSA-4r2r-mv32-3468).
+	 * it existed keeps `admin@dinary.app` / `admin` until someone rotates it (GHSA-4r2r-mv32-3468).
 	 * Skipped on the demo, which publishes these credentials by design. Never throws.
 	 */
 	private async warnAboutPublishedSeedPasswords(): Promise<void> {

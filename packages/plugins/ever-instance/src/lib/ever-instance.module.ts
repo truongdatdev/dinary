@@ -4,7 +4,7 @@ import { EverInstanceService } from './ever-instance.service';
 import { EverOperatorService } from './ever-operator.service';
 
 /**
- * The identity of this installation, shared by the Ordinary Labs Platform modules. It has no route, no timer
+ * The identity of this installation, shared by the Dinary Cloud modules. It has no route, no timer
  * and no outbound request; it is not a plugin of its own, a plugin that needs it imports it.
  */
 @Module({

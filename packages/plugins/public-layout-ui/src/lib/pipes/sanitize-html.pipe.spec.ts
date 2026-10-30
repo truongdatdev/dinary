@@ -106,14 +106,14 @@ describe('SanitizeHtmlPipe', () => {
 	it('leaves legitimate editor output intact', () => {
 		const result = pipe().transform(
 			'<p><strong>Bold</strong> and <em>italic</em></p><ul><li>one</li></ul>' +
-				'<a href="https://ordinarylabs.com">link</a>'
+				'<a href="https://dinary.app">link</a>'
 		);
 		const dom = parse(result);
 
 		expect(dom.querySelector('strong')?.textContent).toBe('Bold');
 		expect(dom.querySelector('em')?.textContent).toBe('italic');
 		expect(dom.querySelectorAll('li')).toHaveLength(1);
-		expect(dom.querySelector('a')?.getAttribute('href')).toBe('https://ordinarylabs.com');
+		expect(dom.querySelector('a')?.getAttribute('href')).toBe('https://dinary.app');
 	});
 
 	it('is idempotent, so re-rendering stored output never changes it', () => {

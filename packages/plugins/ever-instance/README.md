@@ -1,6 +1,6 @@
 # @dinary/plugin-ever-instance: the identity of an installation
 
-A small library shared by the Ordinary Labs Platform modules of Dinary (such as `@dinary/plugin-ever-stats`). It has no route, no timer and makes no outbound request; a test (`no-outbound.spec.ts`) checks that its sources contain no HTTP client.
+A small library shared by the Dinary Cloud modules of Dinary (such as `@dinary/plugin-ever-stats`). It has no route, no timer and makes no outbound request; a test (`no-outbound.spec.ts`) checks that its sources contain no HTTP client.
 
 ## What it holds
 
@@ -13,7 +13,7 @@ One row in `ever_instance` (`id = 'self'`), shared by every API process that use
 | `operatorUserId` | On an installation with one tenant and no operator list: the user who operates it (its first super admin), remembered once, and replaced when that user can no longer be the operator. |
 | `statsEnabledUi` | The operator's switch for the anonymous usage statistics (default on). |
 | `resetCount` | How many times the identity was reset. |
-| `connectPublicKey`, `connectPrivateKeyEncrypted`, `connectKeyId`, `jwksCache`, `jwksFetchedAt` | Reserved for an Ordinary Labs Platform connection, which uses its own, separate key. Never written by the statistics. |
+| `connectPublicKey`, `connectPrivateKeyEncrypted`, `connectKeyId`, `jwksCache`, `jwksFetchedAt` | Reserved for a Dinary Cloud connection, which uses its own, separate key. Never written by the statistics. |
 | `createdAt`, `updatedAt` | Epoch milliseconds. |
 
 `ensure()` is safe when several processes start at once: each tries an insert that does nothing when the row exists, then reads the row, so all of them use the same id and key. The row is excluded from export archives.

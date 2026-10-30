@@ -85,7 +85,7 @@ export interface EverConnectIntegration {
 export interface EverConnectEntitlement {
 	subject: 'instance' | 'link';
 	status: 'valid' | 'stale' | 'paused';
-	/** valid; grace (could not be refreshed, features still apply); paused (Ordinary Labs Platform features off). */
+	/** valid; grace (could not be refreshed, features still apply); paused (Dinary Cloud features off). */
 	ladder: 'valid' | 'grace' | 'paused';
 	/** Licence certificate ids the document names, shown as "Licence EVER-… active". */
 	licence_ids: string[];
@@ -118,7 +118,7 @@ export interface EverConnectAuditRow {
 	scope: 'instance' | 'organization';
 }
 
-/** The Ordinary Labs Platform routes of the API. Every route of the organization side takes `organizationId`. */
+/** The Dinary Cloud routes of the API. Every route of the organization side takes `organizationId`. */
 @Injectable({ providedIn: 'root' })
 export class EverConnectUiService {
 	private readonly http = inject(HttpClient);

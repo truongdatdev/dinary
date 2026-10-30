@@ -4886,7 +4886,7 @@
 		}
 	},
 	"ABOUT_PAGE": {
-		"COPYRIGHT": "‏Copyright © 2019-{{year}}, Ordinary Labs. כל הזכויות שמורות.",
+		"COPYRIGHT": "‏Copyright © 2019-{{year}}, Dinary. כל הזכויות שמורות.",
 		"DESCRIPTION": "‏Dinary™ היא פלטפורמה פתוחה לניהול עסקי עבור כלכלות שיתופיות ולפי דרישה — ERP, CRM, HRM, ATS וניהול פרויקטים עם מעקב זמן מובנה.",
 		"LICENSE": "קוד פתוח, משוחרר תחת רישיון",
 		"VERSION_DETAILS": "פרטי גרסה",

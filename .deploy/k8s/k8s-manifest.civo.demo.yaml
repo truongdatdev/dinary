@@ -48,7 +48,7 @@ spec:
                       allowPrivilegeEscalation: false
                       readOnlyRootFilesystem: false
                       runAsNonRoot: false
-                  image: ghcr.io/ordinary-labs/dinary-api-demo:latest
+                  image: ghcr.io/truongdatdev/dinary-api-demo:latest
                   resources:
                       requests:
                           cpu: '100m'
@@ -131,7 +131,7 @@ spec:
                       allowPrivilegeEscalation: false
                       readOnlyRootFilesystem: false
                       runAsNonRoot: false
-                  image: ghcr.io/ordinary-labs/dinary-webapp-demo:latest
+                  image: ghcr.io/truongdatdev/dinary-webapp-demo:latest
                   resources:
                       requests:
                           cpu: '50m'

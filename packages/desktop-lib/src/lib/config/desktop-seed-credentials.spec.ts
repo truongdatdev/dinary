@@ -14,7 +14,7 @@ import {
  * Owner decision 8 (2026-10-22), GHSA-4r2r-mv32-3468 desktop residual.
  *
  * The desktop apps that run the API locally passed no `DEMO_*_PASSWORD`, so the first start seeded
- * `admin@ordinarylabs.com` / `admin`, `local.admin@ordinarylabs.com` / `admin` and `employee@ordinarylabs.com` / `12345678`,
+ * `admin@dinary.app` / `admin`, `local.admin@dinary.app` / `admin` and `employee@dinary.app` / `12345678`,
  * the passwords printed in the README. Each install now generates its own and passes them to the API.
  *
  * Electron cannot run here, so the decision logic is pure and tested directly.
@@ -80,7 +80,7 @@ describe('desktop seed credentials', () => {
 				superAdmin: 'short',
 				admin: 'generated-password-9999',
 				employee: 'generated-password-8888',
-				pending: [{ key: 'superAdmin' as const, email: 'admin@ordinarylabs.com' }]
+				pending: [{ key: 'superAdmin' as const, email: 'admin@dinary.app' }]
 			};
 
 			const { credentials, changed } = ensureDesktopSeedCredentials(stored, generate);
@@ -96,15 +96,15 @@ describe('desktop seed credentials', () => {
 					admin: 'generated-password-9999',
 					employee: 'generated-password-8888',
 					pending: [
-						{ key: 'superAdmin', email: 'admin@ordinarylabs.com' },
-						{ key: 'admin', email: 'local.admin@ordinarylabs.com' }
+						{ key: 'superAdmin', email: 'admin@dinary.app' },
+						{ key: 'admin', email: 'local.admin@dinary.app' }
 					]
 				},
 				generate
 			);
 
 			expect(changed).toBe(true);
-			expect(credentials.pending).toEqual([{ key: 'admin', email: 'local.admin@ordinarylabs.com' }]);
+			expect(credentials.pending).toEqual([{ key: 'admin', email: 'local.admin@dinary.app' }]);
 			expect(credentials.superAdmin).toBe('generated-password-0001');
 		});
 
@@ -115,7 +115,7 @@ describe('desktop seed credentials', () => {
 				employee: 'generated-password-7777',
 				pending: [
 					{ key: 'superAdmin' as const, email: '' },
-					{ key: 'admin' as const, email: 'local.admin@ordinarylabs.com' }
+					{ key: 'admin' as const, email: 'local.admin@dinary.app' }
 				]
 			};
 
@@ -132,13 +132,13 @@ describe('desktop seed credentials', () => {
 					superAdmin: 'generated-password-9999',
 					admin: 'generated-password-8888',
 					employee: 'generated-password-7777',
-					pending: [{ key: 'superAdmin' } as never, { key: 'admin', email: 'local.admin@ordinarylabs.com' }]
+					pending: [{ key: 'superAdmin' } as never, { key: 'admin', email: 'local.admin@dinary.app' }]
 				},
 				generate
 			);
 
 			expect(changed).toBe(true);
-			expect(credentials.pending).toEqual([{ key: 'admin', email: 'local.admin@ordinarylabs.com' }]);
+			expect(credentials.pending).toEqual([{ key: 'admin', email: 'local.admin@dinary.app' }]);
 		});
 
 		it('does not modify what it was given', () => {
@@ -185,13 +185,13 @@ describe('desktop seed credentials', () => {
 		};
 
 		/** What the API reports for a seed with its default emails (`Database Default Seed Accounts:`). */
-		const reported = { superAdmin: 'admin@ordinarylabs.com', admin: 'local.admin@ordinarylabs.com', employee: 'employee@ordinarylabs.com' };
+		const reported = { superAdmin: 'admin@dinary.app', admin: 'local.admin@dinary.app', employee: 'employee@dinary.app' };
 
 		it('names every account seeded with its generated password, with the emails the API reported', () => {
 			expect(findDesktopSeededAccounts(credentials, desktopSeedCredentialsToEnv(credentials), reported)).toEqual([
-				{ key: 'superAdmin', email: 'admin@ordinarylabs.com' },
-				{ key: 'admin', email: 'local.admin@ordinarylabs.com' },
-				{ key: 'employee', email: 'employee@ordinarylabs.com' }
+				{ key: 'superAdmin', email: 'admin@dinary.app' },
+				{ key: 'admin', email: 'local.admin@dinary.app' },
+				{ key: 'employee', email: 'employee@dinary.app' }
 			]);
 		});
 
@@ -256,16 +256,16 @@ describe('desktop seed credentials', () => {
 		it('reads the accounts the boot check reports as still using a published password', () => {
 			// What AppService.warnAboutPublishedSeedPasswords prints (chalk's padding spaces included).
 			const line =
-				'\u001b[41m\u001b[97m\u001b[1m INSECURE ACCOUNTS: admin@ordinarylabs.com, local.admin@ordinarylabs.com \u001b[22m\u001b[39m\u001b[49m\n';
+				'\u001b[41m\u001b[97m\u001b[1m INSECURE ACCOUNTS: admin@dinary.app, local.admin@dinary.app \u001b[22m\u001b[39m\u001b[49m\n';
 
 			expect(parsePublishedPasswordAccounts(`stderr noise\n${line}more`)).toEqual([
-				'admin@ordinarylabs.com',
-				'local.admin@ordinarylabs.com'
+				'admin@dinary.app',
+				'local.admin@dinary.app'
 			]);
 		});
 
 		it('waits for the whole line, so a line cut between two chunks is not read short', () => {
-			expect(parsePublishedPasswordAccounts(' INSECURE ACCOUNTS: admin@ordinarylabs.com, local.ad')).toEqual([]);
+			expect(parsePublishedPasswordAccounts(' INSECURE ACCOUNTS: admin@dinary.app, local.ad')).toEqual([]);
 		});
 
 		it('does not take the seed guard warning for it', () => {
@@ -277,19 +277,19 @@ describe('desktop seed credentials', () => {
 		it('reads the emails the API reports for its default seed, with or without terminal colours', () => {
 			// What SeedDataService.runDefaultSeed prints just before "Database Default Seed Started".
 			const line =
-				'Database Default Seed Accounts: {"superAdmin":"admin@ordinarylabs.com","admin":"local.admin@ordinarylabs.com","employee":"employee@ordinarylabs.com"}\n';
+				'Database Default Seed Accounts: {"superAdmin":"admin@dinary.app","admin":"local.admin@dinary.app","employee":"employee@dinary.app"}\n';
 
 			expect(
 				parseDesktopSeedAccountEmails(`Found 0 users in DB\n${line}Database Default Seed Started\n`)
 			).toEqual({
-				superAdmin: 'admin@ordinarylabs.com',
-				admin: 'local.admin@ordinarylabs.com',
-				employee: 'employee@ordinarylabs.com'
+				superAdmin: 'admin@dinary.app',
+				admin: 'local.admin@dinary.app',
+				employee: 'employee@dinary.app'
 			});
 			expect(parseDesktopSeedAccountEmails(`\u001b[35m${line.trimEnd()}\u001b[39m\n`)).toEqual({
-				superAdmin: 'admin@ordinarylabs.com',
-				admin: 'local.admin@ordinarylabs.com',
-				employee: 'employee@ordinarylabs.com'
+				superAdmin: 'admin@dinary.app',
+				admin: 'local.admin@dinary.app',
+				employee: 'employee@dinary.app'
 			});
 		});
 
@@ -297,7 +297,7 @@ describe('desktop seed credentials', () => {
 			expect(parseDesktopSeedAccountEmails('Database Default Seed Accounts: {"superAdmin":"admin@ev')).toEqual(
 				{}
 			);
-			expect(parseDesktopSeedAccountEmails('Database Default Seed Accounts: admin@ordinarylabs.com\n')).toEqual({});
+			expect(parseDesktopSeedAccountEmails('Database Default Seed Accounts: admin@dinary.app\n')).toEqual({});
 			expect(parseDesktopSeedAccountEmails('Database Default Seed Started\n')).toEqual({});
 		});
 

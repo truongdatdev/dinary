@@ -54,7 +54,7 @@ export const DEFAULT_HELP_CENTER_MENUS: IHelpCenter[] = [
 		]
 	},
 	{
-		name: 'Ordinary Labs Platform',
+		name: 'Dinary Cloud',
 		icon: 'book-open-outline',
 		flag: 'base',
 		privacy: 'eye-off-outline',

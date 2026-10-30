@@ -88,7 +88,7 @@ describe('SubscriptionRequiredGuard', () => {
 			.catch((e) => e);
 		expect(err).toBeInstanceOf(ForbiddenException);
 		const url = new URL((err as ForbiddenException).getResponse()['checkoutUrl']);
-		expect(url.origin + url.pathname).toBe('https://ordinarylabs.com/checkout');
+		expect(url.origin + url.pathname).toBe('https://dinary.app/checkout');
 		expect(Object.fromEntries(url.searchParams)).toEqual({
 			product: 'dinary',
 			hosting: 'cloud',

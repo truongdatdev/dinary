@@ -1,5 +1,5 @@
 {
-	"description": "Links to Ever hosts the Dinary web app renders that predate the Ordinary Labs Platform modules (the product website, its documentation and legal pages, the company website), recorded with both modules off from the web app image built from base_commit. Links on the signed-out pages are recorded under the path /. The sidebar and footer links are listed for every route, since a route that redirects may be captured before or after its redirect. May only shrink (check-baseline-shrink); an entry excuses that link on that route only, never a lookup or a request.",
+	"description": "Links to Ever hosts the Dinary web app renders that predate the Dinary Cloud modules (the product website, its documentation and legal pages, the company website), recorded with both modules off from the web app image built from base_commit. Links on the signed-out pages are recorded under the path /. The sidebar and footer links are listed for every route, since a route that redirects may be captured before or after its redirect. May only shrink (check-baseline-shrink); an entry excuses that link on that route only, never a lookup or a request.",
 	"base_commit": "65c127cc62f27a4053b838bb2a0b297424d0d471",
 	"entries": [
 		{
@@ -35,7 +35,7 @@
 		{
 			"route": "/",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -113,7 +113,7 @@
 		{
 			"route": "/ai-chat/window",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -149,7 +149,7 @@
 		{
 			"route": "/ai-chat",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -185,7 +185,7 @@
 		{
 			"route": "/auth/accept-client-invite",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -221,7 +221,7 @@
 		{
 			"route": "/auth/accept-invite",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -257,7 +257,7 @@
 		{
 			"route": "/auth/confirm-email",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -293,7 +293,7 @@
 		{
 			"route": "/auth/estimate",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -329,7 +329,7 @@
 		{
 			"route": "/auth/ever-id/confirm",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -365,7 +365,7 @@
 		{
 			"route": "/auth/ever-id/signup",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -401,7 +401,7 @@
 		{
 			"route": "/auth/ever-id",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -437,7 +437,7 @@
 		{
 			"route": "/auth/login-magic",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -473,7 +473,7 @@
 		{
 			"route": "/auth/login-workspace",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -509,7 +509,7 @@
 		{
 			"route": "/auth/login",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -545,7 +545,7 @@
 		{
 			"route": "/auth/logout",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -581,7 +581,7 @@
 		{
 			"route": "/auth/magic-sign-in",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -617,7 +617,7 @@
 		{
 			"route": "/auth/oauth-authorize",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -653,7 +653,7 @@
 		{
 			"route": "/auth/register",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -689,7 +689,7 @@
 		{
 			"route": "/auth/request-password",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -725,7 +725,7 @@
 		{
 			"route": "/auth/reset-password",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -761,7 +761,7 @@
 		{
 			"route": "/auth",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -797,7 +797,7 @@
 		{
 			"route": "/legal/cookies",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -845,7 +845,7 @@
 		{
 			"route": "/legal/privacy",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -911,7 +911,7 @@
 		{
 			"route": "/legal/terms",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -965,7 +965,7 @@
 		{
 			"route": "/legal",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1019,7 +1019,7 @@
 		{
 			"route": "/onboarding/complete",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1055,7 +1055,7 @@
 		{
 			"route": "/onboarding/tenant",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1091,7 +1091,7 @@
 		{
 			"route": "/pages/404",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1133,7 +1133,7 @@
 		{
 			"route": "/pages/about",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1169,7 +1169,7 @@
 		{
 			"route": "/pages/accounting/expense-recurring",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1205,7 +1205,7 @@
 		{
 			"route": "/pages/accounting/expenses/categories",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1241,7 +1241,7 @@
 		{
 			"route": "/pages/accounting/expenses",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1277,7 +1277,7 @@
 		{
 			"route": "/pages/accounting/income",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1313,7 +1313,7 @@
 		{
 			"route": "/pages/accounting/invoices/add",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1349,7 +1349,7 @@
 		{
 			"route": "/pages/accounting/invoices/edit/:id",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1385,7 +1385,7 @@
 		{
 			"route": "/pages/accounting/invoices/estimates/add",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1421,7 +1421,7 @@
 		{
 			"route": "/pages/accounting/invoices/estimates/edit/:id",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1457,7 +1457,7 @@
 		{
 			"route": "/pages/accounting/invoices/estimates/view/:id",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1493,7 +1493,7 @@
 		{
 			"route": "/pages/accounting/invoices/estimates",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1529,7 +1529,7 @@
 		{
 			"route": "/pages/accounting/invoices/payments/:id",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1565,7 +1565,7 @@
 		{
 			"route": "/pages/accounting/invoices/received-estimates",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1601,7 +1601,7 @@
 		{
 			"route": "/pages/accounting/invoices/received-invoices",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1637,7 +1637,7 @@
 		{
 			"route": "/pages/accounting/invoices/recurring",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1673,7 +1673,7 @@
 		{
 			"route": "/pages/accounting/invoices/view/:id",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1709,7 +1709,7 @@
 		{
 			"route": "/pages/accounting/invoices",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1745,7 +1745,7 @@
 		{
 			"route": "/pages/accounting/payments",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1781,7 +1781,7 @@
 		{
 			"route": "/pages/accounting",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1817,7 +1817,7 @@
 		{
 			"route": "/pages/auth/profile",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1853,7 +1853,7 @@
 		{
 			"route": "/pages/candidates",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1889,7 +1889,7 @@
 		{
 			"route": "/pages/contacts/clients",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1925,7 +1925,7 @@
 		{
 			"route": "/pages/contacts/customers",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1961,7 +1961,7 @@
 		{
 			"route": "/pages/contacts/leads",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -1997,7 +1997,7 @@
 		{
 			"route": "/pages/contacts/view/:id",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2033,7 +2033,7 @@
 		{
 			"route": "/pages/contacts/visitors",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2069,7 +2069,7 @@
 		{
 			"route": "/pages/contacts",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2105,7 +2105,7 @@
 		{
 			"route": "/pages/dashboard/accounting",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2141,7 +2141,7 @@
 		{
 			"route": "/pages/dashboard/custom/:id",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2177,7 +2177,7 @@
 		{
 			"route": "/pages/dashboard/dashboard-time-track",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2213,7 +2213,7 @@
 		{
 			"route": "/pages/dashboard/hr",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2249,7 +2249,7 @@
 		{
 			"route": "/pages/dashboard/project-management",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2285,7 +2285,7 @@
 		{
 			"route": "/pages/dashboard/switching",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2321,7 +2321,7 @@
 		{
 			"route": "/pages/dashboard/teams",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2357,7 +2357,7 @@
 		{
 			"route": "/pages/dashboard/time-tracking",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2393,7 +2393,7 @@
 		{
 			"route": "/pages/dashboard",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2429,7 +2429,7 @@
 		{
 			"route": "/pages/documents",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2465,7 +2465,7 @@
 		{
 			"route": "/pages/employees/activity/apps",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2501,7 +2501,7 @@
 		{
 			"route": "/pages/employees/activity/screenshots",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2537,7 +2537,7 @@
 		{
 			"route": "/pages/employees/activity/time-activities",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2579,7 +2579,7 @@
 		{
 			"route": "/pages/employees/activity/urls",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2615,7 +2615,7 @@
 		{
 			"route": "/pages/employees/activity/videos",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2651,7 +2651,7 @@
 		{
 			"route": "/pages/employees/activity",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2693,7 +2693,7 @@
 		{
 			"route": "/pages/employees/appointments/manage/:employeeId/:appointmentId",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2729,7 +2729,7 @@
 		{
 			"route": "/pages/employees/appointments/manage/:employeeId",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2765,7 +2765,7 @@
 		{
 			"route": "/pages/employees/appointments",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2801,7 +2801,7 @@
 		{
 			"route": "/pages/employees/approvals",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2837,7 +2837,7 @@
 		{
 			"route": "/pages/employees/candidates/edit/:id/profile/account",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2873,7 +2873,7 @@
 		{
 			"route": "/pages/employees/candidates/edit/:id/profile/documents",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2909,7 +2909,7 @@
 		{
 			"route": "/pages/employees/candidates/edit/:id/profile/employment",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2945,7 +2945,7 @@
 		{
 			"route": "/pages/employees/candidates/edit/:id/profile/experience",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -2981,7 +2981,7 @@
 		{
 			"route": "/pages/employees/candidates/edit/:id/profile/feedbacks",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3017,7 +3017,7 @@
 		{
 			"route": "/pages/employees/candidates/edit/:id/profile/hiring",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3053,7 +3053,7 @@
 		{
 			"route": "/pages/employees/candidates/edit/:id/profile/history",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3089,7 +3089,7 @@
 		{
 			"route": "/pages/employees/candidates/edit/:id/profile/interview",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3125,7 +3125,7 @@
 		{
 			"route": "/pages/employees/candidates/edit/:id/profile/location",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3161,7 +3161,7 @@
 		{
 			"route": "/pages/employees/candidates/edit/:id/profile/rates",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3197,7 +3197,7 @@
 		{
 			"route": "/pages/employees/candidates/edit/:id/profile/tasks",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3233,7 +3233,7 @@
 		{
 			"route": "/pages/employees/candidates/edit/:id/profile",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3269,7 +3269,7 @@
 		{
 			"route": "/pages/employees/candidates/edit/:id",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3305,7 +3305,7 @@
 		{
 			"route": "/pages/employees/candidates/interviews/calendar",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3341,7 +3341,7 @@
 		{
 			"route": "/pages/employees/candidates/interviews/criterion",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3377,7 +3377,7 @@
 		{
 			"route": "/pages/employees/candidates/interviews/interview_panel",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3413,7 +3413,7 @@
 		{
 			"route": "/pages/employees/candidates/interviews",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3449,7 +3449,7 @@
 		{
 			"route": "/pages/employees/candidates/invites",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3485,7 +3485,7 @@
 		{
 			"route": "/pages/employees/candidates/statistic",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3521,7 +3521,7 @@
 		{
 			"route": "/pages/employees/candidates",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3557,7 +3557,7 @@
 		{
 			"route": "/pages/employees/edit/:id/account",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3593,7 +3593,7 @@
 		{
 			"route": "/pages/employees/edit/:id/contacts",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3629,7 +3629,7 @@
 		{
 			"route": "/pages/employees/edit/:id/documents",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3665,7 +3665,7 @@
 		{
 			"route": "/pages/employees/edit/:id/employment",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3701,7 +3701,7 @@
 		{
 			"route": "/pages/employees/edit/:id/hiring",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3737,7 +3737,7 @@
 		{
 			"route": "/pages/employees/edit/:id/location",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3773,7 +3773,7 @@
 		{
 			"route": "/pages/employees/edit/:id/networks",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3809,7 +3809,7 @@
 		{
 			"route": "/pages/employees/edit/:id/projects",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3845,7 +3845,7 @@
 		{
 			"route": "/pages/employees/edit/:id/rates",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3881,7 +3881,7 @@
 		{
 			"route": "/pages/employees/edit/:id/settings",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3917,7 +3917,7 @@
 		{
 			"route": "/pages/employees/edit/:id",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3953,7 +3953,7 @@
 		{
 			"route": "/pages/employees/employee-level",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -3989,7 +3989,7 @@
 		{
 			"route": "/pages/employees/event-types",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4025,7 +4025,7 @@
 		{
 			"route": "/pages/employees/invites",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4061,7 +4061,7 @@
 		{
 			"route": "/pages/employees/positions",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4097,7 +4097,7 @@
 		{
 			"route": "/pages/employees/recurring-expenses",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4133,7 +4133,7 @@
 		{
 			"route": "/pages/employees/schedules/date-specific-availability",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4169,7 +4169,7 @@
 		{
 			"route": "/pages/employees/schedules/recurring-availability",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4205,7 +4205,7 @@
 		{
 			"route": "/pages/employees/schedules",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4241,7 +4241,7 @@
 		{
 			"route": "/pages/employees/time-off/settings",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4277,7 +4277,7 @@
 		{
 			"route": "/pages/employees/time-off",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4313,7 +4313,7 @@
 		{
 			"route": "/pages/employees/timesheets/:id",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4349,7 +4349,7 @@
 		{
 			"route": "/pages/employees/timesheets/approvals",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4385,7 +4385,7 @@
 		{
 			"route": "/pages/employees/timesheets/calendar",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4421,7 +4421,7 @@
 		{
 			"route": "/pages/employees/timesheets/daily",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4457,7 +4457,7 @@
 		{
 			"route": "/pages/employees/timesheets/weekly",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4493,7 +4493,7 @@
 		{
 			"route": "/pages/employees/timesheets",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4529,7 +4529,7 @@
 		{
 			"route": "/pages/employees/view/:id",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4565,7 +4565,7 @@
 		{
 			"route": "/pages/employees",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4601,7 +4601,7 @@
 		{
 			"route": "/pages/goals/reports",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4637,7 +4637,7 @@
 		{
 			"route": "/pages/goals/settings",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4673,7 +4673,7 @@
 		{
 			"route": "/pages/goals",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4715,7 +4715,7 @@
 		{
 			"route": "/pages/help",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4751,7 +4751,7 @@
 		{
 			"route": "/pages/integrations/activepieces",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4787,7 +4787,7 @@
 		{
 			"route": "/pages/integrations/ever-async",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4823,7 +4823,7 @@
 		{
 			"route": "/pages/integrations/ever-connect/:integrationTenantId",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4859,7 +4859,7 @@
 		{
 			"route": "/pages/integrations/ever-connect",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4895,7 +4895,7 @@
 		{
 			"route": "/pages/integrations/dinary-ai",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4931,7 +4931,7 @@
 		{
 			"route": "/pages/integrations/github",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -4967,7 +4967,7 @@
 		{
 			"route": "/pages/integrations/hubstaff",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5003,7 +5003,7 @@
 		{
 			"route": "/pages/integrations/makecom",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5039,7 +5039,7 @@
 		{
 			"route": "/pages/integrations/new",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5075,7 +5075,7 @@
 		{
 			"route": "/pages/integrations/plane",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5111,7 +5111,7 @@
 		{
 			"route": "/pages/integrations/plugins",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5147,7 +5147,7 @@
 		{
 			"route": "/pages/integrations/sim",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5183,7 +5183,7 @@
 		{
 			"route": "/pages/integrations/upwork",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5219,7 +5219,7 @@
 		{
 			"route": "/pages/integrations/zapier",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5255,7 +5255,7 @@
 		{
 			"route": "/pages/integrations",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5291,7 +5291,7 @@
 		{
 			"route": "/pages/jobs/employee",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5327,7 +5327,7 @@
 		{
 			"route": "/pages/jobs/matching",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5363,7 +5363,7 @@
 		{
 			"route": "/pages/jobs/proposal-template",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5399,7 +5399,7 @@
 		{
 			"route": "/pages/jobs/search",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5435,7 +5435,7 @@
 		{
 			"route": "/pages/jobs",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5471,7 +5471,7 @@
 		{
 			"route": "/pages/legal/cookies",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5519,7 +5519,7 @@
 		{
 			"route": "/pages/legal/privacy",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5585,7 +5585,7 @@
 		{
 			"route": "/pages/legal/terms",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5639,7 +5639,7 @@
 		{
 			"route": "/pages/legal",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5693,7 +5693,7 @@
 		{
 			"route": "/pages/organization/approval-policy",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5729,7 +5729,7 @@
 		{
 			"route": "/pages/organization/departments",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5765,7 +5765,7 @@
 		{
 			"route": "/pages/organization/documents",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5801,7 +5801,7 @@
 		{
 			"route": "/pages/organization/employment-types",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5837,7 +5837,7 @@
 		{
 			"route": "/pages/organization/equipment-sharing-policy",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5873,7 +5873,7 @@
 		{
 			"route": "/pages/organization/equipment-sharing",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5909,7 +5909,7 @@
 		{
 			"route": "/pages/organization/equipment",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5945,7 +5945,7 @@
 		{
 			"route": "/pages/organization/expense-recurring",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -5981,7 +5981,7 @@
 		{
 			"route": "/pages/organization/help-center",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6017,7 +6017,7 @@
 		{
 			"route": "/pages/organization/inventory/:itemId/variants/:itemVariantId",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6053,7 +6053,7 @@
 		{
 			"route": "/pages/organization/inventory/create",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6089,7 +6089,7 @@
 		{
 			"route": "/pages/organization/inventory/edit/:id",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6125,7 +6125,7 @@
 		{
 			"route": "/pages/organization/inventory/merchants",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6161,7 +6161,7 @@
 		{
 			"route": "/pages/organization/inventory/product-categories",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6197,7 +6197,7 @@
 		{
 			"route": "/pages/organization/inventory/product-types",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6233,7 +6233,7 @@
 		{
 			"route": "/pages/organization/inventory/view/:id",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6269,7 +6269,7 @@
 		{
 			"route": "/pages/organization/inventory/warehouses",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6305,7 +6305,7 @@
 		{
 			"route": "/pages/organization/inventory",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6341,7 +6341,7 @@
 		{
 			"route": "/pages/organization/projects/:id/edit",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6377,7 +6377,7 @@
 		{
 			"route": "/pages/organization/projects/create",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6413,7 +6413,7 @@
 		{
 			"route": "/pages/organization/projects",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6449,7 +6449,7 @@
 		{
 			"route": "/pages/organization/tags",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6485,7 +6485,7 @@
 		{
 			"route": "/pages/organization/teams",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6521,7 +6521,7 @@
 		{
 			"route": "/pages/organization/vendors",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6557,7 +6557,7 @@
 		{
 			"route": "/pages/organizations/edit/:id/location",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6593,7 +6593,7 @@
 		{
 			"route": "/pages/organizations/edit/:id/main",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6629,7 +6629,7 @@
 		{
 			"route": "/pages/organizations/edit/:id/settings",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6665,7 +6665,7 @@
 		{
 			"route": "/pages/organizations/edit/:id",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6701,7 +6701,7 @@
 		{
 			"route": "/pages/organizations",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6737,7 +6737,7 @@
 		{
 			"route": "/pages/playground",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6773,7 +6773,7 @@
 		{
 			"route": "/pages/projects",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6809,7 +6809,7 @@
 		{
 			"route": "/pages/reports/accounting",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6845,7 +6845,7 @@
 		{
 			"route": "/pages/reports/all",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6881,7 +6881,7 @@
 		{
 			"route": "/pages/reports/amounts-owed",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6917,7 +6917,7 @@
 		{
 			"route": "/pages/reports/apps-urls",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6953,7 +6953,7 @@
 		{
 			"route": "/pages/reports/client-budgets",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -6989,7 +6989,7 @@
 		{
 			"route": "/pages/reports/daily-limits",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7025,7 +7025,7 @@
 		{
 			"route": "/pages/reports/expense",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7061,7 +7061,7 @@
 		{
 			"route": "/pages/reports/manual-time-edits",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7097,7 +7097,7 @@
 		{
 			"route": "/pages/reports/payments",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7133,7 +7133,7 @@
 		{
 			"route": "/pages/reports/project-budgets",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7169,7 +7169,7 @@
 		{
 			"route": "/pages/reports/time-activity",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7211,7 +7211,7 @@
 		{
 			"route": "/pages/reports/weekly-limits",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7247,7 +7247,7 @@
 		{
 			"route": "/pages/reports/weekly",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7283,7 +7283,7 @@
 		{
 			"route": "/pages/reports",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7319,7 +7319,7 @@
 		{
 			"route": "/pages/sales/estimates",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7355,7 +7355,7 @@
 		{
 			"route": "/pages/sales/invoices",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7391,7 +7391,7 @@
 		{
 			"route": "/pages/sales/payments",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7427,7 +7427,7 @@
 		{
 			"route": "/pages/sales/pipelines/:pipelineId/deals/:dealId/edit",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7463,7 +7463,7 @@
 		{
 			"route": "/pages/sales/pipelines/:pipelineId/deals/create",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7499,7 +7499,7 @@
 		{
 			"route": "/pages/sales/pipelines/:pipelineId/deals",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7535,7 +7535,7 @@
 		{
 			"route": "/pages/sales/pipelines",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7571,7 +7571,7 @@
 		{
 			"route": "/pages/sales/proposals",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7607,7 +7607,7 @@
 		{
 			"route": "/pages/sales",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7643,7 +7643,7 @@
 		{
 			"route": "/pages/settings/accounting-templates",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7679,7 +7679,7 @@
 		{
 			"route": "/pages/settings/ai",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7715,7 +7715,7 @@
 		{
 			"route": "/pages/settings/billing",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7751,7 +7751,7 @@
 		{
 			"route": "/pages/settings/connected-identities",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7787,7 +7787,7 @@
 		{
 			"route": "/pages/settings/custom-smtp/organization",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7823,7 +7823,7 @@
 		{
 			"route": "/pages/settings/custom-smtp/tenant",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7859,7 +7859,7 @@
 		{
 			"route": "/pages/settings/custom-smtp",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7895,7 +7895,7 @@
 		{
 			"route": "/pages/settings/danger-zone",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7931,7 +7931,7 @@
 		{
 			"route": "/pages/settings/documents-inbound",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -7967,7 +7967,7 @@
 		{
 			"route": "/pages/settings/documents",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8003,7 +8003,7 @@
 		{
 			"route": "/pages/settings/email-history",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8039,7 +8039,7 @@
 		{
 			"route": "/pages/settings/email-templates",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8075,7 +8075,7 @@
 		{
 			"route": "/pages/settings/features/organization",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8111,7 +8111,7 @@
 		{
 			"route": "/pages/settings/features/tenant",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8147,7 +8147,7 @@
 		{
 			"route": "/pages/settings/features",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8183,7 +8183,7 @@
 		{
 			"route": "/pages/settings/file-storage",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8219,7 +8219,7 @@
 		{
 			"route": "/pages/settings/general",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8255,7 +8255,7 @@
 		{
 			"route": "/pages/settings/import-export/export",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8291,7 +8291,7 @@
 		{
 			"route": "/pages/settings/import-export/external-redirect",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8327,7 +8327,7 @@
 		{
 			"route": "/pages/settings/import-export/import",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8363,7 +8363,7 @@
 		{
 			"route": "/pages/settings/import-export",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8399,7 +8399,7 @@
 		{
 			"route": "/pages/settings/monitoring",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8435,7 +8435,7 @@
 		{
 			"route": "/pages/settings/oauth-clients",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8471,7 +8471,7 @@
 		{
 			"route": "/pages/settings/roles-permissions",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8507,7 +8507,7 @@
 		{
 			"route": "/pages/settings/sms-gateway",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8543,7 +8543,7 @@
 		{
 			"route": "/pages/settings/usage-statistics",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8579,7 +8579,7 @@
 		{
 			"route": "/pages/settings",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8615,7 +8615,7 @@
 		{
 			"route": "/pages/tasks/dashboard",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8651,7 +8651,7 @@
 		{
 			"route": "/pages/tasks/me",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8687,7 +8687,7 @@
 		{
 			"route": "/pages/tasks/settings/:id",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8723,7 +8723,7 @@
 		{
 			"route": "/pages/tasks/team",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8759,7 +8759,7 @@
 		{
 			"route": "/pages/tasks",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8795,7 +8795,7 @@
 		{
 			"route": "/pages/users/edit/:id/location",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8831,7 +8831,7 @@
 		{
 			"route": "/pages/users/edit/:id/main",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8867,7 +8867,7 @@
 		{
 			"route": "/pages/users/edit/:id/organizations",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8903,7 +8903,7 @@
 		{
 			"route": "/pages/users/edit/:id/settings",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8939,7 +8939,7 @@
 		{
 			"route": "/pages/users/edit/:id",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -8975,7 +8975,7 @@
 		{
 			"route": "/pages/users/invites",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -9011,7 +9011,7 @@
 		{
 			"route": "/pages/users",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -9047,7 +9047,7 @@
 		{
 			"route": "/pages",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -9083,7 +9083,7 @@
 		{
 			"route": "/server-down",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -9119,7 +9119,7 @@
 		{
 			"route": "/share/:type/:id/:token",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -9155,7 +9155,7 @@
 		{
 			"route": "/share/employee/:id/:eventId",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -9191,7 +9191,7 @@
 		{
 			"route": "/share/employee/:id/confirm/:appointmentId",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -9227,7 +9227,7 @@
 		{
 			"route": "/share/employee/:id/create-appointment",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -9263,7 +9263,7 @@
 		{
 			"route": "/share/employee/:id",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -9299,7 +9299,7 @@
 		{
 			"route": "/share/employee/edit-appointment",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -9335,7 +9335,7 @@
 		{
 			"route": "/share/employee",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -9371,7 +9371,7 @@
 		{
 			"route": "/share/organization/:profileLink/:organizationId/:slug/:employeeId",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -9407,7 +9407,7 @@
 		{
 			"route": "/share/organization/:profileLink/:organizationId",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -9443,7 +9443,7 @@
 		{
 			"route": "/share/workspace/create",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -9479,7 +9479,7 @@
 		{
 			"route": "/share/workspace/find",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -9515,7 +9515,7 @@
 		{
 			"route": "/share/workspace/signin",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -9551,7 +9551,7 @@
 		{
 			"route": "/share/workspace",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -9587,7 +9587,7 @@
 		{
 			"route": "/sign-in/google",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -9623,7 +9623,7 @@
 		{
 			"route": "/sign-in/success",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -9671,12 +9671,6 @@
 		{
 			"route": "/pages/candidates/edit/:id",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/candidates/edit/:id",
-			"attribute": "href",
 			"url": "https://dinary.app/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
@@ -9702,12 +9696,6 @@
 			"route": "/pages/candidates/edit/:id/profile",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/candidates/edit/:id/profile",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -9743,12 +9731,6 @@
 		{
 			"route": "/pages/candidates/edit/:id/profile/account",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/candidates/edit/:id/profile/account",
-			"attribute": "href",
 			"url": "https://dinary.app/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
@@ -9774,12 +9756,6 @@
 			"route": "/pages/candidates/edit/:id/profile/documents",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/candidates/edit/:id/profile/documents",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -9815,12 +9791,6 @@
 		{
 			"route": "/pages/candidates/edit/:id/profile/employment",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/candidates/edit/:id/profile/employment",
-			"attribute": "href",
 			"url": "https://dinary.app/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
@@ -9846,12 +9816,6 @@
 			"route": "/pages/candidates/edit/:id/profile/experience",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/candidates/edit/:id/profile/experience",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -9882,12 +9846,6 @@
 			"route": "/pages/candidates/edit/:id/profile/feedbacks",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/candidates/edit/:id/profile/feedbacks",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -9918,12 +9876,6 @@
 			"route": "/pages/candidates/edit/:id/profile/hiring",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/candidates/edit/:id/profile/hiring",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -9954,12 +9906,6 @@
 			"route": "/pages/candidates/edit/:id/profile/history",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/candidates/edit/:id/profile/history",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -9990,12 +9936,6 @@
 			"route": "/pages/candidates/edit/:id/profile/interview",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/candidates/edit/:id/profile/interview",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -10026,12 +9966,6 @@
 			"route": "/pages/candidates/edit/:id/profile/location",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/candidates/edit/:id/profile/location",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -10062,12 +9996,6 @@
 			"route": "/pages/candidates/edit/:id/profile/rates",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/candidates/edit/:id/profile/rates",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -10098,12 +10026,6 @@
 			"route": "/pages/candidates/edit/:id/profile/tasks",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/candidates/edit/:id/profile/tasks",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -10134,12 +10056,6 @@
 			"route": "/pages/candidates/interviews",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/candidates/interviews",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -10170,12 +10086,6 @@
 			"route": "/pages/candidates/interviews/calendar",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/candidates/interviews/calendar",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -10206,12 +10116,6 @@
 			"route": "/pages/candidates/interviews/criterion",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/candidates/interviews/criterion",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -10242,12 +10146,6 @@
 			"route": "/pages/candidates/interviews/interview_panel",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/candidates/interviews/interview_panel",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -10278,12 +10176,6 @@
 			"route": "/pages/candidates/invites",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/candidates/invites",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -10314,12 +10206,6 @@
 			"route": "/pages/candidates/statistic",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/candidates/statistic",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -10350,12 +10236,6 @@
 			"route": "/pages/sales/invoices/add",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/sales/invoices/add",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -10386,12 +10266,6 @@
 			"route": "/pages/sales/invoices/edit/:id",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/sales/invoices/edit/:id",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -10422,12 +10296,6 @@
 			"route": "/pages/sales/invoices/estimates",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/sales/invoices/estimates",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -10458,12 +10326,6 @@
 			"route": "/pages/sales/invoices/estimates/add",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/sales/invoices/estimates/add",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -10494,12 +10356,6 @@
 			"route": "/pages/sales/invoices/estimates/edit/:id",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/sales/invoices/estimates/edit/:id",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -10530,12 +10386,6 @@
 			"route": "/pages/sales/invoices/estimates/view/:id",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/sales/invoices/estimates/view/:id",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -10566,12 +10416,6 @@
 			"route": "/pages/sales/invoices/payments/:id",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/sales/invoices/payments/:id",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -10602,12 +10446,6 @@
 			"route": "/pages/sales/invoices/received-estimates",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/sales/invoices/received-estimates",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -10638,12 +10476,6 @@
 			"route": "/pages/sales/invoices/received-invoices",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/sales/invoices/received-invoices",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -10674,12 +10506,6 @@
 			"route": "/pages/sales/invoices/recurring",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/sales/invoices/recurring",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -10710,12 +10536,6 @@
 			"route": "/pages/sales/invoices/view/:id",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
-		},
-		{
-			"route": "/pages/sales/invoices/view/:id",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the route generator lists lazily loaded children under every parent"
 		},
 		{
@@ -10746,12 +10566,6 @@
 			"route": "/pages/accounting/expense-recurring/view/:id",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
-		},
-		{
-			"route": "/pages/accounting/expense-recurring/view/:id",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
 		},
 		{
@@ -10782,12 +10596,6 @@
 			"route": "/pages/accounting/expenses/view/:id",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
-		},
-		{
-			"route": "/pages/accounting/expenses/view/:id",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
 		},
 		{
@@ -10818,12 +10626,6 @@
 			"route": "/pages/accounting/income/view/:id",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
-		},
-		{
-			"route": "/pages/accounting/income/view/:id",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
 		},
 		{
@@ -10854,12 +10656,6 @@
 			"route": "/pages/accounting/payments/view/:id",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
-		},
-		{
-			"route": "/pages/accounting/payments/view/:id",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
 		},
 		{
@@ -10890,12 +10686,6 @@
 			"route": "/pages/employees/approvals/view/:id",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
-		},
-		{
-			"route": "/pages/employees/approvals/view/:id",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
 		},
 		{
@@ -10926,12 +10716,6 @@
 			"route": "/pages/employees/recurring-expenses/view/:id",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
-		},
-		{
-			"route": "/pages/employees/recurring-expenses/view/:id",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
 		},
 		{
@@ -10962,12 +10746,6 @@
 			"route": "/pages/goals/settings/kpi/:id",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
-		},
-		{
-			"route": "/pages/goals/settings/kpi/:id",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
 		},
 		{
@@ -10998,12 +10776,6 @@
 			"route": "/pages/goals/settings/time-frame/:id",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
-		},
-		{
-			"route": "/pages/goals/settings/time-frame/:id",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
 		},
 		{
@@ -11034,12 +10806,6 @@
 			"route": "/pages/organization/equipment/view/:id",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
-		},
-		{
-			"route": "/pages/organization/equipment/view/:id",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
 		},
 		{
@@ -11070,12 +10836,6 @@
 			"route": "/pages/organization/expense-recurring/view/:id",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
-		},
-		{
-			"route": "/pages/organization/expense-recurring/view/:id",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
 		},
 		{
@@ -11106,12 +10866,6 @@
 			"route": "/pages/organization/teams/view/:id",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
-		},
-		{
-			"route": "/pages/organization/teams/view/:id",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
 		},
 		{
@@ -11142,12 +10896,6 @@
 			"route": "/pages/organization/vendors/view/:id",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
-		},
-		{
-			"route": "/pages/organization/vendors/view/:id",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
 		},
 		{
@@ -11178,12 +10926,6 @@
 			"route": "/pages/sales/payments/view/:id",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
-		},
-		{
-			"route": "/pages/sales/payments/view/:id",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
 		},
 		{
@@ -11214,12 +10956,6 @@
 			"route": "/pages/tasks/view/:id",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
-		},
-		{
-			"route": "/pages/tasks/view/:id",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a record-view route the walk opens since the route list was regenerated after #10254"
 		},
 		{
@@ -11250,12 +10986,6 @@
 			"route": "/pages/goals/initiatives",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since #10779 (Goals → Initiatives pages) added it to the route list"
-		},
-		{
-			"route": "/pages/goals/initiatives",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since #10779 (Goals → Initiatives pages) added it to the route list"
 		},
 		{
@@ -11286,12 +11016,6 @@
 			"route": "/pages/goals/initiatives/:id",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since #10779 (Goals → Initiatives pages) added it to the route list"
-		},
-		{
-			"route": "/pages/goals/initiatives/:id",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since #10779 (Goals → Initiatives pages) added it to the route list"
 		},
 		{
@@ -11322,12 +11046,6 @@
 			"route": "/pages/integrations/ever-works",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the Ever Works integration pages (#10765) added it to the route list"
-		},
-		{
-			"route": "/pages/integrations/ever-works",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the Ever Works integration pages (#10765) added it to the route list"
 		},
 		{
@@ -11358,12 +11076,6 @@
 			"route": "/pages/integrations/ever-works/:integrationTenantId",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the Ever Works integration pages (#10765) added it to the route list"
-		},
-		{
-			"route": "/pages/integrations/ever-works/:integrationTenantId",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the Ever Works integration pages (#10765) added it to the route list"
 		},
 		{
@@ -11394,12 +11106,6 @@
 			"route": "/pages/inbox",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the Inbox UI plugin (#10802, /pages/inbox) added it to the route list"
-		},
-		{
-			"route": "/pages/inbox",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the Inbox UI plugin (#10802, /pages/inbox) added it to the route list"
 		},
 		{
@@ -11430,12 +11136,6 @@
 			"route": "/pages/inbox/mailbox",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the Inbox UI plugin (#10893, My mailbox) added it to the route list"
-		},
-		{
-			"route": "/pages/inbox/mailbox",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the Inbox UI plugin (#10893, My mailbox) added it to the route list"
 		},
 		{
@@ -11466,12 +11166,6 @@
 			"route": "/pages/settings/inbox-mailboxes",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the Inbox UI plugin (#10893, Settings → Inbox → Mailboxes) added it to the route list"
-		},
-		{
-			"route": "/pages/settings/inbox-mailboxes",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the Inbox UI plugin (#10893, Settings → Inbox → Mailboxes) added it to the route list"
 		},
 		{
@@ -11502,12 +11196,6 @@
 			"route": "/pages/settings/inbox-providers",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the Inbox UI plugin (#10873, Settings → Inbox → Providers) added it to the route list"
-		},
-		{
-			"route": "/pages/settings/inbox-providers",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since the Inbox UI plugin (#10873, Settings → Inbox → Providers) added it to the route list"
 		},
 		{
@@ -11538,12 +11226,6 @@
 			"route": "/pages/organization/projects/view/:id",
 			"attribute": "href",
 			"url": "https://docs.dinary.app/reference/faq",
-			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since #11163 (the project view page of #11118) added it to the route list"
-		},
-		{
-			"route": "/pages/organization/projects/view/:id",
-			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
 			"reason": "the same sidebar or footer link as on every other page, on a route the walk opens since #11163 (the project view page of #11118) added it to the route list"
 		},
 		{
@@ -11579,7 +11261,7 @@
 		{
 			"route": "/legal/dpia",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{
@@ -11615,7 +11297,7 @@
 		{
 			"route": "/pages/legal/dpia",
 			"attribute": "href",
-			"url": "https://ordinarylabs.com/",
+			"url": "https://dinary.app/",
 			"reason": "link to the company website (footer of every page)"
 		},
 		{

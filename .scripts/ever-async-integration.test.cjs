@@ -199,7 +199,7 @@ after(async () => {
 
 test('organization-scoped setup, one-time credentials, live mappings and project enforcement', async () => {
 	const dto = {
-		serverUrl: 'https://api-async.ordinarylabs.com',
+		serverUrl: 'https://api-async.dinary.app',
 		userMappings: [{ channel: 'slack', workspace: 'T123', chatUserId: 'U123', employeeId }],
 		projectIds: [projectId]
 	};
@@ -311,8 +311,8 @@ test('verification rejects unsafe destinations and disables redirects and proxie
 		await assert.rejects(service.verifyConnection(serverUrl), /URL|HTTPS|private|credentials/i);
 	}
 	assert.equal(requests.length, 0);
-	assert.equal((await service.verifyConnection('https://api-async.ordinarylabs.com/')).ok, true);
-	assert.equal(requests[0].url, 'https://api-async.ordinarylabs.com/healthz');
+	assert.equal((await service.verifyConnection('https://api-async.dinary.app/')).ok, true);
+	assert.equal(requests[0].url, 'https://api-async.dinary.app/healthz');
 	assert.equal(requests[0].options.maxRedirects, 0);
 	assert.equal(requests[0].options.proxy, false);
 	assert.ok(requests[0].options.httpsAgent);
@@ -336,7 +336,7 @@ test('actual HTTP guard rejects anonymous, wrong-integration and disabled connec
 	try {
 		const key = await service.setupIntegration(
 			{
-				serverUrl: 'https://api-async.ordinarylabs.com',
+				serverUrl: 'https://api-async.dinary.app',
 				projectIds: [projectId],
 				userMappings: [{ channel: 'slack', workspace: 'T123', chatUserId: 'U123', employeeId }]
 			},
@@ -448,8 +448,8 @@ test('concurrent setup produces one catalog and one live organization credential
 		.save({ id: id(), tenantId, organizationId: concurrentOrg, userId });
 	const secondService = new EverAsyncIntegrationService(db, { get: () => of({ data: 'ok' }) });
 	const results = await Promise.allSettled([
-		service.setupIntegration({ serverUrl: 'https://api-async.ordinarylabs.com' }, concurrentOrg),
-		secondService.setupIntegration({ serverUrl: 'https://api-async.ordinarylabs.com' }, concurrentOrg)
+		service.setupIntegration({ serverUrl: 'https://api-async.dinary.app' }, concurrentOrg),
+		secondService.setupIntegration({ serverUrl: 'https://api-async.dinary.app' }, concurrentOrg)
 	]);
 	assert.equal(results.filter((result) => result.status === 'fulfilled').length, 1);
 	const rejected = results.find((result) => result.status === 'rejected');

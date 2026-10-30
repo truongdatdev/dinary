@@ -4,8 +4,8 @@ import { validateSeedCredentials } from './validate-secrets';
 /**
  * Regression suite for GHSA-4r2r-mv32-3468.
  *
- * The first boot against an empty database seeded a SUPER_ADMIN (`admin@ordinarylabs.com` / `admin`), an
- * ADMIN (`local.admin@ordinarylabs.com` / `admin`) and an EMPLOYEE (`employee@ordinarylabs.com` / `12345678`)
+ * The first boot against an empty database seeded a SUPER_ADMIN (`admin@dinary.app` / `admin`), an
+ * ADMIN (`local.admin@dinary.app` / `admin`) and an EMPLOYEE (`employee@dinary.app` / `12345678`)
  * regardless of `DEMO`, using passwords printed in this repository's own README. Nothing warned and
  * nothing blocked, so a deployment that followed the README's "Production" instructions was live on
  * publicly known credentials.
@@ -204,7 +204,7 @@ describe('validateSeedCredentials', () => {
 
 		it('refuses a desktop seed that would use the published passwords', () => {
 			// What a launcher from before the per-install passwords produced: nothing set, so the
-			// Super Admin of a Dinary Server reachable from the LAN was `admin@ordinarylabs.com` / `admin`.
+			// Super Admin of a Dinary Server reachable from the LAN was `admin@dinary.app` / `admin`.
 			expect(() => validateSeedCredentials()).toThrow(/Refusing to seed/);
 			expect(() => validateSeedCredentials()).toThrow(/DEMO_SUPER_ADMIN_PASSWORD/);
 		});

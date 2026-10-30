@@ -77,12 +77,12 @@ export const PROTOCOLS = ['dinary-timer', 'dinary-desktop', 'dinary-server', 'di
 
 /** The app id each app is released with (`build.appId`), when its built manifest does not say. */
 const APP_IDS: Record<DesktopAppName, string> = {
-	'desktop-timer': 'com.ordinarylabs.dinarydesktoptimer',
-	desktop: 'com.ordinarylabs.dinarydesktop',
-	server: 'com.ordinarylabs.dinaryserver',
-	'server-api': 'com.ordinarylabs.dinaryapiserver',
-	agent: 'com.ordinarylabs.dinaryagent',
-	'server-mcp': 'com.ordinarylabs.dinarymcpserver'
+	'desktop-timer': 'com.dinary.dinarydesktoptimer',
+	desktop: 'com.dinary.dinarydesktop',
+	server: 'com.dinary.dinaryserver',
+	'server-api': 'com.dinary.dinaryapiserver',
+	agent: 'com.dinary.dinaryagent',
+	'server-mcp': 'com.dinary.dinarymcpserver'
 };
 
 interface BuiltManifest {

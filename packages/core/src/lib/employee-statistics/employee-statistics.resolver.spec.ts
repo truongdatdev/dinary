@@ -125,7 +125,7 @@ function surfaces() {
 
 	jest.spyOn(RequestContext, 'currentTenantId').mockReturnValue(TENANT);
 	jest.spyOn(RequestContext, 'currentUserId').mockReturnValue('user-1');
-	// The caller's token names `ORGANIZATION`: under the organization boundary (ordinary-labs/dinary#11316) the
+	// The caller's token names `ORGANIZATION`: under the organization boundary (truongdatdev/dinary#11316) the
 	// membership check also requires the organization to be the token's.
 	jest.spyOn(RequestContext, 'currentOrganizationId').mockReturnValue(ORGANIZATION);
 

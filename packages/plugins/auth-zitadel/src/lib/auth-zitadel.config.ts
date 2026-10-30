@@ -15,7 +15,7 @@ export interface AuthZitadelSettings {
 	issuers: string[];
 	/** Issuers that were configured but not accepted, with the reason. */
 	refusedIssuers: Array<{ issuer: string; reason: ZitadelIssuerRefusal }>;
-	/** Ordinary Labs-host issuers that only Ever Connect can enable on a non-cloud install. */
+	/** Dinary-host issuers that only Ever Connect can enable on a non-cloud install. */
 	everIssuersAwaitingConnect: string[];
 	clientId: string | null;
 	clientSecret: string | null;
@@ -42,7 +42,7 @@ export interface AuthZitadelSettings {
 type Env = Record<string, string | undefined>;
 
 /** Hosts whose issuers are only accepted on a non-cloud install through Ever Connect. */
-const ORDINARY_LABS_DOMAIN = 'ordinarylabs.com';
+const ORDINARY_LABS_DOMAIN = 'dinary.app';
 
 /** The OpenID scope a product must never request on its own (it scopes the login to one organization). */
 const ORG_SCOPE_PREFIX = 'urn:zitadel:iam:org:id:';
@@ -87,12 +87,12 @@ export function isZitadelEnabled(env: Env = process.env): boolean {
 }
 
 /**
- * Whether an issuer URL is on an Ordinary Labs host (`ordinarylabs.com` or a subdomain of it).
+ * Whether an issuer URL is on a Dinary host (`dinary.app` or a subdomain of it).
  *
  * @param issuer - Issuer URL.
- * @returns `true` for an Ordinary Labs host.
+ * @returns `true` for a Dinary host.
  */
-export function isOrdinaryLabsHost(issuer: string): boolean {
+export function isdinaryHost(issuer: string): boolean {
 	let host: string;
 	try {
 		host = new URL(issuer).hostname.toLowerCase();
@@ -159,7 +159,7 @@ function boundedInt(env: Env, name: string, fallback: number, min: number, max: 
 
 type IssuerSettings = Pick<AuthZitadelSettings, 'issuers' | 'refusedIssuers' | 'everIssuersAwaitingConnect'>;
 
-/** Reads `ZITADEL_ISSUERS`: at most three valid issuers; an Ordinary Labs host only on Dinary Cloud. */
+/** Reads `ZITADEL_ISSUERS`: at most three valid issuers; a Dinary host only on Dinary Cloud. */
 function parseIssuers(env: Env, isCloud: boolean, warn: (message: string) => void): IssuerSettings {
 	const result: IssuerSettings = { issuers: [], refusedIssuers: [], everIssuersAwaitingConnect: [] };
 	for (const raw of list(env['ZITADEL_ISSUERS'])) {
@@ -171,8 +171,8 @@ function parseIssuers(env: Env, isCloud: boolean, warn: (message: string) => voi
 		} else if (result.issuers.length + result.everIssuersAwaitingConnect.length >= MAX_ISSUERS) {
 			result.refusedIssuers.push({ issuer, reason: 'too_many' });
 			warn(`ZITADEL_ISSUERS: at most ${MAX_ISSUERS} issuers are used; ${issuer} is ignored.`);
-		} else if (!isCloud && isOrdinaryLabsHost(issuer)) {
-			// On a non-cloud install an Ordinary Labs issuer is only ever enabled through Ever Connect.
+		} else if (!isCloud && isdinaryHost(issuer)) {
+			// On a non-cloud install a Dinary issuer is only ever enabled through Ever Connect.
 			result.everIssuersAwaitingConnect.push(issuer);
 		} else if (!result.issuers.includes(issuer)) {
 			result.issuers.push(issuer);

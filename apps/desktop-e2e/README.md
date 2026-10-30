@@ -12,7 +12,7 @@ real Dinary API.
 2. **First start → setup wizard**: Welcome → "Custom / Network" → ActivityWatch and Wakatime off → API host + port →
    Save. Saving makes the app relaunch itself (`app.relaunch()` + `app.exit()`); the suite follows the relaunched
    process, which gets the same command line (user data, DevTools port).
-3. **Login** as the demo seed's employee (`employee@ordinarylabs.com`), typed key by key; Log In must become enabled.
+3. **Login** as the demo seed's employee (`employee@dinary.app`), typed key by key; Log In must become enabled.
 4. **Start** → `POST /api/timesheet/timer/start`, and the capture taken at start is uploaded
    (`POST /api/timesheet/screenshot`, one upload per display).
 5. **One screenshot interval later** the next capture is uploaded too.

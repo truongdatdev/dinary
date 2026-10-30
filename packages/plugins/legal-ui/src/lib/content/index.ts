@@ -7,7 +7,7 @@
  *
  * Run `node packages/plugins/legal-ui/scripts/sync-legal-content.mjs --fetch` to refresh.
  *
- * IMPORTANT: the upstream corpus is written for Ever Gauzy and the Ever legal entities. The
+ * IMPORTANT: the upstream corpus is written for the upstream product and its legal entities. The
  * documents vendored here have been rebranded for Dinary and had their entity details removed;
  * any refresh must be reviewed and rebranded in full before it is published. These documents are
  * templates, not legal advice, and must be reviewed by qualified counsel before they go live.
@@ -27,7 +27,7 @@ export const LEGAL_CORPUS_PACKAGE = '@ever-co/legal';
  */
 export const LEGAL_CORPUS_VERSION = '0.5.0';
 
-/** Corpus the documents belong to, e.g. `dinary` / `ordinarylabs.com`. */
+/** Corpus the documents belong to, e.g. `dinary` / `dinary.app`. */
 export const LEGAL_CORPUS_NAME = 'Dinary';
 
 /** Product the bundled documents were rendered for. */

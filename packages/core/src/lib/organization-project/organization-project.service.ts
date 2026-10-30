@@ -112,7 +112,7 @@ export class OrganizationProjectService extends TenantAwareCrudService<Organizat
 
 			// `isManager` lets a project manager act for the project's members (ManagedEmployeeService: their
 			// time-tracking statistics and activity; the tracked-data guard). Only a caller who may already act for
-			// every employee hands that on, as for teams (ordinary-labs/dinary#11197). An employee, who picks the
+			// every employee hands that on, as for teams (truongdatdev/dinary#11197). An employee, who picks the
 			// members of a project they create and is made its manager above, gets the MANAGER role without the
 			// flag; the role alone still lets them edit the project (`isManagerOfProject`).
 			const flagsManagers = RequestContext.hasPermission(PermissionsEnum.CHANGE_SELECTED_EMPLOYEE);
@@ -334,7 +334,7 @@ export class OrganizationProjectService extends TenantAwareCrudService<Organizat
 		// who may already act for every employee sets it, on a new manager or on an existing member, and repairs a
 		// manager row that lacks it. Anyone else who edits the members (a project manager, through
 		// ProjectManagerOrPermissionGuard) changes the MANAGER role only: the flag is never raised by them, and is
-		// cleared when the role is taken away, as teams do (ordinary-labs/dinary#11197).
+		// cleared when the role is taken away, as teams do (truongdatdev/dinary#11197).
 		const flagsManagers = RequestContext.hasPermission(PermissionsEnum.CHANGE_SELECTED_EMPLOYEE);
 
 		// Find the manager role

@@ -10,7 +10,7 @@ export const DEFAULT_DINARY_ORGANIZATIONS = [
 		totalEmployees: 17
 	},
 	{
-		name: 'Ordinary Labs Ltd',
+		name: 'Dinary Ltd',
 		currency: CurrenciesEnum.ILS,
 		defaultValueDateType: DefaultValueDateTypeEnum.TODAY,
 		imageUrl: 'assets/images/logos/dinary-large.jpg',

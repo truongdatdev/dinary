@@ -1,4 +1,4 @@
-# Mirror desktop-app installers from GitHub Releases into the R2 bucket behind downloads.ordinarylabs.com.
+# Mirror desktop-app installers from GitHub Releases into the R2 bucket behind downloads.dinary.app.
 #
 # The download links on dinary.app used to point at ever.sfo3.cdn.digitaloceanspaces.com, which died
 # with the DigitalOcean account and left every desktop download broken. GitHub Releases stays the
@@ -39,14 +39,14 @@ jobs:
     # ever-k8s-linux-x64-4 runner pod on 2026-08-30:
     #
     #   https://<account>.r2.cloudflarestorage.com   000  (connection timed out)
-    #   https://downloads.ordinarylabs.com                    000  (connection timed out)
+    #   https://downloads.dinary.app                    000  (connection timed out)
     #   https://api.github.com                       200
     #   https://registry-1.docker.io/v2/             401  (reachable)
     #   https://cloudflare.com                       301  (reachable)
     #
     # Forcing IPv4 does not help, so it is not the usual AAAA-first problem: it is the ISP-level
     # blackhole of certain Cloudflare anycast prefixes that this fleet has hit before -- the same
-    # fault that forced cdn.ordinarylabs.com to be terminated in-cluster. The destinations are reachable
+    # fault that forced cdn.dinary.app to be terminated in-cluster. The destinations are reachable
     # from outside the homelab, so a GitHub-hosted runner works.
     #
     # This is a deliberate, narrow exception to the self-hosted-only convention: the entire purpose

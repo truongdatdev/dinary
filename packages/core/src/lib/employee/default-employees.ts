@@ -17,7 +17,7 @@ export const DEFAULT_EMPLOYEES: any = [
 
 export const DEFAULT_DINARY_EMPLOYEES: any = [
 	{
-		email: 'ruslan@example-ordinarylabs.com',
+		email: 'ruslan@example-dinary.app',
 		password: '12345678',
 		firstName: 'Ruslan',
 		lastName: 'K.',
@@ -27,7 +27,7 @@ export const DEFAULT_DINARY_EMPLOYEES: any = [
 		preferredComponentLayout: ComponentLayoutStyleEnum.TABLE
 	},
 	{
-		email: 'alish@example-ordinarylabs.com',
+		email: 'alish@example-dinary.app',
 		password: '12345678',
 		firstName: 'Alish',
 		lastName: 'M.',
@@ -39,7 +39,7 @@ export const DEFAULT_DINARY_EMPLOYEES: any = [
 		preferredComponentLayout: ComponentLayoutStyleEnum.TABLE
 	},
 	{
-		email: 'booster@example-ordinarylabs.com',
+		email: 'booster@example-dinary.app',
 		password: '12345678',
 		firstName: 'Booster',
 		lastName: 'P.',
@@ -51,7 +51,7 @@ export const DEFAULT_DINARY_EMPLOYEES: any = [
 		preferredComponentLayout: ComponentLayoutStyleEnum.TABLE
 	},
 	{
-		email: 'yoster@example-ordinarylabs.com',
+		email: 'yoster@example-dinary.app',
 		password: '12345678',
 		firstName: 'Yoster',
 		lastName: 'F.',
@@ -63,7 +63,7 @@ export const DEFAULT_DINARY_EMPLOYEES: any = [
 		preferredComponentLayout: ComponentLayoutStyleEnum.TABLE
 	},
 	{
-		email: 'hoster@example-ordinarylabs.com',
+		email: 'hoster@example-dinary.app',
 		password: '12345678',
 		firstName: 'Hoster',
 		lastName: 'H.',
@@ -75,7 +75,7 @@ export const DEFAULT_DINARY_EMPLOYEES: any = [
 		preferredComponentLayout: ComponentLayoutStyleEnum.TABLE
 	},
 	{
-		email: 'aster@example-ordinarylabs.com',
+		email: 'aster@example-dinary.app',
 		password: '12345678',
 		firstName: 'Aster',
 		lastName: 'A.',
@@ -87,7 +87,7 @@ export const DEFAULT_DINARY_EMPLOYEES: any = [
 		preferredComponentLayout: ComponentLayoutStyleEnum.TABLE
 	},
 	{
-		email: 'roster@example-ordinarylabs.com',
+		email: 'roster@example-dinary.app',
 		password: '12345678',
 		firstName: 'Roster',
 		lastName: 'R.',
@@ -99,7 +99,7 @@ export const DEFAULT_DINARY_EMPLOYEES: any = [
 		preferredComponentLayout: ComponentLayoutStyleEnum.TABLE
 	},
 	{
-		email: 'dister@example-ordinarylabs.com',
+		email: 'dister@example-dinary.app',
 		password: '12345678',
 		firstName: 'Dister',
 		lastName: 'D.',
@@ -111,7 +111,7 @@ export const DEFAULT_DINARY_EMPLOYEES: any = [
 		preferredComponentLayout: ComponentLayoutStyleEnum.TABLE
 	},
 	{
-		email: 'postern@example-ordinarylabs.com',
+		email: 'postern@example-dinary.app',
 		password: '12345678',
 		firstName: 'Postern',
 		lastName: 'P.',
@@ -123,7 +123,7 @@ export const DEFAULT_DINARY_EMPLOYEES: any = [
 		preferredComponentLayout: ComponentLayoutStyleEnum.TABLE
 	},
 	{
-		email: 'kyoster@example-ordinarylabs.com',
+		email: 'kyoster@example-dinary.app',
 		password: '12345678',
 		firstName: 'Kyoster',
 		lastName: 'K.',
@@ -135,7 +135,7 @@ export const DEFAULT_DINARY_EMPLOYEES: any = [
 		preferredComponentLayout: ComponentLayoutStyleEnum.TABLE
 	},
 	{
-		email: 'taster@example-ordinarylabs.com',
+		email: 'taster@example-dinary.app',
 		password: '12345678',
 		firstName: 'Taster',
 		lastName: 'T.',
@@ -195,7 +195,7 @@ export const DEFAULT_DINARY_EMPLOYEES: any = [
 		preferredComponentLayout: ComponentLayoutStyleEnum.TABLE
 	},
 	{
-		email: 'julia@example-ordinarylabs.com',
+		email: 'julia@example-dinary.app',
 		password: '12345678',
 		firstName: 'Julia',
 		lastName: 'K.',
@@ -207,7 +207,7 @@ export const DEFAULT_DINARY_EMPLOYEES: any = [
 		preferredComponentLayout: ComponentLayoutStyleEnum.TABLE
 	},
 	{
-		email: 'yostorono@example-ordinarylabs.com',
+		email: 'yostorono@example-dinary.app',
 		password: '12345678',
 		firstName: 'Yostorono',
 		lastName: 'Y.',

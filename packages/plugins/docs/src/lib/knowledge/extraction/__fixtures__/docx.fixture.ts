@@ -75,7 +75,7 @@ ${table([row(['Item', 'Owner', 'Due'], true), row(['Laptop', 'IT', 'Day 1']), ro
 ${paragraph('Policies', 'Heading2')}
 ${paragraph('Expense limits are listed below.')}
 ${table([row(['Meals', '40 USD']), row(['Travel', '600 USD'])], 2)}
-${paragraph('Questions go to people@ordinarylabs.com.')}
+${paragraph('Questions go to people@dinary.app.')}
 </w:body></w:document>`;
 
 /**

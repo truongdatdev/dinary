@@ -35,7 +35,7 @@ describe('connect key material', () => {
 });
 
 /**
- * The Ordinary Labs Platform connect key: a second key pair, separate from the statistics key, made once
+ * The Dinary Cloud connect key: a second key pair, separate from the statistics key, made once
  * (also under concurrent calls), refused without a strong secret, signing with the stored key, and
  * dropped after a revocation without touching the statistics identity.
  */

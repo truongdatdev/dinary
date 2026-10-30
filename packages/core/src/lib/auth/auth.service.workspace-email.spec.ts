@@ -15,7 +15,7 @@ import { AuthService } from './auth.service';
  */
 describe('AuthService workspace routes and the caller e-mail address', () => {
 	const TARGET_TENANT = '22222222-2222-4222-8222-222222222222';
-	const CALLER = { id: 'caller', email: 'victim@ordinarylabs.com', tenantId: '11111111-1111-4111-8111-111111111111' };
+	const CALLER = { id: 'caller', email: 'victim@dinary.app', tenantId: '11111111-1111-4111-8111-111111111111' };
 
 	let users: { find: jest.Mock; findOne: jest.Mock };
 	let service: AuthService;

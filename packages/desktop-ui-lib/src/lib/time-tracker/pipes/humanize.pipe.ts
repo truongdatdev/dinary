@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2023 Ordinary Labs
+// Copyright (c) 2019-2023 Dinary
 
 // Modified code from https://github.com/urish/ngx-moment.
 // Originally MIT Licensed

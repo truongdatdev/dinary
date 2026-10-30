@@ -2,7 +2,7 @@ services:
     - type: web
       runtime: image
       image:
-          url: ghcr.io/ordinary-labs/dinary-api-demo:latest
+          url: ghcr.io/truongdatdev/dinary-api-demo:latest
       plan: pro
       name: dinary-api
       envVars:
@@ -47,7 +47,7 @@ services:
       runtime: image
       plan: standard
       image:
-          url: ghcr.io/ordinary-labs/dinary-webapp-demo:latest
+          url: ghcr.io/truongdatdev/dinary-webapp-demo:latest
       envVars:
           - key: DEMO
             value: true

@@ -24,7 +24,7 @@ export function runTccutil(service: string, bundleId: string, timeoutMs = 8000):
 }
 
 export function getAppId() {
-	return process.env.APP_ID || 'com.ordinarylabs.dinarydesktoptimer';
+	return process.env.APP_ID || 'com.dinary.dinarydesktoptimer';
 }
 
 export function getOSInfo(): IOSInfo {

@@ -97,7 +97,7 @@ export const plugins = [
 	// no outbound request). Any other value keeps it on and is logged once.
 	...(isEverStatsEnabled(process.env, (message) => console.warn(message)) ? [EverStatsPlugin] : []),
 
-	// Ordinary Labs Platform connection (connect code, organization links, consented integrations). Off unless
+	// Dinary Cloud connection (connect code, organization links, consented integrations). Off unless
 	// EVER_CONNECT_ENABLED=true; when off it is not loaded at all (no route, no timer, no outbound
 	// request). Any other value keeps it off and is logged once.
 	...(isEverConnectEnabled(process.env, (message) => console.warn(message)) ? [EverConnectPlugin] : []),

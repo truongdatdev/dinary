@@ -16,8 +16,8 @@ export const LEGAL_TOS_EN: ILegalDocument = {
 	product: 'dinary',
 	productName: 'Dinary',
 	domain: 'dinary.app',
-	entity: 'Ordinary Labs',
-	entityId: 'ordinary-labs',
+	entity: 'Dinary',
+	entityId: 'dinary',
 	locale: 'en',
 	version: '1.0.2',
 	effectiveDate: '2026-08-02',
@@ -26,7 +26,7 @@ export const LEGAL_TOS_EN: ILegalDocument = {
 	html: `<p>These Terms of Service (&quot;<strong>Terms</strong>&quot;) govern your access to and use of Dinary Cloud and the
 websites, applications and application programming interfaces we make available at <a href="https://dinary.app">dinary.app</a>
 (together, the &quot;<strong>Service</strong>&quot;).</p>
-<p>The Service is provided by <strong>Ordinary Labs</strong> (&quot;<strong>we</strong>&quot;,
+<p>The Service is provided by <strong>Dinary</strong> (&quot;<strong>we</strong>&quot;,
 &quot;<strong>us</strong>&quot;, &quot;<strong>our</strong>&quot;).</p>
 <p>By creating an account, by accessing the Service, or by clicking to accept these Terms, you agree to be
 bound by them. If you are agreeing on behalf of a company or other organisation, you confirm that you have
@@ -98,18 +98,18 @@ changes to these Terms.</li>
 rules in the general section decide which one wins.</li>
 </ul>
 <h2 id="who-you-contract-with" tabindex="-1">Who you contract with</h2>
-<p>Your contract for the Service is with <strong>Ordinary Labs</strong>, and with no one else.</p>
+<p>Your contract for the Service is with <strong>Dinary</strong>, and with no one else.</p>
 <ul>
 
-<li>Legal notices and contract queries: legal@ordinarylabs.com</li>
+<li>Legal notices and contract queries: legal@dinary.app</li>
 </ul>
-<p>Ordinary Labs operates the Service, invoices you for it, holds your Subscription, and is the party
+<p>Dinary operates the Service, invoices you for it, holds your Subscription, and is the party
 responsible to you under these Terms. <strong>When these Terms say &quot;we&quot;, &quot;us&quot; or &quot;our&quot;, they mean
-Ordinary Labs.</strong> If you need to bring a claim about the Service, it is the company you bring it
+Dinary.</strong> If you need to bring a claim about the Service, it is the company you bring it
 against, on the governing law and in the venue set out later in these Terms.</p>
 <h3 id="intellectual-property-and-your-counterparty" tabindex="-1">Intellectual property and your counterparty</h3>
-<p>The intellectual property in the Service is owned by Ordinary Labs or its licensors, as set out in the
-intellectual property section below. Ordinary Labs is the company you contract with, and it is solely
+<p>The intellectual property in the Service is owned by Dinary or its licensors, as set out in the
+intellectual property section below. Dinary is the company you contract with, and it is solely
 responsible to you for the Service.</p>
 <h3 id="separately-licensed-source-code-is-not-part-of-this-contract" tabindex="-1">Separately licensed source code is not part of this contract</h3>
 <p>Some of the software behind the Service is published under an open-source licence. <strong>That code reaches you
@@ -129,7 +129,7 @@ We require 16 regardless. The Service is a tool for work, it is not designed for
 and we do not knowingly provide it to anyone under 16.</p>
 <p>If we learn that an Account is held by someone under 16, we will close it and delete the associated personal
 data as described in our <a href="https://dinary.app/privacy">Privacy Policy</a>. If you believe a child under 16 has an
-Account, tell us at privacy@ordinarylabs.com.</p>
+Account, tell us at privacy@dinary.app.</p>
 <h3 id="capacity" tabindex="-1">Capacity</h3>
 <p>You must have the legal capacity to enter into a binding contract in the place where you live or where your
 organisation is established. If you do not, you must not accept these Terms.</p>
@@ -181,7 +181,7 @@ whether or not you authorised it, unless the cause was our own failure to keep t
 <li>keep the devices and email accounts used to reach the Service secure, because whoever controls the email
 address controls password recovery.</li>
 </ul>
-<p><strong>Tell us at abuse@ordinarylabs.com as soon as you suspect an Account has been compromised or credentials have
+<p><strong>Tell us at abuse@dinary.app as soon as you suspect an Account has been compromised or credentials have
 leaked.</strong> We may reset credentials, revoke tokens or suspend an Account to contain a security problem, and
 we will tell you when we do.</p>
 <h3 id="the-workspace-administrator-controls-the-workspace" tabindex="-1">The workspace administrator controls the Workspace</h3>
@@ -450,7 +450,7 @@ rights you have over it;</li>
 Service; and</li>
 <li>our <strong>Data Processing Addendum</strong> — how we handle personal data that you put into the Service about other
 people. It forms part of these Terms and applies automatically. You do not need to sign it separately, and
-you can obtain the current version from legal@ordinarylabs.com.</li>
+you can obtain the current version from legal@dinary.app.</li>
 </ul>
 <h3 id="who-is-responsible-for-what" tabindex="-1">Who is responsible for what</h3>
 <p>Two different relationships run in parallel, and it matters which one you are looking at.</p>
@@ -469,7 +469,7 @@ international transfers, and deletion or return at the end.</p>
 the notices, lawful bases and consultations that go with it, are yours</strong> — see the section on what you are
 responsible for.</p>
 <h3 id="contacting-us-about-data-protection" tabindex="-1">Contacting us about data protection</h3>
-<p>Write to privacy@ordinarylabs.com with any data protection question, or to exercise a right you have over
+<p>Write to privacy@dinary.app with any data protection question, or to exercise a right you have over
 personal data we hold as controller. Our Privacy Policy explains how to make a request, how long we take,
 and your right to complain to a supervisory authority. You may complain to the supervisory authority where
 you live or work, or to the authority that oversees our handling of personal data.</p>
@@ -727,7 +727,7 @@ transfer is yours to bear, and does not reduce what you owe us.</p>
 <p>We issue invoices electronically to the billing contact on your account, and an electronic invoice is the
 ordinary form of invoice between us. Payment is due on the date stated on the invoice or, if none is
 stated, within fourteen (14) days of it.</p>
-<p>If you believe an invoice is wrong, write to legal@ordinarylabs.com <strong>within thirty (30) days of the invoice
+<p>If you believe an invoice is wrong, write to legal@dinary.app <strong>within thirty (30) days of the invoice
 date</strong>, saying what you dispute and why. Raise it in good faith and we will work through it with you.
 <strong>You must still pay any part of the invoice you are not disputing, on time.</strong></p>
 <p><strong>After those 30 days an invoice is treated as accepted</strong>, except where there is a manifest error.</p>
@@ -748,14 +748,14 @@ statutory regime for late payment in commercial transactions does not apply to y
 <h2 id="refunds-and-cancellation" tabindex="-1">Refunds and cancellation</h2>
 <h3 id="30-day-money-back-guarantee-on-your-first-purchase" tabindex="-1">30-day money-back guarantee on your first purchase</h3>
 <p>If you are not satisfied, you may request a full refund of your <strong>first</strong> payment for the Service within
-<strong>thirty (30) days</strong> of that payment. Contact legal@ordinarylabs.com within the 30 days and we will refund the
+<strong>thirty (30) days</strong> of that payment. Contact legal@dinary.app within the 30 days and we will refund the
 amount you paid, to the payment method you used.</p>
 <p>The guarantee applies once per customer, to a first purchase only. It does not apply to renewals,
 subsequent purchases, or a repeat purchase after a previous account was closed.</p>
 <p>For annual plans, the same 30-day window applies. A refund requested after that window has closed is not
 available under this guarantee, and your plan continues until the end of the paid term.</p>
 <h3 id="cancelling" tabindex="-1">Cancelling</h3>
-<p>You may cancel at any time from your account settings, or by contacting legal@ordinarylabs.com. Cancellation
+<p>You may cancel at any time from your account settings, or by contacting legal@dinary.app. Cancellation
 stops the next renewal. <strong>Your access continues until the end of the period you have already paid for</strong>,
 and we do not pro-rate a partial period on cancellation, except where the 30-day guarantee above applies
 or where the law requires otherwise.</p>
@@ -897,9 +897,9 @@ addition to any other remedy available.</p>
 <h3 id="ours" tabindex="-1">Ours</h3>
 <p>All intellectual property rights in the Service — including the software, its design, its user interface,
 its documentation, and the Dinary names, logos and other brand features — are owned by
-<strong>Ordinary Labs</strong> or by its licensors.</p>
-<p>Ordinary Labs operates the Service. Your agreement for the Service is with Ordinary Labs, and Ordinary
-Labs is solely responsible to you for the Service under these Terms.</p>
+<strong>Dinary</strong> or by its licensors.</p>
+<p>Dinary operates the Service. Your agreement for the Service is with Dinary, and Dinary is
+solely responsible to you for the Service under these Terms.</p>
 <p>These Terms grant you a limited, non-exclusive, non-transferable, revocable right to use the Service while
 your subscription is in force and you comply with these Terms. <strong>They transfer no ownership.</strong> Any right
 not expressly granted is reserved. Separately licensed open-source components are governed by their own
@@ -928,7 +928,7 @@ keep it — this section does not touch any other confidentiality obligation bet
 ordinarily presented — on our websites, in customer lists, in presentations and in sales and marketing
 material, for the purpose of identifying you as a customer of the Service. Where you have published brand
 guidelines, or given them to us, we will follow them.</p>
-<p><strong>If you would rather we did not, write to legal@ordinarylabs.com and we will stop.</strong> You do not need to give a
+<p><strong>If you would rather we did not, write to legal@dinary.app and we will stop.</strong> You do not need to give a
 reason, and we will take you out of the material we control within a reasonable period. We will not recall
 material that has already been printed or distributed, but we will not produce any more of it.</p>
 <p>Anything beyond that plain identification needs your prior written consent, which is yours to give or
@@ -946,7 +946,7 @@ continue for as long as you hold an account or a subscription with us.</p>
 renews as described in the refunds and cancellation section above. Where you use the Service free of
 charge, on a trial, or in beta or preview, the term runs until you or we close the account.</p>
 <h3 id="you-can-end-it" tabindex="-1">You can end it</h3>
-<p>You may cancel at any time from your account settings, or by writing to legal@ordinarylabs.com. Cancellation
+<p>You may cancel at any time from your account settings, or by writing to legal@dinary.app. Cancellation
 takes effect at the end of the period you have already paid for, and your access continues until then.
 You do not need a reason and there is no exit fee.</p>
 <p>You may also terminate immediately if we are in material breach of these Terms and have not fixed it
@@ -1011,7 +1011,7 @@ data is still there, and thirty days is not long if the person who held the admi
 workspace settings. This is the fastest route and it works throughout the window.</li>
 <li><strong>Through our API.</strong> Your existing credentials keep working for export purposes for the whole window.
 The endpoints are in the product documentation.</li>
-<li><strong>By asking us.</strong> Write to legal@ordinarylabs.com from the account's registered address. We will acknowledge
+<li><strong>By asking us.</strong> Write to legal@dinary.app from the account's registered address. We will acknowledge
 within five (5) business days and deliver the export within thirty (30) days of your request. <strong>A
 request made inside the window is honoured even if the export itself is delivered after the window has
 closed</strong> — so a request on day 29 is a valid request.</li>
@@ -1047,7 +1047,7 @@ we may withhold the export until the breach is remedied or the outstanding amoun
 you what is required and we will not use this as a way to keep your data.</p>
 <p><strong>This never affects anyone's rights under data-protection law.</strong> An individual's right to obtain a copy
 of their own personal data does not depend on your account being in good standing. Those requests go to
-privacy@ordinarylabs.com and we honour them regardless of the state of the account.</p>
+privacy@dinary.app and we honour them regardless of the state of the account.</p>
 <h3 id="where-we-act-as-your-processor" tabindex="-1">Where we act as your processor</h3>
 <p>For personal data that you control and we merely process on your behalf — including employee monitoring
 data, where the customer is the controller and we are the processor — deletion and return are governed by
@@ -1259,7 +1259,7 @@ you do not have an account with us, we give it by publishing the new version wit
 before it applies.</p>
 <h3 id="your-choice" tabindex="-1">Your choice</h3>
 <p><strong>If you keep using the Service on or after the effective date, you accept the new version.</strong> If you do
-not want it, terminate before that date — from your account settings or by writing to legal@ordinarylabs.com.
+not want it, terminate before that date — from your account settings or by writing to legal@dinary.app.
 If you terminate because you object to a material change, <strong>we will refund the unused portion of any
 period you have already paid for</strong>, calculated pro rata from the date your access ends.</p>
 <p>Where a change is significant enough that continued use is not a fair way to establish agreement, we will
@@ -1317,7 +1317,7 @@ the Service, and our use of sub-processors for personal data is governed by our 
 and our published sub-processor list.</p>
 <h2 id="governing-law-and-where-disputes-are-heard" tabindex="-1">Governing law and where disputes are heard</h2>
 <p>These Terms, and any dispute or claim arising out of or in connection with them or with the Service —
-including a non-contractual one — are governed by the laws of the jurisdiction in which Ordinary Labs is
+including a non-contractual one — are governed by the laws of the jurisdiction in which Dinary is
 established, without regard to its conflict-of-law rules.</p>
 <p>The exclusive forum for any such dispute or claim is the competent courts of that jurisdiction, and both
 of us submit to that jurisdiction.</p>
@@ -1339,7 +1339,7 @@ you live.</li>
 <li>We will bring proceedings against you only in the courts of the country where you live.</li>
 </ul>
 <h3 id="complaints-and-out-of-court-routes" tabindex="-1">Complaints, and out-of-court routes</h3>
-<p>Please tell us first. Write to legal@ordinarylabs.com with what went wrong and what you would like us to do.
+<p>Please tell us first. Write to legal@dinary.app with what went wrong and what you would like us to do.
 Most disputes end there, and it costs you nothing to try.</p>
 <p>We are not currently committed to using any particular alternative dispute resolution body, and we are
 not obliged to use one. If you ask us to resolve a dispute through an ADR or mediation body, we will
@@ -1348,7 +1348,7 @@ consider the request in good faith and tell you whether we agree.</p>
 ADR body in your own country. <strong>The European Commission's online dispute resolution platform closed on
 20 July 2025, so there is no longer an EU-wide online form for this</strong> — the route now runs through your
 national body.</p>
-<p>For a complaint about how we handle personal data, write to privacy@ordinarylabs.com. You may also complain to
+<p>For a complaint about how we handle personal data, write to privacy@dinary.app. You may also complain to
 the data protection authority that oversees our handling of personal data, or to the authority in the country
 where you live or work. Doing so does not affect any other remedy you have.</p>
 <h2 id="notices" tabindex="-1">Notices</h2>
@@ -1364,14 +1364,14 @@ or of a policy — with its effective date shown on the page.</li>
 address you gave us counts as given, even if the person who set up the account has left. If your billing
 and technical contacts are different people, tell us, and we will use the right one.</p>
 <h3 id="how-you-contact-us" tabindex="-1">How you contact us</h3>
-<p>For anything to do with these Terms, write to legal@ordinarylabs.com.</p>
+<p>For anything to do with these Terms, write to legal@dinary.app.</p>
 <p>A <strong>formal legal notice</strong> — terminating for breach, notifying a breach, making a claim, or invoking the
-indemnification section — must be in writing and sent to legal@ordinarylabs.com. If you want the notice to be
-beyond argument, send a copy by post as well, to <strong>Ordinary Labs</strong> (contact legal@ordinarylabs.com for our current postal address).</p>
+indemnification section — must be in writing and sent to legal@dinary.app. If you want the notice to be
+beyond argument, send a copy by post as well, to <strong>Dinary</strong> (contact legal@dinary.app for our current postal address).</p>
 <p>A support ticket, a chat message, a social media post or a comment inside the product is not a formal
 legal notice, and neither is an email to an individual employee's personal work address.</p>
-<p>Privacy and data-protection matters go to privacy@ordinarylabs.com; abuse and security reports go to
-abuse@ordinarylabs.com. Those addresses are monitored, and using them gets you a faster answer than the legal
+<p>Privacy and data-protection matters go to privacy@dinary.app; abuse and security reports go to
+abuse@dinary.app. Those addresses are monitored, and using them gets you a faster answer than the legal
 address will.</p>
 <h3 id="when-a-notice-counts-as-received" tabindex="-1">When a notice counts as received</h3>
 <ul>
@@ -1439,11 +1439,11 @@ English text applies.</p>
 <h2 id="how-to-reach-us" tabindex="-1">How to reach us</h2>
 <p>Write to a person, not a form. These addresses are monitored and we answer them.</p>
 <ul>
-<li><strong>Contracts, these Terms, formal legal notices</strong> — legal@ordinarylabs.com</li>
-<li><strong>Privacy, data protection, and requests about your personal data</strong> — privacy@ordinarylabs.com</li>
-<li><strong>Abuse, security reports, and anything harmful you find on the Service</strong> — abuse@ordinarylabs.com</li>
+<li><strong>Contracts, these Terms, formal legal notices</strong> — legal@dinary.app</li>
+<li><strong>Privacy, data protection, and requests about your personal data</strong> — privacy@dinary.app</li>
+<li><strong>Abuse, security reports, and anything harmful you find on the Service</strong> — abuse@dinary.app</li>
 </ul>
-<p>By post: contact legal@ordinarylabs.com for our current postal address.</p>
+<p>By post: contact legal@dinary.app for our current postal address.</p>
 <p>We correspond in English.</p>
 <p>This document is version 1.0.2 of the Terms of Service for
 <a href="https://dinary.app">dinary.app</a>, in force from 2026-08-02. Earlier versions, with the

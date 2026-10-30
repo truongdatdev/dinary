@@ -11,7 +11,7 @@ import {
 
 /**
  * The paywall, the lazy tenant link and the proven-identity (Checkout Session) link all read a Stripe
- * account shared by every Ordinary Labs product. These tests pin that each of them counts ONLY this
+ * account shared by every Dinary product. These tests pin that each of them counts ONLY this
  * deployment's product (`BILLING_PRODUCT`), and that a Checkout Session is accepted as proof of
  * purchase only when every rule holds. Stripe is a fixture router over `fetch`; no network.
  */

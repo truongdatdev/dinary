@@ -4866,7 +4866,7 @@
 		}
 	},
 	"ABOUT_PAGE": {
-		"COPYRIGHT": "Copyright © 2019-{{year}}, Ordinary Labs. 保留所有权利。",
+		"COPYRIGHT": "Copyright © 2019-{{year}}, Dinary. 保留所有权利。",
 		"DESCRIPTION": "Dinary™ 是一个面向协作、按需与共享经济的开放式业务管理平台 — 集 ERP、CRM、HRM、ATS 与项目管理于一体，并内置时间跟踪。",
 		"LICENSE": "开源软件，发布许可证为",
 		"VERSION_DETAILS": "版本详情",

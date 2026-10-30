@@ -3,18 +3,18 @@
 	"version": "0.1.0",
 	"description": "Dinary Platform plugin for the two-way integration with Ever Works (tasks, teams, goals, missions, ideas, agents, inbox and docs); off unless EVER_WORKS_ENABLED=true",
 	"author": {
-		"name": "Ordinary Labs",
-		"url": "https://github.com/ordinary-labs"
+		"name": "Dinary",
+		"url": "https://github.com/truongdatdev"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ordinary-labs/dinary",
+		"url": "https://github.com/truongdatdev/dinary",
 		"directory": "packages/plugins/integration-ever-works"
 	},
 	"bugs": {
-		"url": "https://github.com/ordinary-labs/dinary/issues"
+		"url": "https://github.com/truongdatdev/dinary/issues"
 	},
-	"homepage": "https://github.com/ordinary-labs/dinary/tree/develop/packages/plugins/integration-ever-works",
+	"homepage": "https://github.com/truongdatdev/dinary/tree/develop/packages/plugins/integration-ever-works",
 	"license": "AGPL-3.0",
 	"private": true,
 	"type": "commonjs",

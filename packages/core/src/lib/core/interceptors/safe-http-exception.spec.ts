@@ -41,15 +41,15 @@ describe('toSafeHttpException', () => {
 	it('collapses an embedded raw error to its message and drops SQL / driver / transport internals', () => {
 		const driverError = Object.assign(new Error('duplicate key value violates unique constraint "UQ_email"'), {
 			query: 'INSERT INTO "user" ("email") VALUES ($1)',
-			parameters: ['admin@ordinarylabs.com'],
-			driverError: { detail: 'Key (email)=(admin@ordinarylabs.com) already exists.', table: 'user' },
+			parameters: ['admin@dinary.app'],
+			driverError: { detail: 'Key (email)=(admin@dinary.app) already exists.', table: 'user' },
 			stack: 'QueryFailedError: at ...'
 		});
 		const result = toSafeHttpException(new HttpException({ message: 'Create failed', error: driverError }, 400));
 		expect(result.getStatus()).toBe(400);
 		expect(result.getResponse()).toEqual({ message: 'Create failed', error: driverError.message });
 		expect(JSON.stringify(result.getResponse())).not.toContain('INSERT INTO');
-		expect(JSON.stringify(result.getResponse())).not.toContain('admin@ordinarylabs.com');
+		expect(JSON.stringify(result.getResponse())).not.toContain('admin@dinary.app');
 	});
 
 	it('strips request/response/config keys (Axios errors carry headers) at any depth', () => {

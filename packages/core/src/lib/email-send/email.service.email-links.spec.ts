@@ -48,7 +48,7 @@ describe('EmailService - caller-supplied links', () => {
 		return send.mock.calls[0][0].locals;
 	}
 
-	const user = { id: 'user-1', email: 'person@ordinarylabs.com', firstName: 'P', lastName: 'Q', name: 'P Q' } as any;
+	const user = { id: 'user-1', email: 'person@dinary.app', firstName: 'P', lastName: 'Q', name: 'P Q' } as any;
 	const organization = { id: 'org-1', tenantId: 'tenant-1', name: 'Org' } as any;
 
 	describe('welcome email', () => {
@@ -90,7 +90,7 @@ describe('EmailService - caller-supplied links', () => {
 		});
 
 		it('keep an Origin the deployment serves', async () => {
-			await service.multiTenantResetPassword('person@ordinarylabs.com', [], LanguagesEnum.ENGLISH, TEAMS);
+			await service.multiTenantResetPassword('person@dinary.app', [], LanguagesEnum.ENGLISH, TEAMS);
 			expect(locals().host).toBe(TEAMS);
 		});
 	});
@@ -99,7 +99,7 @@ describe('EmailService - caller-supplied links', () => {
 		it('estimate accept / reject links', async () => {
 			await service.emailInvoice(
 				LanguagesEnum.ENGLISH,
-				'client@ordinarylabs.com',
+				'client@dinary.app',
 				'cGRm',
 				1,
 				'invoice-1',
@@ -116,7 +116,7 @@ describe('EmailService - caller-supplied links', () => {
 
 		it('client invitation link', async () => {
 			await service.inviteOrganizationContact(
-				{ id: 'contact-1', name: 'C', primaryEmail: 'client@ordinarylabs.com' } as any,
+				{ id: 'contact-1', name: 'C', primaryEmail: 'client@dinary.app' } as any,
 				user,
 				organization,
 				{ token: 'tok' } as any,
@@ -129,7 +129,7 @@ describe('EmailService - caller-supplied links', () => {
 
 		it('keeps an allowed Origin, in its parsed form', async () => {
 			await service.inviteOrganizationContact(
-				{ id: 'contact-1', name: 'C', primaryEmail: 'client@ordinarylabs.com' } as any,
+				{ id: 'contact-1', name: 'C', primaryEmail: 'client@dinary.app' } as any,
 				user,
 				organization,
 				{ token: 'tok' } as any,
@@ -147,7 +147,7 @@ describe('EmailService - caller-supplied links', () => {
 				'inviteUser',
 				(s: EmailService, origin: string) =>
 					s.inviteUser({
-						email: 'new@ordinarylabs.com',
+						email: 'new@dinary.app',
 						role: 'EMPLOYEE',
 						organization,
 						registerUrl: 'r',
@@ -159,7 +159,7 @@ describe('EmailService - caller-supplied links', () => {
 				'inviteEmployee',
 				(s: EmailService, origin: string) =>
 					s.inviteEmployee({
-						email: 'new@ordinarylabs.com',
+						email: 'new@dinary.app',
 						organization,
 						registerUrl: 'r',
 						originUrl: origin,
@@ -170,7 +170,7 @@ describe('EmailService - caller-supplied links', () => {
 				'inviteTeamMember',
 				(s: EmailService, origin: string) =>
 					s.inviteTeamMember({
-						email: 'new@ordinarylabs.com',
+						email: 'new@dinary.app',
 						organization,
 						inviteLink: 'l',
 						inviteCode: 'c',
@@ -184,7 +184,7 @@ describe('EmailService - caller-supplied links', () => {
 				(s: EmailService, origin: string) =>
 					s.sendAcceptInvitationEmail(
 						{
-							email: 'admin@ordinarylabs.com',
+							email: 'admin@dinary.app',
 							organization,
 							employee: { user: { firstName: 'E' } },
 							languageCode: LanguagesEnum.ENGLISH
@@ -197,7 +197,7 @@ describe('EmailService - caller-supplied links', () => {
 				(s: EmailService, origin: string) =>
 					s.sendPaymentReceipt(
 						LanguagesEnum.ENGLISH,
-						'client@ordinarylabs.com',
+						'client@dinary.app',
 						'C',
 						1,
 						10,
@@ -209,12 +209,12 @@ describe('EmailService - caller-supplied links', () => {
 			[
 				'sendRejectionEmail',
 				(s: EmailService, origin: string) =>
-					s.sendRejectionEmail(LanguagesEnum.ENGLISH, 'candidate@ordinarylabs.com', 'C', organization, origin)
+					s.sendRejectionEmail(LanguagesEnum.ENGLISH, 'candidate@dinary.app', 'C', organization, origin)
 			],
 			[
 				'sendAppointmentMail',
 				(s: EmailService, origin: string) =>
-					s.sendAppointmentMail('guest@ordinarylabs.com', LanguagesEnum.ENGLISH, undefined, origin)
+					s.sendAppointmentMail('guest@dinary.app', LanguagesEnum.ENGLISH, undefined, origin)
 			]
 		])('%s uses CLIENT_BASE_URL as host instead of a foreign Origin', async (_name, sendIt) => {
 			await sendIt(service, FOREIGN);
@@ -225,9 +225,9 @@ describe('EmailService - caller-supplied links', () => {
 	describe('emails that render caller-supplied integration links', () => {
 		it('sign-in code email footer', async () => {
 			await service.sendMagicLoginCode({
-				email: 'person@ordinarylabs.com',
+				email: 'person@dinary.app',
 				magicCode: 'ABC123',
-				magicLink: `${configured.appMagicSignUrl}?email=person%40ordinarylabs.com&code=ABC123`,
+				magicLink: `${configured.appMagicSignUrl}?email=person%40dinary.app&code=ABC123`,
 				locale: LanguagesEnum.ENGLISH,
 				integration: { ...configured, appLink: `${FOREIGN}/`, companyLink: `${TEAMS}/about` }
 			});
@@ -240,7 +240,7 @@ describe('EmailService - caller-supplied links', () => {
 		it('team join request email (anonymous endpoint)', async () => {
 			await service.organizationTeamJoinRequest(
 				{ id: 'team-1', name: 'Team' } as any,
-				{ id: 'request-1', email: 'requester@ordinarylabs.com', code: 'ABC123' } as any,
+				{ id: 'request-1', email: 'requester@dinary.app', code: 'ABC123' } as any,
 				LanguagesEnum.ENGLISH,
 				organization,
 				{ appName: 'Ever Teams', appLink: `${FOREIGN}/login`, companyLink: '//attacker.example' }

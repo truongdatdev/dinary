@@ -44,8 +44,8 @@ export const linkView = (link: LinkRecord): LinkView => ({
 });
 
 /**
- * Tenant links: one Dinary organization ↔ one Ordinary Labs Platform organization. An administrator pastes a link code
- * minted in app.ordinarylabs.com (`POST /v1/instances/me/tenant-links`); the link's entitlement document is
+ * Tenant links: one Dinary organization ↔ one Dinary Cloud organization. An administrator pastes a link code
+ * minted in app.dinary.app (`POST /v1/instances/me/tenant-links`); the link's entitlement document is
  * verified before anything is stored. Dinary's own record of the link is an `integration_tenant` row
  * named `Ever_Connect`; removing the link archives it.
  */
@@ -87,7 +87,7 @@ export class EverConnectLinkService {
 			throw new ConflictException({
 				statusCode: 409,
 				code: 'not_connected',
-				message: 'This installation is not connected to Ordinary Labs Platform.'
+				message: 'This installation is not connected to Dinary Cloud.'
 			});
 		}
 		if (await this.store.linkOf(input.tenantId, input.organizationId)) {
@@ -127,7 +127,7 @@ export class EverConnectLinkService {
 				throw new UnprocessableEntityException({
 					statusCode: 422,
 					code: 'entitlement_unverifiable',
-					message: "Ordinary Labs Platform's entitlement document for this link could not be verified."
+					message: "Dinary Cloud's entitlement document for this link could not be verified."
 				});
 			}
 			throw this.problem(error);
@@ -218,7 +218,7 @@ export class EverConnectLinkService {
 	}
 
 	/**
-	 * Removes the link of an organization (`integrationTenantId` is its Dinary record): Ordinary Labs Platform is
+	 * Removes the link of an organization (`integrationTenantId` is its Dinary record): Dinary Cloud is
 	 * told when it can be reached; here the link is archived and its integrations switched off anyway.
 	 */
 	async unlink(input: {
@@ -245,13 +245,13 @@ export class EverConnectLinkService {
 			} catch (error) {
 				if (isCredentialRevoked(error)) this.signals.revoked$.next();
 				else if (error instanceof ProblemError && error.status === 404) remote = true;
-				else this.logger.warn(`Ordinary Labs Platform was not told about the removed link (${errorCode(error)}).`);
+				else this.logger.warn(`Dinary Cloud was not told about the removed link (${errorCode(error)}).`);
 			}
 		}
 		await this.unlinkLocally(link, 'user', input.userId, remote);
 	}
 
-	/** The local half of removing a link (also when Ordinary Labs Platform removed it). */
+	/** The local half of removing a link (also when Dinary Cloud removed it). */
 	async unlinkLocally(
 		link: LinkRecord,
 		actorLabel: 'user' | 'platform' | 'operator' | 'system',
@@ -281,7 +281,7 @@ export class EverConnectLinkService {
 		});
 	}
 
-	/** A link's state changed on Ordinary Labs Platform (suspended, orphaned, resumed). */
+	/** A link's state changed on Dinary Cloud (suspended, orphaned, resumed). */
 	async linkStateChanged(linkId: string, status: 'suspended' | 'orphaned' | 'linked'): Promise<void> {
 		const link = await this.store.linkById(linkId);
 		if (!link || link.status === 'unlinked' || link.status === status) return;
@@ -298,19 +298,19 @@ export class EverConnectLinkService {
 		if (error instanceof ProblemError) {
 			if (isUnreachable(error)) {
 				return new HttpException(
-					{ statusCode: 502, code: 'platform_unreachable', message: 'Ordinary Labs Platform could not be reached.' },
+					{ statusCode: 502, code: 'platform_unreachable', message: 'Dinary Cloud could not be reached.' },
 					HttpStatus.BAD_GATEWAY
 				);
 			}
 			const status = error.status === 409 ? 409 : error.status === 404 ? 404 : 422;
 			return new HttpException(
-				{ statusCode: status, code: error.code, message: 'Ordinary Labs Platform refused the link code.' },
+				{ statusCode: status, code: error.code, message: 'Dinary Cloud refused the link code.' },
 				status
 			);
 		}
 		if (isUnreachable(error)) {
 			return new HttpException(
-				{ statusCode: 502, code: 'platform_unreachable', message: 'Ordinary Labs Platform could not be reached.' },
+				{ statusCode: 502, code: 'platform_unreachable', message: 'Dinary Cloud could not be reached.' },
 				HttpStatus.BAD_GATEWAY
 			);
 		}

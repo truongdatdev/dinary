@@ -10,7 +10,7 @@ export interface ApprovalDecision {
 }
 
 /**
- * The installation-wide integrations the connecting organization consented to in app.ordinarylabs.com, which
+ * The installation-wide integrations the connecting organization consented to in app.dinary.app, which
  * wait for the operator of this installation: each shows who asked, what would start moving (the
  * read-only scope), and Accept or Decline behind a confirmation. Shown to the operator only.
  */
@@ -119,7 +119,7 @@ export interface ApprovalDecision {
 })
 export class PendingApprovalsComponent {
 	@Input() items: EverConnectIntegration[] = [];
-	/** The Ever organization that connected this installation (`ordinarylabs.com/<handle>`). */
+	/** The Ever organization that connected this installation (`dinary.app/<handle>`). */
 	@Input() handle: string | null = null;
 	@Input() busy = false;
 	@Output() readonly decide = new EventEmitter<ApprovalDecision>();

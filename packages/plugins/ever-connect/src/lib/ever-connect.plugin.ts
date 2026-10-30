@@ -8,7 +8,7 @@ import {
 import { EverConnectModule } from './ever-connect.module';
 
 /**
- * `ever_instance` is registered by one Ordinary Labs Platform plugin only: the anonymous statistics plugin
+ * `ever_instance` is registered by one Dinary Cloud plugin only: the anonymous statistics plugin
  * when it is loaded (unless `EVER_STATS_ENABLED=false`), this one otherwise.
  */
 const entities =
@@ -17,9 +17,9 @@ const entities =
 		: EVER_CONNECT_ENTITIES.filter((entity) => entity !== EverInstance);
 
 /**
- * Ordinary Labs Platform connection: connects this installation to Ordinary Labs Platform with a connect code from
- * app.ordinarylabs.com, links Dinary organizations to Ordinary Labs Platform organizations, and holds the state of each
- * integration (nothing moves for one unless an administrator consented to it in app.ordinarylabs.com).
+ * Dinary Cloud connection: connects this installation to Dinary Cloud with a connect code from
+ * app.dinary.app, links Dinary organizations to Dinary Cloud organizations, and holds the state of each
+ * integration (nothing moves for one unless an administrator consented to it in app.dinary.app).
  *
  * Off by default. Loaded only with `EVER_CONNECT_ENABLED=true`; otherwise it is not part of the API
  * at all (no route, no timer, no request). Loaded but not connected, it sends nothing.

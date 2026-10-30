@@ -3,7 +3,7 @@ import { PrimaryColumn } from 'typeorm';
 import { MultiORMColumn, MultiORMEntity, SkipExport } from '@dinary/core';
 
 /**
- * The connection of this installation to Ordinary Labs Platform: one row, `id = 'self'`.
+ * The connection of this installation to Dinary Cloud: one row, `id = 'self'`.
  *
  * It holds no credential: the installation proves itself with its connect key (kept encrypted in
  * `ever_instance`), and the short-lived token it gets with that key lives in memory only. The
@@ -20,14 +20,14 @@ export class EverConnectConnection {
 	@PrimaryColumn({ type: 'varchar', length: 16 })
 	id: string;
 
-	/** The Registry id Ordinary Labs Platform gave this installation (a ULID); never the statistics id. */
+	/** The Registry id Dinary Cloud gave this installation (a ULID); never the statistics id. */
 	@MultiORMColumn({ type: 'varchar', length: 32, nullable: true })
 	platformInstanceId?: string | null;
 
 	@MultiORMColumn({ type: 'varchar', length: 16, nullable: true })
 	kid?: string | null;
 
-	/** The Ordinary Labs Platform organization that connected the installation (the connection owner). */
+	/** The Dinary Cloud organization that connected the installation (the connection owner). */
 	@MultiORMColumn({ type: 'varchar', length: 32, nullable: true })
 	ownerOrgId?: string | null;
 

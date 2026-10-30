@@ -55,10 +55,10 @@ jobs:
           load: true
           platforms: linux/amd64
           tags: |
-            ghcr.io/ordinary-labs/dinary-mcp-demo:latest
-            ordinarylabs/dinary-mcp-demo:latest
+            ghcr.io/truongdatdev/dinary-mcp-demo:latest
+            dinary/dinary-mcp-demo:latest
             registry.digitalocean.com/ever/dinary-mcp-demo:latest
-          cache-from: type=registry,ref=ghcr.io/ordinary-labs/dinary-mcp-demo:latest
+          cache-from: type=registry,ref=ghcr.io/truongdatdev/dinary-mcp-demo:latest
           cache-to: type=inline
           build-args: |
             NODE_ENV=production
@@ -84,9 +84,9 @@ jobs:
       - name: Push to Docker Hub Registry
         run: |
           for attempt in 1 2 3 4 5; do
-            docker push ordinarylabs/dinary-mcp-demo:latest && break
+            docker push dinary/dinary-mcp-demo:latest && break
             [ "$attempt" = 5 ] && exit 1
-            echo "::warning::docker push ordinarylabs/dinary-mcp-demo:latest failed (attempt $attempt of 5), retrying in $((attempt * 15)) s"
+            echo "::warning::docker push dinary/dinary-mcp-demo:latest failed (attempt $attempt of 5), retrying in $((attempt * 15)) s"
             sleep $((attempt * 15))
           done
 
@@ -120,9 +120,9 @@ jobs:
       - name: Push to Github Registry
         run: |
           for attempt in 1 2 3 4 5; do
-            docker push ghcr.io/ordinary-labs/dinary-mcp-demo:latest && break
+            docker push ghcr.io/truongdatdev/dinary-mcp-demo:latest && break
             [ "$attempt" = 5 ] && exit 1
-            echo "::warning::docker push ghcr.io/ordinary-labs/dinary-mcp-demo:latest failed (attempt $attempt of 5), retrying in $((attempt * 15)) s"
+            echo "::warning::docker push ghcr.io/truongdatdev/dinary-mcp-demo:latest failed (attempt $attempt of 5), retrying in $((attempt * 15)) s"
             sleep $((attempt * 15))
           done
 
@@ -135,4 +135,4 @@ jobs:
 
     #  - name: Push to CW Registry
     #    run: |
-    #      docker push ${{ secrets.CW_DOCKER_REGISTRY }}/ordinary-labs/dinary-mcp-demo:latest
+    #      docker push ${{ secrets.CW_DOCKER_REGISTRY }}/truongdatdev/dinary-mcp-demo:latest

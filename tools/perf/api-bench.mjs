@@ -31,7 +31,7 @@ const require = createRequire(path.join(process.cwd(), 'package.json'));
 const env = process.env;
 const BASE = (env.BASE || 'http://localhost:3999/api').replace(/\/$/, '');
 // The seeded super admin's sign-in. Its email is not named here: the egress audit allows Ever hosts only in the
-// Ordinary Labs Platform modules, and the seed reads it from DEMO_SUPER_ADMIN_EMAIL (shipped default in .env.sample).
+// Dinary Cloud modules, and the seed reads it from DEMO_SUPER_ADMIN_EMAIL (shipped default in .env.sample).
 const EMAIL = env.EMAIL || env.DEMO_SUPER_ADMIN_EMAIL;
 if (!EMAIL) {
 	console.error(

@@ -59,7 +59,7 @@ Settings on the API (defaults in brackets):
 Booleans accept exactly `true` or `false`; any other value is logged once
 and the default is used.
 
-On an install that is not Dinary Cloud, an issuer on an Ordinary Labs host is not taken
+On an install that is not Dinary Cloud, an issuer on a Dinary host is not taken
 from `ZITADEL_ISSUERS`: it can only be enabled through Ever Connect, so such
 an install never contacts Ever on its own. An issuer on any other host (your
 own identity provider) is accepted.

@@ -13,7 +13,7 @@ import {
  * setting that existing installs find switched on.
  *
  * Before, every launcher passed API_HOST=0.0.0.0, so the integrated server of a Dinary Desktop install,
- * seeded with `admin@ordinarylabs.com` / `admin`, accepted sign-ins from anyone on the same network.
+ * seeded with `admin@dinary.app` / `admin`, accepted sign-ins from anyone on the same network.
  */
 describe('resolveDesktopListenHost', () => {
 	describe('Dinary Desktop integrated server (no LAN access allowed)', () => {

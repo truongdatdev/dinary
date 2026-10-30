@@ -65,7 +65,7 @@ const ALL = ['INTEGRATION_VIEW', 'INTEGRATION_ADD', 'INTEGRATION_EDIT', 'INTEGRA
  * Every request the module could make is recorded (`EVER_CONNECT_FETCH` and the global `fetch`);
  * none is expected in this suite.
  */
-describe.each(TEST_TARGETS)('Ordinary Labs Platform routes on $name', (target) => {
+describe.each(TEST_TARGETS)('Dinary Cloud routes on $name', (target) => {
 	let dataSource: DataSource;
 	let app: INestApplication | undefined;
 	let acme: SeededTenant;
@@ -217,7 +217,7 @@ describe.each(TEST_TARGETS)('Ordinary Labs Platform routes on $name', (target) =
 		const connect = await call('post', '/api/ever-connect/connect', 'operator', { code: 'EVC-AAAA-BBBB-CCCC' });
 		expect(connect.status).toBe(502);
 		expect(calls.length).toBeGreaterThan(0);
-		expect(new Set(calls)).toEqual(new Set(['https://api.ordinarylabs.com/.well-known/ever-keys.json']));
+		expect(new Set(calls)).toEqual(new Set(['https://api.dinary.app/.well-known/ever-keys.json']));
 	});
 
 	it.each([

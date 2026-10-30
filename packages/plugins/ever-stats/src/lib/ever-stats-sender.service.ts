@@ -15,7 +15,7 @@ export const STATS_FETCH = 'EVER_STATS_FETCH';
 
 /**
  * What to do after a send:
- * - `accepted` (202): stored by Ordinary Labs Platform.
+ * - `accepted` (202): stored by Dinary Cloud.
  * - `retry` (429, 5xx, no answer, timeout): try again at +1 h, +4 h, +12 h, then the next day.
  * - `reset_identity` (409 `key_mismatch`): the id is pinned to another key; nothing more is sent for
  *   this id until the operator resets the identity.
@@ -73,7 +73,7 @@ function problemSummary(status: number, body: unknown): string {
 	return [`http_${status}`, code, path, fieldCode].filter(Boolean).join(':').slice(0, 255);
 }
 
-/** Bytes Ordinary Labs Platform would refuse (the SDK's checks): nothing is sent; only codes and field names are kept. */
+/** Bytes Dinary Cloud would refuse (the SDK's checks): nothing is sent; only codes and field names are kept. */
 function refusedBeforeSending(error: StatsValidationError): StatsSendOutcome {
 	const first = error.errors[0];
 	const path = first ? redactStatsPath(first.path) || '(body)' : '(body)';

@@ -108,14 +108,14 @@ const STRONG_SECRET_LENGTH = 32;
 const iso = (ms: number | null) => (ms === null ? null : new Date(ms).toISOString());
 
 /**
- * Connect (a connect code from app.ordinarylabs.com, pasted by the operator or set once in
- * `EVER_CONNECT_CODE`), disconnect, and what follows a revocation by Ordinary Labs Platform.
+ * Connect (a connect code from app.dinary.app, pasted by the operator or set once in
+ * `EVER_CONNECT_CODE`), disconnect, and what follows a revocation by Dinary Cloud.
  *
  * Connect checks everything it can before any call: the address, the key material (refused without
  * `ENCRYPTION_KEY` or a non-default `JWT_SECRET`), the code's shape, an existing connection. The
  * redeem carries the product, its version, the declared install source, the kind, the connect key's
  * public part, and optionally the organization to link; never an address of the installation (only
- * the web app's origin for the consent return, of which Ordinary Labs Platform keeps a digest). The
+ * the web app's origin for the consent return, of which Dinary Cloud keeps a digest). The
  * entitlement document is verified before anything is stored: when it does not verify, nothing is.
  */
 @Injectable()
@@ -256,7 +256,7 @@ export class EverConnectConnectionService implements OnModuleInit, OnModuleDestr
 			}
 			throw keyProblem(error);
 		}
-		// Ordinary Labs Platform's keys first: a platform whose documents this installation cannot verify is
+		// Dinary Cloud's keys first: a platform whose documents this installation cannot verify is
 		// refused before the code is used.
 		try {
 			await this.platform.keys({ refresh: true });
@@ -292,7 +292,7 @@ export class EverConnectConnectionService implements OnModuleInit, OnModuleDestr
 		} catch (error) {
 			throw this.problem(error, 'redeem');
 		}
-		// The ids Ordinary Labs Platform answered are checked before they are kept: a Registry id, the key id of
+		// The ids Dinary Cloud answered are checked before they are kept: a Registry id, the key id of
 		// the key this installation sent, a link id.
 		if (
 			!ULID_SHAPE.test(String(redeemed?.instance_id)) ||
@@ -305,7 +305,7 @@ export class EverConnectConnectionService implements OnModuleInit, OnModuleDestr
 			throw new UnprocessableEntityException({
 				statusCode: 422,
 				code: 'redeem_unverifiable',
-				message: "Ordinary Labs Platform's answer to the connect code could not be verified; the installation was not connected."
+				message: "Dinary Cloud's answer to the connect code could not be verified; the installation was not connected."
 			});
 		}
 		const status: ConnectionStatus = redeemed.status === 'pending_approval' ? 'pending_approval' : 'connected';
@@ -345,10 +345,10 @@ export class EverConnectConnectionService implements OnModuleInit, OnModuleDestr
 	}
 
 	/**
-	 * After the redeem (or Ordinary Labs Platform's approval of a pending connection): verifies and stores the
+	 * After the redeem (or Dinary Cloud's approval of a pending connection): verifies and stores the
 	 * entitlement documents, stores the link the redeem made, and reads the integration states. When
 	 * the installation's document does not verify, nothing is kept: the connection is undone here and
-	 * on Ordinary Labs Platform (best effort), and 422 `entitlement_unverifiable` answers.
+	 * on Dinary Cloud (best effort), and 422 `entitlement_unverifiable` answers.
 	 */
 	private async completeConnect(
 		registryId: string,
@@ -367,7 +367,7 @@ export class EverConnectConnectionService implements OnModuleInit, OnModuleDestr
 					reason: error.code,
 					...(error instanceof EntitlementError && error.path ? { field: error.path } : {}),
 					message:
-						"Ordinary Labs Platform's entitlement document could not be verified; the installation was not connected."
+						"Dinary Cloud's entitlement document could not be verified; the installation was not connected."
 				});
 			}
 			throw this.problem(error, 'entitlement');
@@ -392,7 +392,7 @@ export class EverConnectConnectionService implements OnModuleInit, OnModuleDestr
 		return link;
 	}
 
-	/** Undoes a connect whose document did not verify: nothing is kept here, Ordinary Labs Platform is told (best effort). */
+	/** Undoes a connect whose document did not verify: nothing is kept here, Dinary Cloud is told (best effort). */
 	private async undoConnect(reason = 'entitlement_unverifiable'): Promise<void> {
 		try {
 			const client = await this.platform.getClient();
@@ -418,7 +418,7 @@ export class EverConnectConnectionService implements OnModuleInit, OnModuleDestr
 		});
 	}
 
-	/** Ordinary Labs Platform approved a connection that was pending: finish it. */
+	/** Dinary Cloud approved a connection that was pending: finish it. */
 	async approved(): Promise<void> {
 		const connection = await this.store.connection();
 		if (connection.status !== 'pending_approval' || !connection.platformInstanceId) return;
@@ -452,7 +452,7 @@ export class EverConnectConnectionService implements OnModuleInit, OnModuleDestr
 
 	/**
 	 * Uses `EVER_CONNECT_CODE` once: only without a connection, only when that code was not used
-	 * before (its hash is kept), and one process at a time. Any answer of Ordinary Labs Platform uses the code
+	 * before (its hash is kept), and one process at a time. Any answer of Dinary Cloud uses the code
 	 * up; only a network failure is retried (1 min, 5 min, 30 min, 2 h, 6 h, then every 24 h).
 	 */
 	async useEnvCode(): Promise<void> {
@@ -484,7 +484,7 @@ export class EverConnectConnectionService implements OnModuleInit, OnModuleDestr
 				envCodeAttempts: 0,
 				envCodeNextAttemptAt: null
 			});
-			this.logger.log('EVER_CONNECT_CODE was used: this installation is connected to Ordinary Labs Platform.');
+			this.logger.log('EVER_CONNECT_CODE was used: this installation is connected to Dinary Cloud.');
 		} catch (error) {
 			const status = error instanceof HttpException ? error.getStatus() : 0;
 			const body = error instanceof HttpException ? (error.getResponse() as { code?: string }) : {};
@@ -502,7 +502,7 @@ export class EverConnectConnectionService implements OnModuleInit, OnModuleDestr
 					`EVER_CONNECT_CODE could not be used now (${body?.code ?? 'error'}); it is tried again later.`
 				);
 			} else {
-				// Ordinary Labs Platform answered: the code is used up, whatever the answer.
+				// Dinary Cloud answered: the code is used up, whatever the answer.
 				await this.store.updateConnection({
 					envCodeConsumedHash: hash,
 					envCodeNextAttemptAt: null,
@@ -530,7 +530,7 @@ export class EverConnectConnectionService implements OnModuleInit, OnModuleDestr
 	// ── Disconnect, revocation ────────────────────────────────────────────────
 
 	/**
-	 * Disconnects: Ordinary Labs Platform is told (best effort, at most 10 seconds), then, whatever it
+	 * Disconnects: Dinary Cloud is told (best effort, at most 10 seconds), then, whatever it
 	 * answered, the connection is `disconnected` here, the documents are deleted, every integration
 	 * is off, the links are archived and the heartbeat and feed stop. The anonymous statistics are
 	 * not touched.
@@ -558,7 +558,7 @@ export class EverConnectConnectionService implements OnModuleInit, OnModuleDestr
 				remote = true;
 			} catch (error) {
 				this.logger.warn(
-					`Ordinary Labs Platform was not told about the disconnect (${errorCode(error)}); this installation is disconnected anyway.`
+					`Dinary Cloud was not told about the disconnect (${errorCode(error)}); this installation is disconnected anyway.`
 				);
 			}
 		}
@@ -619,7 +619,7 @@ export class EverConnectConnectionService implements OnModuleInit, OnModuleDestr
 	/**
 	 * Replaces the connect key of a connected installation (`POST /v1/instances/me/keys`): a new key
 	 * pair, two proofs signed by the SDK (`signKeyRotation`: one with the current key, one with the new
-	 * one), then the new key is stored in place of the old one. Ordinary Labs Platform accepts the old key for
+	 * one), then the new key is stored in place of the old one. Dinary Cloud accepts the old key for
 	 * an overlap after the rotation, so requests already on their way still pass. With a key the
 	 * current secrets cannot read, 422 `key_unreadable`: disconnect, then connect again.
 	 */
@@ -629,7 +629,7 @@ export class EverConnectConnectionService implements OnModuleInit, OnModuleDestr
 			throw new ConflictException({
 				statusCode: 409,
 				code: 'not_connected',
-				message: 'This installation is not connected to Ordinary Labs Platform.'
+				message: 'This installation is not connected to Dinary Cloud.'
 			});
 		}
 		let current;
@@ -662,8 +662,8 @@ export class EverConnectConnectionService implements OnModuleInit, OnModuleDestr
 			throw this.problem(error, 'rotate');
 		}
 		if (answer.kid !== rotation.next.kid || !(await rotation.commit())) {
-			// Ordinary Labs Platform answered for another key, or the stored key changed meanwhile: the old key
-			// stays here, and Ordinary Labs Platform accepts it until its overlap ends.
+			// Dinary Cloud answered for another key, or the stored key changed meanwhile: the old key
+			// stays here, and Dinary Cloud accepts it until its overlap ends.
 			this.logger.warn('The rotated connect key could not be installed; the current key stays in use.');
 			throw new ConflictException({
 				statusCode: 409,
@@ -690,7 +690,7 @@ export class EverConnectConnectionService implements OnModuleInit, OnModuleDestr
 			return new UnprocessableEntityException({
 				statusCode: 422,
 				code: 'keys_unverifiable',
-				message: "Ordinary Labs Platform's keys could not be verified for this address; nothing was sent."
+				message: "Dinary Cloud's keys could not be verified for this address; nothing was sent."
 			});
 		}
 		if (error instanceof KeyManifestError) {
@@ -698,12 +698,12 @@ export class EverConnectConnectionService implements OnModuleInit, OnModuleDestr
 				statusCode: 422,
 				code: 'keys_unverifiable',
 				reason: error.code,
-				message: "Ordinary Labs Platform's keys could not be verified for this address; nothing was sent."
+				message: "Dinary Cloud's keys could not be verified for this address; nothing was sent."
 			});
 		}
 		if (isUnreachable(error)) {
 			return new HttpException(
-				{ statusCode: 502, code: 'platform_unreachable', message: 'Ordinary Labs Platform could not be reached.' },
+				{ statusCode: 502, code: 'platform_unreachable', message: 'Dinary Cloud could not be reached.' },
 				HttpStatus.BAD_GATEWAY
 			);
 		}
@@ -715,8 +715,8 @@ export class EverConnectConnectionService implements OnModuleInit, OnModuleDestr
 					code: error.code,
 					message:
 						step === 'redeem'
-							? 'Ordinary Labs Platform refused the connect code.'
-							: 'Ordinary Labs Platform refused the request.'
+							? 'Dinary Cloud refused the connect code.'
+							: 'Dinary Cloud refused the request.'
 				},
 				status
 			);

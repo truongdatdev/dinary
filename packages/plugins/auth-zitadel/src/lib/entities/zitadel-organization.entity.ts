@@ -4,7 +4,7 @@ import { ID } from '@dinary/contracts';
 import { ColumnIndex, MultiORMColumn, MultiORMEntity, TenantOrganizationBaseEntity } from '@dinary/core';
 
 /**
- * The link between one Dinary organization and one organization on the Ordinary Labs Platform.
+ * The link between one Dinary organization and one organization on the Dinary Cloud.
  *
  * Read by the sign-in flow to honour an organization's sign-in rules (a filtered organization, or
  * one that requires its company sign-in). Rows are written only by the organization-linking flow of

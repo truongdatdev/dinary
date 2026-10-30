@@ -11,7 +11,7 @@ describe('mailbox addresses (allocation)', () => {
 	it('slugs names: accents folded, everything else a dash, bounded', () => {
 		expect(slugSegment('Ruslan Konviser')).toBe('ruslan-konviser');
 		expect(slugSegment('Zoë Ångström')).toBe('zoe-angstrom');
-		expect(slugSegment('  --Ordinary Labs!  ')).toBe('ever-co-ltd');
+		expect(slugSegment('  --Dinary!  ')).toBe('dinary');
 		expect(slugSegment('x'.repeat(40))).toHaveLength(24);
 		expect(slugSegment('日本')).toBe('');
 	});

@@ -3,7 +3,7 @@
  */
 export {
 	ZITADEL_ENABLED_ENV,
-	isOrdinaryLabsHost,
+	isdinaryHost,
 	isZitadelEnabled,
 	parseZitadelSettings,
 	readStrictBoolean

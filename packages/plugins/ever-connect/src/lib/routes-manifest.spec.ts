@@ -56,7 +56,7 @@ export function specialRoutes(controllers: Array<Type<unknown>>, prefix = '/api'
 /**
  * `ever-connect.routes.json` declares every endpoint of this module that answers without an
  * organization permission or the operator check. It must equal the routes the module registers when
- * every optional route is mounted (`EVER_STATS_SERVES=dinary,teams`); the requests Ordinary Labs Platform will
+ * every optional route is mounted (`EVER_STATS_SERVES=dinary,teams`); the requests Dinary Cloud will
  * make to an installation are declared as not mounted in this release. `UPDATE_ROUTES_MANIFEST=1`
  * rewrites the method and path list; the descriptions stay hand-written.
  */

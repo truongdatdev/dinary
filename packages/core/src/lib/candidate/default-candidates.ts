@@ -2,7 +2,7 @@ import { ComponentLayoutStyleEnum, LanguagesEnum } from '@dinary/contracts';
 
 export const DEFAULT_CANDIDATES = [
 	{
-		email: 'john@example-ordinarylabs.com',
+		email: 'john@example-dinary.app',
 		password: '12345678',
 		firstName: 'John',
 		lastName: 'S.',
@@ -12,7 +12,7 @@ export const DEFAULT_CANDIDATES = [
 		preferredComponentLayout: ComponentLayoutStyleEnum.TABLE
 	},
 	{
-		email: 'jaye@example-ordinarylabs.com',
+		email: 'jaye@example-dinary.app',
 		password: '12345678',
 		firstName: 'Jaye',
 		lastName: 'J.',
@@ -22,7 +22,7 @@ export const DEFAULT_CANDIDATES = [
 		preferredComponentLayout: ComponentLayoutStyleEnum.TABLE
 	},
 	{
-		email: 'kasey@example-ordinarylabs.com',
+		email: 'kasey@example-dinary.app',
 		password: '12345678',
 		firstName: 'Kasey',
 		lastName: 'K.',
@@ -32,7 +32,7 @@ export const DEFAULT_CANDIDATES = [
 		preferredComponentLayout: ComponentLayoutStyleEnum.TABLE
 	},
 	{
-		email: 'norris@example-ordinarylabs.com',
+		email: 'norris@example-dinary.app',
 		password: '12345678',
 		firstName: 'Norris ',
 		lastName: 'N.',
@@ -42,7 +42,7 @@ export const DEFAULT_CANDIDATES = [
 		preferredComponentLayout: ComponentLayoutStyleEnum.TABLE
 	},
 	{
-		email: 'estella@example-ordinarylabs.com',
+		email: 'estella@example-dinary.app',
 		password: '12345678',
 		firstName: 'Estella',
 		lastName: 'E.',
@@ -52,7 +52,7 @@ export const DEFAULT_CANDIDATES = [
 		preferredComponentLayout: ComponentLayoutStyleEnum.TABLE
 	},
 	{
-		email: 'greg@example-ordinarylabs.com',
+		email: 'greg@example-dinary.app',
 		password: '12345678',
 		firstName: 'Greg ',
 		lastName: 'G.',

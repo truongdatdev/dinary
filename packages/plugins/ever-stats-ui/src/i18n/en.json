@@ -1,7 +1,7 @@
 {
 	"MENU": "Anonymous usage statistics",
 	"TITLE": "Anonymous usage statistics",
-	"INTRO": "When the anonymous usage statistics are on, this installation sends Ordinary Labs Platform an anonymous report once a day: the version, the modules switched on, how many tenants, users, employees and projects exist, and monthly totals per currency. Never a name, an e-mail address, a company, an address or an amount per record (on a small installation a month's total can equal a single invoice). The report is signed and follows a published schema.",
+	"INTRO": "When the anonymous usage statistics are on, this installation sends Dinary Cloud an anonymous report once a day: the version, the modules switched on, how many tenants, users, employees and projects exist, and monthly totals per currency. Never a name, an e-mail address, a company, an address or an amount per record (on a small installation a month's total can equal a single invoice). The report is signed and follows a published schema.",
 	"SCHEMA_LINK": "Read the published schema",
 	"MANAGED": "Managed by the instance operator",
 	"MANAGED_DESCRIPTION": "The report covers the whole installation, so only the person who operates this installation can see it or change it here. It contains counts and totals only, as described by the published schema.",
@@ -45,7 +45,7 @@
 	"SEND_TOO_SOON": "Send now can be used once every 10 minutes.",
 	"RESET": "Reset instance identity",
 	"RESET_CONFIRM_TITLE": "Reset the identity of this installation?",
-	"RESET_CONFIRM_TEXT": "This installation gets a new anonymous id and a new statistics key. Ordinary Labs Platform will count it as a new installation from the next report, and earlier reports can no longer be linked to it. Nothing else changes: the Ordinary Labs Platform connection, if any, stays as it is.",
+	"RESET_CONFIRM_TEXT": "This installation gets a new anonymous id and a new statistics key. Dinary Cloud will count it as a new installation from the next report, and earlier reports can no longer be linked to it. Nothing else changes: the Dinary Cloud connection, if any, stays as it is.",
 	"RESET_CONFIRM": "Reset",
 	"RESET_DONE": "The identity was reset.",
 	"CANCEL": "Cancel",

@@ -86,7 +86,7 @@ describe('single-use claim criteria', () => {
 
 	describe('password reset — conditional DELETE by primary key', () => {
 		it('admits exactly one of two concurrent consumers', async () => {
-			const row = await resets.save({ email: 'victim@ordinarylabs.com', token: 'tok-1' });
+			const row = await resets.save({ email: 'victim@dinary.app', token: 'tok-1' });
 
 			const consume = async () => {
 				const { affected } = await resets.delete(passwordResetConsumeWhere(row.id));
@@ -98,7 +98,7 @@ describe('single-use claim criteria', () => {
 		});
 
 		it('reports a real row count on better-sqlite3, not null or undefined', async () => {
-			const row = await resets.save({ email: 'a@ordinarylabs.com', token: 'tok-2' });
+			const row = await resets.save({ email: 'a@dinary.app', token: 'tok-2' });
 
 			// The whole gate rests on `affected` being a number here. TypeORM types it
 			// `number | null` because exotic drivers do not populate it.
@@ -109,7 +109,7 @@ describe('single-use claim criteria', () => {
 		});
 
 		it('reports 0 for an already-consumed token rather than succeeding', async () => {
-			const row = await resets.save({ email: 'b@ordinarylabs.com', token: 'tok-3' });
+			const row = await resets.save({ email: 'b@dinary.app', token: 'tok-3' });
 			await resets.delete(passwordResetConsumeWhere(row.id));
 
 			const { affected } = await resets.delete(passwordResetConsumeWhere(row.id));
@@ -118,7 +118,7 @@ describe('single-use claim criteria', () => {
 		});
 
 		it('CONTROL: consuming only after the side effect lets BOTH requests through', async () => {
-			const row = await resets.save({ email: 'c@ordinarylabs.com', token: 'tok-4' });
+			const row = await resets.save({ email: 'c@dinary.app', token: 'tok-4' });
 			const passwordWrites: string[] = [];
 
 			// The pre-fix ordering: read, act, then invalidate.
@@ -138,10 +138,10 @@ describe('single-use claim criteria', () => {
 
 	describe('magic sign-in code — conditional UPDATE keyed on the code', () => {
 		it('admits exactly one of two concurrent claims', async () => {
-			await users.save({ email: 'magic@ordinarylabs.com', tenantId: 'T1', code: 'MAGIC1', codeExpireAt: future() });
+			await users.save({ email: 'magic@dinary.app', tenantId: 'T1', code: 'MAGIC1', codeExpireAt: future() });
 
 			const claim = async () => {
-				const { affected } = await users.update(magicCodeClaimWhere('magic@ordinarylabs.com', 'MAGIC1'), {
+				const { affected } = await users.update(magicCodeClaimWhere('magic@dinary.app', 'MAGIC1'), {
 					code: null,
 					codeExpireAt: null
 				});
@@ -154,10 +154,10 @@ describe('single-use claim criteria', () => {
 
 		it('claims every tenant row sharing the email and code', async () => {
 			// One address can exist in several tenants, so a winning claim covers more than one row.
-			await users.save({ email: 'multi@ordinarylabs.com', tenantId: 'T1', code: 'M2', codeExpireAt: future() });
-			await users.save({ email: 'multi@ordinarylabs.com', tenantId: 'T2', code: 'M2', codeExpireAt: future() });
+			await users.save({ email: 'multi@dinary.app', tenantId: 'T1', code: 'M2', codeExpireAt: future() });
+			await users.save({ email: 'multi@dinary.app', tenantId: 'T2', code: 'M2', codeExpireAt: future() });
 
-			const { affected } = await users.update(magicCodeClaimWhere('multi@ordinarylabs.com', 'M2'), {
+			const { affected } = await users.update(magicCodeClaimWhere('multi@dinary.app', 'M2'), {
 				code: null,
 				codeExpireAt: null
 			});
@@ -166,13 +166,13 @@ describe('single-use claim criteria', () => {
 		});
 
 		it('keeps the code in the criteria, so a consumed code matches nothing', async () => {
-			expect(magicCodeClaimWhere('x@ordinarylabs.com', 'CODE')).toHaveProperty('code', 'CODE');
+			expect(magicCodeClaimWhere('x@dinary.app', 'CODE')).toHaveProperty('code', 'CODE');
 		});
 	});
 
 	describe('email verification code — id + code + tenant + expiry', () => {
 		it('admits exactly one of two concurrent claims', async () => {
-			const u = await users.save({ email: 'v@ordinarylabs.com', tenantId: 'T1', code: 'C1', codeExpireAt: future() });
+			const u = await users.save({ email: 'v@dinary.app', tenantId: 'T1', code: 'C1', codeExpireAt: future() });
 
 			const claim = async () => {
 				const { affected } = await users.update(emailVerificationClaimWhere(u.id, 'C1', 'T1', new Date()), {
@@ -188,7 +188,7 @@ describe('single-use claim criteria', () => {
 
 		it('refuses an expired code', async () => {
 			// Closes the window where the lookup and the claim straddle the expiry boundary.
-			const u = await users.save({ email: 'exp@ordinarylabs.com', tenantId: 'T1', code: 'C2', codeExpireAt: past() });
+			const u = await users.save({ email: 'exp@dinary.app', tenantId: 'T1', code: 'C2', codeExpireAt: past() });
 
 			const { affected } = await users.update(emailVerificationClaimWhere(u.id, 'C2', 'T1', new Date()), {
 				code: null,
@@ -199,7 +199,7 @@ describe('single-use claim criteria', () => {
 		});
 
 		it('refuses a code belonging to another tenant', async () => {
-			const u = await users.save({ email: 't@ordinarylabs.com', tenantId: 'T1', code: 'C3', codeExpireAt: future() });
+			const u = await users.save({ email: 't@dinary.app', tenantId: 'T1', code: 'C3', codeExpireAt: future() });
 
 			const wrong = await users.update(emailVerificationClaimWhere(u.id, 'C3', 'T2', new Date()), { code: null });
 			const right = await users.update(emailVerificationClaimWhere(u.id, 'C3', 'T1', new Date()), { code: null });
@@ -209,7 +209,7 @@ describe('single-use claim criteria', () => {
 		});
 
 		it('refuses a wrong code', async () => {
-			const u = await users.save({ email: 'w@ordinarylabs.com', tenantId: 'T1', code: 'C4', codeExpireAt: future() });
+			const u = await users.save({ email: 'w@dinary.app', tenantId: 'T1', code: 'C4', codeExpireAt: future() });
 
 			const { affected } = await users.update(emailVerificationClaimWhere(u.id, 'NOPE', 'T1', new Date()), {
 				code: null
@@ -220,7 +220,7 @@ describe('single-use claim criteria', () => {
 
 		it('CONTROL: scoping by id alone lets BOTH requests through', async () => {
 			// This is precisely what the code did while its comment claimed otherwise.
-			const u = await users.save({ email: 'old@ordinarylabs.com', tenantId: 'T1', code: 'C5', codeExpireAt: future() });
+			const u = await users.save({ email: 'old@dinary.app', tenantId: 'T1', code: 'C5', codeExpireAt: future() });
 
 			const claimIdOnly = async () => {
 				const { affected } = await users.update({ id: u.id }, { code: null, codeExpireAt: null });
@@ -234,7 +234,7 @@ describe('single-use claim criteria', () => {
 
 	describe('invite acceptance — INVITED -> ACCEPTED guard', () => {
 		it('admits exactly one of two concurrent acceptances', async () => {
-			const inv = await invites.save({ email: 'i@ordinarylabs.com', status: InviteStatusEnum.INVITED });
+			const inv = await invites.save({ email: 'i@dinary.app', status: InviteStatusEnum.INVITED });
 
 			const claim = async () => {
 				const { affected } = await invites.update(inviteClaimWhere(inv.id), {
@@ -248,7 +248,7 @@ describe('single-use claim criteria', () => {
 		});
 
 		it('releases a claimed invite back to INVITED so it can be retried', async () => {
-			const inv = await invites.save({ email: 'r@ordinarylabs.com', status: InviteStatusEnum.INVITED });
+			const inv = await invites.save({ email: 'r@dinary.app', status: InviteStatusEnum.INVITED });
 			await invites.update(inviteClaimWhere(inv.id), { status: InviteStatusEnum.ACCEPTED });
 
 			const released = await invites.update(inviteReleaseWhere(inv.id), {
@@ -262,7 +262,7 @@ describe('single-use claim criteria', () => {
 		});
 
 		it('does not resurrect an invite that was rejected or expired by another path', async () => {
-			const inv = await invites.save({ email: 'x@ordinarylabs.com', status: InviteStatusEnum.REJECTED });
+			const inv = await invites.save({ email: 'x@dinary.app', status: InviteStatusEnum.REJECTED });
 
 			const { affected } = await invites.update(inviteReleaseWhere(inv.id), {
 				status: InviteStatusEnum.INVITED
@@ -274,7 +274,7 @@ describe('single-use claim criteria', () => {
 		it('a reject racing an accept cannot overwrite the winner', async () => {
 			// Rejection is the other exit from INVITED. Unguarded, it would flip an invite that has
 			// already registered a user to REJECTED, losing the record of who consumed it.
-			const inv = await invites.save({ email: 'race@ordinarylabs.com', status: InviteStatusEnum.INVITED });
+			const inv = await invites.save({ email: 'race@dinary.app', status: InviteStatusEnum.INVITED });
 
 			const accept = invites.update(inviteClaimWhere(inv.id), {
 				status: InviteStatusEnum.ACCEPTED,
@@ -296,7 +296,7 @@ describe('single-use claim criteria', () => {
 		});
 
 		it('CONTROL: an unguarded reject overwrites an already-accepted invite', async () => {
-			const inv = await invites.save({ email: 'ovr@ordinarylabs.com', status: InviteStatusEnum.INVITED });
+			const inv = await invites.save({ email: 'ovr@dinary.app', status: InviteStatusEnum.INVITED });
 			await invites.update(inviteClaimWhere(inv.id), {
 				status: InviteStatusEnum.ACCEPTED,
 				userId: 'user-2'
@@ -311,7 +311,7 @@ describe('single-use claim criteria', () => {
 		});
 
 		it('CONTROL: flipping status by id alone lets BOTH acceptances through', async () => {
-			const inv = await invites.save({ email: 'ctl@ordinarylabs.com', status: InviteStatusEnum.INVITED });
+			const inv = await invites.save({ email: 'ctl@dinary.app', status: InviteStatusEnum.INVITED });
 
 			const claimIdOnly = async () => {
 				const { affected } = await invites.update({ id: inv.id }, { status: InviteStatusEnum.ACCEPTED });

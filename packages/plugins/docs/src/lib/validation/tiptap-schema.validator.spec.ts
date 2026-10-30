@@ -41,7 +41,7 @@ describe('validateTiptapDocument — structure', () => {
 					{ type: 'callout', attrs: { type: 'warning' }, content: [paragraph(text('careful'))] },
 					{ type: 'codeBlock', attrs: { language: 'typescript' }, content: [text('const a = 1;')] },
 					{ type: 'fileAttachment', attrs: { documentId: 'doc-9', name: 'a.pdf', size: 1, mimeType: 'application/pdf' } },
-					{ type: 'embedCard', attrs: { url: 'https://ordinarylabs.com' } },
+					{ type: 'embedCard', attrs: { url: 'https://dinary.app' } },
 					{ type: 'documentMention', attrs: { id: 'doc-2', label: 'Handbook' } },
 					{ type: 'inlineMath', attrs: { latex: 'x^2' } }
 				)
@@ -143,7 +143,7 @@ describe('validateTiptapDocument — attribute values (§6.1 step 3)', () => {
 		}
 	);
 
-	it.each(['https://ordinarylabs.com', 'http://ordinarylabs.com', 'mailto:hello@ordinarylabs.com', 'tel:+1234', '/pages/documents?id=1'])(
+	it.each(['https://dinary.app', 'http://dinary.app', 'mailto:hello@dinary.app', 'tel:+1234', '/pages/documents?id=1'])(
 		'accepts the link href %s',
 		(href: string) => {
 			expect(() =>
@@ -243,10 +243,10 @@ describe('generateDocumentHtml', () => {
 
 	it('keeps link attributes and forces the safe rel', () => {
 		const html = generateDocumentHtml(
-			doc(paragraph(text('Ever', [{ type: 'link', attrs: { href: 'https://ordinarylabs.com' } }])))
+			doc(paragraph(text('Ever', [{ type: 'link', attrs: { href: 'https://dinary.app' } }])))
 		);
 
-		expect(html).toContain('href="https://ordinarylabs.com"');
+		expect(html).toContain('href="https://dinary.app"');
 		expect(html).toContain('rel="noopener noreferrer nofollow"');
 	});
 

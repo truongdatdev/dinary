@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2020 Ordinary Labs
+// Copyright (c) 2019-2020 Dinary
 
 // Modified code from https://github.com/xmlking/ngx-starter-kit.
 // Originally MIT Licensed

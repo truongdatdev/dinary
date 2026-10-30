@@ -2,8 +2,7 @@
 
 # Inbox email (`@dinary/plugin-inbox`, Phase 4)
 
-Mailboxes, inbound email and the email provider plugins of the Dinary Inbox. Plan: `ever-co/homelab`
-`docs/superpowers/specs/2026-10-15-dinary-ever-works-integration/04-inbox-and-email.md` §5 (G-P4-1 … G-P4-7).
+Mailboxes, inbound email and the email provider plugins of the Dinary Inbox.
 
 ## Switch
 

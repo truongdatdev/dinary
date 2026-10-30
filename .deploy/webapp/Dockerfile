@@ -6,7 +6,7 @@
 # Build args consumed: NODE_ENV, DEMO, NODE_OPTIONS, NX_BRANCH (build stage only).
 # Optional build SECRETS (never pass these as build args — they would be embedded in
 # layers and trigger buildx SecretsUsedInArgOrEnv warnings):
-#   VERDACCIO_TOKEN       — auth for the packages.ordinarylabs.com private registry
+#   VERDACCIO_TOKEN       — auth for the packages.dinary.app private registry
 #   NX_CLOUD_ACCESS_TOKEN — Nx Cloud (currently inert: NX_NO_CLOUD=true below)
 # e.g. docker buildx build --secret id=VERDACCIO_TOKEN,env=VERDACCIO_TOKEN ...
 #      or the `secrets:` input of docker/build-push-action.
@@ -19,8 +19,8 @@
 
 FROM node:26.12.1-alpine3.24 AS dependencies
 
-LABEL maintainer="hello@ordinarylabs.com"
-LABEL org.opencontainers.image.source="https://github.com/ordinary-labs/dinary"
+LABEL maintainer="hello@dinary.app"
+LABEL org.opencontainers.image.source="https://github.com/truongdatdev/dinary"
 
 ENV CI=true
 
@@ -179,13 +179,13 @@ RUN --mount=type=secret,id=VERDACCIO_TOKEN,uid=1000 \
 	sed -i "s|https://registry.yarnpkg.com|${VERDACCIO_REGISTRY%/}|g" yarn.lock && \
 	sed -i "s|https://registry.npmjs.org|${VERDACCIO_REGISTRY%/}|g" yarn.lock; \
 	elif [ -n "$VERDACCIO_TOKEN" ]; then \
-	echo "Internal Verdaccio VIP not in use (VERDACCIO_REGISTRY unset, or its probe failed) - installing through the public packages.ordinarylabs.com route, which is known to truncate large tarballs mid-stream." && \
-	echo "//packages.ordinarylabs.com/:_authToken=${VERDACCIO_TOKEN}" >> .npmrc && \
-	echo "registry=https://packages.ordinarylabs.com/" >> .npmrc && \
+	echo "Internal Verdaccio VIP not in use (VERDACCIO_REGISTRY unset, or its probe failed) - installing through the public packages.dinary.app route, which is known to truncate large tarballs mid-stream." && \
+	echo "//packages.dinary.app/:_authToken=${VERDACCIO_TOKEN}" >> .npmrc && \
+	echo "registry=https://packages.dinary.app/" >> .npmrc && \
 	echo "always-auth=true" >> .npmrc && \
-	echo 'registry "https://packages.ordinarylabs.com/"' >> .yarnrc && \
-	sed -i 's|https://registry.yarnpkg.com|https://packages.ordinarylabs.com|g' yarn.lock && \
-	sed -i 's|https://registry.npmjs.org|https://packages.ordinarylabs.com|g' yarn.lock; \
+	echo 'registry "https://packages.dinary.app/"' >> .yarnrc && \
+	sed -i 's|https://registry.yarnpkg.com|https://packages.dinary.app|g' yarn.lock && \
+	sed -i 's|https://registry.npmjs.org|https://packages.dinary.app|g' yarn.lock; \
 	fi && \
 	yarn install --network-timeout 1000000 --network-concurrency 4 --frozen-lockfile --ignore-scripts && \
 	yarn postinstall.manual && \
@@ -338,16 +338,16 @@ ENV PLATFORM_LOGO="assets/images/logos/logo_Dinary.svg"
 ENV DINARY_DESKTOP_LOGO_512X512="assets/icons/icon_512x512.png"
 ENV PLATFORM_PRIVACY_URL="https://dinary.app/privacy"
 ENV PLATFORM_TOS_URL="https://dinary.app/tos"
-ENV PROJECT_REPO="https://github.com/ordinary-labs/dinary.git"
-ENV COMPANY_NAME="Ordinary Labs"
-ENV COMPANY_LINK="https://ordinarylabs.com"
+ENV PROJECT_REPO="https://github.com/truongdatdev/dinary.git"
+ENV COMPANY_NAME="Dinary"
+ENV COMPANY_LINK="https://dinary.app"
 ENV COMPANY_SITE_NAME="Dinary"
 ENV COMPANY_SITE_LINK="https://dinary.app"
-ENV COMPANY_GITHUB_LINK="https://github.com/ordinary-labs"
-ENV COMPANY_GITLAB_LINK="https://gitlab.com/ordinary-labs"
+ENV COMPANY_GITHUB_LINK="https://github.com/truongdatdev"
+ENV COMPANY_GITLAB_LINK="https://gitlab.com/truongdatdev"
 ENV COMPANY_FACEBOOK_LINK="https://www.facebook.com/dinary"
 ENV COMPANY_TWITTER_LINK="https://twitter.com/dinary"
-ENV COMPANY_IN_LINK="https://www.linkedin.com/company/ordinary-labs"
+ENV COMPANY_IN_LINK="https://www.linkedin.com/company/truongdatdev"
 ENV PLATFORM_WEBSITE_URL="https://dinary.app"
 ENV PLATFORM_WEBSITE_DOWNLOAD_URL="https://dinary.app/downloads"
 ENV DESKTOP_APP_DOWNLOAD_LINK_APPLE="https://dinary.app/downloads#desktop/apple"

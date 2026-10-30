@@ -1,7 +1,7 @@
 import { readRegisterError } from './register-error';
 
 describe('readRegisterError', () => {
-	const checkoutUrl = 'https://ordinarylabs.com/checkout?email=jane%40corp.co';
+	const checkoutUrl = 'https://dinary.app/checkout?email=jane%40corp.co';
 
 	it('reads the subscription-required answer: its message and where to buy', () => {
 		const error = {

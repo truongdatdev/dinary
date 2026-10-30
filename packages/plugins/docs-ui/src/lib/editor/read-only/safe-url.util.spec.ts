@@ -86,10 +86,10 @@ function growthFactor(hostileOfLength: (n: number) => string, n: number): number
 describe('isAllowedUrl', () => {
 	describe('allows what real content is made of', () => {
 		it.each([
-			'https://ordinarylabs.com/docs?a=1#b',
-			'http://ordinarylabs.com',
-			'HTTPS://ORDINARYLABS.COM',
-			'mailto:hello@ordinarylabs.com',
+			'https://dinary.app/docs?a=1#b',
+			'http://dinary.app',
+			'HTTPS://dinary.app',
+			'mailto:hello@dinary.app',
 			'tel:+15551234',
 			'blob:http://localhost/2b6f0cc9-04ba-4f2a-9f1e-2f2b0a1c1234',
 			'/api/documents/1/raw',
@@ -97,7 +97,7 @@ describe('isAllowedUrl', () => {
 			'../up/one.png',
 			'#anchor',
 			'?query=1',
-			'//cdn.ordinarylabs.com/a.png',
+			'//cdn.dinary.app/a.png',
 			'a/b:c',
 			'data:image/png;base64,iVBORw0KGgo=',
 			'data:image/jpeg;base64,/9j/4AA',
@@ -125,7 +125,7 @@ describe('isAllowedUrl', () => {
 			'chrome://settings',
 			'ms-msdt:/id',
 			'jar:http://evil/x!/y',
-			'view-source:https://ordinarylabs.com'
+			'view-source:https://dinary.app'
 		])('refuses %s', (url) => {
 			expect(isAllowedUrl(url)).toBe(false);
 		});
@@ -190,9 +190,9 @@ describe('stripUnsafeUrls', () => {
 	});
 
 	it('leaves safe URLs exactly as they were', () => {
-		const html = '<a href="https://ordinarylabs.com/a?b=1#c">x</a><img src="/api/documents/1/raw" alt="a">';
+		const html = '<a href="https://dinary.app/a?b=1#c">x</a><img src="/api/documents/1/raw" alt="a">';
 
-		expect(parse(stripUnsafeUrls(html)).querySelector('a')?.getAttribute('href')).toBe('https://ordinarylabs.com/a?b=1#c');
+		expect(parse(stripUnsafeUrls(html)).querySelector('a')?.getAttribute('href')).toBe('https://dinary.app/a?b=1#c');
 		expect(parse(stripUnsafeUrls(html)).querySelector('img')?.getAttribute('src')).toBe('/api/documents/1/raw');
 	});
 
@@ -210,7 +210,7 @@ describe('stripUnsafeUrls', () => {
 	});
 
 	it('is idempotent', () => {
-		const once = stripUnsafeUrls('<a href="vbscript:msgbox(1)">c</a><a href="https://ordinarylabs.com">d</a>');
+		const once = stripUnsafeUrls('<a href="vbscript:msgbox(1)">c</a><a href="https://dinary.app">d</a>');
 
 		expect(stripUnsafeUrls(once)).toBe(once);
 	});

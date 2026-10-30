@@ -378,7 +378,7 @@ export class LoginAttemptService {
 	/**
 	 * Builds the key for one (scope, identifier) pair.
 	 *
-	 * Case- and whitespace-insensitive, because `Admin@OrdinaryLabs.com ` and `admin@ordinarylabs.com` reach the same
+	 * Case- and whitespace-insensitive, because `Admin@dinary.app ` and `admin@dinary.app` reach the same
 	 * account and must therefore share one counter — otherwise the case of the submitted email is a
 	 * free bucket-rotation trick of exactly the kind this class exists to prevent.
 	 *

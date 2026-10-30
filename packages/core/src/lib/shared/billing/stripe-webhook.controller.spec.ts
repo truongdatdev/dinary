@@ -11,7 +11,7 @@ import { StripeWebhookController } from './stripe-webhook.controller';
 import { StripeSubscriptionService } from './stripe-subscription.service';
 
 /**
- * The Stripe webhook is registered on an account that EVERY Ordinary Labs product sells through, so most of
+ * The Stripe webhook is registered on an account that EVERY Dinary product sells through, so most of
  * what reaches it is somebody else's purchase. These tests drive the real controller with payloads
  * signed by Stripe's real scheme (`t=<unix>,v1=HMAC-SHA256("<t>." + body)`) and assert what it
  * decided, what it logged, and — the part that matters — that nothing except an administrator's
@@ -272,11 +272,11 @@ describe('StripeWebhookController — signature', () => {
 
 describe('StripeWebhookController — foreign events are acknowledged with no DB or Stripe access', () => {
 	const foreign: Array<[string, string, Record<string, any>]> = [
-		['ordinarylabs.com Teams session', 'checkout.session.completed', session({ metadata: { ever_product: 'teams' } })],
-		['ordinarylabs.com Platform session', 'checkout.session.completed', session({ metadata: { ever_product: 'platform' } })],
-		['ordinarylabs.com Works session', 'checkout.session.completed', session({ metadata: { ever_product: 'works' } })],
-		['ordinarylabs.com Rec session', 'checkout.session.completed', session({ metadata: { ever_product: 'rec' } })],
-		['ordinarylabs.com Demand session', 'checkout.session.completed', session({ metadata: { ever_product: 'demand' } })],
+		['dinary.app Teams session', 'checkout.session.completed', session({ metadata: { ever_product: 'teams' } })],
+		['dinary.app Platform session', 'checkout.session.completed', session({ metadata: { ever_product: 'platform' } })],
+		['dinary.app Works session', 'checkout.session.completed', session({ metadata: { ever_product: 'works' } })],
+		['dinary.app Rec session', 'checkout.session.completed', session({ metadata: { ever_product: 'rec' } })],
+		['dinary.app Demand session', 'checkout.session.completed', session({ metadata: { ever_product: 'demand' } })],
 		[
 			'Ever Works own plan checkout (metadata.kind, no ever_product)',
 			'checkout.session.completed',
@@ -303,7 +303,7 @@ describe('StripeWebhookController — foreign events are acknowledged with no DB
 			})
 		],
 		[
-			'ordinarylabs.com lifetime license (payment mode, customer=null)',
+			'dinary.app lifetime license (payment mode, customer=null)',
 			'checkout.session.completed',
 			session({
 				mode: 'payment',
@@ -343,7 +343,7 @@ describe('StripeWebhookController — foreign events are acknowledged with no DB
 			})
 		],
 		[
-			'ordinarylabs.com Dinary SELF-HOSTED license session (subscription mode, ever_hosting=selfhosted)',
+			'dinary.app Dinary SELF-HOSTED license session (subscription mode, ever_hosting=selfhosted)',
 			'checkout.session.completed',
 			session({
 				metadata: {

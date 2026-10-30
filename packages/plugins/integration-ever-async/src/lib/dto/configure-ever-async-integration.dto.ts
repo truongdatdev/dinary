@@ -14,7 +14,7 @@ import {
 import { EverAsyncUserMappingDto } from './ever-async-user-mapping.dto';
 
 export class ConfigureEverAsyncIntegrationDto {
-	@ApiProperty({ description: 'Public HTTPS URL of the Ever Async server', example: 'https://api-async.ordinarylabs.com' })
+	@ApiProperty({ description: 'Public HTTPS URL of the Ever Async server', example: 'https://api-async.dinary.app' })
 	@IsNotEmpty()
 	@IsString()
 	@IsUrl({ protocols: ['https'], require_protocol: true })

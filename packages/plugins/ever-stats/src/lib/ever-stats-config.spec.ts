@@ -24,10 +24,10 @@ describe('EVER_STATS_ENABLED', () => {
 });
 
 describe('readEverStatsConfig', () => {
-	it('with no environment at all: on, https://api.ordinarylabs.com, ZZ, dinary, daily, self-hosted', () => {
+	it('with no environment at all: on, https://api.dinary.app, ZZ, dinary, daily, self-hosted', () => {
 		const warn = jest.fn();
 		expect(readEverStatsConfig({}, warn)).toEqual({
-			apiUrl: 'https://api.ordinarylabs.com',
+			apiUrl: 'https://api.dinary.app',
 			country: 'ZZ',
 			serves: ['dinary'],
 			intervalS: 86400,

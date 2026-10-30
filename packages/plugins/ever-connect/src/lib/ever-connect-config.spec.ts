@@ -26,10 +26,10 @@ describe('EVER_CONNECT_ENABLED', () => {
 });
 
 describe('readEverConnectConfig', () => {
-	it('defaults: api.ordinarylabs.com, self-hosted, long poll, nothing denied, no code, dinary only', () => {
+	it('defaults: api.dinary.app, self-hosted, long poll, nothing denied, no code, dinary only', () => {
 		const config = readEverConnectConfig({});
 		expect(config).toEqual({
-			apiUrl: 'https://api.ordinarylabs.com',
+			apiUrl: 'https://api.dinary.app',
 			installSource: 'self-hosted',
 			cloud: false,
 			feedMode: 'longpoll',
@@ -61,13 +61,13 @@ describe('readEverConnectConfig', () => {
 	});
 
 	it.each([
-		['https://api-stage.ordinarylabs.com/', 'https://api-stage.ordinarylabs.com'],
+		['https://api-stage.dinary.app/', 'https://api-stage.dinary.app'],
 		['http://127.0.0.1:18080', 'http://127.0.0.1:18080'],
 		['http://localhost:8080', 'http://localhost:8080'],
 		['http://10.0.0.5', 'http://10.0.0.5'],
-		['http://api.ordinarylabs.com', null],
-		['https://user:pass@api.ordinarylabs.com', null],
-		['https://api.ordinarylabs.com/?x=1', null],
+		['http://api.dinary.app', null],
+		['https://user:pass@api.dinary.app', null],
+		['https://api.dinary.app/?x=1', null],
 		['not a url', null]
 	])('EVER_PLATFORM_API_URL %s gives %s (never another address; plain http warns)', (value, expected) => {
 		const warn = jest.fn();
@@ -115,7 +115,7 @@ describe('readEverConnectConfig', () => {
 		).toMatchObject({ issuer: null, localPlatform: false });
 		expect(warn.mock.calls.map(([message]) => message).join(' ')).toMatch(/local or private/);
 		expect(readEverConnectConfig({ ...env, EVER_PLATFORM_API_URL: 'http://192.168.1.20:8080' }).localPlatform).toBe(true);
-		expect(readEverConnectConfig({ ...env, EVER_PLATFORM_API_URL: 'https://api-dev.ordinarylabs.com' }).issuer).toBeNull();
+		expect(readEverConnectConfig({ ...env, EVER_PLATFORM_API_URL: 'https://api-dev.dinary.app' }).issuer).toBeNull();
 	});
 
 	it('a web app on plain http outside loopback (a private network address) is never sent', () => {
@@ -129,7 +129,7 @@ describe('readEverConnectConfig', () => {
 		);
 	});
 
-	it('the return address is the Ordinary Labs Platform page of the web app (https, or http on a local host); nothing else', () => {
+	it('the return address is the Dinary Cloud page of the web app (https, or http on a local host); nothing else', () => {
 		expect(readEverConnectConfig({ CLIENT_BASE_URL: 'https://app.example.test/' })).toMatchObject({
 			returnOrigin: 'https://app.example.test',
 			returnUrl: 'https://app.example.test/#/pages/integrations/ever-connect'

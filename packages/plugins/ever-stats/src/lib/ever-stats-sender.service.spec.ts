@@ -6,7 +6,7 @@ import { statsKeyId } from '@ever-co/connect-sdk';
 import { EverStatsSender, readCappedBody } from './ever-stats-sender.service';
 import { contractsFile } from './fixtures/contracts-file';
 
-/** A report Ordinary Labs Platform accepts: the golden of the SDK's contracts package, as its bytes. */
+/** A report Dinary Cloud accepts: the golden of the SDK's contracts package, as its bytes. */
 const GOLDEN = readFileSync(contractsFile('fixtures', 'stats', 'valid', 'dinary.json'));
 
 /** A statistics signer over a throwaway key, as `EverInstanceService.statsSigner()` returns it. */
@@ -135,7 +135,7 @@ describe('EverStatsSender', () => {
 		expect(await readCappedBody(new Response('{"code":"ok"}'))).toBe('{"code":"ok"}');
 	});
 
-	it('never sends a report Ordinary Labs Platform would refuse (the SDK signs only what its checks accept)', async () => {
+	it('never sends a report Dinary Cloud would refuse (the SDK signs only what its checks accept)', async () => {
 		reply = answer(202, { accepted: true });
 		const outcome = await new EverStatsSender().send(base, Buffer.from('{"schema":"ever.stats.v1","a":1}'), testSigner(), '1.0.0');
 		expect(outcome).toMatchObject({ kind: 'dropped', status: 422 });

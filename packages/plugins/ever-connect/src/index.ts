@@ -1,5 +1,5 @@
 /**
- * Public API of @dinary/plugin-ever-connect: the Ordinary Labs Platform connection.
+ * Public API of @dinary/plugin-ever-connect: the Dinary Cloud connection.
  */
 export * from './lib/entities';
 export * from './lib/ever-connect.constants';

@@ -3,10 +3,7 @@
 # @dinary/plugin-email-provider-resend
 
 [Resend](https://resend.com) as an email provider of the Dinary Inbox: receive mail with Resend inbound and send through
-the Resend API. The reference provider plugin (plan 04 §5.2, G-P4-4) that the Postmark, Mailgun, SendGrid and Amazon SES
-plugins copy.
-
-Plan: `ever-co/homelab` `docs/superpowers/specs/2026-10-15-dinary-ever-works-integration/04-inbox-and-email.md` §5.2.
+the Resend API. It is the reference provider plugin that the Postmark, Mailgun, SendGrid and Amazon SES plugins copy.
 
 ## Switch
 

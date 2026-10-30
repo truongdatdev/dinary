@@ -13,18 +13,18 @@ import {
 	VerifiedEntitlement
 } from './sdk';
 
-/** Ordinary Labs Platform cannot be used from this installation right now (no call was made, or none got through). */
+/** Dinary Cloud cannot be used from this installation right now (no call was made, or none got through). */
 export class PlatformUnavailableError extends Error {
 	constructor(
 		readonly code: 'platform_url_unusable' | 'no_connect_key' | 'platform_unreachable' | 'keys_unverifiable'
 	) {
-		super(`Ordinary Labs Platform is not available (${code}).`);
+		super(`Dinary Cloud is not available (${code}).`);
 		this.name = 'PlatformUnavailableError';
 	}
 }
 
 /**
- * Whether an error means Ordinary Labs Platform could not be reached (no answer, a timeout, a 5xx or a 429),
+ * Whether an error means Dinary Cloud could not be reached (no answer, a timeout, a 5xx or a 429),
  * as opposed to an answer that refuses the request.
  */
 export function isUnreachable(error: unknown): boolean {
@@ -37,14 +37,14 @@ export function isUnreachable(error: unknown): boolean {
 	return error instanceof TimeoutError || (error instanceof TypeError && /fetch/i.test(error.message));
 }
 
-/** Whether an error is Ordinary Labs Platform saying this installation's credential was revoked. */
+/** Whether an error is Dinary Cloud saying this installation's credential was revoked. */
 export function isCredentialRevoked(error: unknown): boolean {
 	return error instanceof ProblemError && error.status === 401 && error.code === 'credential_revoked';
 }
 
 /**
- * The Ordinary Labs Platform client of this installation (the SDK client over its generated operation table),
- * and the key set that verifies Ordinary Labs Platform's documents.
+ * The Dinary Cloud client of this installation (the SDK client over its generated operation table),
+ * and the key set that verifies Dinary Cloud's documents.
  *
  * Nothing is made at start: the client object exists only once the operator connects or a connection
  * exists, and every call it makes is one of the SDK's operations against `EVER_PLATFORM_API_URL`
@@ -119,7 +119,7 @@ export class EverConnectPlatformService {
 	}
 
 	/**
-	 * The key set that verifies Ordinary Labs Platform's documents: the one in memory, else the stored manifest
+	 * The key set that verifies Dinary Cloud's documents: the one in memory, else the stored manifest
 	 * (verified again for this issuer), else a fetch. With `refresh`, or 24 hours after the last fetch,
 	 * it is fetched again; a manifest that does not verify never replaces a good one.
 	 */
@@ -155,7 +155,7 @@ export class EverConnectPlatformService {
 		} catch (error) {
 			if (this.keySet) {
 				// The current set stays in use until a newer manifest verifies.
-				this.logger.warn(`Ordinary Labs Platform's key manifest could not be refreshed (${errorCode(error)}).`);
+				this.logger.warn(`Dinary Cloud's key manifest could not be refreshed (${errorCode(error)}).`);
 				return this.keySet;
 			}
 			if (error instanceof KeyManifestError) {

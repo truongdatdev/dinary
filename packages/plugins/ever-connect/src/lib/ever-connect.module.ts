@@ -21,7 +21,7 @@ import { EverConnectStore } from './ever-connect.store';
 import { EverConnectEnabledGuard, EverConnectOperatorGuard } from './guards/ever-connect-operator.guard';
 
 /**
- * Lists "Ordinary Labs Platform" among the integrations, pins the operator of a single-tenant installation,
+ * Lists "Dinary Cloud" among the integrations, pins the operator of a single-tenant installation,
  * and picks up an existing connection (or uses `EVER_CONNECT_CODE` once) when the API is up.
  * Without a connection it sends nothing and schedules nothing.
  *
@@ -52,16 +52,16 @@ export class EverConnectLifecycle implements OnApplicationBootstrap {
 			await this.instance.ensure();
 			await this.operator.pinFirstSuperAdmin();
 			await this.connection.start();
-			this.logger.log('The Ordinary Labs Platform connection module is loaded (EVER_CONNECT_ENABLED=true).');
+			this.logger.log('The Dinary Cloud connection module is loaded (EVER_CONNECT_ENABLED=true).');
 		} catch (error) {
 			// Never stop the API: without its tables the module stays idle and its routes answer errors.
-			this.logger.warn(`The Ordinary Labs Platform connection could not start (${errorCode(error)}); nothing is sent.`);
+			this.logger.warn(`The Dinary Cloud connection could not start (${errorCode(error)}); nothing is sent.`);
 		}
 	}
 }
 
 /**
- * The Ordinary Labs Platform connection module. `register()` reads the environment once; the health route
+ * The Dinary Cloud connection module. `register()` reads the environment once; the health route
  * for a paired Ever Teams web app is mounted only when `EVER_STATS_SERVES` names `teams`.
  */
 @Module({})

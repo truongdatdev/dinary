@@ -81,15 +81,15 @@ describe('verifySocialAccessToken (GHSA-58x4-7mw9-gmqg)', () => {
 				tokeninfo({
 					aud: 'teams-google.apps.googleusercontent.com',
 					sub: '1234',
-					email: 'Victim@OrdinaryLabs.com',
+					email: 'Victim@dinary.app',
 					email_verified: 'true'
 				})
 			]);
 			await expect(verifySocialAccessToken(http, ProviderEnum.GOOGLE, 'ya29.token', CLIENTS)).resolves.toEqual({
 				provider: ProviderEnum.GOOGLE,
 				id: '1234',
-				email: 'victim@ordinarylabs.com',
-				rawEmail: 'Victim@OrdinaryLabs.com'
+				email: 'victim@dinary.app',
+				rawEmail: 'Victim@dinary.app'
 			});
 			// The access token travels in the POST body, never in the URL.
 			expect(calls[0].url).not.toContain('ya29.token');
@@ -116,7 +116,7 @@ describe('verifySocialAccessToken (GHSA-58x4-7mw9-gmqg)', () => {
 				aud: 'evil-app.apps.googleusercontent.com',
 				azp: 'evil-app.apps.googleusercontent.com',
 				sub: '1',
-				email: 'victim@ordinarylabs.com',
+				email: 'victim@dinary.app',
 				email_verified: 'true'
 			};
 			const { http } = mockHttp([
@@ -124,7 +124,7 @@ describe('verifySocialAccessToken (GHSA-58x4-7mw9-gmqg)', () => {
 				{
 					method: 'get',
 					url: /oauth2\/v1\/userinfo/,
-					respond: ok({ id: '1', email: 'victim@ordinarylabs.com', verified_email: true })
+					respond: ok({ id: '1', email: 'victim@dinary.app', verified_email: true })
 				}
 			]);
 
@@ -132,7 +132,7 @@ describe('verifySocialAccessToken (GHSA-58x4-7mw9-gmqg)', () => {
 			const { data } = await firstValueFrom<any>(
 				http.get('https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=t')
 			);
-			expect((data as any).email).toBe('victim@ordinarylabs.com');
+			expect((data as any).email).toBe('victim@dinary.app');
 
 			await expectRejected(verifySocialAccessToken(http, ProviderEnum.GOOGLE, 't', CLIENTS));
 		});
@@ -142,7 +142,7 @@ describe('verifySocialAccessToken (GHSA-58x4-7mw9-gmqg)', () => {
 				tokeninfo({
 					aud: 'dinary-google.apps.googleusercontent.com',
 					sub: '1',
-					email: 'victim@ordinarylabs.com',
+					email: 'victim@dinary.app',
 					email_verified: emailVerified
 				})
 			]);
@@ -187,13 +187,13 @@ describe('verifySocialAccessToken (GHSA-58x4-7mw9-gmqg)', () => {
 				},
 				user,
 				emails([
-					{ email: 'old@ordinarylabs.com', primary: false, verified: true },
-					{ email: 'victim@ordinarylabs.com', primary: true, verified: true }
+					{ email: 'old@dinary.app', primary: false, verified: true },
+					{ email: 'victim@dinary.app', primary: true, verified: true }
 				])
 			]);
 			await expect(verifySocialAccessToken(http, ProviderEnum.GITHUB, 'gho_x', CLIENTS)).resolves.toMatchObject({
 				id: '42',
-				email: 'victim@ordinarylabs.com'
+				email: 'victim@dinary.app'
 			});
 			// Each app is introspected with its OWN credentials.
 			const introspections = calls.filter((c) => c.method === 'post');
@@ -208,12 +208,12 @@ describe('verifySocialAccessToken (GHSA-58x4-7mw9-gmqg)', () => {
 				// GitHub answers 404 for a token not issued to the app (a PAT or another app's token).
 				{ method: 'post', url: /\/applications\/.*\/token$/, respond: fail(404) },
 				user,
-				emails([{ email: 'victim@ordinarylabs.com', primary: true, verified: true }])
+				emails([{ email: 'victim@dinary.app', primary: true, verified: true }])
 			]);
 
 			// CONTROL: the pre-fix verifier only read these two endpoints, which work for any token.
 			const { data } = await firstValueFrom<any>(http.get('https://api.github.com/user/emails', {}));
-			expect((data as any[]).find((e) => e.primary).email).toBe('victim@ordinarylabs.com');
+			expect((data as any[]).find((e) => e.primary).email).toBe('victim@dinary.app');
 
 			await expectRejected(verifySocialAccessToken(http, ProviderEnum.GITHUB, 'ghp_pat', CLIENTS));
 		});
@@ -226,7 +226,7 @@ describe('verifySocialAccessToken (GHSA-58x4-7mw9-gmqg)', () => {
 					respond: ok({ user: { id: 42 } })
 				},
 				user,
-				emails([{ email: 'victim@ordinarylabs.com', primary: true, verified: false }])
+				emails([{ email: 'victim@dinary.app', primary: true, verified: false }])
 			]);
 			await expectRejected(verifySocialAccessToken(http, ProviderEnum.GITHUB, 'gho_x', CLIENTS));
 		});
@@ -239,13 +239,13 @@ describe('verifySocialAccessToken (GHSA-58x4-7mw9-gmqg)', () => {
 					respond: ok({ user: { id: 7 } })
 				},
 				user,
-				emails([{ email: 'victim@ordinarylabs.com', primary: true, verified: true }])
+				emails([{ email: 'victim@dinary.app', primary: true, verified: true }])
 			]);
 			await expectRejected(verifySocialAccessToken(http, ProviderEnum.GITHUB, 'gho_x', CLIENTS));
 		});
 
 		it('fails closed when no GitHub app is configured', async () => {
-			const { http } = mockHttp([user, emails([{ email: 'victim@ordinarylabs.com', primary: true, verified: true }])]);
+			const { http } = mockHttp([user, emails([{ email: 'victim@dinary.app', primary: true, verified: true }])]);
 			await expectRejected(
 				verifySocialAccessToken(http, ProviderEnum.GITHUB, 'gho_x', { ...CLIENTS, github: { apps: [] } })
 			);
@@ -264,11 +264,11 @@ describe('verifySocialAccessToken (GHSA-58x4-7mw9-gmqg)', () => {
 		it('accepts a valid token of an allowed app and asks /me for the email explicitly', async () => {
 			const { http, calls } = mockHttp([
 				debug({ is_valid: true, app_id: '1111', user_id: '99' }),
-				me({ id: '99', email: 'victim@ordinarylabs.com' })
+				me({ id: '99', email: 'victim@dinary.app' })
 			]);
 			await expect(verifySocialAccessToken(http, ProviderEnum.FACEBOOK, 'EAAB', CLIENTS)).resolves.toMatchObject({
 				id: '99',
-				email: 'victim@ordinarylabs.com'
+				email: 'victim@dinary.app'
 			});
 			expect(calls[0].config.params).toEqual({ input_token: 'EAAB', access_token: '1111|fb-secret' });
 			expect(calls[1].config.params).toEqual({ fields: 'id,email' });
@@ -278,7 +278,7 @@ describe('verifySocialAccessToken (GHSA-58x4-7mw9-gmqg)', () => {
 			['another app', { is_valid: true, app_id: '2222', user_id: '99' }],
 			['an invalid token', { is_valid: false, app_id: '1111', user_id: '99' }]
 		])('rejects a token of %s', async (_label, data) => {
-			const { http } = mockHttp([debug(data), me({ id: '99', email: 'victim@ordinarylabs.com' })]);
+			const { http } = mockHttp([debug(data), me({ id: '99', email: 'victim@dinary.app' })]);
 			await expectRejected(verifySocialAccessToken(http, ProviderEnum.FACEBOOK, 'EAAB', CLIENTS));
 		});
 
@@ -324,11 +324,11 @@ describe('normalizeSocialIdentity (GHSA-58x4-7mw9-gmqg)', () => {
 	});
 
 	it('stringifies numeric ids and lowercases the email', () => {
-		expect(normalizeSocialIdentity(ProviderEnum.GITHUB, { id: 42, email: ' Victim@OrdinaryLabs.com ' })).toEqual({
+		expect(normalizeSocialIdentity(ProviderEnum.GITHUB, { id: 42, email: ' Victim@dinary.app ' })).toEqual({
 			provider: ProviderEnum.GITHUB,
 			id: '42',
-			email: 'victim@ordinarylabs.com',
-			rawEmail: 'Victim@OrdinaryLabs.com'
+			email: 'victim@dinary.app',
+			rawEmail: 'Victim@dinary.app'
 		});
 	});
 
@@ -363,8 +363,8 @@ describe('normalizeSocialIdentity (GHSA-58x4-7mw9-gmqg)', () => {
 			await dataSource.initialize();
 			users = dataSource.getRepository('SocialSpecUser');
 			await users.save([
-				{ id: 'super-admin', email: 'admin@ordinarylabs.com', isActive: true, isArchived: false },
-				{ id: 'victim', email: 'victim@ordinarylabs.com', isActive: true, isArchived: false },
+				{ id: 'super-admin', email: 'admin@dinary.app', isActive: true, isArchived: false },
+				{ id: 'victim', email: 'victim@dinary.app', isActive: true, isArchived: false },
 				{ id: 'attacker', email: 'attacker@evil.co', isActive: true, isArchived: false }
 			]);
 		});
@@ -385,7 +385,7 @@ describe('normalizeSocialIdentity (GHSA-58x4-7mw9-gmqg)', () => {
 		it('the normalizer stops that identity before any query, and a verified one matches one user', async () => {
 			expect(() => normalizeSocialIdentity(ProviderEnum.FACEBOOK, { id: '99' })).toThrow(UnauthorizedException);
 
-			const identity = normalizeSocialIdentity(ProviderEnum.FACEBOOK, { id: '99', email: 'Victim@OrdinaryLabs.com' });
+			const identity = normalizeSocialIdentity(ProviderEnum.FACEBOOK, { id: '99', email: 'Victim@dinary.app' });
 			const matched = await users.find({
 				where: [identity.email, identity.rawEmail].map((email) => ({
 					email,

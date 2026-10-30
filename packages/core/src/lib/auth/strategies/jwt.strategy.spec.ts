@@ -42,7 +42,7 @@ describe('JwtStrategy.validate', () => {
 	const activeUser = {
 		id: 'first-user',
 		tenantId: 'tenant',
-		email: 'admin@ordinarylabs.com',
+		email: 'admin@dinary.app',
 		roleId: 'role-1',
 		isActive: true,
 		isArchived: false
@@ -84,7 +84,7 @@ describe('JwtStrategy.validate', () => {
 	}
 
 	it.each([
-		['an invite token', { email: 'invitee@ordinarylabs.com', code: '123456' }],
+		['an invite token', { email: 'invitee@dinary.app', code: '123456' }],
 		['an estimate-email token', { invoiceId: 'inv', organizationId: 'org', tenantId: 'tenant', email: 'x@y.z' }],
 		['a team-join token', { email: 'x@y.z', tenantId: 't', organizationId: 'o', organizationTeamId: 'team', code: 'c' }],
 		['an appointment token', { appointmentId: 'appointment-1' }],

@@ -12,7 +12,7 @@ const STATUS: EverStatsStatus = {
 	key_id: 'abcdefghijk',
 	serves: ['dinary'],
 	country: 'ZZ',
-	api_url: 'https://api.ordinarylabs.com',
+	api_url: 'https://api.dinary.app',
 	next_send_at: '2026-10-03T12:00:00.000Z',
 	last_attempt: null,
 	key_warning: 'encryption_key_unset',

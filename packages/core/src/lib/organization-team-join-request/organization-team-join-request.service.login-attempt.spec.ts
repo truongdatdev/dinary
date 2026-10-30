@@ -51,17 +51,17 @@ describe('OrganizationTeamJoinRequestService.validateJoinRequest attempt settlem
 		getOneOrFail.mockRejectedValue(new EntityNotFoundError(OrganizationTeamJoinRequest, {}));
 
 		await expect(
-			service.validateJoinRequest({ email: 'victim@ordinarylabs.com', code: 'ZZZZZZ', organizationTeamId: 't1' } as any)
+			service.validateJoinRequest({ email: 'victim@dinary.app', code: 'ZZZZZZ', organizationTeamId: 't1' } as any)
 		).rejects.toBeInstanceOf(BadRequestException);
 
-		expect(loginAttemptService.begin).toHaveBeenCalledWith(LoginAttemptScope.TEAM_JOIN_CODE, 'victim@ordinarylabs.com');
+		expect(loginAttemptService.begin).toHaveBeenCalledWith(LoginAttemptScope.TEAM_JOIN_CODE, 'victim@dinary.app');
 		expect(attempt.fail).toHaveBeenCalledTimes(1);
 		expect(attempt.release).not.toHaveBeenCalled();
 	});
 
 	it('gives the slot back when neither a code nor a token was supplied', async () => {
 		await expect(
-			service.validateJoinRequest({ email: 'victim@ordinarylabs.com', organizationTeamId: 't1' } as any)
+			service.validateJoinRequest({ email: 'victim@dinary.app', organizationTeamId: 't1' } as any)
 		).rejects.toBeInstanceOf(BadRequestException);
 
 		expect(getOneOrFail).not.toHaveBeenCalled();

@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // cspell:words gzip
 /**
- * The static half of the egress audit: no code outside the Ordinary Labs Platform modules names an Ever host
- * or an Ordinary Labs Platform base URL variable it did not name before the modules, in the sources and in
+ * The static half of the egress audit: no code outside the Dinary Cloud modules names an Ever host
+ * or a Dinary Cloud base URL variable it did not name before the modules, in the sources and in
  * the built web app.
  *
  * Ever hosts are the `ever_owned` names of the harness's never-allowed list (`ever-hosts.json` of
@@ -68,7 +68,7 @@ export const ALLOWED = [
 	'**/legal-ui/src/lib/content/*.generated.ts'
 ];
 
-/** The Ordinary Labs Platform base URL variables: only the modules read them. */
+/** The Dinary Cloud base URL variables: only the modules read them. */
 export const VARIABLES = ['EVER_PLATFORM_API_URL', 'EVER_STATS_API_URL'];
 
 /** Files that hold code or configuration a build or a container reads. */
@@ -186,7 +186,7 @@ export function readBaseline(file = BASELINE_FILE) {
 }
 
 const DESCRIPTION =
-	'Ever hosts (and Ordinary Labs Platform base URL variables) that Dinary code outside the Ordinary Labs Platform modules named before the modules: the product site, legal pages, documentation, demo accounts, downloads. Written by `node tools/egress-audit/static-hostnames.mjs --write`; it may only shrink (checked against the base of every pull request). `code`: per tracked file and host, the occurrences; `bundle`: the hosts the built web app names.';
+	'Hostnames (and Dinary Cloud base URL variables) that Dinary code outside the Dinary Cloud modules named before the modules: the product site, legal pages, documentation, demo accounts, downloads. Written by `node tools/egress-audit/static-hostnames.mjs --write`; it may only shrink (checked against the base of every pull request). `code`: per tracked file and host, the occurrences; `bundle`: the hosts the built web app names.';
 
 function writeBaseline(next, file = BASELINE_FILE) {
 	const sorted = Object.fromEntries(
@@ -220,7 +220,7 @@ export function main(
 		const dir = resolve(arg('fixture') ?? '');
 		const growth = codeGrowth(scanCode(dir, { patterns: [], files: walk(dir) }), {});
 		if (growth.length) {
-			err(`static-hostnames: Ever hosts outside the Ordinary Labs Platform modules:\n  ${growth.join('\n  ')}`);
+			err(`static-hostnames: Ever hosts outside the Dinary Cloud modules:\n  ${growth.join('\n  ')}`);
 			return 1;
 		}
 		log('static-hostnames: ok (fixture)');
@@ -299,7 +299,7 @@ export function main(
 	const grown = codeGrowth(found, baseline.code);
 	if (grown.length) {
 		err(
-			`static-hostnames: Ever hosts (or Ordinary Labs Platform base URL variables) outside the Ordinary Labs Platform modules that the baseline does not have. Only the modules (${ALLOWED.slice(0, 5).join(', ')}) may name them; move the call into a module:\n  ${grown.join('\n  ')}`
+			`static-hostnames: Ever hosts (or Dinary Cloud base URL variables) outside the Dinary Cloud modules that the baseline does not have. Only the modules (${ALLOWED.slice(0, 5).join(', ')}) may name them; move the call into a module:\n  ${grown.join('\n  ')}`
 		);
 		return 1;
 	}

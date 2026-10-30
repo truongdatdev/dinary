@@ -21,7 +21,7 @@ const MIGRATIONS = join(__dirname, '../../../../../core/src/lib/database/migrati
 
 type Migration = { name: string; up(runner: unknown): Promise<void>; down(runner: unknown): Promise<void> };
 
-/** The core migrations the plugin needs, in order: `ever_instance`, then the six Ordinary Labs Platform tables. */
+/** The core migrations the plugin needs, in order: `ever_instance`, then the six Dinary Cloud tables. */
 export function connectMigrations(): Migration[] {
 	const { EverInstance1790000021000 } = require(join(MIGRATIONS, '1790000021000-EverInstance'));
 	const { EverConnect1790000021200 } = require(join(MIGRATIONS, '1790000021200-EverConnect'));

@@ -3,9 +3,9 @@ import { PrimaryColumn } from 'typeorm';
 import { ColumnIndex, MultiORMColumn, MultiORMEntity, SkipExport } from '@dinary/core';
 
 /**
- * One Dinary organization linked to one Ordinary Labs Platform organization (a tenant link). Dinary's own record of the
+ * One Dinary organization linked to one Dinary Cloud organization (a tenant link). Dinary's own record of the
  * link is the `integration_tenant` row named `Ever_Connect` (`integrationTenantId`), with the link
- * id, the Ordinary Labs Platform organization, its handle and the link status as its settings; this row keeps what
+ * id, the Dinary Cloud organization, its handle and the link status as its settings; this row keeps what
  * does not fit there: the link's entitlement document, stored encrypted.
  *
  * Times are epoch milliseconds. Created by the core `EverConnect` migration; never exported.
@@ -30,7 +30,7 @@ export class EverConnectLink {
 	@MultiORMColumn({ type: 'varchar', length: 36, nullable: true })
 	integrationTenantId?: string | null;
 
-	/** The tenant link id on Ordinary Labs Platform (a ULID). */
+	/** The tenant link id on Dinary Cloud (a ULID). */
 	@MultiORMColumn({ type: 'varchar', length: 32 })
 	linkId: string;
 

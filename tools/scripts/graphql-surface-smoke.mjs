@@ -179,7 +179,7 @@ async function main() {
 
 	const login = await call(API, '/api/auth/login', {
 		method: 'POST',
-		body: { email: process.env.E2E_EMAIL || 'admin@ordinarylabs.com', password: process.env.E2E_PASSWORD || 'admin' }
+		body: { email: process.env.E2E_EMAIL || 'admin@dinary.app', password: process.env.E2E_PASSWORD || 'admin' }
 	});
 	const token = login.json?.token;
 	const tenantId = login.json?.user?.tenantId;

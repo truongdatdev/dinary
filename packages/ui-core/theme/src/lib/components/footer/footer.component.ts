@@ -34,7 +34,7 @@ export class FooterComponent extends TranslationBaseComponent implements OnInit 
 	companyLinkedinLink: string;
 	user: IUser;
 
-	/** GitHub repo base (no trailing `.git`), e.g. `https://github.com/ordinary-labs/dinary`. */
+	/** GitHub repo base (no trailing `.git`), e.g. `https://github.com/truongdatdev/dinary`. */
 	private readonly repoBaseUrl: string;
 
 	/** This web build's version + commit (baked at build time). */
@@ -88,7 +88,7 @@ export class FooterComponent extends TranslationBaseComponent implements OnInit 
 		this.companyTwitterLink = environment.COMPANY_TWITTER_LINK;
 		this.companyLinkedinLink = environment.COMPANY_IN_LINK;
 
-		this.repoBaseUrl = (environment.PROJECT_REPO ?? 'https://github.com/ordinary-labs/dinary.git').replace(/\.git$/, '');
+		this.repoBaseUrl = (environment.PROJECT_REPO ?? 'https://github.com/truongdatdev/dinary.git').replace(/\.git$/, '');
 		this.web = { version: environment.version ?? '', commit: environment.commit ?? '' };
 	}
 

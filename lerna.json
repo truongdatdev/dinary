@@ -2,7 +2,7 @@
 	"npmClient": "yarn",
 	"version": "0.1.0",
 	"changelog": {
-		"repo": "ordinary-labs/dinary",
+		"repo": "truongdatdev/dinary",
 		"cacheDir": ".changelog",
 		"labels": {}
 	},

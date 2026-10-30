@@ -199,7 +199,7 @@ export class BillingController {
 		);
 	}
 
-	/** The Ordinary Labs product this deployment sells (`BILLING_PRODUCT`, default `dinary`). */
+	/** The Dinary product this deployment sells (`BILLING_PRODUCT`, default `dinary`). */
 	private productKey(): string {
 		const product = this.billingService.product;
 		if (!product) {
@@ -236,7 +236,7 @@ export class BillingController {
 		const customerId = tenant?.stripeCustomerId?.trim();
 		if (customerId) {
 			// A stored link to a customer who never subscribed to THIS product is treated as no link:
-			// that customer's invoices, card and subscriptions belong to another Ordinary Labs product (and quite
+			// that customer's invoices, card and subscriptions belong to another Dinary product (and quite
 			// possibly another person), and nothing on these routes may show or act on them.
 			if (await this.billingService.isCustomerOfProduct(customerId)) return customerId;
 			throw new NotFoundException('This account is not linked to a billing customer.');

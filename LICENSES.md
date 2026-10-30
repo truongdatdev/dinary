@@ -2,13 +2,13 @@
 
 Copyright © 2019-present, Ever Co. LTD and contributors.
 
-Modifications and Dinary branding copyright © 2026 Ordinary Labs.
+Modifications and Dinary branding copyright © 2026 Dinary contributors.
 
-Dinary Platform is a derivative work of the open-source [Ever Gauzy](https://github.com/ever-co/ever-gauzy) project. The upstream project and its contributors retain copyright over their original work.
+Dinary is a derivative work of the open-source [Ever Gauzy](https://github.com/ever-co/ever-gauzy) project. The upstream project and its contributors retain copyright over their original work.
 
 ## GNU Affero General Public License v3.0
 
-Dinary Platform is free software: you can redistribute it and/or modify it under the terms of the [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.txt) as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+Dinary is free software: you can redistribute it and/or modify it under the terms of the [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.txt) as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
 This program is distributed in the hope that it will be useful, but **WITHOUT ANY WARRANTY**; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
 
@@ -41,14 +41,12 @@ Dinary includes open-source libraries and other third-party components licensed 
 
 ## Trademarks
 
-**Dinary™** is a trademark of [Ordinary Labs](https://ordinarylabs.com).
+**Ever Gauzy™** and **Ever®** are trademarks of Ever Co. LTD. They are used in this repository only to identify the upstream project and its origin. This project does not claim ownership of those marks.
 
-**Ever Gauzy™** and **Ever®** are trademarks of Ever Co. LTD. They are used in this repository only to identify the upstream project and its origin. Ordinary Labs does not claim ownership of those marks.
-
-The Dinary name, logo and other Dinary brand assets may only be used with the written permission of Ordinary Labs and may not be used to promote or market competitive products or services. Contact <legal@ordinarylabs.com> for trademark questions.
+The **Dinary** name and logo identify this project. They may not be used to promote or market a modified version in a way that suggests it is the original Dinary distribution.
 
 All other brand and product names are trademarks, registered trademarks or service marks of their respective holders.
 
 ## Contact
 
-Questions about licensing can be sent to <legal@ordinarylabs.com>.
+Questions about licensing can be sent to <legal@dinary.app>.

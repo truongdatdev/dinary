@@ -18,8 +18,7 @@ The Angular side of the Dinary **Inbox**
 ([`@dinary/plugin-inbox`](../inbox/README.md)): one page for everything
 addressed to me, plus an unread badge in the header.
 
-Plan: `04-inbox-and-email.md` §1 (G-P3-2) of the Dinary ↔ Ever Works
-integration plan (`ever-co/homelab`, `docs/superpowers/specs/`).
+Part of the Dinary ↔ Ever Works integration.
 
 ## Switch
 

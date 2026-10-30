@@ -1,6 +1,6 @@
 // cspell:words posthog
 /**
- * The import boundary of the optional Ordinary Labs Platform modules, in one place for two readers: the
+ * The import boundary of the optional Dinary Cloud modules, in one place for two readers: the
  * ESLint rule `dinary-platform/import-boundary` (root `eslint.config.js`, so editors and `nx lint`
  * show it) and `check-import-boundary.mjs` (the CI gate, which needs no workspace install).
  *
@@ -40,7 +40,7 @@ function pluginOf(file) {
 const isPackage = (specifier, name) => specifier === name || specifier.startsWith(`${name}/`);
 const anyOf = (specifier, names) => names.find((name) => isPackage(specifier, name)) ?? null;
 
-/** The Ordinary Labs Platform module a specifier names (`ever-connect`), or null. */
+/** The Dinary Cloud module a specifier names (`ever-connect`), or null. */
 function moduleOf(specifier) {
 	const match = /^@dinary\/plugin-(ever-[a-z0-9-]+)(\/.*)?$/.exec(specifier);
 	return match && MODULES.includes(match[1]) ? match[1] : null;
@@ -55,7 +55,7 @@ function violation(file, specifier) {
 
 	if (target) {
 		if (!MODULES.includes(from ?? '') && !PLUGIN_LISTS.includes(file)) {
-			return `${specifier} is an optional Ordinary Labs Platform module: only the modules and the plugin lists (${PLUGIN_LISTS.join(', ')}) import it, so switching it off removes it whole`;
+			return `${specifier} is an optional Dinary Cloud module: only the modules and the plugin lists (${PLUGIN_LISTS.join(', ')}) import it, so switching it off removes it whole`;
 		}
 		if (specifier !== pkg(target) && from !== target) {
 			return `${specifier}: import a module through its entry point (${pkg(target)}), never its files`;
@@ -107,7 +107,7 @@ const rule = {
 		type: 'problem',
 		docs: {
 			description:
-				'The import boundary of the optional Ordinary Labs Platform modules (tools/dinary-platform/import-boundary.cjs)'
+				'The import boundary of the optional Dinary Cloud modules (tools/dinary-platform/import-boundary.cjs)'
 		},
 		schema: []
 	},

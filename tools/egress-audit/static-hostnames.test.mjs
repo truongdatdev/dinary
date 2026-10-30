@@ -38,11 +38,11 @@ test('one more occurrence of a recorded host in a recorded file fails; one less 
 		'packages/config/src/a.ts: dinary.app x3 (recorded: 2)'
 	]);
 	assert.deepEqual(codeGrowth({ 'packages/config/src/a.ts': { 'dinary.app': 1 } }, baseline), []);
-	assert.equal(codeGrowth({ 'packages/core/src/b.ts': { 'api.ordinarylabs.com': 1 } }, baseline).length, 1);
+	assert.equal(codeGrowth({ 'packages/core/src/b.ts': { 'api.dinary.app': 1 } }, baseline).length, 1);
 });
 
 test('a host new to the built web app fails', () => {
-	assert.deepEqual(bundleGrowth(['dinary.app', 'api.ordinarylabs.com'], ['dinary.app']), ['api.ordinarylabs.com']);
+	assert.deepEqual(bundleGrowth(['dinary.app', 'api.dinary.app'], ['dinary.app']), ['api.dinary.app']);
 	assert.deepEqual(bundleGrowth(['dinary.app'], ['dinary.app', 'docs.dinary.app']), []);
 });
 
@@ -52,7 +52,7 @@ test('every Ever-owned name counts, names under it included; other hosts do not'
 		'ever.team': 1
 	});
 	assert.deepEqual(occurrences('new URL(process.env.EVER_STATS_API_URL)'), { EVER_STATS_API_URL: 1 });
-	assert.deepEqual(occurrences('notordinarylabs.com.uk forordinarylabs.comm'), {});
+	assert.deepEqual(occurrences('notdinary.app.uk fordinary.appm'), {});
 });
 
 test('the modules, docs, the audit and tests may name Ever hosts; core code may not', () => {

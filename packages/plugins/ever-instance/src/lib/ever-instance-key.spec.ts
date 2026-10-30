@@ -86,7 +86,7 @@ describe('statistics key at rest', () => {
 		}
 	});
 
-	it('derives the key id from the public key as Ordinary Labs Platform does (test vector)', () => {
+	it('derives the key id from the public key as Dinary Cloud does (test vector)', () => {
 		// RFC 8032 test 1 public key; its id is base64url(sha256(pub)[0:8]).
 		const publicKey = Buffer.from('d75a980182b10ab7d54bfed3c964073a0ee172f3daa62325af021a68f707511a', 'hex').toString('base64url');
 		expect(keyIdOf(publicKey)).toBe('If4x36FUomE');

@@ -7,70 +7,70 @@ export const DEFAULT_ORGANIZATION_TEAMS = [
 			`${environment.demoCredentialConfig.superAdminEmail}`,
 			`${environment.demoCredentialConfig.adminEmail}`,
 			`${environment.demoCredentialConfig.employeeEmail}`,
-			'ruslan@example-ordinarylabs.com',
-			'alish@example-ordinarylabs.com',
-			'julia@example-ordinarylabs.com',
-			'booster@example-ordinarylabs.com',
-			'yoster@example-ordinarylabs.com'
+			'ruslan@example-dinary.app',
+			'alish@example-dinary.app',
+			'julia@example-dinary.app',
+			'booster@example-dinary.app',
+			'yoster@example-dinary.app'
 		],
-		manager: [`${environment.demoCredentialConfig.superAdminEmail}`, 'ruslan@example-ordinarylabs.com']
+		manager: [`${environment.demoCredentialConfig.superAdminEmail}`, 'ruslan@example-dinary.app']
 	},
 	{
 		name: 'Contractors',
 		defaultMembers: [
 			`${environment.demoCredentialConfig.adminEmail}`,
 			'ckhandla94@gmail.com',
-			'hoster@example-ordinarylabs.com',
-			'aster@example-ordinarylabs.com'
+			'hoster@example-dinary.app',
+			'aster@example-dinary.app'
 		],
-		manager: [`${environment.demoCredentialConfig.adminEmail}`, 'ruslan@example-ordinarylabs.com']
+		manager: [`${environment.demoCredentialConfig.adminEmail}`, 'ruslan@example-dinary.app']
 	},
 	{
 		name: 'Designers',
 		defaultMembers: [
 			`${environment.demoCredentialConfig.employeeEmail}`,
-			'julia@example-ordinarylabs.com',
-			'roster@example-ordinarylabs.com',
-			'dister@example-ordinarylabs.com',
-			'postern@example-ordinarylabs.com'
+			'julia@example-dinary.app',
+			'roster@example-dinary.app',
+			'dister@example-dinary.app',
+			'postern@example-dinary.app'
 		],
-		manager: ['julia@example-ordinarylabs.com', 'alish@example-ordinarylabs.com', `${environment.demoCredentialConfig.employeeEmail}`]
+		manager: ['julia@example-dinary.app', 'alish@example-dinary.app', `${environment.demoCredentialConfig.employeeEmail}`]
 	},
 	{
 		name: 'QA',
 		defaultMembers: [
 			`${environment.demoCredentialConfig.superAdminEmail}`,
 			`${environment.demoCredentialConfig.employeeEmail}`,
-			'julia@example-ordinarylabs.com',
-			'kyoster@example-ordinarylabs.com',
-			'taster@example-ordinarylabs.com',
+			'julia@example-dinary.app',
+			'kyoster@example-dinary.app',
+			'taster@example-dinary.app',
 			'mustero@smooper.xyz'
 		],
-		manager: ['julia@example-ordinarylabs.com']
+		manager: ['julia@example-dinary.app']
 	},
 	{
 		name: 'Developers',
 		defaultMembers: [
 			`${environment.demoCredentialConfig.adminEmail}`,
 			`${environment.demoCredentialConfig.employeeEmail}`,
-			'ruslan@example-ordinarylabs.com',
-			'alish@example-ordinarylabs.com',
-			'booster@example-ordinarylabs.com',
-			'yoster@example-ordinarylabs.com',
+			'ruslan@example-dinary.app',
+			'alish@example-dinary.app',
+			'booster@example-dinary.app',
+			'yoster@example-dinary.app',
 			'ckhandla94@gmail.com',
 			'rahulrathore576@gmail.com'
 		],
-		manager: [`${environment.demoCredentialConfig.adminEmail}`, 'ruslan@example-ordinarylabs.com', 'alish@example-ordinarylabs.com']
+		manager: [`${environment.demoCredentialConfig.adminEmail}`, 'ruslan@example-dinary.app', 'alish@example-dinary.app']
 	},
 	{
 		name: 'Marketing',
 		defaultMembers: [
 			`${environment.demoCredentialConfig.employeeEmail}`,
-			'julia@example-ordinarylabs.com',
-			'yostorono@example-ordinarylabs.com',
+			'julia@example-dinary.app',
+			'yostorono@example-dinary.app',
 			'desterrro@hotmail.com'
 		],
-		manager: ['yostorono@example-ordinarylabs.com', `${environment.demoCredentialConfig.employeeEmail}`]
+		manager: ['yostorono@example-dinary.app', `${environment.demoCredentialConfig.employeeEmail}`]
 	},
 	{
 		name: 'Default Team',
@@ -78,9 +78,9 @@ export const DEFAULT_ORGANIZATION_TEAMS = [
 			`${environment.demoCredentialConfig.superAdminEmail}`,
 			`${environment.demoCredentialConfig.employeeEmail}`,
 			`${environment.demoCredentialConfig.adminEmail}`,
-			'ruslan@example-ordinarylabs.com',
-			'alish@example-ordinarylabs.com',
-			'julia@example-ordinarylabs.com'
+			'ruslan@example-dinary.app',
+			'alish@example-dinary.app',
+			'julia@example-dinary.app'
 		],
 		manager: [
 			`${environment.demoCredentialConfig.superAdminEmail}`,
@@ -92,48 +92,48 @@ export const DEFAULT_ORGANIZATION_TEAMS = [
 		name: 'Backend Team',
 		defaultMembers: [
 			`${environment.demoCredentialConfig.adminEmail}`,
-			'ruslan@example-ordinarylabs.com',
-			'alish@example-ordinarylabs.com',
+			'ruslan@example-dinary.app',
+			'alish@example-dinary.app',
 			'ckhandla94@gmail.com',
 			'rahulrathore576@gmail.com',
-			'booster@example-ordinarylabs.com',
-			'hoster@example-ordinarylabs.com'
+			'booster@example-dinary.app',
+			'hoster@example-dinary.app'
 		],
-		manager: ['ruslan@example-ordinarylabs.com', `${environment.demoCredentialConfig.adminEmail}`]
+		manager: ['ruslan@example-dinary.app', `${environment.demoCredentialConfig.adminEmail}`]
 	},
 	{
 		name: 'Frontend Team',
 		defaultMembers: [
 			`${environment.demoCredentialConfig.employeeEmail}`,
-			'alish@example-ordinarylabs.com',
-			'julia@example-ordinarylabs.com',
-			'yoster@example-ordinarylabs.com',
-			'roster@example-ordinarylabs.com',
-			'dister@example-ordinarylabs.com'
+			'alish@example-dinary.app',
+			'julia@example-dinary.app',
+			'yoster@example-dinary.app',
+			'roster@example-dinary.app',
+			'dister@example-dinary.app'
 		],
-		manager: ['alish@example-ordinarylabs.com', `${environment.demoCredentialConfig.employeeEmail}`]
+		manager: ['alish@example-dinary.app', `${environment.demoCredentialConfig.employeeEmail}`]
 	},
 	{
 		name: 'Mobile Team',
 		defaultMembers: [
 			`${environment.demoCredentialConfig.employeeEmail}`,
-			'ruslan@example-ordinarylabs.com',
-			'booster@example-ordinarylabs.com',
+			'ruslan@example-dinary.app',
+			'booster@example-dinary.app',
 			'ckhandla94@gmail.com',
-			'yoster@example-ordinarylabs.com',
-			'postern@example-ordinarylabs.com'
+			'yoster@example-dinary.app',
+			'postern@example-dinary.app'
 		],
-		manager: ['ruslan@example-ordinarylabs.com', `${environment.demoCredentialConfig.employeeEmail}`]
+		manager: ['ruslan@example-dinary.app', `${environment.demoCredentialConfig.employeeEmail}`]
 	},
 	{
 		name: 'DevOps Team',
 		defaultMembers: [
 			`${environment.demoCredentialConfig.superAdminEmail}`,
 			`${environment.demoCredentialConfig.adminEmail}`,
-			'ruslan@example-ordinarylabs.com',
+			'ruslan@example-dinary.app',
 			'ckhandla94@gmail.com',
-			'hoster@example-ordinarylabs.com'
+			'hoster@example-dinary.app'
 		],
-		manager: [`${environment.demoCredentialConfig.superAdminEmail}`, 'ruslan@example-ordinarylabs.com']
+		manager: [`${environment.demoCredentialConfig.superAdminEmail}`, 'ruslan@example-dinary.app']
 	}
 ];

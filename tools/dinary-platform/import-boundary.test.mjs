@@ -1,6 +1,6 @@
 // node --test tools/dinary-platform/import-boundary.test.mjs
 //
-// The import boundary of the optional Ordinary Labs Platform modules: the tree is clean, the known-bad
+// The import boundary of the optional Dinary Cloud modules: the tree is clean, the known-bad
 // fixtures fail with the scanner AND with the ESLint rule (same rules, import-boundary.cjs).
 // The ESLint half needs `eslint` and `@typescript-eslint/parser`: from the workspace, or from
 // ESLINT_PREFIX (the CI job installs both there). With EVER_BOUNDARY_ESLINT_REQUIRED=true a missing
@@ -76,7 +76,7 @@ test('the plugin lists may import the modules through their entry points, nobody
 	assert.equal(violation('packages/core/src/lib/a.ts', '@dinary/plugin-integration-ever-async'), null);
 	assert.match(
 		violation('packages/core/src/lib/a.ts', '@dinary/plugin-ever-instance'),
-		/optional Ordinary Labs Platform module/
+		/optional Dinary Cloud module/
 	);
 });
 

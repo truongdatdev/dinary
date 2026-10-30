@@ -16,8 +16,8 @@ export const LEGAL_PRIVACY_EN: ILegalDocument = {
 	product: 'dinary',
 	productName: 'Dinary',
 	domain: 'dinary.app',
-	entity: 'Ordinary Labs',
-	entityId: 'ordinary-labs',
+	entity: 'Dinary',
+	entityId: 'dinary',
 	locale: 'en',
 	version: '1.0.3',
 	effectiveDate: '2026-10-24',
@@ -57,35 +57,35 @@ one.</p>
 <p><strong>Your organisation's own systems.</strong> Where your employer or another organisation uses the Service, it also
 runs systems of its own. This notice covers our part. Its notice covers its part.</p>
 <h2 id="who-we-are" tabindex="-1">Who we are</h2>
-<p>The controller of the personal data described in this notice is <strong>Ordinary Labs</strong>.</p>
+<p>The controller of the personal data described in this notice is <strong>Dinary</strong>.</p>
 <p>&quot;Controller&quot; is the legal term for the organisation that decides why personal data is used and how.
-Wherever this notice says we make that decision, <strong>Ordinary Labs is the organisation accountable to
+Wherever this notice says we make that decision, <strong>Dinary is the organisation accountable to
 you</strong> and to the supervisory authority that oversees our handling of personal data.</p>
-<p>Ordinary Labs operates Dinary Cloud and is the company you contract with for it. There
+<p>Dinary operates Dinary Cloud and is the company you contract with for it. There
 is no other operator behind us and no second company you have to chase to get an answer.</p>
-<p>You can reach us about anything in this notice at privacy@ordinarylabs.com.</p>
+<p>You can reach us about anything in this notice at privacy@dinary.app.</p>
 <p>There are parts of this notice where we are deliberately <strong>not</strong> the controller: where a customer puts
 personal data about its own people into the Service, that customer decides, and we act on its instructions.
 That split matters, so it has its own section below.</p>
 <h2 id="other-companies-in-our-group" tabindex="-1">Other companies in our group</h2>
-<p>Ordinary Labs owns the intellectual property in the software and operates the Service. No other company
+<p>Dinary owns the intellectual property in the software and operates the Service. No other company
 in our group has access to personal data held in the Service.</p>
 <h2 id="data-protection-contact" tabindex="-1">Data protection contact</h2>
 <p><strong>We have not designated a Data Protection Officer.</strong> Article 13(1)(b) of the GDPR asks a controller to
 publish a Data Protection Officer's contact details where one has been designated. None has been designated
-at Ordinary Labs, so there are none to publish. We would rather tell you that outright than let a
+at Dinary, so there are none to publish. We would rather tell you that outright than let a
 mailbox name imply otherwise. We keep the question under review, and if it changes we will publish the
 details here.</p>
 <p>What we do publish is a contact route that is monitored and acted on. <strong>Privacy questions and requests to
 exercise your rights are handled through these addresses:</strong></p>
 <ul>
-<li><strong>privacy@ordinarylabs.com</strong> — use this for anything about this notice, about the personal data we hold, or to
+<li><strong>privacy@dinary.app</strong> — use this for anything about this notice, about the personal data we hold, or to
 make a request under any of your rights.</li>
-<li><strong>dpo@ordinarylabs.com</strong> — an alias that reaches the same people. It exists because procurement forms,
+<li><strong>dpo@dinary.app</strong> — an alias that reaches the same people. It exists because procurement forms,
 security questionnaires and privacy tooling routinely expect an address in that form. <strong>It is a routing
 alias, not an office. Nothing about it means a Data Protection Officer has been designated.</strong></li>
 </ul>
-<p>For our current postal address, write to privacy@ordinarylabs.com.</p>
+<p>For our current postal address, write to privacy@dinary.app.</p>
 <p>We will acknowledge your message, and we will answer a request to exercise your rights within one month —
 the deadline the GDPR sets. Where a request is genuinely complex, or where you have made several, we may
 extend that by up to two further months. If we do, we will tell you inside the first month and explain
@@ -266,7 +266,7 @@ processor's systems and never reach ours.</li>
 <li><strong>We do not collect precise location by default.</strong> Where a product uses location at all, it is because a
 specific feature needs it, and that feature says so.</li>
 </ul>
-<p>If you find any of this to be untrue of something we ship, tell us at privacy@ordinarylabs.com. We will treat it
+<p>If you find any of this to be untrue of something we ship, tell us at privacy@dinary.app. We will treat it
 as a defect in the product, not as a disagreement about wording.</p>
 <h2 id="where-data-comes-from-when-it-does-not-come-from-you" tabindex="-1">Where data comes from when it does not come from you</h2>
 <p>Not all of the personal data we hold came from you. Article 14 of the GDPR requires us to tell you where it
@@ -435,7 +435,7 @@ and a great deal of it we are required to keep in any event.</li>
 </ul>
 <h3 id="your-right-to-object" tabindex="-1">Your right to object</h3>
 <p><strong>You can object to any processing we base on legitimate interests, at any time, by writing to
-privacy@ordinarylabs.com.</strong> Tell us which processing, and where you can, why — your particular situation is part
+privacy@dinary.app.</strong> Tell us which processing, and where you can, why — your particular situation is part
 of the balance. We will stop unless we can show compelling legitimate grounds that override your interests,
 rights and freedoms, or unless we need the data to establish, exercise or defend legal claims.</p>
 <p><strong>If you object to direct marketing there is no balancing at all. We stop.</strong> That right is absolute.</p>
@@ -736,7 +736,7 @@ for first. Timesheets and time logs usually need to outlive the captures behind 
 payroll and invoicing, and they can be kept while the media is deleted.</p>
 <p>Deleting a screenshot, a time slot or a time entry in the web application hides it at once, but it is a soft
 deletion: the record, and for a screenshot its stored image and thumbnail, stay on our live systems until they
-are permanently deleted. Ask us at privacy@ordinarylabs.com and we will delete them permanently. The backup position
+are permanently deleted. Ask us at privacy@dinary.app and we will delete them permanently. The backup position
 is in the retention section above.</p>
 <h3 id="if-you-are-being-monitored-with-dinary-read-this" tabindex="-1">If you are being monitored with Dinary, read this</h3>
 <p><strong>Your employer chose every setting described in this annex. We did not, and we cannot change one for
@@ -759,7 +759,7 @@ see your own screenshots, you can check what is being taken rather than imagine 
 <li><strong>A capture that caught something private can be deleted.</strong> Your employer can delete an individual
 screenshot. Ask them to, and to make sure it is deleted permanently rather than only hidden.</li>
 <li><strong>If you believe you are being monitored covertly</strong> — that capture is running and you were never told —
-write to abuse@ordinarylabs.com. You do not need to be our customer, we keep the identity of a reporter
+write to abuse@dinary.app. You do not need to be our customer, we keep the identity of a reporter
 confidential, and the enforcement section of our <a href="https://dinary.app/aup">Acceptable Use Policy</a> sets out
 what we do next.</li>
 </ul>
@@ -1017,7 +1017,7 @@ the corresponding UK and Swiss additions are applied to those clauses.</p>
 contract you have asked us to perform — only in a specific, occasional case where no other mechanism fits.
 It is not a routine mechanism for us, and we do not use it to run a regular data flow.</p>
 <h3 id="getting-a-copy-of-the-safeguards" tabindex="-1">Getting a copy of the safeguards</h3>
-<p>You are entitled to see the safeguards we rely on. Write to privacy@ordinarylabs.com naming the provider or the
+<p>You are entitled to see the safeguards we rely on. Write to privacy@dinary.app naming the provider or the
 transfer you are asking about, and we will send you a copy of the relevant clauses and tell you which
 modules apply. We may redact commercial terms such as pricing and service levels; we do not redact the
 data protection terms, which are the part that concerns you.</p>
@@ -1152,7 +1152,7 @@ tell affected people directly without undue delay where the breach is likely to 
 them.</p>
 <p>Your part matters too. Use a strong and unique password, turn on multi-factor authentication where it is
 offered, keep your devices patched, and do not share credentials or access tokens. If you think an account
-has been compromised, tell us at privacy@ordinarylabs.com immediately.</p>
+has been compromised, tell us at privacy@dinary.app immediately.</p>
 <h2 id="your-rights-over-your-personal-data" tabindex="-1">Your rights over your personal data</h2>
 <p>Where we are the controller, the GDPR gives you the rights below. They are yours to use, you do not have
 to explain why you are using them, and using one costs you nothing.</p>
@@ -1183,7 +1183,7 @@ keep invoices for the statutory accounting period, and portability does not exte
 generated rather than received from you. <strong>Where we cannot do all of what you ask, we will tell you which
 part we cannot do and why</strong>, rather than declining as a whole.</p>
 <h3 id="how-to-make-a-request" tabindex="-1">How to make a request</h3>
-<p>Write to privacy@ordinarylabs.com. Tell us which right you are using and enough about yourself for us to find
+<p>Write to privacy@dinary.app. Tell us which right you are using and enough about yourself for us to find
 the right records — the email address on the account is usually enough. You can also write to us by post
 at the address at the end of this policy.</p>
 <ul>
@@ -1219,7 +1219,7 @@ customer's workspace without their instruction</strong> — unless a law that ap
 not us being unhelpful: acting on a workspace's data without the controller's instruction is precisely
 what a processor is not allowed to do.</li>
 </ul>
-<p>If you are not sure which of the two situations you are in, ask us at privacy@ordinarylabs.com and we will tell
+<p>If you are not sure which of the two situations you are in, ask us at privacy@dinary.app and we will tell
 you, and point you to the right organisation if it is not us.</p>
 <h2 id="withdrawing-your-consent" tabindex="-1">Withdrawing your consent</h2>
 <p>Where we rely on your consent for something, <strong>you can withdraw it at any time, and withdrawing is as easy
@@ -1233,13 +1233,13 @@ undo it. What it does mean is that we stop, and that we do not start again unles
 <a href="https://dinary.app">dinary.app</a>, turn off the categories you no longer want, and save. The change
 takes effect immediately. Details are in our <a href="https://dinary.app/cookies">Cookie Policy</a>.</li>
 <li><strong>Marketing emails</strong> — use the unsubscribe link at the bottom of any message we send you, or write to
-privacy@ordinarylabs.com and ask us to stop. Either route works, and the unsubscribe link does not require
+privacy@dinary.app and ask us to stop. Either route works, and the unsubscribe link does not require
 you to sign in or find your password first.</li>
 <li><strong>Optional features and integrations you switched on</strong> — turn the feature off, or disconnect the
-connected account, in your settings. If you cannot find the switch, ask us at privacy@ordinarylabs.com and we
+connected account, in your settings. If you cannot find the switch, ask us at privacy@dinary.app and we
 will turn it off for you.</li>
 </ul>
-<p>If you have consented to something not listed here, write to privacy@ordinarylabs.com naming it, and we will
+<p>If you have consented to something not listed here, write to privacy@dinary.app naming it, and we will
 act on it the same way.</p>
 <h3 id="what-happens-next" tabindex="-1">What happens next</h3>
 <p>We stop the processing, and we remove you from the relevant list or turn the relevant feature off. We keep
@@ -1254,7 +1254,7 @@ switch off the Service</strong> — it affects only the things you consented to.
 <h2 id="complaining-to-a-supervisory-authority" tabindex="-1">Complaining to a supervisory authority</h2>
 <p>If you think we have handled your personal data badly or unlawfully, <strong>you have the right to complain to a
 data protection supervisory authority</strong>. That right is yours regardless of anything else in this policy.</p>
-<p>We would like the chance to put it right first. Write to privacy@ordinarylabs.com, tell us what went wrong, and
+<p>We would like the chance to put it right first. Write to privacy@dinary.app, tell us what went wrong, and
 we will look into it and come back to you. In most cases that is the quickest way to get the outcome you
 actually want. <strong>You are not required to do this, and it is not a condition of complaining</strong> — you can go
 straight to an authority, and you can do it at any point, including while we are still dealing with your
@@ -1283,7 +1283,7 @@ decision of that kind is made about you by an organisation using the Service, a 
 organisation makes it.</p>
 <p>We do use automated rules to detect fraud, spam, abuse and attacks against the Service — rate limits,
 anomaly detection, and similar. Those rules can block a request or temporarily restrict an account. If one
-of them affects you, write to privacy@ordinarylabs.com and a person will review it.</p>
+of them affects you, write to privacy@dinary.app and a person will review it.</p>
 <h3 id="where-a-customer-turns-on-ai-features-be-aware-of-this" tabindex="-1">Where a customer turns on AI features, be aware of this</h3>
 <p>This is the part worth reading carefully, because it is easy to misunderstand.</p>
 <p>Some of our products capture activity data on behalf of a customer — an employer, typically — and some of
@@ -1325,7 +1325,7 @@ Below that age, consent has to come from — or be authorised by — a holder of
 Because we do not offer the Service to children, we do not operate a parental consent mechanism, and a
 child under the applicable age should not create an account or submit personal data to us.</p>
 <h3 id="if-a-childs-data-has-reached-us" tabindex="-1">If a child's data has reached us</h3>
-<p>Tell us. Write to privacy@ordinarylabs.com with enough detail for us to find the record — an email address, an
+<p>Tell us. Write to privacy@dinary.app with enough detail for us to find the record — an email address, an
 account name, or the page where the data was submitted. You do not need to prove anything first, and you
 do not need to be the child's parent to report it.</p>
 <p>We will check, and where we confirm that we hold personal data collected from a child without proper
@@ -1345,7 +1345,7 @@ they do with it is governed by their own privacy notice, which is the one to rea
 Where embedded content is not strictly necessary to deliver a page, we load it only once you have agreed
 to the relevant cookie category — see our <a href="https://dinary.app/cookies">Cookie Policy</a>.</p>
 <p>A link is not an endorsement. If a link from our site takes you somewhere that mishandles your data, we
-would like to know at privacy@ordinarylabs.com so we can reconsider carrying it.</p>
+would like to know at privacy@dinary.app so we can reconsider carrying it.</p>
 <h2 id="changes-to-this-policy" tabindex="-1">Changes to this policy</h2>
 <p>This policy changes when the Service changes, when we engage or replace a provider, or when the law moves.
 We would rather update it than let it drift out of date and quietly stop being true.</p>
@@ -1370,18 +1370,18 @@ ask for it separately and record it.</p>
 <p>We do not overwrite the past. <strong>Every version of this policy that we have published remains available</strong>,
 with the dates it was in force, from the version history linked at the foot of
 <a href="https://dinary.app/privacy">https://dinary.app/privacy</a>. If you want to know what we said about your data on a
-particular date, that is where to look — and if you cannot find it, ask us at privacy@ordinarylabs.com and we
+particular date, that is where to look — and if you cannot find it, ask us at privacy@dinary.app and we
 will send it to you.</p>
 <h2 id="how-to-contact-us" tabindex="-1">How to contact us</h2>
-<p>The controller for the personal data described in this policy is <strong>Ordinary Labs</strong>.</p>
+<p>The controller for the personal data described in this policy is <strong>Dinary</strong>.</p>
 <ul>
-<li><strong>Privacy questions, and any request about your personal data</strong> — privacy@ordinarylabs.com</li>
-<li><strong>Data protection correspondence</strong> — dpo@ordinarylabs.com</li>
+<li><strong>Privacy questions, and any request about your personal data</strong> — privacy@dinary.app</li>
+<li><strong>Data protection correspondence</strong> — dpo@dinary.app</li>
 </ul>
 <p>Both addresses are monitored by the same people, and either will reach us. For our current postal address,
-write to privacy@ordinarylabs.com and mark the message for the attention of the privacy team. We correspond in
+write to privacy@dinary.app and mark the message for the attention of the privacy team. We correspond in
 English.</p>
-<p><strong>We have not designated a Data Protection Officer under Article 37 GDPR.</strong> The dpo@ordinarylabs.com address is
+<p><strong>We have not designated a Data Protection Officer under Article 37 GDPR.</strong> The dpo@dinary.app address is
 a contact channel, not a designation, and we will not describe it as one. If that position changes, this
 policy will say so and will give the designated office's contact details.</p>
 <p>If your question is about personal data held inside one of our customers' workspaces, that customer is the

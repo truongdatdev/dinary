@@ -83,7 +83,7 @@ export class RegisterUserDTO implements IUserRegistrationInput {
 	readonly terms?: TermsAcceptanceClaimDTO[];
 
 	/**
-	 * The Stripe Checkout Session the registrant just completed on the shared ordinarylabs.com checkout, which
+	 * The Stripe Checkout Session the registrant just completed on the shared dinary.app checkout, which
 	 * forwards it to the register form as `checkout_session`.
 	 *
 	 * Optional, so every existing client keeps working unchanged (and an older API simply strips it,

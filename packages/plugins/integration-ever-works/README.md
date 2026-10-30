@@ -22,9 +22,7 @@ Works agents work on is visible in Dinary (and through Dinary in Plane and Ever
 Teams), and what people do in Dinary is visible to agents and people in Ever
 Works.
 
-The design lives in the integration plan (homelab repository,
-`docs/superpowers/specs/2026-10-15-dinary-ever-works-integration/`). The plugin
-codes against the Ever Works integration contract v1 (`/api/integrations/v1`);
+The plugin codes against the Ever Works integration contract v1 (`/api/integrations/v1`);
 its machine-readable form is in the ever-works repository, under
 `docs/specs/features/integrations-api-v1/contract/`. This version adds the
 connection, the organization mapping and the sync engine; the handlers of the
