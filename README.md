@@ -201,8 +201,6 @@ The **Dinary** name and logo identify this project. All other product names used
 
 ## Links
 
-- **Website:** <https://dinary.app>
-- **Documentation:** <https://docs.dinary.app>
 - **Source code:** <https://github.com/truongdatdev/dinary>
 - **Issues:** <https://github.com/truongdatdev/dinary/issues>
 
