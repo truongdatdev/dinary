@@ -25,7 +25,7 @@ name: External Uptime Monitor
 #  OS underneath the probe - it is still a GitHub-hosted runner.)
 #
 #  COST: truongdatdev/dinary is a PUBLIC repository, so GitHub-hosted minutes are free and
-#  unlimited. This costs $0. If the repo ever goes private, reduce the cron to hourly.
+#  unlimited. A manual run takes a few minutes and costs $0.
 # =====================================================================================
 
 # Domain vocabulary and curl `-w` field names used throughout this file. `.cspell.json` runs
@@ -35,11 +35,9 @@ name: External Uptime Monitor
 # cspell:ignore cfallow cfcleanup startswith fromdateiso tolower alnum
 
 on:
-  schedule:
-    # Every 15 minutes. Free on public repos. GitHub's scheduler is best-effort and can
-    # be delayed under load; treat gaps between runs as normal, not as an outage.
-    - cron: '*/15 * * * *'
-
+  # No schedule: the hosts this probe watches (dinary.app and its subdomains) are not deployed
+  # yet, so every automatic run reported a false outage. Restore the 15-minute cron
+  # (`- cron: '*/15 * * * *'`) once the production and staging DNS records exist.
   workflow_dispatch:
     inputs:
       dry_run:
@@ -65,8 +63,8 @@ on:
   pull_request:
     # Off by owner decision (2026-09-21): a pull request INTO develop no longer starts this self-test. Here it
     # proves the YAML parses and the probes work before the change is merged, and develop is the branch the
-    # merge itself is about - so the rehearsal stays for PRs aimed at other branches, and the scheduled and
-    # manual runs below are untouched.
+    # merge itself is about - so the rehearsal stays for PRs aimed at other branches, and the manual
+    # runs below are untouched.
     branches-ignore:
       - develop
     paths:
@@ -80,9 +78,9 @@ permissions:
   contents: read
 
 concurrency:
-  # Scheduled and manual runs share one group so two live probes never overlap and fight over the
-  # same alert issue. Pull-request self-tests get their own per-ref group, so reviewing this file
-  # can never delay or displace a real production probe.
+  # Live runs share one group so two probes never overlap and fight over the same alert issue.
+  # Pull-request self-tests get their own per-ref group, so reviewing this file can never delay or
+  # displace a real production probe.
   group: >-
     external-uptime-monitor-${{ github.event_name == 'pull_request' && github.ref || 'live' }}
   # Per-event, because the two halves of that group want opposite answers. A LIVE probe must never
@@ -124,7 +122,7 @@ jobs:
         id: mode
         run: |
           set -euo pipefail
-          # Alerting is ON for scheduled runs, and for manual runs unless dry_run was ticked.
+          # Alerting is ON for manual runs unless dry_run was ticked.
           # It is always OFF for pull_request events (this file's own self-test).
           MODE=on
           if [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then
@@ -674,12 +672,12 @@ jobs:
         env:
           RULE_ID: ${{ steps.cfallow.outputs.rule_id }}
         run: |
-          # A run's sweep removes only rules older than 20 minutes, and the next scheduled run starts
-          # ~15 minutes after this one, so it is usually the SECOND run after this one (~30 minutes).
+          # A run's sweep removes only rules older than 20 minutes, and the next run starts later,
+          # so it is usually the SECOND run after this one that sweeps it.
           WHERE="Cloudflare dashboard → dinary.app → Security → WAF → Tools → IP Access Rules, note 'dinary-uptime-monitor run ${GITHUB_RUN_ID}/${GITHUB_RUN_ATTEMPT}'"
           if [ -n "${RULE_ID}" ]; then
-            echo "::error::Temporary Cloudflare allow rule ${RULE_ID} on dinary.app could not be removed. A later run deletes it once it is older than 20 minutes (usually the second scheduled run after this one, ~30 minutes). To remove it now: ${WHERE}."
+            echo "::error::Temporary Cloudflare allow rule ${RULE_ID} on dinary.app could not be removed. A later run deletes it once it is older than 20 minutes. To remove it now: ${WHERE}."
           else
-            echo "::error::Could not confirm whether this run created a temporary Cloudflare allow rule on dinary.app. If it did, a later run deletes it once it is older than 20 minutes (~30 minutes). To check now: ${WHERE}."
+            echo "::error::Could not confirm whether this run created a temporary Cloudflare allow rule on dinary.app. If it did, a later run deletes it once it is older than 20 minutes. To check now: ${WHERE}."
           fi
           exit 1
