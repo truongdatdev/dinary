@@ -24,6 +24,14 @@ on:
     # being published and being mirrored is bounded -- and until it is mirrored the website keeps
     # linking to GitHub, because it only rewrites URLs listed in manifest.json.
     - cron: '0 */6 * * *'
+  push:
+    # Self-test. A change to this file is the likeliest way to break the mirror, and the next
+    # scheduled run is up to 6 hours away. Scoped to this file so ordinary pushes never start a
+    # mirror; the run is idempotent, so a real upload on this trigger is harmless.
+    branches:
+      - main
+    paths:
+      - '.github/workflows/mirror-releases-to-r2.yml'
 
 concurrency:
   # Two concurrent mirrors would race on manifest.json and could publish one that omits keys the
