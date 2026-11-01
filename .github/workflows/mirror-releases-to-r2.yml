@@ -7,6 +7,9 @@
 # This runs on a schedule rather than hooking the release workflows: it is self-healing (a missed or
 # failed run is corrected by the next one), it touches none of the ~24 existing desktop build
 # workflows, and it is idempotent -- an asset already present at the right size is skipped.
+#
+# Until the R2 bucket exists the scheduled run is a no-op: its first step reports the missing secrets
+# as a notice and skips the upload, so an unprovisioned bucket does not fail six times a day.
 name: mirror-releases-to-r2
 
 on:
@@ -61,10 +64,37 @@ jobs:
         with:
           node-version: '26'
 
+      - name: Check whether R2 is configured
+        id: config
+        # The bucket behind downloads.dinary.app is not provisioned yet, so the four secrets are
+        # empty and the mirror can only report "missing env". Failing every 6 hours turns that
+        # known gap into six red emails a day and buries real failures. Report it as a notice and
+        # skip the upload steps instead; the next scheduled run picks the mirror up on its own as
+        # soon as the secrets exist, so nothing here needs a follow-up commit.
+        #
+        # A configuration that EXISTS but is wrong still fails loudly in the selftest step below.
+        env:
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          R2_S3_ENDPOINT: ${{ secrets.R2_S3_ENDPOINT }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        run: |
+          missing=()
+          for name in R2_BUCKET R2_S3_ENDPOINT R2_ACCESS_KEY_ID R2_SECRET_ACCESS_KEY; do
+            if [ -z "${!name}" ]; then missing+=("${name}"); fi
+          done
+          if [ "${#missing[@]}" -gt 0 ]; then
+            echo "::notice title=R2 mirror skipped::R2 is not configured yet - no upload attempted. Missing secret(s): ${missing[*]}."
+            echo "configured=false" >> "${GITHUB_OUTPUT}"
+          else
+            echo "configured=true" >> "${GITHUB_OUTPUT}"
+          fi
+
       - name: Verify R2 credentials and signing
         # Runs before any mirroring. R2 answers "signature rejected" in a way the mirror reads as
         # "object absent", so without this a credential or signing fault would look like an empty
         # mirror and publish an empty manifest instead of failing.
+        if: steps.config.outputs.configured == 'true'
         env:
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
           R2_S3_ENDPOINT: ${{ secrets.R2_S3_ENDPOINT }}
@@ -73,6 +103,7 @@ jobs:
         run: node scripts/mirror-releases-to-r2.mjs --selftest
 
       - name: Mirror release assets to R2
+        if: steps.config.outputs.configured == 'true'
         env:
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
           R2_S3_ENDPOINT: ${{ secrets.R2_S3_ENDPOINT }}
